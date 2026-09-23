@@ -1,0 +1,9 @@
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+build/
+windows/flutter/ephemeral/
+*.iml
+.idea/
+pubspec.lock
