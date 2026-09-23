@@ -3,23 +3,20 @@
 
   const bridge = window.ccWebsiteEditor;
   if (!bridge || !window.grapesjs) {
-    document.body.innerHTML = '<pre>Website Editor konnte nicht gestartet werden. GrapesJS oder die Electron-Bridge fehlt.</pre>';
+    document.body.innerHTML = '<pre>GrapesJS Editor konnte nicht gestartet werden.</pre>';
     return;
   }
 
-  const state = {
-    page: 'index.html',
-    assetBaseUrl: '',
-    loading: false,
-    dirty: false,
-  };
-
+  const state = { page: 'index.html', assetBaseUrl: '', loading: false, dirty: false };
   const pageSelect = document.querySelector('#page-select');
   const status = document.querySelector('#status');
   const repoPath = document.querySelector('#repo-path');
+  const selectedName = document.querySelector('#selected-name');
   const codeDialog = document.querySelector('#code-dialog');
   const codeHtml = document.querySelector('#code-html');
   const codeCss = document.querySelector('#code-css');
+  const selectionButtons = ['select-parent', 'duplicate', 'delete']
+    .map(name => document.querySelector('[data-action="' + name + '"]'));
 
   const editor = grapesjs.init({
     container: '#gjs',
@@ -28,6 +25,10 @@
     fromElement: false,
     storageManager: false,
     noticeOnUnload: false,
+    panels: { defaults: [] },
+    blockManager: { appendTo: '#blocks' },
+    layerManager: { appendTo: '#layers' },
+    traitManager: { appendTo: '#traits' },
     selectorManager: { componentFirst: true },
     deviceManager: {
       devices: [
@@ -37,81 +38,57 @@
       ],
     },
     styleManager: {
+      appendTo: '#styles',
       sectors: [
-        {
-          name: 'Größe & Abstand',
-          open: true,
-          buildProps: ['display', 'position', 'width', 'height', 'max-width', 'min-height', 'margin', 'padding'],
-        },
-        {
-          name: 'Typografie',
-          open: false,
-          buildProps: ['font-family', 'font-size', 'font-weight', 'letter-spacing', 'line-height', 'text-align', 'text-transform', 'color'],
-        },
-        {
-          name: 'Fläche',
-          open: false,
-          buildProps: ['background-color', 'background', 'border', 'border-radius', 'box-shadow', 'opacity'],
-        },
-        {
-          name: 'Flex / Grid',
-          open: false,
-          buildProps: ['flex-direction', 'justify-content', 'align-items', 'gap', 'grid-template-columns'],
-        },
+        { name: 'Layout', open: true, buildProps: ['display', 'position', 'width', 'height', 'max-width', 'min-height', 'margin', 'padding', 'overflow'] },
+        { name: 'Typografie', open: true, buildProps: ['font-family', 'font-size', 'font-weight', 'letter-spacing', 'line-height', 'text-align', 'text-transform', 'color'] },
+        { name: 'Fläche', open: false, buildProps: ['background-color', 'background', 'border', 'border-radius', 'box-shadow', 'opacity'] },
+        { name: 'Flex / Grid', open: false, buildProps: ['flex-direction', 'flex-wrap', 'justify-content', 'align-items', 'gap', 'grid-template-columns'] },
       ],
     },
   });
 
   const blocks = editor.BlockManager;
-  blocks.add('cc-section', {
-    label: 'Abschnitt',
-    category: 'Layout',
-    content: '<section class="section section-shell"><p class="kicker">NEUER ABSCHNITT</p><h2>Überschrift</h2><p>Neuer Inhalt</p></section>',
-  });
-  blocks.add('cc-heading', {
-    label: 'Überschrift',
-    category: 'Inhalt',
-    content: '<h2>Neue Überschrift</h2>',
-  });
-  blocks.add('cc-text', {
-    label: 'Text',
-    category: 'Inhalt',
-    content: '<p>Neuer Text</p>',
-  });
+  [
+    ['cc-section', 'Abschnitt', 'Layout', '<section class="section section-shell"><p class="kicker">NEUER ABSCHNITT</p><h2>Überschrift</h2><p>Neuer Inhalt</p></section>'],
+    ['cc-two-columns', '2 Spalten', 'Layout', '<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px"><div><p>Spalte 1</p></div><div><p>Spalte 2</p></div></div>'],
+    ['cc-heading', 'Überschrift', 'Inhalt', '<h2>Neue Überschrift</h2>'],
+    ['cc-text', 'Text', 'Inhalt', '<p>Neuer Text</p>'],
+    ['cc-link', 'Link', 'Inhalt', '<a class="text-link" href="#">Neuer Link</a>'],
+    ['cc-button', 'Button', 'Inhalt', '<a class="button button-solid" href="#">Button</a>'],
+    ['cc-divider', 'Trenner', 'Layout', '<hr>'],
+  ].forEach(([id, label, category, content]) => blocks.add(id, { label, category, content }));
+
   blocks.add('cc-image', {
     label: 'Bild',
     category: 'Inhalt',
     content: { type: 'image', src: 'images/products/kohesion-pendant.png', alt: '' },
   });
-  blocks.add('cc-link', {
-    label: 'Link',
-    category: 'Inhalt',
-    content: '<a class="text-link" href="#">Neuer Link</a>',
-  });
-  blocks.add('cc-button', {
-    label: 'Button',
-    category: 'Inhalt',
-    content: '<a class="button button-solid" href="#">Button</a>',
-  });
-  blocks.add('cc-divider', {
-    label: 'Trenner',
-    category: 'Layout',
-    content: '<hr>',
-  });
 
-  function setStatus(message, kind) {
+  function setStatus(message, kind = '') {
     status.textContent = message;
-    status.dataset.kind = kind || '';
+    status.dataset.kind = kind;
   }
 
   function setDirty(value) {
     state.dirty = Boolean(value);
-    if (state.dirty) {
-      setStatus('Ungespeichert', 'dirty');
-    } else {
-      setStatus('Gespeichert', 'ok');
-    }
-    document.title = (state.dirty ? '● ' : '') + 'CircuitCurios Website Editor';
+    setStatus(state.dirty ? 'Ungespeichert' : 'Gespeichert', state.dirty ? 'dirty' : 'ok');
+    document.title = (state.dirty ? '● ' : '') + 'CircuitCurios GrapesJS Editor';
+  }
+
+  function componentLabel(component) {
+    if (!component) return 'Nichts ausgewählt';
+    const tag = component.get('tagName') || component.get('type') || 'Element';
+    const id = component.getId ? component.getId() : '';
+    const classes = component.getClasses ? component.getClasses() : [];
+    const suffix = id ? '#' + id : classes.length ? '.' + classes.slice(0, 2).join('.') : '';
+    return String(tag).toUpperCase() + suffix;
+  }
+
+  function updateSelectionUi() {
+    const selected = editor.getSelected();
+    selectedName.textContent = componentLabel(selected);
+    selectionButtons.forEach(button => { button.disabled = !selected; });
   }
 
   function injectCanvasHelpers() {
@@ -133,15 +110,11 @@
       helper.dataset.ccEditorOnly = 'true';
       doc.head.appendChild(helper);
     }
-    helper.textContent = [
-      '.reveal{opacity:1!important;transform:none!important;}',
-      'a[href]{cursor:default;}',
-    ].join('');
+    helper.textContent = '.reveal{opacity:1!important;transform:none!important}.site-header{pointer-events:auto!important}a[href]{cursor:default!important}';
   }
 
-  async function loadPage(page, options) {
-    const opts = options || {};
-    if (!opts.force && state.dirty) {
+  async function loadPage(page, { force = false } = {}) {
+    if (!force && state.dirty) {
       const discard = window.confirm('Ungespeicherte Änderungen verwerfen und Seite wechseln?');
       if (!discard) {
         pageSelect.value = state.page;
@@ -155,26 +128,25 @@
       const data = await bridge.loadPage(page);
       state.page = data.page;
       state.assetBaseUrl = data.assetBaseUrl;
-      repoPath.textContent = data.repoRoot || 'CircuitCurios';
+      repoPath.textContent = data.repoRoot || 'CircuitCurios-website';
 
       editor.setComponents(data.body);
       editor.setStyle(data.css);
 
-      const assetManager = editor.AssetManager;
       if (Array.isArray(data.assets) && data.assets.length) {
-        assetManager.add(data.assets);
+        editor.AssetManager.add(data.assets);
       }
 
       pageSelect.value = data.page;
-      if (editor.UndoManager && typeof editor.UndoManager.clear === 'function') {
-        editor.UndoManager.clear();
-      }
+      editor.select(null);
+      editor.UndoManager.clear();
 
       window.setTimeout(() => {
         injectCanvasHelpers();
         state.loading = false;
         setDirty(false);
-      }, 30);
+        updateSelectionUi();
+      }, 50);
     } catch (error) {
       state.loading = false;
       setStatus('Fehler', 'error');
@@ -201,23 +173,19 @@
   }
 
   async function openPreview() {
-    if (state.dirty) {
-      const saved = await savePage();
-      if (!saved) return;
-    }
+    if (state.dirty && !(await savePage())) return;
     await bridge.openPreview(state.page);
   }
 
   function openAssets() {
-    const assetManager = editor.AssetManager;
-    assetManager.open({
+    editor.AssetManager.open({
       select(asset, complete) {
         const selected = editor.getSelected();
         if (selected && selected.is('image')) {
           selected.addAttributes({ src: asset.getSrc() });
           setDirty(true);
         }
-        if (complete) assetManager.close();
+        if (complete) editor.AssetManager.close();
       },
     });
   }
@@ -225,7 +193,7 @@
   async function importImages() {
     try {
       const imported = await bridge.importImages();
-      if (!Array.isArray(imported) || imported.length === 0) return;
+      if (!Array.isArray(imported) || !imported.length) return;
       editor.AssetManager.add(imported);
       setStatus(imported.length + ' Bild(er) importiert', 'ok');
       openAssets();
@@ -250,6 +218,40 @@
     codeDialog.close();
   }
 
+  function selectParent() {
+    const selected = editor.getSelected();
+    const parent = selected && selected.parent && selected.parent();
+    if (parent && parent !== editor.getWrapper()) editor.select(parent);
+  }
+
+  function duplicateSelected() {
+    const selected = editor.getSelected();
+    const parent = selected && selected.parent && selected.parent();
+    if (!selected || !parent || typeof selected.clone !== 'function') return;
+    const siblings = parent.components();
+    const index = typeof siblings.indexOf === 'function' ? siblings.indexOf(selected) : -1;
+    const clone = selected.clone();
+    parent.append(clone, index >= 0 ? { at: index + 1 } : undefined);
+    editor.select(clone);
+  }
+
+  function deleteSelected() {
+    const selected = editor.getSelected();
+    if (!selected || selected.get('removable') === false) return;
+    const parent = selected.parent && selected.parent();
+    selected.remove();
+    if (parent && parent !== editor.getWrapper()) editor.select(parent);
+  }
+
+  function activateInspector(name) {
+    document.querySelectorAll('[data-inspector]').forEach(button => {
+      button.classList.toggle('is-active', button.dataset.inspector === name);
+    });
+    document.querySelectorAll('.inspector-pane').forEach(pane => {
+      pane.classList.toggle('is-active', pane.id === name);
+    });
+  }
+
   async function initPages() {
     const pages = await bridge.listPages();
     pageSelect.innerHTML = '';
@@ -262,15 +264,12 @@
     await loadPage('index.html', { force: true });
   }
 
-  editor.on('update', () => {
-    if (!state.loading) setDirty(true);
-  });
-
+  editor.on('update', () => { if (!state.loading) setDirty(true); });
   editor.on('canvas:frame:load', injectCanvasHelpers);
+  editor.on('component:selected', updateSelectionUi);
+  editor.on('component:deselected', updateSelectionUi);
 
-  pageSelect.addEventListener('change', () => {
-    loadPage(pageSelect.value);
-  });
+  pageSelect.addEventListener('change', () => loadPage(pageSelect.value));
 
   document.querySelectorAll('[data-device]').forEach(button => {
     button.addEventListener('click', () => {
@@ -280,6 +279,10 @@
     });
   });
 
+  document.querySelectorAll('[data-inspector]').forEach(button => {
+    button.addEventListener('click', () => activateInspector(button.dataset.inspector));
+  });
+
   document.querySelector('[data-action="undo"]').addEventListener('click', () => editor.UndoManager.undo());
   document.querySelector('[data-action="redo"]').addEventListener('click', () => editor.UndoManager.redo());
   document.querySelector('[data-action="assets"]').addEventListener('click', openAssets);
@@ -287,10 +290,11 @@
   document.querySelector('[data-action="code"]').addEventListener('click', openCodeDialog);
   document.querySelector('[data-action="preview"]').addEventListener('click', openPreview);
   document.querySelector('[data-action="save"]').addEventListener('click', savePage);
+  document.querySelector('[data-action="select-parent"]').addEventListener('click', selectParent);
+  document.querySelector('[data-action="duplicate"]').addEventListener('click', duplicateSelected);
+  document.querySelector('[data-action="delete"]').addEventListener('click', deleteSelected);
 
-  document.querySelectorAll('[data-code-close]').forEach(button => {
-    button.addEventListener('click', () => codeDialog.close());
-  });
+  document.querySelectorAll('[data-code-close]').forEach(button => button.addEventListener('click', () => codeDialog.close()));
   document.querySelector('#code-apply').addEventListener('click', applyCodeDialog);
 
   window.addEventListener('keydown', event => {
@@ -298,14 +302,14 @@
     if ((event.ctrlKey || event.metaKey) && key === 's') {
       event.preventDefault();
       savePage();
-    }
-    if ((event.ctrlKey || event.metaKey) && key === 'z' && !event.shiftKey) {
+    } else if ((event.ctrlKey || event.metaKey) && key === 'z' && !event.shiftKey) {
       event.preventDefault();
       editor.UndoManager.undo();
-    }
-    if ((event.ctrlKey || event.metaKey) && (key === 'y' || (key === 'z' && event.shiftKey))) {
+    } else if ((event.ctrlKey || event.metaKey) && (key === 'y' || (key === 'z' && event.shiftKey))) {
       event.preventDefault();
       editor.UndoManager.redo();
+    } else if (event.key === 'Delete' && !['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) {
+      deleteSelected();
     }
   });
 

@@ -45,8 +45,20 @@ function findRepoRoot() {
     if (found) return found;
   }
 
+  // Last fallback for packaged builds started from a sibling repository.
+  for (const candidate of candidates.filter(Boolean)) {
+    let current = path.resolve(candidate);
+    for (let i = 0; i < 10; i += 1) {
+      const sibling = path.join(path.dirname(current), 'CircuitCurios-website');
+      if (looksLikeRepo(sibling)) return sibling;
+      const parent = path.dirname(current);
+      if (parent === current) break;
+      current = parent;
+    }
+  }
+
   throw new Error(
-    'CircuitCurios-website Repo nicht gefunden. Starte den Editor aus dem Repo oder setze CIRCUITCURIOS_WEBSITE_ROOT.'
+    'CircuitCurios-website Repo nicht gefunden. Erwartet wird das Website-Repo neben dem Hauptrepo oder CIRCUITCURIOS_WEBSITE_ROOT.'
   );
 }
 
@@ -244,7 +256,7 @@ function createEditorWindow() {
     minWidth: 1080,
     minHeight: 720,
     backgroundColor: '#17191d',
-    title: 'CircuitCurios Website Editor',
+    title: 'CircuitCurios GrapesJS Editor',
     autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(here, 'preload.cjs'),
