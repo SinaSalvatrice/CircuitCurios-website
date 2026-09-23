@@ -41,6 +41,8 @@ if (-not (Test-Path $windowsProject)) {
   $trackedFiles = @(
     'pubspec.yaml',
     'analysis_options.yaml',
+    '.gitignore',
+    'README.md',
     'lib\main.dart'
   )
 
@@ -67,6 +69,11 @@ if (-not (Test-Path $windowsProject)) {
       $entry.Value,
       [System.Text.UTF8Encoding]::new($false)
     )
+  }
+
+  $templateTest = Join-Path $editorRoot 'test\widget_test.dart'
+  if (Test-Path $templateTest) {
+    Remove-Item (Split-Path $templateTest -Parent) -Recurse -Force
   }
 } else {
   Write-Host '[1/5] Windows-Runner vorhanden.' -ForegroundColor DarkGray
