@@ -6,7 +6,7 @@ Statische Website für **https://circuitcurios.de**.
 
 - `index.html` – Startseite
 - `impressum.html` – Impressum
-- `datenschutz.html` – Datenschutzerklärung inkl. CircuitCurios Studio / Pinterest API
+- `datenschutz.html` – Datenschutzerklärung inkl. Pinterest API
 - `privacy.html` – Kompatibilitäts-Weiterleitung auf `datenschutz.html`
 - `css/style.css` – globales Styling
 - `js/main.js` – Navigation, Header, Reveal-Effekte, Jahreszahl
@@ -25,15 +25,3 @@ Alle gelb markierten Platzhalter müssen durch die tatsächlichen Pflichtangaben
 Keine Build-Pipeline, keine externen JS-Abhängigkeiten und keine extern geladenen Webfonts.  
 Die Seite läuft direkt auf GitHub Pages.
 
-
-## Website Studio
-
-Im Ordner `editor/` liegt eine eigenständige Flutter-Windows-App zum Bearbeiten dieser Website. HTML, CSS und JavaScript bleiben dabei die eigentliche Website; der Editor schreibt direkt in die vorhandenen Dateien.
-
-Build:
-
-```powershell
-.\editor\build-editor.ps1
-```
-
-Der vollständige Windows-Release wird lokal unter `build/apps/website-studio/` bereitgestellt. Die große CircuitCurios-Studio-App kann diesen Release als Schwester-App öffnen.
