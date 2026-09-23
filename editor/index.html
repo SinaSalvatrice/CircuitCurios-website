@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CircuitCurios Website Editor</title>
+  <link rel="stylesheet" href="node_modules/grapesjs/dist/css/grapes.min.css">
+  <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="editor-toolbar">
+      <div class="editor-brand">
+        <span class="editor-mark">CC</span>
+        <div>
+          <strong>Website Editor</strong>
+          <span id="repo-path">CircuitCurios</span>
+        </div>
+      </div>
+
+      <div class="editor-page-tools">
+        <label for="page-select">Seite</label>
+        <select id="page-select" aria-label="Seite auswählen"></select>
+      </div>
+
+      <div class="editor-device-tools" aria-label="Vorschaugröße">
+        <button type="button" data-device="Desktop" class="is-active">Desktop</button>
+        <button type="button" data-device="Tablet">Tablet</button>
+        <button type="button" data-device="Mobil">Mobil</button>
+      </div>
+
+      <div class="editor-actions">
+        <button type="button" data-action="undo" title="Rückgängig">Undo</button>
+        <button type="button" data-action="redo" title="Wiederholen">Redo</button>
+        <button type="button" data-action="assets">Bilder</button>
+        <button type="button" data-action="import">Importieren</button>
+        <button type="button" data-action="code">HTML/CSS</button>
+        <button type="button" data-action="preview">Vorschau</button>
+        <button type="button" data-action="save" class="save-button">Speichern</button>
+      </div>
+
+      <div id="status" class="editor-status" role="status">Bereit</div>
+    </header>
+
+    <main class="editor-stage">
+      <div id="gjs"></div>
+    </main>
+  </div>
+
+  <dialog id="code-dialog" class="code-dialog">
+    <div class="code-dialog-head">
+      <div>
+        <strong>HTML / CSS</strong>
+        <span>Direkte Bearbeitung der aktuellen GrapesJS-Seite</span>
+      </div>
+      <button type="button" data-code-close aria-label="Schließen">Schließen</button>
+    </div>
+    <div class="code-editors">
+      <label>
+        <span>HTML</span>
+        <textarea id="code-html" spellcheck="false"></textarea>
+      </label>
+      <label>
+        <span>CSS</span>
+        <textarea id="code-css" spellcheck="false"></textarea>
+      </label>
+    </div>
+    <div class="code-dialog-actions">
+      <button type="button" data-code-close>Abbrechen</button>
+      <button type="button" id="code-apply" class="save-button">Übernehmen</button>
+    </div>
+  </dialog>
+
+  <script src="node_modules/grapesjs/dist/grapes.min.js"></script>
+  <script src="editor.js"></script>
+</body>
+</html>

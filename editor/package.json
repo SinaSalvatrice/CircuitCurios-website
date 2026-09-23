@@ -1,0 +1,39 @@
+{
+  "name": "circuitcurios-website-editor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local GrapesJS website editor for CircuitCurios.",
+  "main": "main.mjs",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win --x64 --dir"
+  },
+  "dependencies": {
+    "grapesjs": "0.23.6"
+  },
+  "devDependencies": {
+    "electron": "44.4.5",
+    "electron-builder": "26.16.1"
+  },
+  "build": {
+    "appId": "de.circuitcurios.websiteeditor",
+    "productName": "CircuitCurios Website Editor",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.mjs",
+      "preload.cjs",
+      "index.html",
+      "editor.js",
+      "editor.css",
+      "package.json",
+      "node_modules/grapesjs/dist/**/*"
+    ],
+    "win": {
+      "executableName": "circuitcurios_website_studio"
+    }
+  }
+}
