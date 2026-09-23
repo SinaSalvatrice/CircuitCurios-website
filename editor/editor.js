@@ -161,7 +161,6 @@
       editor.setStyle(data.css);
 
       const assetManager = editor.AssetManager;
-      if (typeof assetManager.clear === 'function') assetManager.clear();
       if (Array.isArray(data.assets) && data.assets.length) {
         assetManager.add(data.assets);
       }
@@ -190,7 +189,7 @@
       await bridge.savePage({
         page: state.page,
         body: editor.getHtml(),
-        css: editor.getCss(),
+        css: editor.getCss({ keepUnusedStyles: true }),
       });
       setDirty(false);
       return true;
@@ -209,13 +208,27 @@
     await bridge.openPreview(state.page);
   }
 
+  function openAssets() {
+    const assetManager = editor.AssetManager;
+    assetManager.open({
+      select(asset, complete) {
+        const selected = editor.getSelected();
+        if (selected && selected.is('image')) {
+          selected.addAttributes({ src: asset.getSrc() });
+          setDirty(true);
+        }
+        if (complete) assetManager.close();
+      },
+    });
+  }
+
   async function importImages() {
     try {
       const imported = await bridge.importImages();
       if (!Array.isArray(imported) || imported.length === 0) return;
       editor.AssetManager.add(imported);
       setStatus(imported.length + ' Bild(er) importiert', 'ok');
-      editor.runCommand('open-assets');
+      openAssets();
     } catch (error) {
       window.alert('Bildimport fehlgeschlagen:\n\n' + (error?.message || error));
     }
@@ -223,7 +236,7 @@
 
   function openCodeDialog() {
     codeHtml.value = editor.getHtml();
-    codeCss.value = editor.getCss();
+    codeCss.value = editor.getCss({ keepUnusedStyles: true });
     codeDialog.showModal();
   }
 
@@ -269,7 +282,7 @@
 
   document.querySelector('[data-action="undo"]').addEventListener('click', () => editor.UndoManager.undo());
   document.querySelector('[data-action="redo"]').addEventListener('click', () => editor.UndoManager.redo());
-  document.querySelector('[data-action="assets"]').addEventListener('click', () => editor.runCommand('open-assets'));
+  document.querySelector('[data-action="assets"]').addEventListener('click', openAssets);
   document.querySelector('[data-action="import"]').addEventListener('click', importImages);
   document.querySelector('[data-action="code"]').addEventListener('click', openCodeDialog);
   document.querySelector('[data-action="preview"]').addEventListener('click', openPreview);
