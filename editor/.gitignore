@@ -6,3 +6,4 @@ build/
 windows/flutter/ephemeral/
 *.iml
 .idea/
+pubspec.lock
