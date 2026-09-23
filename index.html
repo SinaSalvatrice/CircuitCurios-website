@@ -1,70 +1,186 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CircuitCurios — Handmade Objects & Studio Tools</title>
-  <meta name="description" content="CircuitCurios creates handmade industrial jewelry, objects and supporting studio tools for preparing and publishing product content.">
-  <link rel="stylesheet" href="styles.css">
+  <title>CircuitCurios — handgefertigter Schmuck & Metallobjekte</title>
+  <meta name="description" content="CircuitCurios steht für handgefertigten Aluminiumschmuck, charaktervolle Metalloberflächen und Einzelstücke aus dem eigenen Studio.">
+  <meta name="theme-color" content="#0b0c0e">
+  <meta property="og:title" content="CircuitCurios">
+  <meta property="og:description" content="Handgefertigter Aluminiumschmuck und charaktervolle Metalloberflächen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://circuitcurios.de/">
+  <link rel="canonical" href="https://circuitcurios.de/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <main>
-    <header class="hero">
-      <div class="eyebrow">CIRCUITCURIOS</div>
-      <h1>New objectives<br>for old objects.</h1>
-      <p class="lead">
-        Handmade industrial jewelry, altered objects and the digital studio tools used to prepare,
-        manage and publish CircuitCurios product content.
-      </p>
-      <div class="actions">
-        <a class="button primary" href="https://circuitcurios.etsy.com" rel="noopener">Visit the Etsy shop</a>
-        <a class="button" href="privacy.html">Privacy Policy</a>
+  <a class="skip-link" href="#content">Zum Inhalt</a>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="index.html" aria-label="CircuitCurios Startseite">
+      <span class="brand-mark" aria-hidden="true">CC</span>
+      <span class="brand-name">CircuitCurios</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+      <span></span><span></span>
+      <span class="sr-only">Navigation öffnen</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Hauptnavigation" data-nav>
+      <a href="#arbeiten">Arbeiten</a>
+      <a href="#oberflaechen">Oberflächen</a>
+      <a href="#studio">Studio</a>
+      <a href="#ueber">Über</a>
+      <a class="nav-shop" href="https://circuitcurios.etsy.com" target="_blank" rel="noopener noreferrer">Shop ↗</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="kicker">Handmade · Aluminium · Einzelstücke</p>
+        <h1>Die Oberfläche<br>als Identität.</h1>
+        <p class="hero-text">
+          Schmuck und Metallobjekte, bei denen Spuren, Struktur und Material nicht versteckt werden,
+          sondern den Charakter des Stücks bestimmen.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-solid" href="https://circuitcurios.etsy.com" target="_blank" rel="noopener noreferrer">Zum Etsy-Shop</a>
+          <a class="text-link" href="#arbeiten">Arbeiten ansehen <span aria-hidden="true">↓</span></a>
+        </div>
       </div>
-    </header>
 
-    <section class="grid" aria-label="About CircuitCurios">
-      <article class="card">
-        <span class="number">01</span>
-        <h2>Objects</h2>
-        <p>
-          Small-series and one-off pieces made by hand, with a focus on aluminium jewelry,
-          etched metal surfaces and industrial material character.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number">02</span>
-        <h2>Studio</h2>
-        <p>
-          CircuitCurios Studio is an internal production tool for preparing product imagery,
-          listing content and publishing workflows used by CircuitCurios.
-        </p>
-      </article>
-
-      <article class="card">
-        <span class="number">03</span>
-        <h2>Pinterest integration</h2>
-        <p>
-          The studio can connect to Pinterest through Pinterest's OAuth flow and API to manage
-          CircuitCurios-owned boards and publish CircuitCurios-owned product content.
-        </p>
-      </article>
+      <div class="hero-object reveal" aria-hidden="true">
+        <div class="object-frame">
+          <div class="metal-shape metal-shape-a"></div>
+          <div class="metal-shape metal-shape-b"></div>
+          <span class="object-label">material / surface / form</span>
+        </div>
+      </div>
     </section>
 
-    <section class="statement">
-      <p>
-        This website is the official web presence for CircuitCurios and the CircuitCurios Studio
-        application used in connection with the Pinterest API.
-      </p>
+    <section class="section section-shell" id="arbeiten">
+      <div class="section-head reveal">
+        <p class="kicker">01 — Arbeiten</p>
+        <h2>Von Hand gebaut.<br>Nicht glattgebügelt.</h2>
+        <p>
+          Kleine Serien und Einzelstücke aus Aluminium und Metall. Leicht, direkt und bewusst mit
+          sichtbaren Spuren der Bearbeitung.
+        </p>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card reveal">
+          <div class="work-visual work-ring" aria-hidden="true"><span></span></div>
+          <div class="work-meta"><span>Ringe</span><span>Aluminium</span></div>
+          <h3>Struktur statt Dekor</h3>
+        </article>
+
+        <article class="work-card reveal">
+          <div class="work-visual work-pendant" aria-hidden="true"><span></span></div>
+          <div class="work-meta"><span>Anhänger</span><span>Handarbeit</span></div>
+          <h3>Fläche wird zum Motiv</h3>
+        </article>
+
+        <article class="work-card reveal">
+          <div class="work-visual work-object" aria-hidden="true"><span></span></div>
+          <div class="work-meta"><span>Objekte</span><span>Metall</span></div>
+          <h3>Spuren dürfen bleiben</h3>
+        </article>
+      </div>
     </section>
 
-    <footer>
-      <span>© 2026 CircuitCurios</span>
-      <nav>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="https://circuitcurios.etsy.com" rel="noopener">Etsy</a>
-      </nav>
-    </footer>
+    <section class="section section-dark" id="oberflaechen">
+      <div class="section-shell surface-layout">
+        <div class="surface-intro reveal">
+          <p class="kicker">02 — Oberflächen</p>
+          <h2>Keine Textur<br>ist nur Textur.</h2>
+        </div>
+
+        <div class="surface-list">
+          <article class="surface-row reveal">
+            <span class="surface-number">A</span>
+            <div>
+              <h3>Geologie</h3>
+              <p>Deformation, Schichtung, Bruchlinien und kristalline Strukturen als Ausgangspunkt.</p>
+            </div>
+          </article>
+          <article class="surface-row reveal">
+            <span class="surface-number">B</span>
+            <div>
+              <h3>Physik</h3>
+              <p>Kräfte, Wellen, Schwingung und Abrieb werden in bearbeitete Metallflächen übersetzt.</p>
+            </div>
+          </article>
+          <article class="surface-row reveal">
+            <span class="surface-number">C</span>
+            <div>
+              <h3>Industrie</h3>
+              <p>Linien, Mikrostrukturen und technische Spuren treffen auf bewusst unperfekte Handarbeit.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-shell" id="studio">
+      <div class="studio-panel reveal">
+        <div>
+          <p class="kicker">03 — Studio</p>
+          <h2>Vom Werkstück<br>bis zum Listing.</h2>
+        </div>
+        <div class="studio-copy">
+          <p>
+            CircuitCurios entwickelt neben den physischen Arbeiten eigene interne Werkzeuge für
+            Produktbilder, Texturen, Listings und Veröffentlichungsabläufe.
+          </p>
+          <p class="small">
+            Dazu gehört auch eine autorisierte Pinterest-Integration, mit der ausschließlich
+            CircuitCurios-eigene Inhalte und Boards verwaltet werden.
+          </p>
+          <a class="text-link" href="datenschutz.html">Datenschutz & Pinterest-Integration →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-shell about" id="ueber">
+      <div class="about-label reveal">
+        <p class="kicker">04 — CircuitCurios</p>
+      </div>
+      <div class="about-copy reveal">
+        <p class="about-lead">
+          Nicht Perfektion macht ein Stück interessant, sondern eine Oberfläche, die zeigt,
+          dass mit ihr gearbeitet wurde.
+        </p>
+        <p>
+          CircuitCurios verbindet handwerkliche Bearbeitung mit einer technischen, reduzierten
+          Formensprache. Der Fokus liegt auf Aluminium-Schmuck, Metallobjekten und experimentellen
+          Oberflächen.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta section-shell reveal">
+      <p class="kicker">Shop</p>
+      <a href="https://circuitcurios.etsy.com" target="_blank" rel="noopener noreferrer">
+        Aktuelle Stücke auf Etsy <span aria-hidden="true">↗</span>
+      </a>
+    </section>
   </main>
+
+  <footer class="site-footer section-shell">
+    <div>
+      <strong>CircuitCurios</strong>
+      <span>© <span data-year>2026</span></span>
+    </div>
+    <nav aria-label="Footer">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="https://circuitcurios.etsy.com" target="_blank" rel="noopener noreferrer">Etsy ↗</a>
+    </nav>
+  </footer>
 </body>
 </html>

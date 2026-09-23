@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" role="img" aria-labelledby="title desc">
+  <title id="title">CircuitCurios</title>
+  <desc id="desc">Typografische CircuitCurios Wortmarke als neutrale Web-Fallbackgrafik.</desc>
+  <rect width="480" height="120" fill="none"/>
+  <circle cx="60" cy="60" r="42" fill="none" stroke="#111214" stroke-width="2"/>
+  <text x="60" y="66" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="700" letter-spacing="2" fill="#111214">CC</text>
+  <text x="125" y="70" font-family="Arial,Helvetica,sans-serif" font-size="36" font-weight="700" letter-spacing="3" fill="#111214">CIRCUITCURIOS</text>
+</svg>
