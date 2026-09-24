@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1400">
+  <rect width="1100" height="1400" fill="#ddd9cf"/>
+  <g fill="none" stroke="#77766f" stroke-width="2" opacity=".3">
+    <ellipse cx="550" cy="520" rx="230" ry="300"/>
+    <path d="M190 1400c40-420 220-650 360-650s320 230 360 650"/>
+  </g>
+  <text x="60" y="90" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" letter-spacing="5" fill="#5f5e59">PORTRAIT</text>
+  <text x="60" y="1330" font-family="Arial,Helvetica,sans-serif" font-size="17" letter-spacing="3" fill="#77766f">HIER DEIN BILD EINSETZEN</text>
+</svg>
