@@ -160,3 +160,38 @@ mark{background:#f4df9e;padding:0 3px}
   .portrait-panel{min-height:520px}
   .site-footer{flex-direction:column}
 }
+
+
+/* shop */
+.page-gates-three{grid-template-columns:repeat(3,1fr)}
+.shop-hero{padding-bottom:clamp(60px,8vw,110px)}
+.shop-hero-row{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-top:38px}
+.shop-hero-row .page-intro{margin:0;max-width:620px}
+.shop-etsy-cta{flex:0 0 auto;display:inline-flex;align-items:center;gap:16px;text-decoration:none;text-transform:uppercase;letter-spacing:.12em;font-size:.7rem;font-weight:800;border-bottom:1px solid currentColor;padding-bottom:6px}
+.shop-list{padding-bottom:clamp(90px,11vw,160px)}
+.shop-list-head{display:flex;justify-content:space-between;align-items:end;gap:32px;padding:0 0 24px;border-bottom:1px solid var(--line);margin-bottom:clamp(24px,3vw,42px)}
+.shop-list-head h2{margin:0;text-transform:uppercase;font-size:clamp(2rem,4vw,4.7rem);letter-spacing:-.055em;line-height:.85}
+.shop-list-head p{margin:0;max-width:420px;color:var(--muted)}
+.product-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(16px,2vw,28px)}
+.product-card{grid-column:span 4;margin:0}
+.product-card a{display:block;text-decoration:none}
+.product-card-image{overflow:hidden;background:#ddd9cf}
+.product-card img{aspect-ratio:4/5;object-fit:cover;transition:transform .35s ease}
+.product-card a:hover img{transform:scale(1.018)}
+.product-card figcaption{padding:14px 0 18px;border-bottom:1px solid var(--line)}
+.product-meta{display:flex;justify-content:space-between;gap:18px;align-items:baseline}
+.product-meta strong{text-transform:uppercase;font-size:.9rem;letter-spacing:.04em}
+.product-meta span{font:700 .6rem/1.2 monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.product-action{display:flex;justify-content:space-between;gap:18px;margin-top:10px;text-transform:uppercase;font-size:.64rem;font-weight:800;letter-spacing:.12em}
+.shop-note{margin-top:clamp(36px,5vw,70px);padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:30px;color:var(--muted)}
+.shop-note p{margin:0;max-width:620px}
+.shop-note a{color:var(--ink);text-underline-offset:4px}
+@media (max-width:900px){
+  .page-gates-three{grid-template-columns:1fr 1fr}
+  .shop-hero-row,.shop-list-head,.shop-note{align-items:flex-start;flex-direction:column}
+  .product-card{grid-column:span 6}
+}
+@media (max-width:680px){
+  .page-gates-three{grid-template-columns:1fr}
+  .product-card{grid-column:1/-1}
+}
