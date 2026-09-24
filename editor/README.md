@@ -17,6 +17,7 @@ Der alte selbstgebaute Flutter-Editor wurde durch **GrapesJS** in einer kleinen 
 - Bildimport nach `images/uploads/`
 - echte Website-Vorschau in einem separaten Fenster
 - Speichern mit `Strg+S`
+- **Veröffentlichen** speichert, committed ausschließlich die Live-Website-Dateien und pusht `main` zu GitHub Pages
 - lokale Sicherung vor jedem Speichern unter `editor/.backups/`
 
 ## Entwicklung starten
