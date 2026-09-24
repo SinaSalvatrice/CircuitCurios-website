@@ -8,7 +8,6 @@ Set-StrictMode -Version Latest
 $root = $PSScriptRoot
 $vendor = Join-Path $root '.vendor\VvvebJs'
 $server = Join-Path $root 'server.mjs'
-$url = 'http://127.0.0.1:8877/editor.html'
 
 Write-Host ''
 Write-Host '=== CircuitCurios VvvebJs Prototyp ===' -ForegroundColor Cyan
@@ -38,10 +37,9 @@ if (-not (Test-Path (Join-Path $vendor 'editor.html'))) {
 }
 
 Write-Host '[2/2] Starte lokalen Editor ...' -ForegroundColor DarkCyan
-Start-Process $url
 
 Write-Host ''
-Write-Host 'Browser wird geöffnet. Dieses Fenster offen lassen.' -ForegroundColor Green
+Write-Host 'Browser wird automatisch geöffnet. Dieses Fenster offen lassen.' -ForegroundColor Green
 Write-Host 'Strg+C beendet den Prototyp.' -ForegroundColor DarkGray
 Write-Host ''
 
