@@ -5,51 +5,43 @@
 
   const updateHeader = () => {
     if (!header) return;
-    header.classList.toggle('scrolled', window.scrollY > 24);
+    header.classList.toggle('scrolled', window.scrollY > 18);
   };
-
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
 
   if (toggle && nav) {
-    const closeNav = () => {
+    const close = () => {
       toggle.setAttribute('aria-expanded', 'false');
       nav.classList.remove('open');
       document.body.classList.remove('nav-open');
     };
-
     toggle.addEventListener('click', () => {
-      const open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      nav.classList.toggle('open', !open);
-      document.body.classList.toggle('nav-open', !open);
+      const opening = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(opening));
+      nav.classList.toggle('open', opening);
+      document.body.classList.toggle('nav-open', opening);
     });
-
-    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
-    window.addEventListener('keydown', event => {
-      if (event.key === 'Escape') closeNav();
-    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
+    window.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
   }
 
   document.querySelectorAll('[data-year]').forEach(el => {
     el.textContent = String(new Date().getFullYear());
   });
 
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const reveals = document.querySelectorAll('.reveal');
-
-  if (reducedMotion || !('IntersectionObserver' in window)) {
-    reveals.forEach(el => el.classList.add('visible'));
+  const items = document.querySelectorAll('.reveal');
+  if (!items.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    items.forEach(el => el.classList.add('visible'));
     return;
   }
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('visible');
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.12 });
-
-  reveals.forEach(el => observer.observe(el));
+  }, { threshold: .1 });
+  items.forEach(el => observer.observe(el));
 })();
