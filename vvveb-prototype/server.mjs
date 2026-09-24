@@ -1,12 +1,14 @@
 import http from 'node:http';
 import { createReadStream, existsSync } from 'node:fs';
 import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { spawn } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(here, '..');
 const vendorRoot = path.join(here, '.vendor', 'VvvebJs');
+const workRoot = path.join(here, '.work');
 const port = Number(process.env.CC_VVVEB_PORT || 8877);
 const host = '127.0.0.1';
 const editablePages = new Set(['index.html', 'impressum.html', 'datenschutz.html']);
@@ -203,6 +205,13 @@ async function collectBody(req, limit = 25 * 1024 * 1024) {
   return Buffer.concat(chunks).toString('utf8');
 }
 
+async function resetWorkCopies() {
+  await mkdir(workRoot, { recursive: true });
+  for (const page of editablePages) {
+    await copyFile(path.join(repoRoot, page), path.join(workRoot, page));
+  }
+}
+
 async function savePage(req, res) {
   const raw = await collectBody(req);
   const form = new URLSearchParams(raw);
@@ -218,14 +227,10 @@ async function savePage(req, res) {
     return;
   }
 
-  const target = path.join(repoRoot, requested);
-  const backupRoot = path.join(here, '.backups');
-  const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-  await mkdir(backupRoot, { recursive: true });
-  await copyFile(target, path.join(backupRoot, `${stamp}-${requested}`));
+  const target = path.join(workRoot, requested);
   await writeFile(target, html.trim() + '\n', 'utf8');
 
-  send(res, 200, `${requested} gespeichert (Backup angelegt).`);
+  send(res, 200, `${requested} in der Test-Arbeitskopie gespeichert. Die echte Website bleibt unverändert.`);
 }
 
 const server = http.createServer(async (req, res) => {
@@ -250,7 +255,13 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (pathname.startsWith('/site/')) {
-      const file = safeJoin(repoRoot, pathname.slice('/site/'.length));
+      const relative = pathname.slice('/site/'.length);
+      const pageName = path.basename(relative);
+      if (!relative.includes('/') && editablePages.has(pageName)) {
+        sendFile(res, path.join(workRoot, pageName));
+        return;
+      }
+      const file = safeJoin(repoRoot, relative);
       sendFile(res, file);
       return;
     }
@@ -263,12 +274,26 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
+await resetWorkCopies();
+
 server.listen(port, host, () => {
+  const editorUrl = `http://${host}:${port}/editor.html`;
   console.log('');
   console.log('=== CircuitCurios VvvebJs Prototyp ===');
-  console.log(`Editor:  http://${host}:${port}/editor.html`);
+  console.log(`Editor:  ${editorUrl}`);
   console.log(`Website: ${repoRoot}`);
-  console.log('Speichern ist nur für index.html, impressum.html und datenschutz.html freigegeben.');
+  console.log('Testmodus: Speichern schreibt nur nach vvveb-prototype/.work/.');
+  console.log('Die echte Website bleibt unverändert.');
   console.log('Strg+C beendet den Prototyp.');
   console.log('');
+
+  if (process.platform === 'win32') {
+    setTimeout(() => {
+      const child = spawn('cmd.exe', ['/c', 'start', '', editorUrl], {
+        detached: true,
+        stdio: 'ignore',
+      });
+      child.unref();
+    }, 350);
+  }
 });
