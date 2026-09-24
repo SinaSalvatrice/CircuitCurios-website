@@ -23,25 +23,82 @@
       document.body.classList.toggle('nav-open', opening);
     });
     nav.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
-    window.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
+    window.addEventListener('keydown', event => {
+      if (event.key === 'Escape') close();
+    });
   }
 
   document.querySelectorAll('[data-year]').forEach(el => {
     el.textContent = String(new Date().getFullYear());
   });
 
-  const items = document.querySelectorAll('.reveal');
-  if (!items.length) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
-    items.forEach(el => el.classList.add('visible'));
-    return;
+  const reveals = document.querySelectorAll('.reveal');
+  if (reveals.length) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+        !('IntersectionObserver' in window)) {
+      reveals.forEach(el => el.classList.add('visible'));
+    } else {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: .1 });
+      reveals.forEach(el => observer.observe(el));
+    }
   }
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+
+  const editorMode = new URLSearchParams(location.search).has('cceditor');
+  const dialog = document.querySelector('[data-texture-dialog]');
+  const cards = document.querySelectorAll('[data-texture-card]');
+
+  if (!editorMode && dialog && cards.length) {
+    const image = dialog.querySelector('[data-texture-dialog-image]');
+    const title = dialog.querySelector('[data-texture-dialog-title]');
+    const material = dialog.querySelector('[data-texture-dialog-material]');
+    const description = dialog.querySelector('[data-texture-dialog-description]');
+    const fields = ['group', 'family', 'pattern', 'principle'];
+
+    const openCard = card => {
+      const cardImage = card.querySelector('img');
+      const cardTitle = card.querySelector('figcaption strong');
+      const cardMaterial = card.querySelector('figcaption span:last-child');
+
+      if (image && cardImage) {
+        image.src = cardImage.currentSrc || cardImage.src;
+        image.alt = cardImage.alt || '';
+      }
+      if (title) title.textContent = cardTitle?.textContent?.trim() || 'Oberfläche';
+      if (material) material.textContent = cardMaterial?.textContent?.trim() || '';
+
+      fields.forEach(field => {
+        const value = (card.dataset['texture' + field[0].toUpperCase() + field.slice(1)] || '').trim();
+        const row = dialog.querySelector('[data-texture-row="' + field + '"]');
+        const target = dialog.querySelector('[data-texture-dialog-' + field + ']');
+        if (target) target.textContent = value;
+        if (row) row.hidden = !value;
+      });
+
+      if (description) {
+        description.textContent = (card.dataset.textureDescription || '').trim();
+      }
+      dialog.showModal();
+    };
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => openCard(card));
+      card.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        openCard(card);
+      });
     });
-  }, { threshold: .1 });
-  items.forEach(el => observer.observe(el));
+
+    dialog.querySelector('[data-texture-dialog-close]')
+      ?.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+      if (event.target === dialog) dialog.close();
+    });
+  }
 })();
