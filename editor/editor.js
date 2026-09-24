@@ -15,6 +15,7 @@
   const codeDialog = document.querySelector('#code-dialog');
   const codeHtml = document.querySelector('#code-html');
   const codeCss = document.querySelector('#code-css');
+  const publishButton = document.querySelector('[data-action="publish"]');
   const selectionButtons = ['select-parent', 'duplicate', 'delete']
     .map(name => document.querySelector('[data-action="' + name + '"]'));
 
@@ -177,6 +178,35 @@
     await bridge.openPreview(state.page);
   }
 
+  async function publishSite() {
+    if (state.loading || publishButton.disabled) return;
+    if (state.dirty && !(await savePage())) return;
+
+    publishButton.disabled = true;
+    const previousText = publishButton.textContent;
+    publishButton.textContent = 'Veröffentliche…';
+    setStatus('Veröffentliche…');
+
+    try {
+      const result = await bridge.publishSite();
+      setStatus('Veröffentlicht', 'ok');
+      const detail = result?.commit ? ' · Commit ' + result.commit : '';
+      window.alert(
+        'Website veröffentlicht' + detail + '.\n\n'
+        + 'GitHub Pages übernimmt die Änderung automatisch für circuitcurios.de.'
+      );
+    } catch (error) {
+      setStatus('Publish-Fehler', 'error');
+      window.alert(
+        'Veröffentlichung fehlgeschlagen:\n\n'
+        + (error?.message || error)
+      );
+    } finally {
+      publishButton.disabled = false;
+      publishButton.textContent = previousText;
+    }
+  }
+
   function openAssets() {
     editor.AssetManager.open({
       select(asset, complete) {
@@ -290,6 +320,7 @@
   document.querySelector('[data-action="code"]').addEventListener('click', openCodeDialog);
   document.querySelector('[data-action="preview"]').addEventListener('click', openPreview);
   document.querySelector('[data-action="save"]').addEventListener('click', savePage);
+  publishButton.addEventListener('click', publishSite);
   document.querySelector('[data-action="select-parent"]').addEventListener('click', selectParent);
   document.querySelector('[data-action="duplicate"]').addEventListener('click', duplicateSelected);
   document.querySelector('[data-action="delete"]').addEventListener('click', deleteSelected);
