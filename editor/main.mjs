@@ -1,4 +1,5 @@
 import { app, BrowserWindow, dialog, ipcMain, shell } from 'electron';
+import { execFile } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { copyFile, mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -153,6 +154,111 @@ function configureExternalLinks(window) {
   });
 }
 
+const PUBLISH_PATHS = [
+  'index.html',
+  'impressum.html',
+  'datenschutz.html',
+  'privacy.html',
+  'css',
+  'js',
+  'images',
+  'favicon.svg',
+  'CNAME',
+];
+
+function runGit(args, { allowNonZero = false } = {}) {
+  return new Promise((resolve, reject) => {
+    execFile(
+      'git',
+      args,
+      {
+        cwd: repoRoot,
+        windowsHide: true,
+        encoding: 'utf8',
+        maxBuffer: 4 * 1024 * 1024,
+      },
+      (error, stdout = '', stderr = '') => {
+        const output = [stdout, stderr].filter(Boolean).join('\n').trim();
+        if (!error) {
+          resolve({ code: 0, stdout, stderr, output });
+          return;
+        }
+
+        if (error.code === 'ENOENT') {
+          reject(new Error(
+            'Git wurde nicht gefunden. Installiere Git für Windows bzw. stelle sicher, dass git.exe im PATH liegt.'
+          ));
+          return;
+        }
+
+        const code = typeof error.code === 'number' ? error.code : 1;
+        if (allowNonZero) {
+          resolve({ code, stdout, stderr, output });
+          return;
+        }
+
+        reject(new Error(output || error.message || 'Git-Befehl fehlgeschlagen.'));
+      }
+    );
+  });
+}
+
+async function publishWebsite() {
+  const branch = (await runGit(['branch', '--show-current'])).stdout.trim();
+  if (branch !== 'main') {
+    throw new Error(
+      'Veröffentlichen ist nur vom Website-Branch "main" erlaubt. Aktuell aktiv: '
+      + (branch || 'detached HEAD')
+      + '. Wechsle zuerst auf main.'
+    );
+  }
+
+  const conflicts = (await runGit(['diff', '--name-only', '--diff-filter=U'])).stdout.trim();
+  if (conflicts) {
+    throw new Error(
+      'Im Website-Repo gibt es ungelöste Git-Konflikte. Veröffentlichung abgebrochen:\n'
+      + conflicts
+    );
+  }
+
+  // Nur Live-Website-Dateien stagen. Editor-Quellcode, Builds und Backups
+  // dürfen niemals versehentlich über den Publish-Button committed werden.
+  await runGit(['add', '-A', '--', ...PUBLISH_PATHS]);
+
+  const staged = await runGit(['diff', '--cached', '--quiet'], { allowNonZero: true });
+  let committed = false;
+
+  if (staged.code === 1) {
+    await runGit(['commit', '-m', 'Website aktualisiert (Editor)']);
+    committed = true;
+  } else if (staged.code !== 0) {
+    throw new Error(staged.output || 'Änderungen konnten nicht geprüft werden.');
+  }
+
+  try {
+    await runGit(['push', 'origin', 'main']);
+  } catch (error) {
+    const message = String(error?.message || error);
+    if (/non-fast-forward|fetch first|rejected/i.test(message)) {
+      throw new Error(
+        'GitHub enthält neuere Änderungen. Deine Website-Änderungen sind lokal sicher'
+        + (committed ? ' committed' : '')
+        + ', aber noch nicht veröffentlicht. Synchronisiere main und starte danach Veröffentlichen erneut.\n\n'
+        + message
+      );
+    }
+    throw error;
+  }
+
+  const commit = (await runGit(['rev-parse', '--short', 'HEAD'])).stdout.trim();
+  return {
+    branch,
+    commit,
+    committed,
+    url: 'https://circuitcurios.de',
+  };
+}
+
 function registerIpc() {
   ipcMain.handle('editor:list-pages', async () => {
     return Array.from(PAGE_LABELS, ([file, label]) => ({ file, label }));
@@ -195,6 +301,10 @@ function registerIpc() {
     await writeFile(path.join(repoRoot, 'css', 'style.css'), css.trimEnd() + '\n', 'utf8');
 
     return { savedAt: new Date().toISOString() };
+  });
+
+  ipcMain.handle('editor:publish-site', async () => {
+    return publishWebsite();
   });
 
   ipcMain.handle('editor:import-images', async () => {

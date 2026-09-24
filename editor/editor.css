@@ -21,6 +21,8 @@ button:hover:not(:disabled),button:focus-visible,select:hover,select:focus-visib
 button:disabled{opacity:.38;cursor:default}
 button.is-active{background:#3b424b;border-color:#7d8692}
 .save-button{background:var(--ui-accent);color:var(--ui-accent-text);border-color:var(--ui-accent);font-weight:700}
+.publish-button{background:#343b44;border-color:#66717e;color:#f3f3ef;font-weight:800}
+.publish-button:hover:not(:disabled),.publish-button:focus-visible{background:#414a55;border-color:#9aa5b1}
 .app-shell{height:100vh;display:grid;grid-template-rows:54px minmax(0,1fr)}
 .editor-toolbar{position:relative;z-index:20;display:flex;align-items:center;gap:12px;padding:8px 10px;background:#0f1114;border-bottom:1px solid var(--ui-border);white-space:nowrap}
 .editor-brand{display:flex;align-items:center;gap:8px;min-width:310px}
