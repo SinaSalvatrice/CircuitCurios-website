@@ -28,8 +28,11 @@ http://127.0.0.1:8877/editor.html
 - `datenschutz.html`
 
 Die echte Website-CSS, Bilder und JavaScript-Dateien werden im Editor geladen.
-Vor jedem Speichern wird die aktuelle HTML-Datei unter
-`vvveb-prototype/.backups/` gesichert.
+Die drei HTML-Seiten werden beim Start nach `vvveb-prototype/.work/` kopiert.
+
+**Speichern verändert im Prototyp ausschließlich diese Arbeitskopien.**
+Die echte Website bleibt unverändert. Beim nächsten Start werden die Arbeitskopien
+wieder vom aktuellen Website-Stand erzeugt.
 
 ## Ziel des Tests
 
