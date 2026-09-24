@@ -5,3 +5,5 @@
 *.log
 .DS_Store
 Thumbs.db
+/editor/.backups/
+/editor/node_modules/
