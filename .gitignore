@@ -7,3 +7,6 @@
 Thumbs.db
 /editor/.backups/
 /editor/node_modules/
+/vvveb-prototype/.vendor/
+/vvveb-prototype/.backups/
+/vvveb-prototype/.work/
