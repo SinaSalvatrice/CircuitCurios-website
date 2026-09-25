@@ -49,7 +49,7 @@
     }
   }
 
-  const editorMode = new URLSearchParams(location.search).has('cceditor');
+  const editorMode = window.CC_EDITOR_MODE === true || new URLSearchParams(location.search).has('cceditor');
   const dialog = document.querySelector('[data-texture-dialog]');
   const cards = document.querySelectorAll('[data-texture-card]');
 
