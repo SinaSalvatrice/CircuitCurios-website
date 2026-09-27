@@ -148,6 +148,120 @@
   };
   addBlocks();
 
+  const blockContent = (blockId) => {
+    const block = editor.BlockManager.get(blockId);
+    if (!block) return null;
+    return block.get('content');
+  };
+
+  const insertBlockAtComponent = (blockId, targetComponent) => {
+    const content = blockContent(blockId);
+    if (!content) return null;
+
+    let target = targetComponent || editor.getSelected() || editor.getWrapper();
+
+    // Walk up until we find a component that can accept children.
+    while (target && target.get && target.get('droppable') === false) {
+      target = target.parent ? target.parent() : null;
+    }
+    target = target || editor.getWrapper();
+
+    let added;
+    try {
+      added = target.append(content);
+    } catch (_) {
+      added = editor.getWrapper().append(content);
+    }
+
+    const inserted = Array.isArray(added) ? added[0] : added;
+    if (inserted) editor.select(inserted);
+    setDirty(true);
+    setStatus('Element eingefügt');
+    return inserted;
+  };
+
+  const enableExternalBlockDnD = () => {
+    const blockEls = Array.from(document.querySelectorAll('#cc-blocks .gjs-block'));
+    const blocks = editor.BlockManager.getAll().models;
+
+    blockEls.forEach((el, index) => {
+      const block = blocks[index];
+      if (!block) return;
+      const blockId = block.get('id') || block.id;
+      if (!blockId) return;
+
+      el.setAttribute('draggable', 'true');
+      el.dataset.ccBlockId = blockId;
+
+      el.addEventListener('dragstart', event => {
+        if (!event.dataTransfer) return;
+        event.dataTransfer.effectAllowed = 'copy';
+        event.dataTransfer.setData('text/x-cc-block', blockId);
+        event.dataTransfer.setData('text/plain', 'cc-block:' + blockId);
+        document.body.classList.add('cc-dragging-block');
+      });
+
+      el.addEventListener('dragend', () => {
+        document.body.classList.remove('cc-dragging-block');
+      });
+
+      // Click-to-insert is intentional as a second input method, not a replacement
+      // for drag and drop. It is especially useful with touchpads and accessibility.
+      el.addEventListener('dblclick', event => {
+        event.preventDefault();
+        insertBlockAtComponent(blockId, editor.getSelected() || editor.getWrapper());
+      });
+    });
+  };
+
+  const installCanvasDropTarget = () => {
+    const doc = editor.Canvas.getDocument();
+    if (!doc || !doc.body || doc.body.dataset.ccDropReady === '1') return;
+
+    doc.body.dataset.ccDropReady = '1';
+
+    doc.addEventListener('dragover', event => {
+      if (!event.dataTransfer) return;
+      const types = Array.from(event.dataTransfer.types || []);
+      if (!types.includes('text/x-cc-block') &&
+          !types.includes('text/plain')) return;
+      event.preventDefault();
+      event.dataTransfer.dropEffect = 'copy';
+    }, true);
+
+    doc.addEventListener('drop', event => {
+      if (!event.dataTransfer) return;
+      let blockId = event.dataTransfer.getData('text/x-cc-block');
+      if (!blockId) {
+        const plain = event.dataTransfer.getData('text/plain') || '';
+        if (plain.startsWith('cc-block:')) blockId = plain.slice('cc-block:'.length);
+      }
+      if (!blockId) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      let targetComponent = null;
+      try {
+        targetComponent = editor.getModel(event.target);
+      } catch (_) {}
+
+      insertBlockAtComponent(blockId, targetComponent);
+      document.body.classList.remove('cc-dragging-block');
+    }, true);
+  };
+
+  // Block views are rendered asynchronously by GrapesJS.
+  const refreshDnD = () => {
+    requestAnimationFrame(() => {
+      enableExternalBlockDnD();
+      installCanvasDropTarget();
+    });
+  };
+
+  editor.on('load', refreshDnD);
+  editor.on('block:add block:remove', refreshDnD);
+
   const resolveSiteUrl = (url) => {
     if (!url) return url;
     if (/^(https?:|data:|blob:|#|mailto:|tel:|\/\/)/i.test(url)) return url;
@@ -185,7 +299,10 @@
     });
   };
 
-  editor.on('canvas:frame:load', injectCanvasHead);
+  editor.on('canvas:frame:load', () => {
+    injectCanvasHead();
+    installCanvasDropTarget();
+  });
 
   const stripScripts = (root) => {
     root.querySelectorAll('script').forEach(el => el.remove());
