@@ -1,202 +1,97 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CircuitCurios â€” OberflÃ¤che als IdentitÃ¤t</title>
-  <meta name="description" content="CircuitCurios: handgearbeitete OberflÃ¤chen, Schmuck und Objekte aus Aluminium. Material, Struktur und Werkzeugspur als IdentitÃ¤t.">
-  <meta name="theme-color" content="#f2f0e9">
-  <link rel="canonical" href="https://circuitcurios.de/">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>CircuitCurios — Oberfläche als Identität</title>
+<meta content="CircuitCurios: handgearbeitete Oberflächen, Schmuck und Objekte aus Aluminium. Material, Struktur und Werkzeugspur als Identität." name="description"/>
+<meta content="#18bc9c" name="theme-color"/>
+<link href="https://circuitcurios.de/" rel="canonical"/>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+<link rel="stylesheet" href="css/vendor/bootstrap-flatly.min.css">
+<link rel="stylesheet" href="css/vendor/freelancer.css">
+<link rel="stylesheet" href="css/freelancer-custom.css">
+<script defer="" src="js/main.js"></script>
 </head>
-<body>
-  <a class="skip-link" href="#main">Zum Inhalt</a>
-
-  <header class="site-header" data-header>
-    <a class="brand" href="index.html" aria-label="CircuitCurios Startseite">
-      <span class="brand-mark" aria-hidden="true">CC</span>
-      <span>CircuitCurios</span>
-    </a>
-
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
-      <span class="sr-only">Navigation Ã¶ffnen</span>
-      <span></span><span></span>
-    </button>
-
-    <nav class="site-nav" id="site-nav" data-nav aria-label="Hauptnavigation">
-      <a class="active" href="index.html">OberflÃ¤chen</a>
-      <a href="prozess.html">Prozess</a>
-      <a href="ueber.html">Ãœber</a>
-      <a href="shop.html">Shop</a>
-    </nav>
-  </header>
-
-  <main id="main">
-    <section class="home-hero section-shell">
-      <div class="home-hero-copy">
-        <p class="eyebrow">CircuitCurios Â· Materialarchiv 01</p>
-        <h1>OberflÃ¤che<br><em>als</em> IdentitÃ¤t.</h1>
-        <p class="hero-intro">
-          Nicht Dekoration auf dem StÃ¼ck, sondern ein Teil seiner Entstehung:
-          Druck, Schlag, Bruch, Linie und Abrieb bleiben als Spur im Aluminium.
-        </p>
-        <div class="hero-actions">
-          <a class="arrow-link" href="#archiv">OberflÃ¤chen ansehen <span>â†“</span></a>
-          <a class="quiet-link" href="prozess.html">Wie sie entstehen â†’</a>
-        </div>
-      </div>
-
-      <figure class="hero-plate">
-        <div class="hero-plate-image">
-          <img src="images/web/impakt.webp" alt="Makroaufnahme der CircuitCurios OberflÃ¤che Impakt">
-        </div>
-        <figcaption>
-          <span>Impakt</span>
-          <span>Geologie Â· Deformation</span>
-          <span>Aluminium / handbearbeitet</span>
-        </figcaption>
-      </figure>
-
-      <div class="hero-index" aria-hidden="true">
-        <span>01</span>
-        <span>Material / Struktur / Spur</span>
-      </div>
-    </section>
-
-    <section id="archiv" class="surface-archive section-shell">
-      <header class="archive-head reveal">
-        <div>
-          <p class="eyebrow">Archiv / OberflÃ¤che</p>
-          <h2>Die OberflÃ¤chen</h2>
-        </div>
-        <p>
-          Jede Struktur folgt einem Entstehungsprinzip. Ã–ffne eine OberflÃ¤che,
-          um ihre Einordnung und die Idee dahinter zu sehen.
-        </p>
-      </header>
-
-      <div class="surface-grid">
-        <figure class="surface-card surface-card-feature reveal" tabindex="0" role="button"
-          data-texture-card
-          data-texture-group="Geologie"
-          data-texture-family="Deformation"
-          data-texture-pattern="Bruchlinien"
-          data-texture-principle="Geformt durch gerichtete Verformung und Bruch."
-          data-texture-description="Tektonik Ã¼bersetzt Verschiebung, Spannung und aufbrechende Linien in eine handbearbeitete MetalloberflÃ¤che.">
-          <div class="surface-image"><img src="images/web/tektonik.webp" alt="Textur Tektonik auf Aluminium" loading="lazy"></div>
-          <figcaption><strong>Tektonik</strong><span>01 / Geologie</span></figcaption>
-        </figure>
-
-        <figure class="surface-card surface-card-portrait reveal" tabindex="0" role="button"
-          data-texture-card
-          data-texture-group="Geologie"
-          data-texture-family="Deformation"
-          data-texture-pattern="Bruchlinien"
-          data-texture-principle="Erzeugt durch konzentrierte Krafteinwirkung."
-          data-texture-description="Impakt bÃ¼ndelt Druck und Schlag in einer OberflÃ¤che, die je nach Lichteinfall zwischen Krater, Bruch und Verdichtung wechselt.">
-          <div class="surface-image"><img src="images/web/impakt.webp" alt="Textur Impakt auf Aluminium" loading="lazy"></div>
-          <figcaption><strong>Impakt</strong><span>02 / Geologie</span></figcaption>
-        </figure>
-
-        <figure class="surface-card reveal" tabindex="0" role="button"
-          data-texture-card
-          data-texture-group="Physik"
-          data-texture-family="KrÃ¤fte"
-          data-texture-pattern="Mikrostrukturen"
-          data-texture-principle="Erzeugt durch gerichteten Abrieb."
-          data-texture-description="Abrasion zeigt Bewegung Ã¼ber Material: feine gerichtete Spuren Ã¼berlagern sich zu einer matten, technisch wirkenden Struktur.">
-          <div class="surface-image"><img src="images/web/abrasion.webp" alt="Textur Abrasion auf Aluminium" loading="lazy"></div>
-          <figcaption><strong>Abrasion</strong><span>03 / Physik</span></figcaption>
-        </figure>
-
-        <figure class="surface-card surface-card-wide reveal" tabindex="0" role="button"
-          data-texture-card
-          data-texture-description="KohÃ¤sion untersucht Zusammenhalt, Verdichtung und das optische Verschmelzen einzelner Spuren zu einer zusammenhÃ¤ngenden FlÃ¤che.">
-          <div class="surface-image"><img src="images/web/01_koh-sion_texture.webp" alt="Textur KohÃ¤sion auf Aluminium" loading="lazy"></div>
-          <figcaption><strong>KohÃ¤sion</strong><span>04 / OberflÃ¤che</span></figcaption>
-        </figure>
-
-        <figure class="surface-card reveal" tabindex="0" role="button"
-          data-texture-card
-          data-texture-description="Fraktur konzentriert sich auf Kanten, Unterbrechungen und Bruchbilder. Die OberflÃ¤che wirkt weniger dekoriert als aufgebrochen.">
-          <div class="surface-image"><img src="images/web/fraktur.webp" alt="Textur Fraktur auf Aluminium" loading="lazy"></div>
-          <figcaption><strong>Fraktur</strong><span>05 / OberflÃ¤che</span></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="manifesto">
-      <div class="section-shell manifesto-inner reveal">
-        <p class="eyebrow">Prinzip</p>
-        <p class="manifesto-line">Die OberflÃ¤che ist kein Finish.</p>
-        <p class="manifesto-line manifesto-line-shift">Sie ist der <em>Entwurf.</em></p>
-        <div class="manifesto-meta">
-          <span>Handgearbeitet</span>
-          <span>Nickelfreies Aluminium</span>
-          <span>EinzelstÃ¼cke</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="process-preview section-shell">
-      <header class="section-intro reveal">
-        <div>
-          <p class="eyebrow">02 / Prozess</p>
-          <h2>Vom neutralen Material zur Spur.</h2>
-        </div>
-        <a class="arrow-link" href="prozess.html">Prozess ansehen <span>â†’</span></a>
-      </header>
-
-      <div class="process-preview-grid">
-        <figure class="editorial-image editorial-image-large reveal">
-          <img src="images/web/kohesion-pendant.webp" alt="Handbearbeiteter Aluminium AnhÃ¤nger von CircuitCurios" loading="lazy">
-          <figcaption><span>01</span><strong>Material</strong><span>Aluminium</span></figcaption>
-        </figure>
-        <figure class="editorial-image reveal">
-          <img src="images/web/kohesion-ring.webp" alt="Handbearbeiteter Aluminium Ring von CircuitCurios" loading="lazy">
-          <figcaption><span>02</span><strong>Form</strong><span>von Hand</span></figcaption>
-        </figure>
-        <figure class="editorial-image reveal">
-          <img src="images/web/impakt-ring.webp" alt="Aluminium Ring mit Impakt OberflÃ¤che von CircuitCurios" loading="lazy">
-          <figcaption><span>03</span><strong>OberflÃ¤che</strong><span>als IdentitÃ¤t</span></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <nav class="page-gates page-gates-three section-shell" aria-label="Weitere Seiten">
-      <a href="prozess.html"><small>02</small><span>Prozess</span><b>â†’</b></a>
-      <a href="ueber.html"><small>03</small><span>Ãœber</span><b>â†’</b></a>
-      <a href="shop.html"><small>04</small><span>Shop</span><b>â†—</b></a>
-    </nav>
-  </main>
-
-  <dialog class="texture-dialog" data-texture-dialog aria-labelledby="texture-dialog-title">
-    <button class="dialog-close" type="button" aria-label="Detailansicht schlieÃŸen" data-texture-dialog-close>Ã—</button>
-    <div class="texture-dialog-grid">
-      <figure class="texture-dialog-visual">
-        <img data-texture-dialog-image alt="">
-      </figure>
-      <div class="texture-dialog-copy">
-        <p class="eyebrow">OberflÃ¤chenidentitÃ¤t</p>
-        <h2 id="texture-dialog-title" data-texture-dialog-title>OberflÃ¤che</h2>
-        <p class="texture-dialog-material" data-texture-dialog-material>Handbearbeitetes Aluminium</p>
-        <dl class="texture-data">
-          <div data-texture-row="group"><dt>Gruppe</dt><dd data-texture-dialog-group></dd></div>
-          <div data-texture-row="family"><dt>Familie</dt><dd data-texture-dialog-family></dd></div>
-          <div data-texture-row="pattern"><dt>Struktur</dt><dd data-texture-dialog-pattern></dd></div>
-          <div data-texture-row="principle"><dt>Entstehungsprinzip</dt><dd data-texture-dialog-principle></dd></div>
-        </dl>
-        <p class="texture-dialog-description" data-texture-dialog-description></p>
-      </div>
-    </div>
-  </dialog>
-
-  <footer class="site-footer section-shell">
-    <div><strong>CircuitCurios</strong><span>Remscheid Â· Deutschland</span><span>Â© <span data-year>2026</span></span></div>
-    <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
-  </footer>
+<body id="page-top" class="index">
+<a class="skip-link" href="#main">Zum Inhalt</a>
+<!-- Freelancer: ordinary HTML elements remain editable in a visual HTML editor. -->
+<nav class="navbar navbar-default navbar-fixed-top" data-header aria-label="Hauptnavigation" data-gjs-name="Navigation">
+ <div class="container">
+  <div class="navbar-header">
+   <button class="navbar-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Navigation öffnen</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+   <a class="navbar-brand" href="#page-top">CircuitCurios</a>
+  </div>
+  <div class="collapse navbar-collapse" id="site-nav" data-nav>
+   <ul class="nav navbar-nav navbar-right"><li><a href="#portfolio">Oberflächen</a></li><li><a href="#about">Über</a></li><li><a href="#contact">Kontakt</a></li><li><a href="shop.html">Shop</a></li></ul>
+  </div>
+ </div>
+</nav>
+<main id="main">
+ <header class="freelancer-hero" data-gjs-name="Startbereich">
+  <div class="container"><div class="row"><div class="col-lg-12">
+   <img class="img-responsive hero-image" src="images/web/kohesion-ring.webp" alt="Handgearbeiteter Aluminiumring von CircuitCurios" width="256" height="256">
+   <div class="intro-text"><h1 class="name">CircuitCurios</h1><hr class="star-light" aria-hidden="true"><p class="skills">Oberfläche als Identität.</p><p class="hero-subtitle">Handgearbeiteter Schmuck · Aluminium · Einzelstücke</p></div>
+   <a class="btn btn-lg btn-outline" href="#portfolio">Oberflächen entdecken ↓</a>
+  </div></div></div>
+ </header>
+ <section id="portfolio" data-gjs-name="Oberflächenraster">
+  <div class="container portfolio-flex-grid"><div class="row"><div class="col-lg-12 text-center"><h2>Die Oberflächen</h2><hr class="star-primary" aria-hidden="true"><p class="section-intro">Jede Struktur folgt einem Entstehungsprinzip. Öffne eine Oberfläche, um ihre Identität zu sehen.</p></div></div>
+  <div class="portfolio-flex-row">
+<figure class="portfolio-flex-item portfolio-item surface-card" data-gjs-name="Tektonik" data-texture-card="" data-texture-description="Tektonik übersetzt Verschiebung, Spannung und aufbrechende Linien in eine handbearbeitete Metalloberfläche." data-texture-family="Deformation" data-texture-group="Geologie" data-texture-pattern="Bruchlinien" data-texture-principle="Geformt durch gerichtete Verformung und Bruch." role="button" tabindex="0">
+<div class="portfolio-link"><img alt="Textur Tektonik auf Aluminium" class="img-responsive" height="450" loading="lazy" src="images/web/tektonik.webp" width="600"/><span aria-hidden="true" class="caption"><span class="caption-content">+</span></span></div>
+<figcaption><strong>Tektonik</strong><span>01 / Geologie</span></figcaption>
+</figure>
+<figure class="portfolio-flex-item portfolio-item surface-card" data-gjs-name="Impakt" data-texture-card="" data-texture-description="Impakt bündelt Druck und Schlag in einer Oberfläche, die je nach Lichteinfall zwischen Krater, Bruch und Verdichtung wechselt." data-texture-family="Deformation" data-texture-group="Geologie" data-texture-pattern="Bruchlinien" data-texture-principle="Erzeugt durch konzentrierte Krafteinwirkung." role="button" tabindex="0">
+<div class="portfolio-link"><img alt="Textur Impakt auf Aluminium" class="img-responsive" height="450" loading="lazy" src="images/web/impakt.webp" width="600"/><span aria-hidden="true" class="caption"><span class="caption-content">+</span></span></div>
+<figcaption><strong>Impakt</strong><span>02 / Geologie</span></figcaption>
+</figure>
+<figure class="portfolio-flex-item portfolio-item surface-card" data-gjs-name="Abrasion" data-texture-card="" data-texture-description="Abrasion zeigt Bewegung über Material: feine gerichtete Spuren überlagern sich zu einer matten, technisch wirkenden Struktur." data-texture-family="Kräfte" data-texture-group="Physik" data-texture-pattern="Mikrostrukturen" data-texture-principle="Erzeugt durch gerichteten Abrieb." role="button" tabindex="0">
+<div class="portfolio-link"><img alt="Textur Abrasion auf Aluminium" class="img-responsive" height="450" loading="lazy" src="images/web/abrasion.webp" width="600"/><span aria-hidden="true" class="caption"><span class="caption-content">+</span></span></div>
+<figcaption><strong>Abrasion</strong><span>03 / Physik</span></figcaption>
+</figure>
+<figure class="portfolio-flex-item portfolio-item surface-card" data-gjs-name="Kohäsion" data-texture-card="" data-texture-description="Kohäsion untersucht Zusammenhalt, Verdichtung und das optische Verschmelzen einzelner Spuren zu einer zusammenhängenden Fläche." role="button" tabindex="0">
+<div class="portfolio-link"><img alt="Textur Kohäsion auf Aluminium" class="img-responsive" height="450" loading="lazy" src="images/web/01_koh-sion_texture.webp" width="600"/><span aria-hidden="true" class="caption"><span class="caption-content">+</span></span></div>
+<figcaption><strong>Kohäsion</strong><span>04 / Oberfläche</span></figcaption>
+</figure>
+<figure class="portfolio-flex-item portfolio-item surface-card" data-gjs-name="Fraktur" data-texture-card="" data-texture-description="Fraktur konzentriert sich auf Kanten, Unterbrechungen und Bruchbilder. Die Oberfläche wirkt weniger dekoriert als aufgebrochen." role="button" tabindex="0">
+<div class="portfolio-link"><img alt="Textur Fraktur auf Aluminium" class="img-responsive" height="450" loading="lazy" src="images/web/fraktur.webp" width="600"/><span aria-hidden="true" class="caption"><span class="caption-content">+</span></span></div>
+<figcaption><strong>Fraktur</strong><span>05 / Oberfläche</span></figcaption>
+</figure>
+<a class="portfolio-flex-item portfolio-item shop-card" href="shop.html" data-gjs-name="Shop-Kachel"><div class="portfolio-link"><img class="img-responsive" src="images/web/impakt-ring.webp" alt="Aluminiumring mit Impakt-Oberfläche" width="600" height="450" loading="lazy"><span class="caption" aria-hidden="true"><span class="caption-content">↗</span></span></div><span class="shop-caption"><strong>Schmuck &amp; Objekte</strong><span>Zum Shop →</span></span></a>
+  </div></div>
+ </section>
+ <section class="success" id="about" data-gjs-name="Über CircuitCurios">
+  <div class="container"><div class="row"><div class="col-lg-12 text-center"><h2>Über CircuitCurios</h2><hr class="star-light" aria-hidden="true"></div></div>
+   <div class="row"><div class="col-lg-4 col-lg-offset-2"><p>CircuitCurios ist ein unabhängiges Handmade-Label aus Remscheid. Im Mittelpunkt stehen Aluminium, Oberfläche und Einzelstücke.</p></div><div class="col-lg-4"><p>Struktur, kleine Unterschiede und Werkzeugspuren gehören zum Entwurf. Die Oberfläche ist kein Finish. Sie ist der Entwurf.</p></div><div class="col-lg-8 col-lg-offset-2 text-center"><a class="btn btn-lg btn-outline" href="prozess.html">Wie die Oberflächen entstehen →</a> <a class="btn btn-lg btn-outline" href="ueber.html">Mehr über CircuitCurios</a></div></div>
+  </div>
+ </section>
+ <section id="contact" data-gjs-name="Kontakt und Shop"><div class="container text-center"><h2>Kontakt &amp; Shop</h2><hr class="star-primary" aria-hidden="true"><p>Aktuelle verfügbare Arbeiten findest du im CircuitCurios Etsy-Shop.<br>Dort kannst du auch Kontakt aufnehmen.</p><a class="btn btn-lg btn-primary" href="https://circuitcurios.etsy.com" target="_blank" rel="noopener noreferrer">CircuitCurios auf Etsy ↗</a></div></section>
+</main>
+<dialog aria-labelledby="texture-dialog-title" class="texture-dialog" data-texture-dialog="">
+<button aria-label="Detailansicht schließen" class="dialog-close" data-texture-dialog-close="" type="button">×</button>
+<div class="texture-dialog-grid">
+<figure class="texture-dialog-visual">
+<img alt="" data-texture-dialog-image=""/>
+</figure>
+<div class="texture-dialog-copy">
+<p class="eyebrow">Oberflächenidentität</p>
+<h2 data-texture-dialog-title="" id="texture-dialog-title">Oberfläche</h2>
+<p class="texture-dialog-material" data-texture-dialog-material="">Handbearbeitetes Aluminium</p>
+<dl class="texture-data">
+<div data-texture-row="group"><dt>Gruppe</dt><dd data-texture-dialog-group=""></dd></div>
+<div data-texture-row="family"><dt>Familie</dt><dd data-texture-dialog-family=""></dd></div>
+<div data-texture-row="pattern"><dt>Struktur</dt><dd data-texture-dialog-pattern=""></dd></div>
+<div data-texture-row="principle"><dt>Entstehungsprinzip</dt><dd data-texture-dialog-principle=""></dd></div>
+</dl>
+<p class="texture-dialog-description" data-texture-dialog-description=""></p>
+</div>
+</div>
+</dialog>
+<footer class="text-center" data-gjs-name="Fußbereich"><div class="footer-above"><div class="container"><div class="row">
+ <div class="footer-col col-md-4"><h3>CircuitCurios</h3><p>Remscheid<br>Deutschland</p></div>
+ <div class="footer-col col-md-4"><h3>Entdecken</h3><p><a href="prozess.html">Prozess</a> · <a href="ueber.html">Über</a> · <a href="shop.html">Shop</a></p></div>
+ <div class="footer-col col-md-4"><h3>Informationen</h3><p><a href="impressum.html">Impressum</a><br><a href="datenschutz.html">Datenschutz</a></p></div>
+</div></div></div><div class="footer-below"><div class="container">© <span data-year>2026</span> CircuitCurios</div></div></footer>
 </body>
 </html>
-
