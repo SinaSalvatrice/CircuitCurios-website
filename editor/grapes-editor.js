@@ -133,7 +133,7 @@
     bm.add('cc-image', {
       label: 'Bild',
       category: 'Inhalt',
-      content: { type: 'image', src: 'images/placeholders/placeholder-product.svg' }
+      content: { type: 'image', src: 'images/placeholders/surface.svg' }
     });
     bm.add('cc-link', {
       label: 'Link / Button',
