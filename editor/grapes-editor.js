@@ -150,7 +150,7 @@
 
   const resolveSiteUrl = (url) => {
     if (!url) return url;
-    if (/^(https?:|data:|blob:|#|mailto:|tel:)/i.test(url)) return url;
+    if (/^(https?:|data:|blob:|#|mailto:|tel:|\/\/)/i.test(url)) return url;
     if (url.startsWith('/site/')) return url;
     if (url.startsWith('/')) return '/site' + url;
     return '/site/' + url.replace(/^\.\//, '');
@@ -241,7 +241,7 @@
       const res = await fetch('/api/assets', { cache: 'no-store' });
       if (!res.ok) return;
       const assets = await res.json();
-      editor.AssetManager.clear();
+      editor.AssetManager.getAll().reset();
       editor.AssetManager.add(assets);
     } catch (_) {}
   };
@@ -370,9 +370,14 @@
     del.disabled = false;
   };
 
-  editor.on('component:selected', updateSelectionUi);
+  editor.on('component:selected', component => {
+    if (component && component.get('resizable') !== false) {
+      component.set('resizable', true);
+    }
+    updateSelectionUi();
+  });
   editor.on('component:deselected', updateSelectionUi);
-  editor.on('component:add component:remove component:update styleable:change', () => {
+  editor.on('component:add component:remove component:update', () => {
     if (!loading) setDirty(true);
   });
   editor.on('style:property:update', () => {
