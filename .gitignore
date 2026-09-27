@@ -2,8 +2,6 @@
 /build/
 /editor/generated/
 
-# Silex runtime is cloned locally by the installer
-/editor/.silex-runtime/
 
 # Local noise
 *.log
