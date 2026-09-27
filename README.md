@@ -39,9 +39,12 @@ als statische HTML-Version. Sie braucht weder Jekyll noch einen Build-Schritt.
 - `?cceditor` an der Vorschau-URL unterdrückt das Öffnen der Detailfenster während der Bearbeitung.
 
 Die Seite enthält echte HTML-Elemente, keine eingebettete Vorschau und kein gerendertes Bild.
-Im aktuellen Repository ist **kein ausführbarer visueller Editor** enthalten. Diese Änderung
-installiert keinen neuen Editor; sie liefert die bearbeitbare Website für einen HTML-Editor.
-Das Speichern und erneute Laden in der lokalen Editor-App muss dort geprüft werden.
+Das vorhandene Editor-Overlay in `editor/live-editor.js` und `editor/live-editor.css`
+bleibt erhalten. Es wird von der lokalen Editor-App eingebunden und benötigt deren
+Endpunkte zum Speichern und zur Bildauswahl. Die Freelancer-Seite verwendet weiterhin
+dieselben HTML-Elemente und unterstützt diesen Bearbeitungsweg.
+Das Speichern und erneute Laden mit der vollständigen lokalen Editor-App muss dort geprüft werden.
+Die Startseite nutzt die optimierten Bilder aus `images/web/`.
 
 Lokale Vorschau: im Repository `python -m http.server 8080` starten und
 `http://localhost:8080` öffnen. Für GitHub Pages oder Netcup die Website-Dateien samt
