@@ -7,24 +7,27 @@
     if (!header) return;
     header.classList.toggle('scrolled', window.scrollY > 18);
   };
+
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
 
   if (toggle && nav) {
-    const close = () => {
+    const closeNav = () => {
       toggle.setAttribute('aria-expanded', 'false');
       nav.classList.remove('open');
       document.body.classList.remove('nav-open');
     };
+
     toggle.addEventListener('click', () => {
       const opening = toggle.getAttribute('aria-expanded') !== 'true';
       toggle.setAttribute('aria-expanded', String(opening));
       nav.classList.toggle('open', opening);
       document.body.classList.toggle('nav-open', opening);
     });
-    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
+
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
     window.addEventListener('keydown', event => {
-      if (event.key === 'Escape') close();
+      if (event.key === 'Escape') closeNav();
     });
   }
 
@@ -34,8 +37,7 @@
 
   const reveals = document.querySelectorAll('.reveal');
   if (reveals.length) {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
-        !('IntersectionObserver' in window)) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
       reveals.forEach(el => el.classList.add('visible'));
     } else {
       const observer = new IntersectionObserver(entries => {
@@ -44,12 +46,15 @@
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         });
-      }, { threshold: .1 });
+      }, { threshold: .08, rootMargin: '0px 0px -4% 0px' });
       reveals.forEach(el => observer.observe(el));
     }
   }
 
-  const editorMode = window.CC_EDITOR_MODE === true || new URLSearchParams(location.search).has('cceditor');
+  const editorMode =
+    window.CC_EDITOR_MODE === true ||
+    new URLSearchParams(location.search).has('cceditor');
+
   const dialog = document.querySelector('[data-texture-dialog]');
   const cards = document.querySelectorAll('[data-texture-card]');
 
@@ -58,32 +63,43 @@
     const title = dialog.querySelector('[data-texture-dialog-title]');
     const material = dialog.querySelector('[data-texture-dialog-material]');
     const description = dialog.querySelector('[data-texture-dialog-description]');
+    const closeButton = dialog.querySelector('[data-texture-dialog-close]');
     const fields = ['group', 'family', 'pattern', 'principle'];
+    let opener = null;
+
+    const readDataset = (card, field) => {
+      const key = 'texture' + field[0].toUpperCase() + field.slice(1);
+      return (card.dataset[key] || '').trim();
+    };
 
     const openCard = card => {
+      opener = card;
       const cardImage = card.querySelector('img');
       const cardTitle = card.querySelector('figcaption strong');
-      const cardMaterial = card.querySelector('figcaption span:last-child');
 
       if (image && cardImage) {
         image.src = cardImage.currentSrc || cardImage.src;
         image.alt = cardImage.alt || '';
       }
       if (title) title.textContent = cardTitle?.textContent?.trim() || 'Oberfläche';
-      if (material) material.textContent = cardMaterial?.textContent?.trim() || '';
+      if (material) material.textContent = 'Handbearbeitetes Aluminium';
 
       fields.forEach(field => {
-        const value = (card.dataset['texture' + field[0].toUpperCase() + field.slice(1)] || '').trim();
+        const value = readDataset(card, field);
         const row = dialog.querySelector('[data-texture-row="' + field + '"]');
         const target = dialog.querySelector('[data-texture-dialog-' + field + ']');
         if (target) target.textContent = value;
         if (row) row.hidden = !value;
       });
 
-      if (description) {
-        description.textContent = (card.dataset.textureDescription || '').trim();
-      }
+      if (description) description.textContent = (card.dataset.textureDescription || '').trim();
+
       dialog.showModal();
+      closeButton?.focus();
+    };
+
+    const closeDialog = () => {
+      if (dialog.open) dialog.close();
     };
 
     cards.forEach(card => {
@@ -95,10 +111,15 @@
       });
     });
 
-    dialog.querySelector('[data-texture-dialog-close]')
-      ?.addEventListener('click', () => dialog.close());
+    closeButton?.addEventListener('click', closeDialog);
+
     dialog.addEventListener('click', event => {
-      if (event.target === dialog) dialog.close();
+      if (event.target === dialog) closeDialog();
+    });
+
+    dialog.addEventListener('close', () => {
+      opener?.focus({ preventScroll: true });
+      opener = null;
     });
   }
 })();
