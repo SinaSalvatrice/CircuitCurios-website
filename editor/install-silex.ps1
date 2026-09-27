@@ -4,10 +4,15 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $runtime = Join-Path $PSScriptRoot '.silex-runtime'
+$ready = Join-Path $runtime '.cc-silex-ready'
 $repo = 'https://github.com/silexlabs/Silex.git'
 
 if ($Force -and (Test-Path $runtime)) {
   Remove-Item -Recurse -Force $runtime
+}
+
+if (-not (Get-Command corepack -ErrorAction SilentlyContinue)) {
+  throw 'Corepack wurde nicht gefunden. Installiere eine aktuelle Node.js-Version mit Corepack.'
 }
 
 if (-not (Test-Path $runtime)) {
@@ -21,13 +26,15 @@ if (-not (Test-Path $runtime)) {
   git -C $runtime submodule update --init --recursive
 }
 
+if (Test-Path $ready) {
+  Remove-Item -Force $ready
+}
+
 Push-Location $runtime
 try {
-  if (Get-Command corepack -ErrorAction SilentlyContinue) {
-    corepack enable
-  }
-  pnpm install
-  pnpm build
+  corepack pnpm install
+  corepack pnpm build
+  New-Item -ItemType File -Path $ready -Force | Out-Null
 }
 finally {
   Pop-Location
