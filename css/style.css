@@ -376,6 +376,11 @@ h1, h2, h3, p { text-wrap: pretty; }
 .shop-note p { max-width: 620px; margin: 0; }
 .shop-note a { color: var(--ink); text-underline-offset: 4px; }
 
+/* Inner-page compatibility */
+.process-list { padding-bottom: clamp(40px, 6vw, 90px); }
+.about-object-panel { overflow: hidden; }
+.legal-contact-card { background: var(--paper-deep); padding-inline: clamp(18px, 3vw, 30px); }
+
 /* Legal */
 .legal-page { min-height: 70vh; }
 .legal-hero { max-width: 1000px; padding-top: 90px; padding-bottom: 54px; }
