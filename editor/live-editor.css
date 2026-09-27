@@ -1,5 +1,0 @@
-
-html[data-cc-hugo-host],html[data-cc-hugo-host] body{margin:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:#111!important}
-#cc-hugo-editor-frame{position:fixed;inset:0;width:100vw;height:100vh;border:0;background:#ece9e1;z-index:2147483646}
-#cc-hugo-editor-fallback{position:fixed;z-index:2147483647;inset:0;display:grid;place-content:center;gap:8px;text-align:center;background:#111214;color:#f3f0e8;font:14px/1.5 Arial,sans-serif}
-#cc-hugo-editor-fallback strong{font-size:18px}#cc-hugo-editor-fallback span{color:#aaa}

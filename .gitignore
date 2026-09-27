@@ -2,9 +2,8 @@
 /build/
 /editor/generated/
 
-# Hugo local resources/cache
-/editor/hugo/resources/
-.hugo_build.lock
+# Silex runtime is cloned locally by the installer
+/editor/.silex-runtime/
 
 # Local noise
 *.log
