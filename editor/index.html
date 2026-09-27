@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CircuitCurios Website Editor</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/grapesjs@0.22.12/dist/css/grapes.min.css">
+  <link rel="stylesheet" href="/site/editor/grapes-editor.css">
+</head>
+<body>
+  <div class="cc-editor-shell">
+    <header class="cc-topbar">
+      <div class="cc-brand">CIRCUITCURIOS</div>
+      <div class="cc-page-title" id="cc-page-title">Website Editor</div>
+      <div class="cc-top-actions">
+        <button class="cc-button" id="cc-undo" title="Rückgängig">↶</button>
+        <button class="cc-button" id="cc-redo" title="Wiederholen">↷</button>
+        <span class="cc-separator"></span>
+        <button class="cc-button cc-device is-active" data-device="Desktop">Desktop</button>
+        <button class="cc-button cc-device" data-device="Tablet">Tablet</button>
+        <button class="cc-button cc-device" data-device="Mobile">Mobil</button>
+        <span class="cc-separator"></span>
+        <button class="cc-button" id="cc-code">Code</button>
+        <button class="cc-button" id="cc-preview">Vorschau</button>
+        <button class="cc-button cc-primary" id="cc-save">Speichern</button>
+      </div>
+    </header>
+
+    <div class="cc-main">
+      <aside class="cc-sidebar cc-left">
+        <div class="cc-tabs">
+          <button class="cc-tab is-active" data-panel="blocks">Elemente</button>
+          <button class="cc-tab" data-panel="layers">Ebenen</button>
+          <button class="cc-tab" data-panel="assets">Assets</button>
+        </div>
+        <section class="cc-panel is-active" data-panel-content="blocks">
+          <div id="cc-blocks"></div>
+        </section>
+        <section class="cc-panel" data-panel-content="layers">
+          <div id="cc-layers"></div>
+        </section>
+        <section class="cc-panel cc-assets-panel" data-panel-content="assets">
+          <button class="cc-wide-button" id="cc-pick-image">Bild vom Rechner wählen</button>
+          <button class="cc-wide-button" id="cc-open-assets">Asset-Bibliothek öffnen</button>
+          <p class="cc-help">Bilder aus dem Website-Repo und neue Uploads stehen hier zur Verfügung.</p>
+        </section>
+      </aside>
+
+      <main class="cc-canvas-wrap">
+        <div class="cc-selection-bar">
+          <span id="cc-selection-label">Nichts ausgewählt</span>
+          <div class="cc-selection-actions">
+            <button class="cc-mini" id="cc-duplicate" disabled>Duplizieren</button>
+            <button class="cc-mini" id="cc-delete" disabled>Löschen</button>
+          </div>
+        </div>
+        <div id="gjs"></div>
+      </main>
+
+      <aside class="cc-sidebar cc-right">
+        <div class="cc-tabs">
+          <button class="cc-tab is-active" data-panel="style">Stil</button>
+          <button class="cc-tab" data-panel="traits">Eigenschaften</button>
+          <button class="cc-tab" data-panel="advanced">Erweitert</button>
+        </div>
+        <section class="cc-panel is-active" data-panel-content="style">
+          <div id="cc-styles"></div>
+        </section>
+        <section class="cc-panel" data-panel-content="traits">
+          <div id="cc-traits"></div>
+        </section>
+        <section class="cc-panel cc-advanced" data-panel-content="advanced">
+          <button class="cc-wide-button" id="cc-add-class">CSS-Klasse hinzufügen</button>
+          <button class="cc-wide-button" id="cc-clear-styles">Element-Stile zurücksetzen</button>
+          <button class="cc-wide-button" id="cc-open-code-advanced">HTML / CSS bearbeiten</button>
+          <p class="cc-help">Fortgeschrittene Funktionen bleiben verfügbar, ohne die Hauptansicht zu überladen.</p>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="cc-statusbar">
+      <span id="cc-status">Editor wird geladen …</span>
+      <span id="cc-dirty"></span>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/grapesjs@0.22.12/dist/grapes.min.js"></script>
+  <script src="/site/editor/grapes-editor.js"></script>
+</body>
+</html>
