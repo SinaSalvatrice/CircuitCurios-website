@@ -1,0 +1,59 @@
+/* Edit this file for CircuitCurios customizations; vendor files retain the theme. */
+:root { --cc-primary: #18bc9c; --cc-ink: #2c3e50; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { font-family: Arial, Helvetica, sans-serif; }
+main { display: block; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 3px solid #233140; outline-offset: 5px; }
+.navbar a:focus-visible, footer a:focus-visible { outline-color: #fff; }
+.skip-link { position: fixed; left: 12px; top: -80px; z-index: 2000; padding: 12px; color: #233140; background: white; }
+.skip-link:focus { top: 12px; }
+.navbar.scrolled { padding: 10px 0; }
+.navbar-brand { max-width: calc(100vw - 85px); }
+.navbar-toggle .icon-bar { background-color: #fff; }
+.hero-image { width: 256px; height: 256px; object-fit: contain; }
+header .intro-text .name { margin: 0; font-size: clamp(2rem, 7vw, 6rem); overflow-wrap: anywhere; }
+.hero-subtitle { margin-top: 12px; font-size: 18px; }
+/* Unicode star replaces the external icon font. */
+hr.star-light:after, hr.star-primary:after { content: '★'; font-family: Arial, sans-serif; }
+.section-intro { max-width: 720px; margin: 0 auto 38px; }
+.surface-card { cursor: pointer; }
+.portfolio-item { color: #2c3e50; }
+.portfolio-item img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.shop-card img { object-fit: contain; background: #f2f0e9; }
+#portfolio .portfolio-link { max-width: none; }
+.portfolio-item figcaption, .shop-caption { display: flex; justify-content: space-between; gap: 10px; padding: 14px 0; font-size: 15px; }
+.portfolio-item figcaption span, .shop-caption > span { font-size: 13px; }
+.shop-card:hover { text-decoration: none; }
+#portfolio .portfolio-item:hover .caption, #portfolio .portfolio-item:focus-visible .caption { opacity: 1; }
+#portfolio .portfolio-item .caption-content { height: auto; margin-top: -35px; font-size: 48px; }
+#contact .btn { margin-top: 20px; white-space: normal; }
+footer a { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+footer a:hover { color: #fff; }
+.texture-dialog { position: fixed; inset: 0; width: min(1000px, calc(100% - 32px)); max-height: calc(100dvh - 40px); margin: auto; padding: 50px 30px 30px; border: 0; color: #2c3e50; background: #fff; overflow-y: auto; }
+.texture-dialog::backdrop { background: rgb(20 31 42 / 75%); }
+.texture-dialog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
+.texture-dialog-visual { margin: 0; }
+.texture-dialog-visual img { width: 100%; height: auto; }
+.texture-dialog h2 { font-size: clamp(25px, 5vw, 40px); overflow-wrap: anywhere; }
+.dialog-close { position: absolute; top: 8px; right: 12px; width: 44px; height: 44px; border: 0; background: transparent; color: #2c3e50; font-size: 32px; }
+.texture-data div { margin: 12px 0; }
+.texture-data dt { font-size: 13px; text-transform: uppercase; }
+.texture-data dd { margin: 0; }
+.texture-dialog p { font-size: 17px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; }
+[hidden] { display: none !important; }
+@media (max-width: 767px) {
+  html { scroll-padding-top: 70px; }
+  .navbar.scrolled { padding: 0; }
+  .navbar-collapse.open { display: block; }
+  .navbar-brand { font-size: 19px; }
+  .hero-image { width: 190px; height: 190px; }
+  section h2 { font-size: 30px; }
+  .texture-dialog-grid { grid-template-columns: 1fr; }
+  .texture-dialog-visual img { max-height: 32vh; object-fit: contain; }
+  .texture-dialog { padding: 55px 20px 25px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
