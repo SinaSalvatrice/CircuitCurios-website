@@ -99,12 +99,16 @@ button, input, select, textarea { font: inherit; }
 
 .cc-main {
   min-height: 0;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 240px minmax(420px, 1fr) 290px;
 }
 
 .cc-sidebar {
   min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
   background: #f8f8f5;
   display: flex;
   flex-direction: column;
@@ -141,13 +145,18 @@ button, input, select, textarea { font: inherit; }
 .cc-panel {
   display: none;
   min-height: 0;
-  overflow: auto;
+  overflow: hidden;
   padding: 8px;
 }
 
 .cc-panel.is-active {
   display: block;
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
 }
 
 .cc-canvas-wrap {
@@ -327,4 +336,25 @@ button, input, select, textarea { font: inherit; }
 @media (max-width: 1050px) {
   .cc-main { grid-template-columns: 200px minmax(360px, 1fr) 240px; }
   .cc-button { padding-left: 6px; padding-right: 6px; }
+}
+
+
+#cc-blocks,
+#cc-layers,
+#cc-styles,
+#cc-traits {
+  min-height: 0;
+}
+
+.cc-panel[data-panel-content="blocks"],
+.cc-panel[data-panel-content="layers"],
+.cc-panel[data-panel-content="style"],
+.cc-panel[data-panel-content="traits"] {
+  scrollbar-width: thin;
+}
+
+.cc-panel[data-panel-content="style"] .gjs-sm-sectors,
+.cc-panel[data-panel-content="traits"] .gjs-trt-traits,
+.cc-panel[data-panel-content="layers"] #cc-layers {
+  min-height: min-content;
 }
