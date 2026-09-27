@@ -1,0 +1,17 @@
+baseURL = "http://127.0.0.1:1313/"
+languageCode = "de-de"
+title = "CircuitCurios Webeditor"
+disableKinds = ["RSS", "sitemap", "robotsTXT"]
+enableRobotsTXT = false
+
+[outputs]
+home = ["HTML", "JSON"]
+
+[taxonomies]
+group = "groups"
+family = "families"
+pattern = "patterns"
+
+[params]
+schemaVersion = 1
+productionSite = "https://circuitcurios.de/"
