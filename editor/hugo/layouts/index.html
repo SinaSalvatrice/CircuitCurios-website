@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ .Site.Title }}</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#171717;background:#f4f2ec}
+*{box-sizing:border-box}body{margin:0}.wrap{max-width:1100px;margin:auto;padding:32px}
+header{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:28px}
+h1{margin:0;font-size:clamp(30px,5vw,58px);line-height:.95}p{line-height:1.55}
+.badge{border:1px solid #222;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:#fff;border:1px solid #d8d4ca;padding:16px;min-height:190px}
+.card h2{margin:0 0 8px}.meta{font-size:12px;color:#666;text-transform:uppercase;letter-spacing:.06em}
+code{background:#e7e3d9;padding:2px 5px}.note{margin-top:26px;padding:16px;border-left:3px solid #222;background:#ece8df}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div><div class="meta">Nur Editor · nicht die Live-Website</div><h1>CircuitCurios<br>Hugo Content Engine</h1></div><span class="badge">{{ len (where .Site.RegularPages "Section" "textures") }} Oberflächen</span></header>
+<p>Diese Hugo-Instanz verwaltet strukturierte Inhalte und Taxonomien für den Webeditor. Das veröffentlichte CircuitCurios-Template bleibt normales HTML.</p>
+<div class="grid">
+{{ range where .Site.RegularPages "Section" "textures" }}
+<article class="card">
+<div class="meta">{{ .Params.group }}{{ with .Params.family }} · {{ . }}{{ end }}</div>
+<h2>{{ .Title }}</h2>
+<p>{{ .Params.description }}</p>
+{{ with .Params.principle }}<p><strong>Entstehung:</strong> {{ . }}</p>{{ end }}
+</article>
+{{ end }}
+</div>
+<div class="note">Maschinenlesbare Editor-Daten: <code>/index.json</code>. Quelldateien: <code>editor/hugo/content/</code>.</div>
+</div>
+</body>
+</html>

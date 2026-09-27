@@ -1,5 +1,10 @@
 # Generated build output
 /build/
+/editor/generated/
+
+# Hugo local resources/cache
+/editor/hugo/resources/
+.hugo_build.lock
 
 # Local noise
 *.log
