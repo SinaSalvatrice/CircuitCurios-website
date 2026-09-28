@@ -64,6 +64,270 @@
           <button class="cc-tab" data-panel="advanced">Erweitert</button>
         </div>
         <section class="cc-panel is-active" data-panel-content="style">
+          <div class="cc-smart-controls">
+            <div class="cc-control-group">
+              <div class="cc-control-title">Layout</div>
+              <label>Anzeige<select id="cc-display">
+                <option value="">— unverändert —</option>
+                <option value="block">Block</option>
+                <option value="inline">Inline</option>
+                <option value="inline-block">Inline-Block</option>
+                <option value="flex">Flex</option>
+                <option value="inline-flex">Inline-Flex</option>
+                <option value="grid">Grid</option>
+                <option value="none">Ausblenden</option>
+              </select></label>
+              <label>Flex-Richtung<select id="cc-flex-direction">
+                <option value="">— unverändert —</option>
+                <option value="row">Zeile</option>
+                <option value="column">Spalte</option>
+                <option value="row-reverse">Zeile umgekehrt</option>
+                <option value="column-reverse">Spalte umgekehrt</option>
+              </select></label>
+              <label>Umbruch<select id="cc-flex-wrap">
+                <option value="">— unverändert —</option>
+                <option value="nowrap">Kein Umbruch</option>
+                <option value="wrap">Umbruch</option>
+                <option value="wrap-reverse">Umbruch umgekehrt</option>
+              </select></label>
+              <label>Horizontal ausrichten<select id="cc-justify-content">
+                <option value="">— unverändert —</option>
+                <option value="flex-start">Start</option>
+                <option value="center">Mitte</option>
+                <option value="flex-end">Ende</option>
+                <option value="space-between">Zwischenraum</option>
+                <option value="space-around">Außenraum</option>
+                <option value="space-evenly">Gleichmäßig</option>
+              </select></label>
+              <label>Vertikal ausrichten<select id="cc-align-items">
+                <option value="">— unverändert —</option>
+                <option value="stretch">Strecken</option>
+                <option value="flex-start">Start</option>
+                <option value="center">Mitte</option>
+                <option value="flex-end">Ende</option>
+                <option value="baseline">Grundlinie</option>
+              </select></label>
+              <label>Grid-Spalten<select id="cc-grid-columns">
+                <option value="">— unverändert —</option>
+                <option value="1fr">1 Spalte</option>
+                <option value="repeat(2, minmax(0, 1fr))">2 Spalten</option>
+                <option value="repeat(3, minmax(0, 1fr))">3 Spalten</option>
+                <option value="repeat(4, minmax(0, 1fr))">4 Spalten</option>
+                <option value="1fr 2fr">1 : 2</option>
+                <option value="2fr 1fr">2 : 1</option>
+              </select></label>
+            </div>
+
+            <div class="cc-control-group">
+              <div class="cc-control-title">Größe & Abstand</div>
+              <label>Breite<select id="cc-width">
+                <option value="">— unverändert —</option>
+                <option value="auto">Automatisch</option><option value="25%">25 %</option>
+                <option value="33.333%">33 %</option><option value="50%">50 %</option>
+                <option value="66.666%">67 %</option><option value="75%">75 %</option>
+                <option value="100%">100 %</option><option value="fit-content">Inhalt</option>
+                <option value="max-content">Max. Inhalt</option>
+              </select></label>
+              <label>Höhe<select id="cc-height">
+                <option value="">— unverändert —</option>
+                <option value="auto">Automatisch</option><option value="100px">100 px</option>
+                <option value="200px">200 px</option><option value="300px">300 px</option>
+                <option value="400px">400 px</option><option value="500px">500 px</option>
+                <option value="50vh">50 % Bildschirmhöhe</option><option value="100vh">Volle Bildschirmhöhe</option>
+              </select></label>
+              <label>Außenabstand<select id="cc-margin">
+                <option value="">— unverändert —</option><option value="0">0</option>
+                <option value="4px">4 px</option><option value="8px">8 px</option>
+                <option value="12px">12 px</option><option value="16px">16 px</option>
+                <option value="24px">24 px</option><option value="32px">32 px</option>
+                <option value="48px">48 px</option><option value="64px">64 px</option>
+                <option value="0 auto">Horizontal zentrieren</option>
+              </select></label>
+              <label>Innenabstand<select id="cc-padding">
+                <option value="">— unverändert —</option><option value="0">0</option>
+                <option value="4px">4 px</option><option value="8px">8 px</option>
+                <option value="12px">12 px</option><option value="16px">16 px</option>
+                <option value="24px">24 px</option><option value="32px">32 px</option>
+                <option value="48px">48 px</option><option value="64px">64 px</option>
+              </select></label>
+              <label>Abstand zwischen Elementen<select id="cc-gap">
+                <option value="">— unverändert —</option><option value="0">0</option>
+                <option value="4px">4 px</option><option value="8px">8 px</option>
+                <option value="12px">12 px</option><option value="16px">16 px</option>
+                <option value="24px">24 px</option><option value="32px">32 px</option>
+                <option value="48px">48 px</option><option value="64px">64 px</option>
+              </select></label>
+              <label>Rahmen<select id="cc-border">
+                <option value="">— unverändert —</option><option value="none">Keiner</option>
+                <option value="1px solid currentColor">1 px</option>
+                <option value="2px solid currentColor">2 px</option>
+                <option value="3px solid currentColor">3 px</option>
+                <option value="1px dashed currentColor">1 px gestrichelt</option>
+                <option value="2px dashed currentColor">2 px gestrichelt</option>
+              </select></label>
+              <label>Ecken<select id="cc-border-radius">
+                <option value="">— unverändert —</option><option value="0">Eckig</option>
+                <option value="4px">4 px</option><option value="8px">8 px</option>
+                <option value="12px">12 px</option><option value="16px">16 px</option>
+                <option value="24px">24 px</option><option value="50%">Rund</option>
+                <option value="999px">Pille</option>
+              </select></label>
+              <label>Schatten<select id="cc-box-shadow">
+                <option value="">— unverändert —</option><option value="none">Keiner</option>
+                <option value="0 2px 8px rgba(0,0,0,.12)">Leicht</option>
+                <option value="0 6px 18px rgba(0,0,0,.16)">Mittel</option>
+                <option value="0 12px 30px rgba(0,0,0,.22)">Stark</option>
+                <option value="0 0 0 1px rgba(0,0,0,.12)">Feine Kontur</option>
+              </select></label>
+              <label>Deckkraft<select id="cc-opacity">
+                <option value="">— unverändert —</option>
+                <option value="1">100 %</option><option value=".9">90 %</option>
+                <option value=".75">75 %</option><option value=".5">50 %</option>
+                <option value=".25">25 %</option><option value="0">0 %</option>
+              </select></label>
+            </div>
+
+            <div class="cc-control-group">
+              <div class="cc-control-title">Typografie</div>
+              <label>Schriftart<select id="cc-font-family">
+                <option value="">— unverändert —</option>
+                <option value="'Oswald', sans-serif">Oswald</option>
+                <option value="'Inter', sans-serif">Inter</option>
+                <option value="'Roboto', sans-serif">Roboto</option>
+                <option value="'Playfair Display', serif">Playfair Display</option>
+                <option value="'Space Mono', monospace">Space Mono</option>
+                <option value="'Segoe UI', Arial, sans-serif">Segoe UI</option>
+                <option value="Arial, Helvetica, sans-serif">Arial</option>
+                <option value="Georgia, serif">Georgia</option>
+                <option value="'Courier New', monospace">Courier New</option>
+              </select></label>
+              <label>Schriftstärke<select id="cc-font-weight">
+                <option value="">— unverändert —</option>
+                <option value="300">Leicht 300</option>
+                <option value="400">Normal 400</option>
+                <option value="500">Medium 500</option>
+                <option value="600">Semi Bold 600</option>
+                <option value="700">Bold 700</option>
+              </select></label>
+              <label>Schriftgröße<select id="cc-font-size">
+                <option value="">— unverändert —</option>
+                <option value="12px">12 px</option><option value="14px">14 px</option>
+                <option value="16px">16 px</option><option value="18px">18 px</option>
+                <option value="20px">20 px</option><option value="24px">24 px</option>
+                <option value="28px">28 px</option><option value="32px">32 px</option>
+                <option value="40px">40 px</option><option value="48px">48 px</option>
+                <option value="64px">64 px</option><option value="80px">80 px</option>
+              </select></label>
+              <label>Zeilenhöhe<select id="cc-line-height">
+                <option value="">— unverändert —</option>
+                <option value="1">1.0</option><option value="1.1">1.1</option>
+                <option value="1.2">1.2</option><option value="1.3">1.3</option>
+                <option value="1.4">1.4</option><option value="1.5">1.5</option>
+                <option value="1.6">1.6</option><option value="1.8">1.8</option>
+                <option value="2">2.0</option>
+              </select></label>
+              <label>Buchstabenabstand<select id="cc-letter-spacing">
+                <option value="">— unverändert —</option>
+                <option value="-0.05em">-0.05 em</option><option value="-0.02em">-0.02 em</option>
+                <option value="0">0</option><option value="0.02em">0.02 em</option>
+                <option value="0.05em">0.05 em</option><option value="0.1em">0.1 em</option>
+                <option value="0.2em">0.2 em</option>
+              </select></label>
+              <label>Textausrichtung<select id="cc-text-align">
+                <option value="">— unverändert —</option>
+                <option value="left">Links</option><option value="center">Mitte</option>
+                <option value="right">Rechts</option><option value="justify">Blocksatz</option>
+              </select></label>
+              <label>Groß/Klein<select id="cc-text-transform">
+                <option value="">— unverändert —</option>
+                <option value="none">Normal</option><option value="uppercase">GROSSBUCHSTABEN</option>
+                <option value="lowercase">kleinbuchstaben</option><option value="capitalize">Wortanfänge groß</option>
+              </select></label>
+            </div>
+
+            <div class="cc-control-group cc-image-controls" id="cc-image-controls" hidden>
+              <div class="cc-control-title">Bildausschnitt</div>
+              <label>Format<select id="cc-crop-ratio">
+                <option value="">Original</option>
+                <option value="1 / 1">1 : 1</option>
+                <option value="4 / 5">4 : 5</option>
+                <option value="3 / 4">3 : 4</option>
+                <option value="3 / 2">3 : 2</option>
+                <option value="4 / 3">4 : 3</option>
+                <option value="16 / 9">16 : 9</option>
+                <option value="21 / 9">21 : 9</option>
+              </select></label>
+              <label>Einpassen<select id="cc-object-fit">
+                <option value="cover">Ausschnitt füllen (Cover)</option>
+                <option value="contain">Ganzes Bild zeigen (Contain)</option>
+                <option value="fill">Strecken (Fill)</option>
+                <option value="none">Originalgröße</option>
+                <option value="scale-down">Verkleinern falls nötig</option>
+              </select></label>
+              <label>Ausschnitt horizontal<select id="cc-object-x">
+                <option value="0%">Ganz links</option><option value="10%">10 %</option>
+                <option value="25%">25 %</option><option value="50%" selected>Mitte</option>
+                <option value="75%">75 %</option><option value="90%">90 %</option>
+                <option value="100%">Ganz rechts</option>
+              </select></label>
+              <label>Ausschnitt vertikal<select id="cc-object-y">
+                <option value="0%">Ganz oben</option><option value="10%">10 %</option>
+                <option value="25%">25 %</option><option value="50%" selected>Mitte</option>
+                <option value="75%">75 %</option><option value="90%">90 %</option>
+                <option value="100%">Ganz unten</option>
+              </select></label>
+              <button class="cc-wide-button" id="cc-crop-reset">Bildausschnitt zurücksetzen</button>
+            </div>
+
+            <div class="cc-control-group">
+              <div class="cc-control-title">Position & Effekte</div>
+              <label>Position<select id="cc-position">
+                <option value="">— unverändert —</option>
+                <option value="static">Normal</option><option value="relative">Relativ</option>
+                <option value="absolute">Absolut</option><option value="fixed">Fixiert</option>
+                <option value="sticky">Sticky</option>
+              </select></label>
+              <label>Überlauf<select id="cc-overflow">
+                <option value="">— unverändert —</option>
+                <option value="visible">Sichtbar</option><option value="hidden">Abschneiden</option>
+                <option value="auto">Automatisch scrollen</option><option value="scroll">Immer scrollen</option>
+              </select></label>
+              <label>Transform<select id="cc-transform">
+                <option value="">— unverändert —</option>
+                <option value="none">Keine</option>
+                <option value="rotate(-10deg)">Drehen -10°</option><option value="rotate(-5deg)">Drehen -5°</option>
+                <option value="rotate(-3deg)">Drehen -3°</option><option value="rotate(3deg)">Drehen +3°</option>
+                <option value="rotate(5deg)">Drehen +5°</option><option value="rotate(10deg)">Drehen +10°</option>
+                <option value="scale(0.9)">Skalieren 90 %</option><option value="scale(1.05)">Skalieren 105 %</option>
+                <option value="scale(1.1)">Skalieren 110 %</option><option value="scale(1.2)">Skalieren 120 %</option>
+                <option value="skewX(-5deg)">Neigen -5°</option><option value="skewX(5deg)">Neigen +5°</option>
+              </select></label>
+              <label>Filter<select id="cc-filter">
+                <option value="">— unverändert —</option>
+                <option value="none">Keine</option>
+                <option value="grayscale(1)">Graustufen</option>
+                <option value="sepia(1)">Sepia</option>
+                <option value="brightness(0.8)">Dunkler</option>
+                <option value="brightness(1.2)">Heller</option>
+                <option value="contrast(1.2)">Mehr Kontrast</option>
+                <option value="contrast(0.8)">Weniger Kontrast</option>
+                <option value="saturate(0.7)">Weniger Sättigung</option>
+                <option value="saturate(1.3)">Mehr Sättigung</option>
+                <option value="blur(2px)">Weich 2 px</option>
+                <option value="blur(5px)">Weich 5 px</option>
+              </select></label>
+              <label>Übergang<select id="cc-transition">
+                <option value="">— unverändert —</option>
+                <option value="none">Keiner</option>
+                <option value="all 0.15s ease">Schnell</option>
+                <option value="all 0.3s ease">Normal</option>
+                <option value="all 0.5s ease">Langsam</option>
+                <option value="transform 0.3s ease">Nur Transform</option>
+                <option value="opacity 0.3s ease">Nur Deckkraft</option>
+              </select></label>
+            </div>
+          </div>
+          <div class="cc-control-title cc-native-title">Feineinstellungen</div>
           <div id="cc-styles"></div>
         </section>
         <section class="cc-panel" data-panel-content="traits">

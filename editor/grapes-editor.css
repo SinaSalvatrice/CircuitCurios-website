@@ -358,3 +358,65 @@ button, input, select, textarea { font: inherit; }
 .cc-panel[data-panel-content="layers"] #cc-layers {
   min-height: min-content;
 }
+
+
+.cc-smart-controls {
+  display: grid;
+  gap: 9px;
+  margin-bottom: 10px;
+}
+
+.cc-control-group {
+  display: grid;
+  gap: 7px;
+  padding: 9px;
+  border: 1px solid #deded8;
+  border-radius: 7px;
+  background: #fff;
+}
+
+.cc-control-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #5f5f58;
+  margin-bottom: 1px;
+}
+
+.cc-native-title {
+  padding: 7px 2px 5px;
+}
+
+.cc-control-group label {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3px;
+  font-size: 10px;
+  color: #66665f;
+}
+
+.cc-control-group select {
+  width: 100%;
+  min-height: 30px;
+  border: 1px solid #d3d3cd;
+  border-radius: 5px;
+  background: #fff;
+  color: #242422;
+  padding: 4px 7px;
+  font-size: 11px;
+}
+
+.cc-control-group select:focus {
+  outline: 2px solid #9b9b92;
+  outline-offset: 1px;
+}
+
+.cc-image-controls {
+  border-style: dashed;
+  background: #fafaf7;
+}
+
+.cc-image-controls[hidden] {
+  display: none;
+}
