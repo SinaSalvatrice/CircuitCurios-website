@@ -35,52 +35,26 @@
       appendTo: '#cc-styles',
       sectors: [
         {
-          name: 'Layout',
-          open: true,
-          buildProps: [
-            'display', 'flex-direction', 'flex-wrap', 'justify-content',
-            'align-items', 'align-content', 'gap', 'grid-template-columns',
-            'grid-template-rows', 'grid-column-gap', 'grid-row-gap'
-          ]
-        },
-        {
           name: 'Abstand & Größe',
           open: true,
           buildProps: [
             'margin', 'padding', 'width', 'height', 'min-width', 'max-width',
-            'min-height', 'max-height'
+            'min-height', 'max-height', 'gap'
           ]
         },
         {
-          name: 'Typografie',
+          name: 'Farbe & Rahmen',
           open: false,
           buildProps: [
-            'font-family', 'font-size', 'font-weight', 'letter-spacing',
-            'line-height', 'color', 'text-align', 'text-decoration',
-            'text-transform'
-          ]
-        },
-        {
-          name: 'Hintergrund & Rahmen',
-          open: false,
-          buildProps: [
-            'background-color', 'background', 'border', 'border-radius',
+            'color', 'background-color', 'border', 'border-radius',
             'box-shadow', 'opacity'
           ]
         },
         {
-          name: 'Position',
+          name: 'Feinposition',
           open: false,
           buildProps: [
-            'position', 'top', 'right', 'bottom', 'left', 'z-index',
-            'overflow'
-          ]
-        },
-        {
-          name: 'Transform & Effekte',
-          open: false,
-          buildProps: [
-            'transform', 'filter', 'transition'
+            'top', 'right', 'bottom', 'left', 'z-index'
           ]
         }
       ]
@@ -467,6 +441,115 @@
     };
   };
 
+  const styleSelects = {
+    'cc-display': 'display',
+    'cc-flex-direction': 'flex-direction',
+    'cc-flex-wrap': 'flex-wrap',
+    'cc-justify-content': 'justify-content',
+    'cc-align-items': 'align-items',
+    'cc-grid-columns': 'grid-template-columns',
+    'cc-font-family': 'font-family',
+    'cc-font-weight': 'font-weight',
+    'cc-font-size': 'font-size',
+    'cc-line-height': 'line-height',
+    'cc-letter-spacing': 'letter-spacing',
+    'cc-text-align': 'text-align',
+    'cc-text-transform': 'text-transform',
+    'cc-position': 'position',
+    'cc-overflow': 'overflow',
+    'cc-transform': 'transform',
+    'cc-filter': 'filter',
+    'cc-transition': 'transition'
+  };
+
+  const setSelectedStyle = (property, value) => {
+    const selected = editor.getSelected();
+    if (!selected) {
+      setStatus('Erst ein Element auswählen');
+      return;
+    }
+    const style = { ...(selected.getStyle ? selected.getStyle() : {}) };
+    if (value === '') {
+      delete style[property];
+    } else {
+      style[property] = value;
+    }
+    selected.setStyle(style);
+    setDirty(true);
+  };
+
+  Object.entries(styleSelects).forEach(([id, property]) => {
+    const control = document.getElementById(id);
+    if (!control) return;
+    control.addEventListener('change', () => setSelectedStyle(property, control.value));
+  });
+
+  const cropControls = {
+    ratio: document.getElementById('cc-crop-ratio'),
+    fit: document.getElementById('cc-object-fit'),
+    x: document.getElementById('cc-object-x'),
+    y: document.getElementById('cc-object-y'),
+    group: document.getElementById('cc-image-controls')
+  };
+
+  const applyCrop = () => {
+    const selected = editor.getSelected();
+    if (!selected || !selected.is('image')) return;
+
+    const style = { ...(selected.getStyle ? selected.getStyle() : {}) };
+    const ratio = cropControls.ratio.value;
+    if (ratio) {
+      style['aspect-ratio'] = ratio;
+      style['object-fit'] = cropControls.fit.value || 'cover';
+      style['object-position'] = cropControls.x.value + ' ' + cropControls.y.value;
+      if (!style.width) style.width = '100%';
+    } else {
+      delete style['aspect-ratio'];
+      delete style['object-fit'];
+      delete style['object-position'];
+    }
+    selected.setStyle(style);
+    setDirty(true);
+    setStatus(ratio ? 'Bildausschnitt geändert' : 'Bildausschnitt zurückgesetzt');
+  };
+
+  ['cc-crop-ratio', 'cc-object-fit', 'cc-object-x', 'cc-object-y'].forEach(id => {
+    document.getElementById(id)?.addEventListener('change', applyCrop);
+  });
+
+  document.getElementById('cc-crop-reset')?.addEventListener('click', () => {
+    cropControls.ratio.value = '';
+    cropControls.fit.value = 'cover';
+    cropControls.x.value = '50%';
+    cropControls.y.value = '50%';
+    applyCrop();
+  });
+
+  const syncSmartControls = () => {
+    const selected = editor.getSelected();
+    const style = selected?.getStyle ? selected.getStyle() : {};
+
+    Object.entries(styleSelects).forEach(([id, property]) => {
+      const control = document.getElementById(id);
+      if (!control) return;
+      const value = style?.[property] || '';
+      const exists = Array.from(control.options).some(option => option.value === value);
+      control.value = exists ? value : '';
+    });
+
+    const isImage = !!selected && selected.is('image');
+    cropControls.group.hidden = !isImage;
+    if (isImage) {
+      const ratio = style?.['aspect-ratio'] || '';
+      const fit = style?.['object-fit'] || 'cover';
+      const position = (style?.['object-position'] || '50% 50%').trim().split(/\s+/);
+      cropControls.ratio.value = Array.from(cropControls.ratio.options).some(o => o.value === ratio) ? ratio : '';
+      cropControls.fit.value = Array.from(cropControls.fit.options).some(o => o.value === fit) ? fit : 'cover';
+      cropControls.x.value = Array.from(cropControls.x.options).some(o => o.value === position[0]) ? position[0] : '50%';
+      cropControls.y.value = Array.from(cropControls.y.options).some(o => o.value === position[1]) ? position[1] : '50%';
+    }
+  };
+
   const updateSelectionUi = () => {
     const selected = editor.getSelected();
     const label = document.getElementById('cc-selection-label');
@@ -492,13 +575,18 @@
       component.set('resizable', true);
     }
     updateSelectionUi();
+    syncSmartControls();
   });
-  editor.on('component:deselected', updateSelectionUi);
+  editor.on('component:deselected', () => {
+    updateSelectionUi();
+    syncSmartControls();
+  });
   editor.on('component:add component:remove component:update', () => {
     if (!loading) setDirty(true);
   });
   editor.on('style:property:update', () => {
     if (!loading) setDirty(true);
+    syncSmartControls();
   });
 
   document.getElementById('cc-save').onclick = () => save().catch(err => setStatus(err.message));
