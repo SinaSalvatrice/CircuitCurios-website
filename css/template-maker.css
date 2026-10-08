@@ -178,6 +178,14 @@
   display: flex;
   flex-direction: column;
 }
+.cc-tm-gallery.cc-gallery-sequence {
+  display: block !important;
+}
+.cc-tm-gallery.cc-gallery-sequence .cc-tm-gallery-field {
+  position: absolute;
+  inset: var(--cc-gallery-padding, 12px);
+  opacity: 0;
+}
 .cc-tm-gallery-field {
   min-width: 0;
   min-height: 0;
