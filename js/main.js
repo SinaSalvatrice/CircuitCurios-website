@@ -35,6 +35,29 @@
     el.textContent = String(new Date().getFullYear());
   });
 
+  const privacyPolicyHref = 'circuitcurios-privacy-policy.html';
+  document.querySelectorAll('footer').forEach(footer => {
+    if (footer.querySelector(`a[href="${privacyPolicyHref}"]`)) return;
+
+    const privacyLink = document.createElement('a');
+    privacyLink.href = privacyPolicyHref;
+    privacyLink.textContent = 'Privacy Policy';
+
+    const footerNav = footer.querySelector('nav');
+    if (footerNav) {
+      footerNav.appendChild(privacyLink);
+      return;
+    }
+
+    const existingLinks = footer.querySelectorAll('a');
+    const lastLink = existingLinks[existingLinks.length - 1];
+    const linkContainer = lastLink?.parentElement;
+    if (!linkContainer) return;
+
+    linkContainer.appendChild(document.createTextNode(' · '));
+    linkContainer.appendChild(privacyLink);
+  });
+
   const reveals = document.querySelectorAll('.reveal');
   if (reveals.length) {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
