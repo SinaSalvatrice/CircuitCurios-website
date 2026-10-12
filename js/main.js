@@ -1,4 +1,67 @@
 (() => {
+  // Some pages were exported before the Template Maker UTF-8 import fix and
+  // therefore already contain mojibake in the committed HTML. Repair only
+  // known broken byte-sequences at runtime; genuine Unicode stays untouched.
+  const mojibakePairs = [
+    ['Ã„', 'Ä'], ['Ã–', 'Ö'], ['Ãœ', 'Ü'],
+    ['Ã¤', 'ä'], ['Ã¶', 'ö'], ['Ã¼', 'ü'], ['ÃŸ', 'ß'],
+    ['Â·', '·'], ['Â©', '©'], ['Â®', '®'], ['Â ', ' '],
+    ['â€”', '—'], ['â€“', '–'],
+    ['â†’', '→'], ['â†', '←'], ['â†—', '↗'],
+    ['â€™', '’'], ['â€œ', '“'], ['â€', '”'], ['â€¦', '…'], ['â€¢', '•']
+  ];
+
+  const repairMojibake = value => {
+    if (!value || !/[ÃÂâ]/.test(value)) return value;
+    let repaired = value;
+    mojibakePairs.forEach(([broken, correct]) => {
+      if (repaired.includes(broken)) repaired = repaired.split(broken).join(correct);
+    });
+    return repaired;
+  };
+
+  const repairPublishedText = () => {
+    document.title = repairMojibake(document.title);
+
+    document.querySelectorAll('meta[content]').forEach(meta => {
+      meta.content = repairMojibake(meta.content);
+    });
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const parent = node.parentElement;
+        if (!parent || /^(SCRIPT|STYLE|NOSCRIPT|TEXTAREA)$/.test(parent.tagName)) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return /[ÃÂâ]/.test(node.nodeValue || '')
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
+      }
+    });
+
+    let node;
+    while ((node = walker.nextNode())) {
+      node.nodeValue = repairMojibake(node.nodeValue);
+    }
+
+    const textAttributes = [
+      'title', 'aria-label', 'alt', 'placeholder',
+      'data-texture-description', 'data-texture-group', 'data-texture-family',
+      'data-texture-pattern', 'data-texture-principle'
+    ];
+
+    document.querySelectorAll(textAttributes.map(attr => `[${attr}]`).join(',')).forEach(el => {
+      textAttributes.forEach(attr => {
+        if (!el.hasAttribute(attr)) return;
+        const value = el.getAttribute(attr);
+        const repaired = repairMojibake(value);
+        if (repaired !== value) el.setAttribute(attr, repaired);
+      });
+    });
+  };
+
+  repairPublishedText();
+
   // Template Maker pages use one fixed logical design canvas. Fit that whole
   // canvas uniformly to the available browser width instead of squeezing only
   // the X axis while keeping height and typography at desktop scale.
