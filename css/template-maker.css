@@ -9,7 +9,7 @@
 }
 .cc-template-canvas {
   position: relative;
-  width: min(100%, calc(var(--cc-design-width) * 1px));
+  width: calc(var(--cc-design-width) * 1px);
   height: calc(var(--cc-design-height) * 1px);
   margin: 0 auto;
   overflow: hidden;
