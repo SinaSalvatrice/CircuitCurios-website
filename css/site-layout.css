@@ -1,13 +1,16 @@
 /* Shared public-site layout normalization.
-   Keeps the visual language intact while giving every page the same desktop rhythm. */
+   Keeps every non-template page on the same desktop grid and visual rhythm. */
 :root {
-  --cc-layout-max: 1680px;
-  --cc-layout-gutter: clamp(22px, 4vw, 76px);
-  --cc-layout-section: clamp(78px, 8vw, 132px);
+  --cc-layout-max: 1920px;
+  --cc-layout-gutter: clamp(24px, 3.5vw, 72px);
+  --cc-layout-section: clamp(72px, 7vw, 120px);
 }
 
 html { width: 100%; }
-body { min-width: 320px; }
+body {
+  min-width: 320px;
+  min-height: 100svh;
+}
 
 /* Standard pages: one consistent desktop content width and gutter. */
 body:not(.snappy-home) .section-shell {
@@ -23,22 +26,23 @@ body:not(.snappy-home) main {
   width: 100%;
 }
 
-/* Give the primary inner-page hero enough visual weight on desktop. */
+/* Give all inner-page intros the same desktop scale instead of letting some
+   pages look like narrow columns and others like full compositions. */
 body:not(.snappy-home) .page-hero {
   min-height: clamp(620px, 82svh, 900px);
   display: grid;
   align-content: center;
-  padding-top: clamp(120px, 12vw, 190px);
-  padding-bottom: clamp(72px, 8vw, 120px);
+  padding-top: clamp(120px, 11vw, 180px);
+  padding-bottom: clamp(72px, 7vw, 112px);
 }
 
 body:not(.snappy-home) .page-intro {
-  max-width: 720px;
-  font-size: clamp(1.02rem, 1.15vw, 1.2rem);
+  max-width: 760px;
+  font-size: clamp(1.02rem, 1.1vw, 1.2rem);
 }
 
-/* About page used to run edge-to-edge while the other pages used a shell.
-   Pull it onto the same grid so page changes feel deliberate rather than accidental. */
+/* About used to run edge-to-edge while other pages used a shell. Keep it on
+   the same page grid so switching sections feels deliberate and stable. */
 body:not(.snappy-home) .about-hero {
   width: min(calc(100% - (var(--cc-layout-gutter) * 2)), var(--cc-layout-max));
   min-height: clamp(650px, 86svh, 940px);
@@ -48,16 +52,16 @@ body:not(.snappy-home) .about-hero {
 }
 
 body:not(.snappy-home) .about-copy {
-  max-width: 720px;
+  max-width: 760px;
   padding: 40px 0;
 }
 
-/* Slightly stronger image presentation without changing the industrial look. */
+/* Images get the same restrained edge treatment site-wide. */
 body:not(.snappy-home) .portrait-panel,
 body:not(.snappy-home) .surface-image,
 body:not(.snappy-home) .product-card-image,
 body:not(.snappy-home) .editorial-image img {
-  box-shadow: 0 1px 0 rgba(17, 18, 20, .16);
+  box-shadow: 0 1px 0 rgba(17, 18, 20, .16), 0 18px 48px rgba(17, 18, 20, .055);
 }
 
 body:not(.snappy-home) .page-gates,
@@ -66,19 +70,20 @@ body:not(.snappy-home) .about-notes {
   scroll-margin-top: 96px;
 }
 
-/* Keep footer alignment identical to the page body. */
+/* Keep section and footer spacing consistent instead of ending pages at
+   visibly different distances. */
 body:not(.snappy-home) .site-footer {
-  margin-top: clamp(28px, 4vw, 64px);
+  margin-top: clamp(36px, 4.5vw, 72px);
 }
 
 @media (min-width: 1500px) {
   body:not(.snappy-home) .page-hero h1,
   body:not(.snappy-home) .about-copy h1 {
-    font-size: clamp(6.8rem, 8vw, 9.6rem);
+    font-size: clamp(6.8rem, 7.6vw, 9.4rem);
   }
 
   body:not(.snappy-home) .product-grid {
-    gap: clamp(22px, 1.8vw, 32px);
+    gap: clamp(22px, 1.8vw, 34px);
   }
 }
 
