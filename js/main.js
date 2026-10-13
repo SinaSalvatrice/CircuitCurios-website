@@ -63,8 +63,9 @@
   repairPublishedText();
 
   // Template Maker pages use one fixed logical design canvas. Fit that whole
-  // canvas uniformly to the available browser width instead of squeezing only
-  // the X axis while keeping height and typography at desktop scale.
+  // canvas uniformly to the available browser width. Public pages may scale
+  // up on large desktops; editor/import mode deliberately stays at <= 100%
+  // so DOM geometry remains stable for the Template Maker importer.
   const fitTemplateCanvas = () => {
     const canvas = document.querySelector(
       '.cc-template-page > .cc-template-canvas'
@@ -80,7 +81,11 @@
       1,
       host ? host.clientWidth : document.documentElement.clientWidth
     );
-    canvas.style.zoom = String(Math.min(1, available / designWidth));
+    const editorLayout =
+      window.CC_EDITOR_MODE === true ||
+      new URLSearchParams(location.search).has('cceditor');
+    const maxScale = editorLayout ? 1 : 1.5;
+    canvas.style.zoom = String(Math.min(maxScale, available / designWidth));
   };
 
   fitTemplateCanvas();
