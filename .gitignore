@@ -1,7 +1,13 @@
-# Generated build output
+﻿# Generated build output
 /build/
 /editor/generated/
-
+/editor/.dart_tool/
+/editor/build/
+/editor/dist/
+/editor/node_modules/
+/editor/.idea/
+/editor/.backups/
+/images/template-maker/imported/
 
 # Local noise
 *.log
