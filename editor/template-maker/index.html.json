@@ -4,7 +4,7 @@
   "page": "index.html",
   "htmlSource": null,
   "canvas": {
-    "width": 1425.0,
+    "width": 1920.0,
     "height": 8766.0781,
     "backgroundColor": "rgb(242, 240, 233)"
   },
@@ -3333,8 +3333,8 @@
       "id": "website-47",
       "type": "container",
       "x": 0.0,
-      "y": 90.21719213093134,
-      "width": 1425.0,
+      "y": 90.21719213093132,
+      "width": 1920.0,
       "height": 628.3528776939731,
       "text": "",
       "imagePath": null,
