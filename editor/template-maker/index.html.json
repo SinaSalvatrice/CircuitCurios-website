@@ -3735,8 +3735,20 @@
       "galleryItemBorderColor": null,
       "galleryItemRadius": 0.0,
       "galleryItems": [],
-      "interactionEnabled": false,
-      "actions": [],
+      "interactionEnabled": true,
+      "actions": [
+        {
+          "id": "action-2",
+          "type": "openInternal",
+          "enabled": true,
+          "target": null,
+          "presentation": "navigate",
+          "componentPath": null,
+          "scale": 0.94,
+          "durationMs": 120,
+          "delayMs": 0
+        }
+      ],
       "transition": {
         "enabled": false,
         "trigger": "enterViewport",
