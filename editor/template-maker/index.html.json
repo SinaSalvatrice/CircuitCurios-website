@@ -243,6 +243,19 @@
           "target": "prozess.html",
           "presentation": "navigate",
           "componentPath": null,
+          "floating": {
+            "width": 720.0,
+            "height": 520.0,
+            "position": "center",
+            "backdropColor": "#000000",
+            "backdropOpacity": 0.62,
+            "animation": "fadeScale",
+            "durationMs": 280,
+            "cornerRadius": 16.0,
+            "showCloseButton": true,
+            "closeOnBackdrop": true,
+            "closeOnEscape": true
+          },
           "scale": 0.94,
           "durationMs": 120,
           "delayMs": 0
@@ -409,6 +422,19 @@
           "target": "formen.html",
           "presentation": "navigate",
           "componentPath": null,
+          "floating": {
+            "width": 720.0,
+            "height": 520.0,
+            "position": "center",
+            "backdropColor": "#000000",
+            "backdropOpacity": 0.62,
+            "animation": "fadeScale",
+            "durationMs": 280,
+            "cornerRadius": 16.0,
+            "showCloseButton": true,
+            "closeOnBackdrop": true,
+            "closeOnEscape": true
+          },
           "scale": 0.94,
           "durationMs": 120,
           "delayMs": 0
@@ -498,6 +524,19 @@
           "target": "ueber.html",
           "presentation": "navigate",
           "componentPath": null,
+          "floating": {
+            "width": 720.0,
+            "height": 520.0,
+            "position": "center",
+            "backdropColor": "#000000",
+            "backdropOpacity": 0.62,
+            "animation": "fadeScale",
+            "durationMs": 280,
+            "cornerRadius": 16.0,
+            "showCloseButton": true,
+            "closeOnBackdrop": true,
+            "closeOnEscape": true
+          },
           "scale": 0.94,
           "durationMs": 120,
           "delayMs": 0
@@ -587,6 +626,19 @@
           "target": "shop.html",
           "presentation": "navigate",
           "componentPath": null,
+          "floating": {
+            "width": 720.0,
+            "height": 520.0,
+            "position": "center",
+            "backdropColor": "#000000",
+            "backdropOpacity": 0.62,
+            "animation": "fadeScale",
+            "durationMs": 280,
+            "cornerRadius": 16.0,
+            "showCloseButton": true,
+            "closeOnBackdrop": true,
+            "closeOnEscape": true
+          },
           "scale": 0.94,
           "durationMs": 120,
           "delayMs": 0
@@ -1908,6 +1960,19 @@
           "target": "template-85",
           "presentation": "navigate",
           "componentPath": null,
+          "floating": {
+            "width": 720.0,
+            "height": 520.0,
+            "position": "center",
+            "backdropColor": "#000000",
+            "backdropOpacity": 0.62,
+            "animation": "fadeScale",
+            "durationMs": 280,
+            "cornerRadius": 16.0,
+            "showCloseButton": true,
+            "closeOnBackdrop": true,
+            "closeOnEscape": true
+          },
           "scale": 0.94,
           "durationMs": 120,
           "delayMs": 0
@@ -3141,10 +3206,35 @@
       "galleryItemBorderColor": null,
       "galleryItemRadius": 0.0,
       "galleryItems": [],
-      "interactionEnabled": false,
-      "hoverCursor": "auto",
+      "interactionEnabled": true,
+      "hoverCursor": "pointer",
       "cursorAssetPath": null,
-      "actions": [],
+      "actions": [
+        {
+          "id": "action-1",
+          "type": "openComponent",
+          "enabled": true,
+          "target": null,
+          "presentation": "floating",
+          "componentPath": "library://components/website/hero_foot/hero_foot.cccomponent.json",
+          "floating": {
+            "width": 740.0,
+            "height": 520.0,
+            "position": "center",
+            "backdropColor": "#000000",
+            "backdropOpacity": 0.62,
+            "animation": "fadeScale",
+            "durationMs": 280,
+            "cornerRadius": 16.0,
+            "showCloseButton": true,
+            "closeOnBackdrop": true,
+            "closeOnEscape": true
+          },
+          "scale": 0.94,
+          "durationMs": 120,
+          "delayMs": 0
+        }
+      ],
       "transition": {
         "enabled": false,
         "trigger": "enterViewport",

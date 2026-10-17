@@ -113,7 +113,140 @@ main.cc-template-page {
   background: var(--cc-bg, transparent);
 }
 .cc-tm-hero > img,
-.cc-tm-hero > .cc-tm-placeholder {
+.cc-tm-hero >
+/* Floating interaction dialogs are styled by the exported CSS as well as
+   the standalone preview; no additional website stylesheet is required. */
+.cc-interaction-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  box-sizing: border-box;
+  padding: 16px;
+  place-items: center;
+  background: var(--cc-popup-backdrop, rgba(0,0,0,.62));
+  isolation: isolate;
+}
+.cc-interaction-overlay.cc-open { display: grid; }
+.cc-interaction-overlay[data-position="top"] { align-items: start; }
+.cc-interaction-overlay[data-position="bottom"] { align-items: end; }
+.cc-interaction-overlay[data-position="left"] { justify-items: start; }
+.cc-interaction-overlay[data-position="right"] { justify-items: end; }
+.cc-interaction-surface {
+  position: relative;
+  box-sizing: border-box;
+  width: min(var(--cc-popup-width, 720px), calc(100vw - 32px));
+  height: min(var(--cc-popup-height, 520px), calc(100dvh - 32px));
+  min-width: 0;
+  min-height: 0;
+  max-height: calc(100dvh - 32px);
+  overflow: hidden;
+  border-radius: var(--cc-popup-radius, 16px);
+  background: #f4f1ea;
+  box-shadow: 0 18px 64px rgba(0,0,0,.3);
+  outline: none;
+}
+.cc-interaction-content {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.cc-interaction-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+}
+.cc-interaction-component {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.cc-interaction-close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  color: #111;
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 1px 8px rgba(0,0,0,.22);
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 1;
+}
+.cc-interaction-close[hidden] { display: none !important; }
+.cc-interaction-overlay.cc-panel { justify-items: end; padding: 0; }
+.cc-interaction-overlay.cc-panel .cc-interaction-surface {
+  width: min(var(--cc-popup-width, 720px), 100vw);
+  height: 100dvh;
+  max-height: 100dvh;
+  border-radius: 0;
+}
+.cc-interaction-overlay.cc-fullscreen { padding: 0; }
+.cc-interaction-overlay.cc-fullscreen .cc-interaction-surface {
+  width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  border-radius: 0;
+}
+@keyframes cc-popup-enter {
+  from { opacity: 0; transform: var(--cc-popup-from, scale(.9)); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes cc-popup-exit {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: var(--cc-popup-from, scale(.9)); }
+}
+@keyframes cc-popup-backdrop-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.cc-interaction-overlay[data-animation="fadeScale"] {
+  --cc-popup-from: scale(.9);
+}
+.cc-interaction-overlay[data-animation="fade"] {
+  --cc-popup-from: none;
+}
+.cc-interaction-overlay[data-animation="slideUp"] {
+  --cc-popup-from: translateY(48px);
+}
+.cc-interaction-overlay[data-animation="slideDown"] {
+  --cc-popup-from: translateY(-48px);
+}
+.cc-interaction-overlay.cc-open:not([data-animation="none"]) {
+  animation: cc-popup-backdrop-enter var(--cc-popup-duration, 280ms) ease-out both;
+}
+.cc-interaction-overlay.cc-open:not([data-animation="none"]) .cc-interaction-surface {
+  animation: cc-popup-enter var(--cc-popup-duration, 280ms) ease-out both;
+}
+.cc-interaction-overlay.cc-closing {
+  animation: cc-popup-backdrop-enter var(--cc-popup-duration, 280ms) ease-in reverse both !important;
+}
+.cc-interaction-overlay.cc-closing .cc-interaction-surface {
+  animation: cc-popup-exit var(--cc-popup-duration, 280ms) ease-in both !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cc-interaction-overlay,
+  .cc-interaction-surface { animation: none !important; }
+}
+@media (max-width: 700px) {
+  .cc-interaction-overlay { padding: 12px; }
+  .cc-interaction-surface {
+    width: min(var(--cc-popup-width, 720px), calc(100vw - 24px));
+    height: min(var(--cc-popup-height, 520px), calc(100dvh - 24px));
+  }
+}
+
+ .cc-tm-placeholder {
   position: absolute;
   inset: 0;
 }
