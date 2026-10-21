@@ -28,6 +28,7 @@
     // display that canvas smaller, but it must scale uniformly in both axes so
     // the published page, preview and editor keep the same proportions.
     const fitTemplateCanvas = () => {
+      if (window.ccSetEditorViewport) return;
       const canvas = document.querySelector(
         '.cc-template-page > .cc-template-canvas'
       );
@@ -170,6 +171,12 @@
       }
       previousFocus = null;
     };
+    // Editor mode must be able to close the dialog even while the WebView
+    // ignores pointer input and its animation timers are paused.
+    window.ccDismissInteractionOverlay = () => {
+      clearTimeout(closeTimer);
+      finishClose();
+    };
     const closeOverlay = () => {
       if (!overlay || !overlay.classList.contains('cc-open') ||
           overlay.classList.contains('cc-closing')) return;
@@ -177,7 +184,7 @@
       const duration = window.matchMedia('(prefers-reduced-motion: reduce)')
         .matches || activeFloating.animation === 'none'
         ? 0 : activeFloating.durationMs;
-      if (duration === 0) {
+      if (duration === 0 || window.ccPlayback?.paused) {
         finishClose();
       } else {
         overlay.classList.add('cc-closing');
@@ -231,6 +238,8 @@
         media.alt = '';
       }
       content.appendChild(media);
+      // The editor emergency-close path can force-hide a broken dialog.
+      overlay.style.removeProperty('display');
       overlay.classList.add('cc-open');
       overlay.setAttribute('aria-hidden', 'false');
       if (settings.showCloseButton) close.focus();

@@ -82,6 +82,12 @@ main.cc-template-page {
   background: var(--cc-bg, transparent);
   line-height: var(--cc-line-height, 1.08);
 }
+/* Browser Range text measurements describe line boxes, not clipped glyph bounds.
+   Keep imported text free to paint its ascenders/descenders and letter spacing. */
+.cc-tm-imported-text {
+  overflow: visible;
+  overflow-wrap: normal;
+}
 .cc-tm-imported img {
   position: absolute;
   inset: 0;
@@ -113,7 +119,11 @@ main.cc-template-page {
   background: var(--cc-bg, transparent);
 }
 .cc-tm-hero > img,
-.cc-tm-hero >
+.cc-tm-hero > .cc-tm-placeholder {
+  position: absolute;
+  inset: 0;
+}
+
 /* Floating interaction dialogs are styled by the exported CSS as well as
    the standalone preview; no additional website stylesheet is required. */
 .cc-interaction-overlay {
@@ -246,10 +256,6 @@ main.cc-template-page {
   }
 }
 
- .cc-tm-placeholder {
-  position: absolute;
-  inset: 0;
-}
 .cc-tm-shade {
   position: absolute;
   inset: 0;
