@@ -823,10 +823,10 @@
       "href": null
     },
     {
-      "id": "template-95",
+      "id": "template-96",
       "type": "gallery",
       "x": 0.0,
-      "y": 70.0,
+      "y": 70.20408163265381,
       "width": 1920.0,
       "height": 625.0000000000006,
       "text": "",
@@ -873,70 +873,70 @@
       "galleryItems": [
         {
           "id": "cc-texture-1",
-          "imagePath": "library://components/website/animation/texturwechsel_fade/assets/texture_01.png",
+          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_01.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-2",
-          "imagePath": "library://components/website/animation/texturwechsel_fade/assets/texture_02.png",
+          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_02.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-3",
-          "imagePath": "library://components/website/animation/texturwechsel_fade/assets/texture_03.png",
+          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_03.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-4",
-          "imagePath": "library://components/website/animation/texturwechsel_fade/assets/texture_04.png",
+          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_04.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-5",
-          "imagePath": "library://components/website/animation/texturwechsel_fade/assets/texture_05.png",
+          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_05.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-6",
-          "imagePath": "library://components/website/animation/texturwechsel_fade/assets/texture_06.png",
+          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_06.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-7",
-          "imagePath": "library://components/website/animation/texturwechsel_fade/assets/texture_07.png",
+          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_07.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-8",
-          "imagePath": "library://components/website/animation/texturwechsel_fade/assets/texture_08.png",
+          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_08.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-9",
-          "imagePath": "library://components/website/animation/texturwechsel_fade/assets/texture_09.png",
+          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_09.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-10",
-          "imagePath": "library://components/website/animation/texturwechsel_fade/assets/texture_10.png",
+          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_10.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
@@ -980,7 +980,7 @@
       "text": "",
       "imagePath": null,
       "visible": true,
-      "locked": false,
+      "locked": true,
       "rotation": 0.0,
       "imported": true,
       "sourceTag": "DIV",
