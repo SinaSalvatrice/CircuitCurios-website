@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="de">
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CircuitCurios – Template Vorschau</title>
@@ -89,6 +90,12 @@ main.cc-template-page {
   background: var(--cc-bg, transparent);
   line-height: var(--cc-line-height, 1.08);
 }
+/* Browser Range text measurements describe line boxes, not clipped glyph bounds.
+   Keep imported text free to paint its ascenders/descenders and letter spacing. */
+.cc-tm-imported-text {
+  overflow: visible;
+  overflow-wrap: normal;
+}
 .cc-tm-imported img {
   position: absolute;
   inset: 0;
@@ -120,7 +127,11 @@ main.cc-template-page {
   background: var(--cc-bg, transparent);
 }
 .cc-tm-hero > img,
-.cc-tm-hero >
+.cc-tm-hero > .cc-tm-placeholder {
+  position: absolute;
+  inset: 0;
+}
+
 /* Floating interaction dialogs are styled by the exported CSS as well as
    the standalone preview; no additional website stylesheet is required. */
 .cc-interaction-overlay {
@@ -253,10 +264,6 @@ main.cc-template-page {
   }
 }
 
- .cc-tm-placeholder {
-  position: absolute;
-  inset: 0;
-}
 .cc-tm-shade {
   position: absolute;
   inset: 0;
@@ -483,8 +490,20 @@ main.cc-template-page {
 |   ÜBER MICH   </div>
     <div id="website-56" data-cc-element-kind="text" data-cc-actions="[{&quot;id&quot;:&quot;action-2&quot;,&quot;type&quot;:&quot;openInternal&quot;,&quot;enabled&quot;:true,&quot;target&quot;:&quot;shop.html&quot;,&quot;presentation&quot;:&quot;navigate&quot;,&quot;componentPath&quot;:null,&quot;floating&quot;:{&quot;width&quot;:720.0,&quot;height&quot;:520.0,&quot;position&quot;:&quot;center&quot;,&quot;backdropColor&quot;:&quot;#000000&quot;,&quot;backdropOpacity&quot;:0.62,&quot;animation&quot;:&quot;fadeScale&quot;,&quot;durationMs&quot;:280,&quot;cornerRadius&quot;:16.0,&quot;showCloseButton&quot;:true,&quot;closeOnBackdrop&quot;:true,&quot;closeOnEscape&quot;:true},&quot;scale&quot;:0.94,&quot;durationMs&quot;:120,&quot;delayMs&quot;:0}]" tabindex="0" role="button" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:1728px;top:0px;width:157.6842px;height:80px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;cursor:pointer;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(205, 208, 210);color:rgb(205, 208, 210);--cc-font-size:18px;font-size:18px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:right;--cc-letter-spacing:4px;letter-spacing:4px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(205, 208, 210);--cc-border-width:0px;border:none;text-shadow:0px 0px 10px rgba(255,255,255,0.7)">
 |   ZUM SHOP   </div>
-    <figure id="template-58" data-cc-element-kind="image" class="cc-tm-element cc-tm-imported cc-tm-imported-image" style="left:0px;top:62.3255px;width:1920px;height:625.9193px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:-0.0052;--cc-image-position-y:0.1598;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:49.7396%;--cc-object-position-y:57.9883%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(17, 18, 20);color:rgb(17, 18, 20);--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Arial Narrow';font-family:'Arial Narrow';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.45;line-height:1.45;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(17, 18, 20);--cc-border-width:0px;border:none"><img src="images/template-maker/asset-584032cadb9ef871da984d33.png" alt=""></figure>
-    <div id="template-59" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported" style="left:0px;top:60.4px;width:1920px;height:628.3529px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(13, 12, 12, 0.36);background-color:rgba(13, 12, 12, 0.36);--cc-fg:rgb(77, 77, 77);color:rgb(77, 77, 77);--cc-font-size:16px;font-size:16px;--cc-font-weight:600;font-weight:600;--cc-font-family:'Times New Roman';font-family:'Times New Roman';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(77, 77, 77);--cc-border-width:1.0114px;border-width:1.0114px;border-style:solid;border-color:rgb(77, 77, 77)"></div>
+    <section id="template-95" data-cc-element-kind="gallery"  data-cc-transition="{&quot;enabled&quot;:true,&quot;trigger&quot;:&quot;pageLoad&quot;,&quot;effect&quot;:&quot;imageSequenceFade&quot;,&quot;direction&quot;:&quot;bottom&quot;,&quot;durationMs&quot;:900,&quot;delayMs&quot;:0,&quot;easing&quot;:&quot;easeInOut&quot;,&quot;once&quot;:false,&quot;distance&quot;:0.0,&quot;scaleFrom&quot;:1.0,&quot;staggerMs&quot;:0,&quot;loop&quot;:true,&quot;loopPauseMs&quot;:0,&quot;sequenceHoldMs&quot;:2800}" class="cc-tm-element cc-tm-gallery" style="left:0px;top:70px;width:1920px;height:625.px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:0px;--cc-gallery-padding:0px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:#111315;background-color:#111315;--cc-fg:#ffffff;color:#ffffff;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none">
+      <div class="cc-tm-gallery-field" style="--cc-gallery-fit:cover;--cc-gallery-pos-x:50%;--cc-gallery-pos-y:50%"><img src="images/template-maker/asset-7df9e17582885a5a2da8e92a.png" alt=""></div>
+<div class="cc-tm-gallery-field" style="--cc-gallery-fit:cover;--cc-gallery-pos-x:50%;--cc-gallery-pos-y:50%"><img src="images/template-maker/asset-e00558e7587a50154a09a425.png" alt=""></div>
+<div class="cc-tm-gallery-field" style="--cc-gallery-fit:cover;--cc-gallery-pos-x:50%;--cc-gallery-pos-y:50%"><img src="images/template-maker/asset-48ca4e7e34c4a78a83037d0d.png" alt=""></div>
+<div class="cc-tm-gallery-field" style="--cc-gallery-fit:cover;--cc-gallery-pos-x:50%;--cc-gallery-pos-y:50%"><img src="images/template-maker/asset-73cfefc07de8a36a9c5d172f.png" alt=""></div>
+<div class="cc-tm-gallery-field" style="--cc-gallery-fit:cover;--cc-gallery-pos-x:50%;--cc-gallery-pos-y:50%"><img src="images/template-maker/asset-c753efc34f21bfccf7c2fd65.png" alt=""></div>
+<div class="cc-tm-gallery-field" style="--cc-gallery-fit:cover;--cc-gallery-pos-x:50%;--cc-gallery-pos-y:50%"><img src="images/template-maker/asset-09efb6f887d8a6bcd3d0ee10.png" alt=""></div>
+<div class="cc-tm-gallery-field" style="--cc-gallery-fit:cover;--cc-gallery-pos-x:50%;--cc-gallery-pos-y:50%"><img src="images/template-maker/asset-5c2cb79e433e3a03a98bb2e2.png" alt=""></div>
+<div class="cc-tm-gallery-field" style="--cc-gallery-fit:cover;--cc-gallery-pos-x:50%;--cc-gallery-pos-y:50%"><img src="images/template-maker/asset-fb1a9daea87a1b0e77d68b96.png" alt=""></div>
+<div class="cc-tm-gallery-field" style="--cc-gallery-fit:cover;--cc-gallery-pos-x:50%;--cc-gallery-pos-y:50%"><img src="images/template-maker/asset-93e72d57016c1c5fa0977a71.png" alt=""></div>
+<div class="cc-tm-gallery-field" style="--cc-gallery-fit:cover;--cc-gallery-pos-x:50%;--cc-gallery-pos-y:50%"><img src="images/template-maker/asset-43bb8b8df7de8bf6648aa843.png" alt=""></div>
+
+    </section>
+    <div id="template-59" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported" style="left:0px;top:65.4px;width:1920px;height:628.3529px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(13, 12, 12, 0.36);background-color:rgba(13, 12, 12, 0.36);--cc-fg:rgb(77, 77, 77);color:rgb(77, 77, 77);--cc-font-size:16px;font-size:16px;--cc-font-weight:600;font-weight:600;--cc-font-family:'Times New Roman';font-family:'Times New Roman';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(77, 77, 77);--cc-border-width:1.0114px;border-width:1.0114px;border-style:solid;border-color:rgb(77, 77, 77)"></div>
     <div id="template-60" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:18.9387px;top:405.8558px;width:1148.4575px;height:223.9997px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(253, 249, 243);color:rgb(253, 249, 243);--cc-font-size:85.6px;font-size:85.6px;--cc-font-weight:850;font-weight:850;--cc-font-family:'Arial Narrow';font-family:'Arial Narrow';text-align:start;--cc-letter-spacing:-1.17px;letter-spacing:-1.17px;--cc-line-height:0.77;line-height:0.77;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(253, 249, 243);--cc-border-width:0px;border:none;text-shadow:13px -8px 8px rgba(0,0,0,0.52)">
 OBERFLÄCHEN</div>
     <div id="template-61" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:38.3999px;top:523.5299px;width:159.9996px;height:81.6247px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(253, 249, 243);color:rgb(253, 249, 243);--cc-font-size:74.6px;font-size:74.6px;--cc-font-weight:850;font-weight:850;--cc-font-family:'Arial Narrow';font-family:'Arial Narrow';text-align:start;--cc-letter-spacing:0.63px;letter-spacing:0.63px;--cc-line-height:0.77;line-height:0.77;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(253, 249, 243);--cc-border-width:0px;border:none;text-shadow:13px -6px 8px rgba(0,0,0,0.62)">als</div>
