@@ -491,23 +491,31 @@
           opacity: fades ? 0 : targetOpacity,
           transform: 'rotate(' + rotation + ') translate(' + (moves ? x : 0) + 'px,' + (moves ? y : 0) + 'px) scale(calc(var(--cc-element-scale, 1) * ' + scale + '))',
           filter: effect === 'blur' ? 'blur(14px)' : 'none',
-          clipPath: startClip
+          ...(effect === 'reveal' ? { clipPath: startClip } : {})
         },
         end: {
           opacity: targetOpacity,
           transform: 'rotate(' + rotation + ') translate(0px,0px) scale(var(--cc-element-scale, 1))',
           filter: 'none',
-          clipPath: 'inset(0)'
+          ...(effect === 'reveal' ? { clipPath: 'inset(0)' } : {})
         }
       };
     };
 
-    const runAnimation = async (controller, target, frames, options) => {
+    const runAnimation = async (controller, target, frames, options, release = false) => {
       if (controller.cancelled || !target.animate) return;
       const animation = target.animate(frames, options);
+      // Replace the previous loop endpoint, including any retained reveal mask.
+      controller.animations.forEach(previous => previous.cancel());
+      controller.animations.clear();
       controller.animations.add(animation);
       try { await animation.finished; } catch (_) {}
-      controller.animations.delete(animation);
+      // The visible endpoint is the element's own CSS. Keeping a filled reveal
+      // animation would permanently clip its exported shadow at the box edge.
+      if (release || controller.cancelled) {
+        animation.cancel();
+        controller.animations.delete(animation);
+      }
     };
 
     const cancelTransition = element => {
@@ -607,7 +615,7 @@
       if (delay > 0) await wait(delay);
       do {
         if (controller.cancelled) return;
-        await runAnimation(controller, element, [states.start, states.end], options);
+        await runAnimation(controller, element, [states.start, states.end], options, true);
         if (!loop || controller.cancelled) return;
         if (pause > 0) await wait(pause);
         await runAnimation(controller, element, [states.end, states.start], options);
