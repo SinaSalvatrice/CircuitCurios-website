@@ -1,5 +1,13 @@
 {
   "schemaVersion": 2,
+  "responsive": {
+    "version": 1,
+    "active": "desktop",
+    "rules": {
+      "group-3": "auto"
+    },
+    "layouts": {}
+  },
   "kind": "circuitcurios.websiteTemplate",
   "page": "index.html",
   "htmlSource": {
@@ -9,7 +17,7 @@
   },
   "canvas": {
     "width": 1920.0,
-    "height": 8766.0781,
+    "height": 2697.0,
     "backgroundColor": "rgb(242, 240, 233)"
   },
   "fonts": [
@@ -653,9 +661,9 @@
       "id": "group-3",
       "type": "container",
       "x": 0.0,
-      "y": 67.7777777777726,
+      "y": 63.57142857142776,
       "width": 1920.0,
-      "height": 662.5182038809205,
+      "height": 666.7245530872655,
       "text": "",
       "imagePath": null,
       "visible": true,
@@ -727,12 +735,12 @@
       "href": null
     },
     {
-      "id": "template-43",
+      "id": "template-59",
       "type": "gallery",
       "x": 0.0,
-      "y": 71.1111111111112,
+      "y": 63.57142857142776,
       "width": 1920.0,
-      "height": 615.5555555555558,
+      "height": 625.0,
       "text": "",
       "imagePath": null,
       "visible": true,
@@ -777,70 +785,70 @@
       "galleryItems": [
         {
           "id": "cc-texture-1",
-          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\animation\\texturwechsel_fade\\assets\\texture_01.png",
+          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\texturwechsel_fade\\assets\\texture_01.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-2",
-          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\animation\\texturwechsel_fade\\assets\\texture_02.png",
+          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\texturwechsel_fade\\assets\\texture_02.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-3",
-          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\animation\\texturwechsel_fade\\assets\\texture_03.png",
+          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\texturwechsel_fade\\assets\\texture_03.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-4",
-          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\animation\\texturwechsel_fade\\assets\\texture_04.png",
+          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\texturwechsel_fade\\assets\\texture_04.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-5",
-          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\animation\\texturwechsel_fade\\assets\\texture_05.png",
+          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\texturwechsel_fade\\assets\\texture_05.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-6",
-          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\animation\\texturwechsel_fade\\assets\\texture_06.png",
+          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\texturwechsel_fade\\assets\\texture_06.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-7",
-          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\animation\\texturwechsel_fade\\assets\\texture_07.png",
+          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\texturwechsel_fade\\assets\\texture_07.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-8",
-          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\animation\\texturwechsel_fade\\assets\\texture_08.png",
+          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\texturwechsel_fade\\assets\\texture_08.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-9",
-          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\animation\\texturwechsel_fade\\assets\\texture_09.png",
+          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\texturwechsel_fade\\assets\\texture_09.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-10",
-          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\animation\\texturwechsel_fade\\assets\\texture_10.png",
+          "imagePath": "C:\\GitHub\\CircuitCurios_Brand_System\\library\\components\\website\\texturwechsel_fade\\assets\\texture_10.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
@@ -878,7 +886,7 @@
       "id": "template-45",
       "type": "container",
       "x": 0.0,
-      "y": 67.7777777777726,
+      "y": 67.77777777777277,
       "width": 1920.0,
       "height": 619.6711111111113,
       "text": "FREIE BOX",
@@ -955,7 +963,7 @@
       "id": "website-12",
       "type": "text",
       "x": 3.199999999999932,
-      "y": 698.2959271134132,
+      "y": 698.2959271134133,
       "width": 674.8631578947368,
       "height": 32.00005454527989,
       "text": "CIRCUITCURIOS · ALUMINIUM · HANDARBEIT",
@@ -1032,7 +1040,7 @@
       "id": "template-48",
       "type": "text",
       "x": 18.938697884228873,
-      "y": 343.5302932186702,
+      "y": 343.53029321867035,
       "width": 1237.3463498541105,
       "height": 268.4441939933238,
       "text": "\nOBERFLÄCHEN",
@@ -1109,7 +1117,7 @@
       "id": "template-49",
       "type": "text",
       "x": 35.89992237402414,
-      "y": 498.6999999999988,
+      "y": 498.699999999999,
       "width": 159.99961187012067,
       "height": 81.62466238866182,
       "text": "als",
@@ -1186,7 +1194,7 @@
       "id": "template-50",
       "type": "text",
       "x": 197.23154538607457,
-      "y": 385.52742297281907,
+      "y": 385.5274229728194,
       "width": 1123.5533044022443,
       "height": 257.33426984063135,
       "text": "\nIDENTITÄT",
