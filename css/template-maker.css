@@ -355,7 +355,8 @@ main.cc-template-page {
 }
 .cc-tm-gallery.cc-gallery-sequence,
 .cc-tm-gallery[data-cc-transition*="imageSequenceFade"] {
-  /* Sequence layout applies before JavaScript starts, avoiding a 3x3 flash. */
+  /* Set the full-screen sequence layout on first paint, before JS starts.
+     Otherwise the 3-column gallery flashes briefly during page loading. */
   display: block !important;
   overflow: hidden;
 }
