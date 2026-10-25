@@ -94,6 +94,28 @@ main.cc-template-page {
   overflow: hidden;
   background: var(--cc-page-bg, #f4f1ea);
 }
+.cc-tm-transition-group {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  transform-origin: calc(var(--cc-group-x) + var(--cc-group-width) / 2)
+    calc(var(--cc-group-y) + var(--cc-group-height) / 2);
+  --cc-rotation: 0rad;
+  --cc-element-scale: 1;
+}
+.cc-tm-transition-group > .cc-tm-element { pointer-events: auto; }
+[data-cc-group-trigger] {
+  position: absolute;
+  left: var(--cc-group-x);
+  top: var(--cc-group-y);
+  width: var(--cc-group-width);
+  height: var(--cc-group-height);
+  pointer-events: none;
+}
 .cc-tm-element {
   position: absolute;
   box-sizing: border-box;
