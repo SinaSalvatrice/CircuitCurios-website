@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Component</title>
+  <link rel="stylesheet" href="template-maker.css">
+  <style>
+    html, body { margin: 0; min-height: 100%; background: transparent; }
+    body { display: grid; place-items: start center; }
+  </style>
+</head>
+<body>
+<main id="main" class="cc-template-page" data-cc-template-maker="1" style="--cc-page-bg:rgba(0,0,0,0)">
+  <div class="cc-template-canvas" style="--cc-design-width:980;--cc-design-height:580;--cc-page-bg:rgba(0,0,0,0)">
+    <div id="detail_backdrop" data-cc-element-kind="container" class="cc-tm-element cc-tm-container" style="left:0px;top:0px;width:980px;height:580px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:#111315;background-color:#111315;--cc-fg:#111315;color:#111315;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"></div>
+    <figure id="texture_hero" data-cc-element-kind="image" class="cc-tm-element cc-tm-image" style="left:0px;top:0px;width:518px;height:580px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0,0,0,0);background-color:rgba(0,0,0,0);--cc-fg:#111315;color:#111315;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"><img src="assets/asset-09cbca088e303eb75510008c.png" alt=""></figure>
+    <div id="texture_corner_line" data-cc-element-kind="container" class="cc-tm-element cc-tm-container" style="left:0px;top:0px;width:518px;height:2px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:#EBE6DD;background-color:#EBE6DD;--cc-fg:#111315;color:#111315;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"></div>
+    <div id="texture_overlay_bottom" data-cc-element-kind="container" class="cc-tm-element cc-tm-container" style="left:0px;top:514px;width:518px;height:66px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0,0,0,.72);background-color:rgba(0,0,0,.72);--cc-fg:#111315;color:#111315;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"></div>
+    <div id="texture_archive_kicker" data-cc-element-kind="text" class="cc-tm-element cc-tm-text" style="left:25px;top:530px;width:415px;height:23px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0,0,0,0);background-color:rgba(0,0,0,0);--cc-fg:#F0ECE4;color:#F0ECE4;--cc-font-size:15px;font-size:15px;--cc-font-weight:500;font-weight:500;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:1.8px;letter-spacing:1.8px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"><span>CIRCUITCURIOS  /  SURFACE ARCHIVE</span></div>
+    <div id="texture_archive_index" data-cc-element-kind="text" class="cc-tm-element cc-tm-text" style="left:432px;top:531px;width:75px;height:20px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0,0,0,0);background-color:rgba(0,0,0,0);--cc-fg:#C3BFB6;color:#C3BFB6;--cc-font-size:13px;font-size:13px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:1px;letter-spacing:1px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"><span>01  /  01</span></div>
+    <div id="detail_right_panel" data-cc-element-kind="container" class="cc-tm-element cc-tm-container" style="left:518px;top:0px;width:462px;height:580px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:#E9E5DD;background-color:#E9E5DD;--cc-fg:#111315;color:#111315;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"></div>
+    <div id="detail_vertical_rule" data-cc-element-kind="container" class="cc-tm-element cc-tm-container" style="left:518px;top:0px;width:2px;height:580px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:#111315;background-color:#111315;--cc-fg:#111315;color:#111315;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"></div>
+    <div id="detail_eyebrow" data-cc-element-kind="text" class="cc-tm-element cc-tm-text" style="left:565px;top:43px;width:373px;height:29px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0,0,0,0);background-color:rgba(0,0,0,0);--cc-fg:#606565;color:#606565;--cc-font-size:15px;font-size:15px;--cc-font-weight:500;font-weight:500;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:2.3px;letter-spacing:2.3px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"><span>GEOLOGIE  /  DEFORMATION</span></div>
+    <div id="detail_title" data-cc-element-kind="text" class="cc-tm-element cc-tm-text" style="left:560px;top:93px;width:385px;height:94px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0,0,0,0);background-color:rgba(0,0,0,0);--cc-fg:#141617;color:#141617;--cc-font-size:78px;font-size:78px;--cc-font-weight:600;font-weight:600;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:-0.8px;letter-spacing:-0.8px;--cc-line-height:1;line-height:1;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"><span>IMPAKT</span></div>
+    <div id="detail_rule_1" data-cc-element-kind="container" class="cc-tm-element cc-tm-container" style="left:565px;top:196px;width:371px;height:2px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:#141617;background-color:#141617;--cc-fg:#111315;color:#111315;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"></div>
+    <div id="detail_subheading" data-cc-element-kind="text" class="cc-tm-element cc-tm-text" style="left:565px;top:221px;width:369px;height:58px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0,0,0,0);background-color:rgba(0,0,0,0);--cc-fg:#141617;color:#141617;--cc-font-size:26px;font-size:26px;--cc-font-weight:500;font-weight:500;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0.1px;letter-spacing:0.1px;--cc-line-height:1.03;line-height:1.03;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"><span>WENN DRUCK SICHTBAR WIRD.</span></div>
+    <div id="detail_description" data-cc-element-kind="text" class="cc-tm-element cc-tm-text" style="left:565px;top:304px;width:368px;height:128px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0,0,0,0);background-color:rgba(0,0,0,0);--cc-fg:#313536;color:#313536;--cc-font-size:18px;font-size:18px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.32;line-height:1.32;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"><span>Eine Oberfläche wie die Spur eines Einschlags. Verdichtete Zonen, unregelmäßige Vertiefungen und abrupte Kanten erzeugen eine rohe, gerichtete Struktur. Kein gleichmäßiges Muster – jede Fläche reagiert anders auf das Licht.</span></div>
+    <div id="detail_rule_2" data-cc-element-kind="container" class="cc-tm-element cc-tm-container" style="left:565px;top:447px;width:371px;height:1px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:#A9ABA7;background-color:#A9ABA7;--cc-fg:#111315;color:#111315;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"></div>
+    <div id="detail_label_1" data-cc-element-kind="text" class="cc-tm-element cc-tm-text" style="left:565px;top:461px;width:115px;height:20px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0,0,0,0);background-color:rgba(0,0,0,0);--cc-fg:#696E6D;color:#696E6D;--cc-font-size:14px;font-size:14px;--cc-font-weight:500;font-weight:500;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:1.5px;letter-spacing:1.5px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"><span>CHARAKTER</span></div>
+    <div id="detail_value_1" data-cc-element-kind="text" class="cc-tm-element cc-tm-text" style="left:696px;top:459px;width:244px;height:27px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0,0,0,0);background-color:rgba(0,0,0,0);--cc-fg:#141617;color:#141617;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"><span>gebrochen  /  verdichtet</span></div>
+    <div id="detail_rule_3" data-cc-element-kind="container" class="cc-tm-element cc-tm-container" style="left:565px;top:494px;width:371px;height:1px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:#A9ABA7;background-color:#A9ABA7;--cc-fg:#111315;color:#111315;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"></div>
+    <div id="detail_label_2" data-cc-element-kind="text" class="cc-tm-element cc-tm-text" style="left:565px;top:507px;width:115px;height:20px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0,0,0,0);background-color:rgba(0,0,0,0);--cc-fg:#696E6D;color:#696E6D;--cc-font-size:14px;font-size:14px;--cc-font-weight:500;font-weight:500;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:1.5px;letter-spacing:1.5px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"><span>WIRKUNG</span></div>
+    <div id="detail_value_2" data-cc-element-kind="text" class="cc-tm-element cc-tm-text" style="left:696px;top:505px;width:244px;height:27px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0,0,0,0);background-color:rgba(0,0,0,0);--cc-fg:#141617;color:#141617;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"><span>kantig  /  metallisch</span></div>
+    <div id="detail_bottom_rule" data-cc-element-kind="container" class="cc-tm-element cc-tm-container" style="left:565px;top:551px;width:371px;height:2px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:#141617;background-color:#141617;--cc-fg:#111315;color:#111315;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Oswald';font-family:'Oswald';text-align:left;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none"></div>
+  </div>
+
+  <div id="cc-interaction-overlay" class="cc-interaction-overlay" role="dialog" aria-label="Detailansicht" aria-modal="true" aria-hidden="true">
+    <div class="cc-interaction-surface" tabindex="-1">
+      <button class="cc-interaction-close" type="button" aria-label="Schließen">×</button>
+      <div class="cc-interaction-content"></div>
+    </div>
+  </div>
+  <script>
+  (() => {
+    // Keep one logical canvas coordinate system everywhere. The browser may
+    // display that canvas smaller, but it must scale uniformly in both axes so
+    // the published page, preview and editor keep the same proportions.
+    const fitTemplateCanvas = () => {
+      if (window.ccSetEditorViewport) return;
+      const canvas = document.querySelector(
+        '.cc-template-page > .cc-template-canvas'
+      );
+      if (!canvas) return;
+      const style = getComputedStyle(canvas);
+      const designWidth = parseFloat(
+        style.getPropertyValue('--cc-design-width') || ''
+      );
+      if (!Number.isFinite(designWidth) || designWidth <= 0) return;
+      const host = canvas.parentElement;
+      const viewportWidth = Math.max(
+        1,
+        document.documentElement.clientWidth || window.innerWidth || 1
+      );
+      const hostWidth = host && host.clientWidth > 0
+        ? host.clientWidth
+        : viewportWidth;
+      const hostRect = host ? host.getBoundingClientRect() : null;
+      const visibleHostWidth = hostRect
+        ? Math.max(
+            1,
+            Math.min(
+              hostWidth,
+              viewportWidth - Math.max(0, hostRect.left)
+            )
+          )
+        : viewportWidth;
+      // Existing site CSS can make <main> wider than the browser viewport.
+      // Never use that oversized host width as the scale reference, otherwise
+      // the logical canvas stays at 1:1 and the right side gets clipped.
+      const available = Math.max(
+        1,
+        Math.min(viewportWidth, visibleHostWidth)
+      );
+      const scale = Math.min(1, available / designWidth);
+      canvas.style.zoom = String(scale);
+    };
+    fitTemplateCanvas();
+    window.addEventListener('resize', fitTemplateCanvas, { passive: true });
+
+    const overlay = document.getElementById('cc-interaction-overlay');
+    const content = overlay ? overlay.querySelector('.cc-interaction-content') : null;
+    const close = overlay ? overlay.querySelector('.cc-interaction-close') : null;
+    const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+    const hostWindow = (() => {
+      try {
+        if (window.top && window.top.location.origin === window.location.origin) {
+          return window.top;
+        }
+      } catch (_) {}
+      return window;
+    })();
+    const hostDocument = (() => {
+      try { return hostWindow.document; } catch (_) { return document; }
+    })();
+
+    (() => {
+      let push = null;
+      try {
+        push = sessionStorage.getItem('cc-page-push');
+        sessionStorage.removeItem('cc-page-push');
+      } catch (_) {}
+      if (!push) return;
+
+      const canvas = document.querySelector('.cc-template-canvas');
+      if (!canvas || !canvas.animate) return;
+      const startX = push === 'fromRight' ? '48px' : '-48px';
+      canvas.animate(
+        [
+          { transform: 'translateX(' + startX + ')', opacity: 0 },
+          { transform: 'translateX(0)', opacity: 1 }
+        ],
+        {
+          duration: 320,
+          easing: 'cubic-bezier(.2,.75,.25,1)',
+          fill: 'both'
+        }
+      );
+    })();
+
+    const surface = overlay ? overlay.querySelector('.cc-interaction-surface') : null;
+    const floatingDefaults = {
+      width: 720, height: 520, position: 'center',
+      backdropColor: '#000000', backdropOpacity: .62,
+      animation: 'fadeScale', durationMs: 280, cornerRadius: 16,
+      showCloseButton: true, closeOnBackdrop: true, closeOnEscape: true,
+    };
+    const floatingPositions = ['center', 'top', 'bottom', 'left', 'right'];
+    const floatingAnimations = [
+      'fadeScale', 'fade', 'slideUp', 'slideDown', 'none',
+    ];
+    const clampNumber = (value, fallback, min, max) => {
+      const number = Number(value);
+      return Number.isFinite(number)
+        ? Math.max(min, Math.min(max, number))
+        : fallback;
+    };
+    const floatingSettings = raw => {
+      const input = raw && typeof raw === 'object' ? raw : {};
+      return {
+        width: clampNumber(input.width, 720, 240, 1600),
+        height: clampNumber(input.height, 520, 160, 1200),
+        position: floatingPositions.includes(input.position)
+          ? input.position : 'center',
+        backdropColor: typeof input.backdropColor === 'string' &&
+          /^#[0-9a-fA-F]{6}$/.test(input.backdropColor)
+          ? input.backdropColor : '#000000',
+        backdropOpacity: clampNumber(
+          input.backdropOpacity, .62, 0, 1
+        ),
+        animation: floatingAnimations.includes(input.animation)
+          ? input.animation : 'fadeScale',
+        durationMs: clampNumber(input.durationMs, 280, 0, 1500),
+        cornerRadius: clampNumber(input.cornerRadius, 16, 0, 64),
+        showCloseButton: input.showCloseButton !== false ||
+          (input.closeOnBackdrop === false && input.closeOnEscape === false),
+        closeOnBackdrop: input.closeOnBackdrop !== false,
+        closeOnEscape: input.closeOnEscape !== false,
+      };
+    };
+    let activeFloating = floatingDefaults;
+    let previousFocus = null;
+    let previousBodyOverflow = null;
+    let closeTimer = null;
+
+    const finishClose = () => {
+      if (!overlay || !content) return;
+      overlay.classList.remove(
+        'cc-open', 'cc-closing', 'cc-panel', 'cc-fullscreen'
+      );
+      overlay.setAttribute('aria-hidden', 'true');
+      content.replaceChildren();
+      if (previousBodyOverflow !== null) {
+        document.body.style.overflow = previousBodyOverflow;
+        previousBodyOverflow = null;
+      }
+      if (previousFocus && previousFocus.isConnected &&
+          typeof previousFocus.focus === 'function') {
+        previousFocus.focus();
+      }
+      previousFocus = null;
+    };
+    // Editor mode must be able to close the dialog even while the WebView
+    // ignores pointer input and its animation timers are paused.
+    window.ccDismissInteractionOverlay = () => {
+      clearTimeout(closeTimer);
+      finishClose();
+    };
+    const closeOverlay = () => {
+      if (!overlay || !overlay.classList.contains('cc-open') ||
+          overlay.classList.contains('cc-closing')) return;
+      clearTimeout(closeTimer);
+      const duration = window.matchMedia('(prefers-reduced-motion: reduce)')
+        .matches || activeFloating.animation === 'none'
+        ? 0 : activeFloating.durationMs;
+      if (duration === 0 || window.ccPlayback?.paused) {
+        finishClose();
+      } else {
+        overlay.classList.add('cc-closing');
+        closeTimer = setTimeout(finishClose, duration);
+      }
+    };
+
+    const openMediaOverlay = (kind, source, mediaType, rawSettings) => {
+      if (!overlay || !surface || !content || !source) return;
+      clearTimeout(closeTimer);
+      const isNew = !overlay.classList.contains('cc-open');
+      activeFloating = floatingSettings(rawSettings);
+      if (isNew) {
+        previousFocus = document.activeElement;
+        previousBodyOverflow = document.body.style.overflow;
+      }
+      document.body.style.overflow = 'hidden';
+
+      const settings = activeFloating;
+      const hex = settings.backdropColor;
+      const red = parseInt(hex.substring(1, 3), 16);
+      const green = parseInt(hex.substring(3, 5), 16);
+      const blue = parseInt(hex.substring(5, 7), 16);
+      overlay.style.setProperty('--cc-popup-backdrop',
+        'rgba(' + red + ',' + green + ',' + blue + ',' +
+        settings.backdropOpacity + ')');
+      overlay.style.setProperty('--cc-popup-width', settings.width + 'px');
+      overlay.style.setProperty('--cc-popup-height', settings.height + 'px');
+      overlay.style.setProperty('--cc-popup-radius',
+        settings.cornerRadius + 'px');
+      overlay.style.setProperty('--cc-popup-duration',
+        settings.durationMs + 'ms');
+      overlay.dataset.position = settings.position;
+      overlay.dataset.animation = settings.animation;
+      overlay.classList.remove('cc-closing', 'cc-panel', 'cc-fullscreen');
+      if (kind === 'panel') overlay.classList.add('cc-panel');
+      if (kind === 'fullscreen') overlay.classList.add('cc-fullscreen');
+      close.hidden = !settings.showCloseButton;
+      content.replaceChildren();
+
+      const media = document.createElement(
+        mediaType === 'iframe' ? 'iframe' : 'img'
+      );
+      media.className = mediaType === 'iframe'
+        ? 'cc-interaction-frame'
+        : 'cc-interaction-component';
+      media.src = source;
+      if (mediaType === 'iframe') {
+        media.title = 'Geöffneter Inhalt';
+      } else {
+        media.alt = '';
+      }
+      content.appendChild(media);
+      // The editor emergency-close path can force-hide a broken dialog.
+      overlay.style.removeProperty('display');
+      overlay.classList.add('cc-open');
+      overlay.setAttribute('aria-hidden', 'false');
+      if (settings.showCloseButton) close.focus();
+      else surface.focus();
+    };
+
+    close && close.addEventListener('click', closeOverlay);
+    overlay && overlay.addEventListener('click', event => {
+      if (event.target === overlay && activeFloating.closeOnBackdrop) {
+        closeOverlay();
+      }
+    });
+    document.addEventListener('keydown', event => {
+      if (!overlay || !overlay.classList.contains('cc-open')) return;
+      if (event.key === 'Escape' && activeFloating.closeOnEscape) {
+        event.preventDefault();
+        closeOverlay();
+      }
+      // Keep keyboard focus in the active dialog, even without the X button.
+      if (event.key === 'Tab' && !overlay.contains(document.activeElement)) {
+        event.preventDefault();
+        (close.hidden ? surface : close).focus();
+      }
+    });
+
+    const runAction = async (element, action) => {
+      const type = action.type;
+
+      if (type === 'press') {
+        const scale = Number(action.scale || .94);
+        const duration = Number(action.durationMs || 120);
+        const rotation =
+          getComputedStyle(element).getPropertyValue('--cc-rotation').trim() ||
+          '0rad';
+
+        element.style.transition =
+          'transform ' + duration + 'ms ease-out';
+        element.style.transform =
+          'rotate(' + rotation + ') scale(calc(var(--cc-element-scale, 1) * ' + scale + '))';
+        await wait(duration);
+        element.style.transform =
+          'rotate(' + rotation + ') scale(var(--cc-element-scale, 1))';
+        await wait(Math.max(80, duration));
+        element.style.transition = '';
+        element.style.transform = '';
+        return;
+      }
+
+      if (type === 'openUrl' && action.target) {
+        if (action.presentation === 'newTab') {
+          window.open(action.target, '_blank', 'noopener');
+        } else {
+          hostWindow.location.href = action.target;
+        }
+        return;
+      }
+
+      if (type === 'openInternal' && action.target) {
+        if (action.presentation === 'newTab') {
+          window.open(action.target, '_blank', 'noopener');
+        } else if (
+          action.presentation === 'floating' ||
+          action.presentation === 'panel' ||
+          action.presentation === 'fullscreen'
+        ) {
+          openMediaOverlay(
+            action.presentation,
+            action.target,
+            'iframe',
+            action.floating
+          );
+        } else if (
+          action.presentation === 'pushFromRight' ||
+          action.presentation === 'pushFromLeft'
+        ) {
+          const canvas =
+            hostDocument.querySelector('.cc-template-canvas');
+          const fromRight = action.presentation === 'pushFromRight';
+          try {
+            hostWindow.sessionStorage.setItem(
+              'cc-page-push',
+              fromRight ? 'fromRight' : 'fromLeft'
+            );
+          } catch (_) {}
+
+          if (canvas && canvas.animate) {
+            const distance = fromRight ? '-48px' : '48px';
+            const animation = canvas.animate(
+              [
+                { transform: 'translateX(0)', opacity: 1 },
+                { transform: 'translateX(' + distance + ')', opacity: 0 }
+              ],
+              {
+                duration: 280,
+                easing: 'cubic-bezier(.2,.75,.25,1)',
+                fill: 'forwards'
+              }
+            );
+            try {
+              await animation.finished;
+            } catch (_) {}
+          }
+          hostWindow.location.href = action.target;
+        } else {
+          hostWindow.location.href = action.target;
+        }
+        return;
+      }
+
+      if (type === 'openComponent' && action.componentPath) {
+        openMediaOverlay(
+          action.presentation || 'floating',
+          action.componentPath,
+          action.componentMedia || 'iframe',
+          action.floating
+        );
+        return;
+      }
+
+      if (type === 'scrollTo' && action.target) {
+        const target = document.getElementById(action.target);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+        }
+        return;
+      }
+
+      if (type === 'toggle' && action.target) {
+        const target = document.getElementById(action.target);
+        if (target) target.classList.toggle('cc-hidden-by-action');
+        return;
+      }
+
+      if (type === 'lightbox') {
+        const image = element.querySelector('img');
+        if (image && image.src) {
+          openMediaOverlay('floating', image.src, 'image');
+        }
+        return;
+      }
+
+      if (type === 'back') {
+        hostWindow.history.back();
+      }
+    };
+
+    document.querySelectorAll('[data-cc-actions]').forEach(element => {
+      const run = async event => {
+        if (
+          event.type === 'keydown' &&
+          event.key !== 'Enter' &&
+          event.key !== ' '
+        ) {
+          return;
+        }
+        if (event.type === 'keydown' || event.type === 'click') {
+          event.preventDefault();
+        }
+
+        let actions = [];
+        try {
+          actions = JSON.parse(element.dataset.ccActions || '[]');
+        } catch (_) {
+          return;
+        }
+
+        for (const action of actions) {
+          if (action.enabled === false) continue;
+          const delay = Number(action.delayMs || 0);
+          if (delay > 0) await wait(delay);
+          await runAction(element, action);
+        }
+      };
+
+      element.addEventListener('click', run);
+      element.addEventListener('keydown', run);
+    });
+
+    const easingValue = value => {
+      if (value === 'linear') return 'linear';
+      if (value === 'easeIn') return 'ease-in';
+      if (value === 'easeInOut') return 'ease-in-out';
+      if (value === 'overshoot') {
+        return 'cubic-bezier(.2,1.55,.45,1)';
+      }
+      return 'ease-out';
+    };
+
+
+    // Hover effects use individual transform properties so they compose with
+    // the editor's existing CSS transform and viewport transitions.
+    // Click/Press remains independent; touch devices do not synthesize hover.
+    if (hostWindow.matchMedia?.('(hover: hover) and (pointer: fine)').matches ?? true) {
+      document.querySelectorAll('[data-cc-hover]').forEach(source => {
+        let actions = [];
+        try { actions = JSON.parse(source.dataset.ccHover || '[]'); }
+        catch (_) { return; }
+
+        actions.filter(action => action.enabled !== false).forEach(action => {
+          let active = null;
+          let baseline = null;
+          const targetOf = () => {
+            if (action.hoverTarget === 'other') {
+              return action.target ? document.getElementById(action.target) : null;
+            }
+            if (action.hoverTarget === 'group') {
+              return source.closest('.cc-tm-transition-group') || source;
+            }
+            return source;
+          };
+          const snapshot = target => {
+            const css = getComputedStyle(target);
+            return {
+              translate: css.translate === 'none' ? '0px 0px' : css.translate,
+              scale: css.scale === 'none' ? '1' : css.scale,
+              rotate: css.rotate === 'none' ? '0deg' : css.rotate,
+              opacity: css.opacity,
+              boxShadow: css.boxShadow,
+            };
+          };
+          const play = entering => {
+            const target = targetOf();
+            if (!target || !target.animate) return;
+            // Capture the original CSS once, before any filled animation.
+            if (!baseline || baseline.target !== target) {
+              baseline = { target, style: snapshot(target) };
+            }
+            const start = snapshot(target);
+            if (active) active.cancel();
+            const end = { ...baseline.style };
+            if (entering) {
+              const effects = new Set(Array.isArray(action.hoverEffects)
+                ? action.hoverEffects : ['lift']);
+              const distance = Math.max(0, Math.min(200, Number(action.hoverDistance ?? 8)));
+              let x = 0, y = 0;
+              if (effects.has('lift')) y -= distance;
+              if (effects.has('slide')) {
+                const direction = action.hoverDirection || 'right';
+                if (direction === 'left') x -= distance;
+                else if (direction === 'up') y -= distance;
+                else if (direction === 'down') y += distance;
+                else x += distance;
+              }
+              if (effects.has('lift') || effects.has('slide'))
+                end.translate = x + 'px ' + y + 'px';
+              if (effects.has('scale'))
+                end.scale = String(Math.max(.5, Math.min(2, Number(action.hoverScale ?? 1.05))));
+              if (effects.has('tilt'))
+                end.rotate = String(Math.max(-45, Math.min(45, Number(action.hoverTilt ?? 4)))) + 'deg';
+              if (effects.has('fade'))
+                end.opacity = String(Math.max(0, Math.min(1, Number(action.hoverOpacity ?? .7))));
+              if (effects.has('glow'))
+                end.boxShadow = (baseline.style.boxShadow === 'none' ? '' :
+                    baseline.style.boxShadow + ', ') + '0 12px 30px rgba(0,0,0,.28)';
+            }
+            const duration = hostWindow.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+              ? 0 : Math.max(0, Math.min(5000, Number(action.durationMs ?? 250)));
+            active = target.animate([start, end], {
+              duration, delay: entering ? Math.max(0, Number(action.delayMs || 0)) : 0,
+              easing: easingValue(action.hoverEasing || 'easeOut'),
+              fill: 'forwards'
+            });
+          };
+          source.addEventListener('pointerenter', () => play(true));
+          source.addEventListener('pointerleave', () => {
+            if (action.hoverReverse !== false) play(false);
+          });
+        });
+      });
+    }
+
+    const transitionControllers = new WeakMap();
+
+    const transitionConfig = element => {
+      try {
+        const config = JSON.parse(element.dataset.ccTransition || '{}');
+        return config.enabled ? config : null;
+      } catch (_) {
+        return null;
+      }
+    };
+
+    const transitionStates = (element, config) => {
+      const distance = Number(config.distance || 32);
+      const effect = config.effect || 'fadeSlide';
+      const direction = config.direction || 'bottom';
+      const rotation =
+        getComputedStyle(element).getPropertyValue('--cc-rotation').trim() ||
+        '0rad';
+      const parsedOpacity = Number.parseFloat(getComputedStyle(element).opacity);
+      const targetOpacity = Number.isFinite(parsedOpacity) ? parsedOpacity : 1;
+      let x = 0;
+      let y = 0;
+      if (direction === 'left') x = -distance;
+      if (direction === 'right') x = distance;
+      if (direction === 'top') y = -distance;
+      if (direction === 'bottom') y = distance;
+      const moves = effect === 'slide' || effect === 'fadeSlide' || effect === 'rise';
+      const fades = effect === 'fade' || effect === 'fadeSlide' || effect === 'rise' || effect === 'blur' || effect === 'bounce';
+      const scale = effect === 'scale' ? Number(config.scaleFrom || .96) : 1;
+      let startClip = 'inset(0)';
+      let endClip = 'inset(0)';
+      if (effect === 'reveal') {
+        startClip = 'inset(100% 0 0 0)';
+        if (direction === 'left') startClip = 'inset(0 100% 0 0)';
+        if (direction === 'right') startClip = 'inset(0 0 0 100%)';
+        if (direction === 'top') startClip = 'inset(0 0 100% 0)';
+        if (element.hasAttribute('data-cc-transition-group')) {
+          const style = getComputedStyle(element);
+          const number = name => parseFloat(style.getPropertyValue(name)) || 0;
+          const left = number('--cc-group-x'), top = number('--cc-group-y');
+          const width = number('--cc-group-width'), height = number('--cc-group-height');
+          const right = element.clientWidth - left - width;
+          const bottom = element.clientHeight - top - height;
+          const clip = (t, r, b, l) => 'inset(' + [t, r, b, l].map(n => n + 'px').join(' ') + ')';
+          endClip = clip(top, right, bottom, left);
+          startClip = clip(top + height, right, bottom, left);
+          if (direction === 'left') startClip = clip(top, right + width, bottom, left);
+          if (direction === 'right') startClip = clip(top, right, bottom, left + width);
+          if (direction === 'top') startClip = clip(top, right, bottom + height, left);
+        }
+      }
+      return {
+        start: {
+          opacity: fades ? 0 : targetOpacity,
+          transform: 'rotate(' + rotation + ') translate(' + (moves ? x : 0) + 'px,' + (moves ? y : 0) + 'px) scale(calc(var(--cc-element-scale, 1) * ' + scale + '))',
+          filter: effect === 'blur' ? 'blur(14px)' : 'none',
+          ...(effect === 'reveal' ? { clipPath: startClip } : {})
+        },
+        end: {
+          opacity: targetOpacity,
+          transform: 'rotate(' + rotation + ') translate(0px,0px) scale(var(--cc-element-scale, 1))',
+          filter: 'none',
+          ...(effect === 'reveal' ? { clipPath: endClip } : {})
+        }
+      };
+    };
+
+    const runAnimation = async (controller, target, frames, options, release = false) => {
+      if (controller.cancelled || !target.animate) return;
+      const animation = target.animate(frames, options);
+      // Replace the previous loop endpoint, including any retained reveal mask.
+      controller.animations.forEach(previous => previous.cancel());
+      controller.animations.clear();
+      controller.animations.add(animation);
+      try { await animation.finished; } catch (_) {}
+      // The visible endpoint is the element's own CSS. Keeping a filled reveal
+      // animation would permanently clip its exported shadow at the box edge.
+      if (release || controller.cancelled) {
+        animation.cancel();
+        controller.animations.delete(animation);
+      }
+    };
+
+    const cancelTransition = element => {
+      const controller = transitionControllers.get(element);
+      if (!controller) return;
+      controller.cancelled = true;
+      controller.animations.forEach(animation => animation.cancel());
+      controller.animations.clear();
+      transitionControllers.delete(element);
+      if (element.classList.contains('cc-gallery-sequence')) {
+        // Never expose the underlying 3-column gallery when playback stops.
+        // Keep the first texture visible until the sequence starts again.
+        element.querySelectorAll('.cc-tm-gallery-field').forEach((field, index) => {
+          field.style.opacity = index === 0 ? '1' : '0';
+        });
+      }
+    };
+
+    // Keep an opaque image underneath the incoming image for the entire fade.
+    // A fade-out-to-background is not a crossfade.
+    const runImageSequence = async (element, config, controller) => {
+      const fields = Array.from(element.querySelectorAll('.cc-tm-gallery-field'));
+      if (!fields.length) return;
+      const duration = Math.max(0, Number(config.durationMs ?? 350));
+      const hold = Math.max(0, Number(config.sequenceHoldMs ?? 2200));
+      const delay = Math.max(0, Number(config.delayMs ?? 0));
+      const pause = Math.max(0, Number(config.loopPauseMs ?? 0));
+      const loop = config.loop === true;
+      const easing = easingValue(config.easing);
+
+      element.classList.add('cc-gallery-sequence');
+      fields.forEach((field, index) => {
+        field.style.opacity = index === 0 ? '1' : '0';
+      });
+      // Keep the first frame fully visible while loading and before playback.
+      if (delay > 0) await wait(delay);
+      if (controller.cancelled || fields.length === 1 || !Element.prototype.animate) return;
+
+      let current = 0;
+      do {
+        if (controller.cancelled) return;
+        if (hold > 0) await wait(hold);
+        if (controller.cancelled) return;
+
+        const next = (current + 1) % fields.length;
+        const incoming = fields[next];
+        const outgoing = fields[current];
+        // Keep the outgoing texture visible until the incoming image has
+        // decoded; never animate an empty frame or expose the background.
+        const nextImage = incoming.querySelector('img');
+        if (nextImage) {
+          try {
+            if (typeof nextImage.decode === 'function') {
+              await nextImage.decode();
+            } else if (!nextImage.complete) {
+              await new Promise((resolve) => {
+                nextImage.addEventListener('load', resolve, { once: true });
+                nextImage.addEventListener('error', resolve, { once: true });
+              });
+            }
+          } catch (_) {}
+          if (!nextImage.naturalWidth) return;
+        }
+        if (controller.cancelled) return;
+        // Both layers occupy the same box. Never fade the outgoing layer to
+        // transparent before the incoming one has become fully opaque.
+        incoming.style.opacity = '0';
+        const animation = incoming.animate(
+          [{ opacity: 0 }, { opacity: 1 }],
+          { duration, easing, fill: 'both' },
+        );
+        controller.animations.add(animation);
+        try { await animation.finished; } catch (_) {}
+        controller.animations.delete(animation);
+        if (controller.cancelled) {
+          animation.cancel();
+          return;
+        }
+        incoming.style.opacity = '1';
+        animation.cancel(); // Remove the filled animation after persisting state.
+        outgoing.style.opacity = '0';
+        current = next;
+
+        if (!loop && current === fields.length - 1) return;
+        if (loop && current === 0 && pause > 0) await wait(pause);
+      } while (!controller.cancelled);
+    };
+
+    const runGenericTransition = async (element, config, controller) => {
+      const duration = Math.max(0, Number(config.durationMs || 350));
+      const delay = Math.max(0, Number(config.delayMs || 0));
+      const pause = Math.max(0, Number(config.loopPauseMs || 0));
+      const loop = config.loop === true;
+      const easing = config.effect === 'bounce' ? easingValue('overshoot') : easingValue(config.easing);
+      const states = transitionStates(element, config);
+      const options = { duration, easing, fill: 'forwards' };
+      if (delay > 0) await wait(delay);
+      do {
+        if (controller.cancelled) return;
+        await runAnimation(controller, element, [states.start, states.end], options, true);
+        if (!loop || controller.cancelled) return;
+        if (pause > 0) await wait(pause);
+        await runAnimation(controller, element, [states.end, states.start], options);
+        if (pause > 0) await wait(pause);
+      } while (!controller.cancelled);
+    };
+
+    const startTransition = (element, config) => {
+      cancelTransition(element);
+      const controller = { cancelled: false, animations: new Set() };
+      transitionControllers.set(element, controller);
+      const runner = config.effect === 'imageSequenceFade' ? runImageSequence(element, config, controller) : runGenericTransition(element, config, controller);
+      runner.catch(() => {});
+    };
+
+    const transitionRegistrations = new Map();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        for (const [element, registration] of transitionRegistrations) {
+          if (registration.target !== entry.target) continue;
+          const config = registration.config;
+          if (entry.isIntersecting) {
+            startTransition(element, config);
+            if (config.once !== false && config.loop !== true) observer.unobserve(entry.target);
+          } else if (config.once === false || config.loop === true) {
+            cancelTransition(element);
+          }
+        }
+      });
+    }, { threshold: .12 });
+
+    // Inspector edits register only new/changed transitions. Existing HTML,
+    // iframes and unchanged animations keep their current playback state.
+    window.ccRefreshTemplateTransitions = () => {
+      const elements = Array.from(document.querySelectorAll('[data-cc-transition]'));
+      const current = new Set(elements);
+      for (const [element, registration] of transitionRegistrations) {
+        if (current.has(element)) continue;
+        observer.unobserve(registration.target);
+        cancelTransition(element);
+        transitionRegistrations.delete(element);
+      }
+      elements.forEach(element => {
+        const source = element.dataset.ccTransition;
+        const marker = element.previousElementSibling;
+        const target = element.hasAttribute('data-cc-transition-group')
+          ? (marker?.getAttribute('data-cc-group-trigger') === element.id ? marker : null) : element;
+        if (!target) return;
+        const previous = transitionRegistrations.get(element);
+        if (previous && previous.source === source && previous.target === target) return;
+        if (previous) {
+          observer.unobserve(previous.target);
+          cancelTransition(element);
+          transitionRegistrations.delete(element);
+        }
+        const config = transitionConfig(element);
+        if (!config) return;
+        const registration = { source, config, target };
+        transitionRegistrations.set(element, registration);
+        if (config.trigger === 'pageLoad') {
+          requestAnimationFrame(() => {
+            if (transitionRegistrations.get(element) === registration) startTransition(element, config);
+          });
+        } else {
+          observer.observe(target);
+        }
+      });
+    };
+    window.ccRefreshTemplateTransitions();
+  })();
+  </script>
+</main>
+
+</body>
+</html>
