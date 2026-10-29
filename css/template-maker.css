@@ -207,6 +207,9 @@ main.cc-template-page {
   height: var(--cc-group-height);
   pointer-events: none;
 }
+.cc-archive-filter-hidden {
+  display: none !important;
+}
 .cc-tm-element {
   position: absolute;
   box-sizing: border-box;
@@ -227,6 +230,7 @@ main.cc-template-page {
 }
 .cc-tm-hero > img,
 .cc-tm-image > img,
+.cc-tm-icon > img,
 .cc-tm-imported:not(.cc-tm-raw-html) > img,
 .cc-tm-texture-card > .cc-tm-media > img,
 .cc-tm-gallery > .cc-tm-gallery-field > img,
@@ -449,16 +453,41 @@ main.cc-template-page {
   line-height: var(--cc-line-height, 1.05);
 }
 .cc-tm-text {
-  padding: 20px;
-  display: grid;
-  align-content: center;
+  /* Text is a transparent glyph layer. Its editable bounds are not artwork. */
+  padding: 0;
+  display: block;
+  overflow: visible;
   color: var(--cc-fg, #1f1f1f);
-  background: var(--cc-bg, #f4f1ea);
+  background: var(--cc-bg, transparent);
   font-family: var(--cc-font-family, inherit);
   font-size: var(--cc-font-size, clamp(14px, 1.8vw, 24px));
   font-weight: var(--cc-font-weight, 400);
   letter-spacing: var(--cc-letter-spacing, inherit);
   line-height: var(--cc-line-height, 1.35);
+}
+.cc-tm-icon {
+  overflow: hidden;
+  contain: paint;
+  isolation: isolate;
+  background: var(--cc-bg, transparent);
+}
+.cc-tm-icon-mask {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--cc-fg, #1f1f1f);
+  -webkit-mask-image: var(--cc-icon-src, none);
+  mask-image: var(--cc-icon-src, none);
+  -webkit-mask-mode: alpha;
+  mask-mode: alpha;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
+  mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
+  -webkit-mask-size: var(--cc-icon-fit, contain);
+  mask-size: var(--cc-icon-fit, contain);
+  transform: scale(var(--cc-image-scale, 1));
+  transform-origin: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
 }
 .cc-tm-image,
 .cc-tm-imported-image {
@@ -466,6 +495,23 @@ main.cc-template-page {
   contain: paint;
   isolation: isolate;
   background: var(--cc-bg, transparent);
+}
+/* A raster or SVG image is a CSS alpha mask, not a text glyph. */
+.cc-tm-icon-mask {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--cc-icon-color, #1f1f1f);
+  -webkit-mask-image: var(--cc-icon-url);
+  mask-image: var(--cc-icon-url);
+  -webkit-mask-size: var(--cc-icon-mask-size, contain);
+  mask-size: var(--cc-icon-mask-size, contain);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
+  mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
+  transform: scale(var(--cc-image-scale, 1));
+  transform-origin: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
 }
 .cc-tm-texture-card {
   display: flex;
@@ -637,6 +683,59 @@ main.cc-template-page {
   font-weight: var(--cc-font-weight, 700);
   letter-spacing: var(--cc-letter-spacing, .08em);
   line-height: var(--cc-line-height, inherit);
+}
+
+
+/* Underline in text nodes (also when the glyph color is a texture mask). */
+.cc-tm-element.cc-tm-underlined,
+.cc-tm-element.cc-tm-hover-underlined,
+.cc-tm-hover-underlined .cc-tm-element {
+  text-decoration-line: underline !important;
+  text-decoration-color: var(--cc-fg, currentColor);
+}
+.cc-tm-element.cc-tm-underlined .cc-tm-fill-target,
+.cc-tm-element.cc-tm-hover-underlined .cc-tm-fill-target,
+.cc-tm-hover-underlined .cc-tm-fill-target {
+  text-decoration-line: underline;
+  text-decoration-color: var(--cc-fg, currentColor);
+}
+
+/* Browser-native text and alpha masks: keep text editable and images portable. */
+.cc-tm-element.cc-tm-textured .cc-tm-fill-target {
+  background-image: var(--cc-fill-texture);
+  background-size: var(--cc-fill-size, cover);
+  background-position: var(--cc-fill-pos-x, 50%) var(--cc-fill-pos-y, 50%);
+  background-repeat: var(--cc-fill-repeat, no-repeat);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.cc-tm-element.cc-tm-textured.cc-tm-container {
+  background-image: var(--cc-fill-texture);
+  background-size: var(--cc-fill-size, cover);
+  background-position: var(--cc-fill-pos-x, 50%) var(--cc-fill-pos-y, 50%);
+  background-repeat: var(--cc-fill-repeat, no-repeat);
+}
+.cc-tm-element.cc-tm-textured.cc-tm-image,
+.cc-tm-element.cc-tm-textured.cc-tm-imported-image {
+  background-image: var(--cc-fill-texture);
+  background-size: var(--cc-fill-size, cover);
+  background-position: var(--cc-fill-pos-x, 50%) var(--cc-fill-pos-y, 50%);
+  background-repeat: var(--cc-fill-repeat, no-repeat);
+  -webkit-mask-image: var(--cc-icon-mask);
+  mask-image: var(--cc-icon-mask);
+  mask-mode: alpha;
+  -webkit-mask-size: var(--cc-object-fit, contain);
+  mask-size: var(--cc-object-fit, contain);
+  -webkit-mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
+  mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.cc-tm-element.cc-tm-textured.cc-tm-image > img,
+.cc-tm-element.cc-tm-textured.cc-tm-imported-image > img {
+  visibility: hidden;
 }
 .cc-tm-container {
   display: grid;
