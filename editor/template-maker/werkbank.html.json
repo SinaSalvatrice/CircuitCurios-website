@@ -1,0 +1,12 @@
+{
+  "kind": "circuitcurios.websiteTemplate",
+  "schemaVersion": 2,
+  "page": "werkbank.html",
+  "canvas": {
+    "width": 1440,
+    "height": 2600,
+    "backgroundColor": "rgba(244,241,234,1)"
+  },
+  "elements": [],
+  "assetBase": "sharedLibrary"
+}
