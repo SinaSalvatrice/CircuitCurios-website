@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "groups": {
+    "text-style-1": {
+      "name": "technisch"
+    },
+    "text-style-2": {
+      "name": "navigation"
+    },
+    "text-style-3": {
+      "name": "taxonomie & nummer"
+    },
+    "text-style-4": {
+      "name": "Title TILE"
+    },
+    "text-style-5": {
+      "name": "linktext"
+    },
+    "text-style-6": {
+      "name": "archiv"
+    },
+    "text-style-7": {
+      "name": "strukturformeln"
+    },
+    "text-style-8": {
+      "name": "lange beschreibung"
+    },
+    "text-style-9": {
+      "name": "FOOT"
+    }
+  }
+}
