@@ -5,9 +5,9 @@
       "name": "technisch",
       "style": {
         "fontFamily": "BigShoulders",
+        "fontSize": 15.0,
         "fontWeight": 400,
-        "textColor": "rgba(38,36,35,1)",
-        "fontSize": 15.0
+        "textColor": "rgba(38,36,35,1)"
       },
       "explicitKeys": [
         "fontFamily",
@@ -121,14 +121,16 @@
       "style": {
         "fontFamily": "Manrope",
         "fontSize": 24.0,
+        "fontWeight": 200,
         "textColor": "rgba(253,249,243,1)",
         "textAlign": "right",
-        "letterSpacing": 1.8800000000000001
+        "letterSpacing": 2.38
       },
       "styleExplicit": true,
       "explicitKeys": [
         "fontFamily",
         "fontSize",
+        "fontWeight",
         "letterSpacing",
         "textAlign",
         "textColor"
@@ -157,6 +159,41 @@
         "fillTexturePath": null,
         "fillTextureScale": 1.0,
         "fillTexturePositionX": 0.0,
+        "fillTexturePositionY": 0.0,
+        "fillTextureRepeat": false
+      }
+    },
+    "text-style-10": {
+      "name": "hero text",
+      "explicitKeys": [
+        "fillTexturePath",
+        "fillTexturePositionX",
+        "fillTextureRepeat",
+        "fillTextureScale",
+        "fontSize",
+        "shadowEnabled",
+        "textColor"
+      ],
+      "styleExplicit": true,
+      "style": {
+        "fontFamily": "BigShoulders",
+        "fontSize": 132.0,
+        "fontWeight": 900,
+        "textColor": "rgba(253,249,243,1)",
+        "textAlign": "start",
+        "letterSpacing": 15.0,
+        "lineHeight": 0.77,
+        "textUnderline": false,
+        "shadowEnabled": true,
+        "shadowColor": "rgba(0,0,0,1)",
+        "shadowOpacity": 1.0,
+        "shadowBlur": 13.0,
+        "shadowSpread": 0.0,
+        "shadowX": 10.0,
+        "shadowY": -5.0,
+        "fillTexturePath": null,
+        "fillTextureScale": 1.0,
+        "fillTexturePositionX": 0.40740740740740455,
         "fillTexturePositionY": 0.0,
         "fillTextureRepeat": false
       }
