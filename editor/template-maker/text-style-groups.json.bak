@@ -8,10 +8,21 @@
       "name": "navigation"
     },
     "text-style-3": {
-      "name": "taxonomie & nummer"
+      "name": "taxonomie & nummer",
+      "style": {
+        "fontFamily": "IBMPlexMono"
+      },
+      "styleExplicit": true
     },
     "text-style-4": {
-      "name": "Title TILE"
+      "name": "Title TILE",
+      "style": {
+        "fontFamily": "BigShoulders",
+        "letterSpacing": 4.8999999999999995,
+        "lineHeight": 0.93,
+        "textColor": "rgba(38,36,35,1)"
+      },
+      "styleExplicit": true
     },
     "text-style-5": {
       "name": "linktext"
@@ -23,7 +34,15 @@
       "name": "strukturformeln"
     },
     "text-style-8": {
-      "name": "lange beschreibung"
+      "name": "lange beschreibung",
+      "style": {
+        "fontFamily": "Manrope",
+        "fontSize": 24.0,
+        "textAlign": "right",
+        "letterSpacing": 1.8800000000000001,
+        "textColor": "rgba(38,36,35,1)"
+      },
+      "styleExplicit": true
     },
     "text-style-9": {
       "name": "FOOT"
