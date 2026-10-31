@@ -1,0 +1,23 @@
+name: Request Android asset sync
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: request-android-assets-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch the central publisher in Brand System
+        env:
+          GH_TOKEN: ${{ secrets.ANDROID_ASSETS_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo '::error::Set ANDROID_ASSETS_TOKEN with Actions write access to CircuitCurios_Brand_System.'
+            exit 1
+          fi
+          gh api --method POST repos/SinaSalvatrice/CircuitCurios_Brand_System/actions/workflows/sync-android-assets.yml/dispatches -f ref=main
