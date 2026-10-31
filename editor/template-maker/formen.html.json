@@ -1948,10 +1948,19 @@
     }
   },
   "activeTextSnippet": "tektonik",
-  "textStyleGroups": {},
+  "textStyleGroups": {
+    "text-style-1": "technisch",
+    "text-style-2": "navigation",
+    "text-style-3": "taxonomie & nummer",
+    "text-style-4": "Title TILE",
+    "text-style-5": "linktext",
+    "text-style-6": "archiv",
+    "text-style-7": "strukturformeln",
+    "text-style-8": "lange beschreibung",
+    "text-style-9": "FOOT"
+  },
   "editorState": {
     "collapsedGroupIds": [
-      "group-1",
       "group-11",
       "group-12",
       "group-13",
@@ -9729,7 +9738,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -12002,7 +12013,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "overshoot"
+          "hoverEasing": "overshoot",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-6",
@@ -12041,7 +12054,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -12174,7 +12189,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-7",
@@ -12214,7 +12231,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "overshoot"
+          "hoverEasing": "overshoot",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -12347,7 +12366,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-8",
@@ -12387,7 +12408,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "overshoot"
+          "hoverEasing": "overshoot",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -12520,7 +12543,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-9",
@@ -12560,7 +12585,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "overshoot"
+          "hoverEasing": "overshoot",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -12693,7 +12720,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-10",
@@ -12733,7 +12762,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "overshoot"
+          "hoverEasing": "overshoot",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
