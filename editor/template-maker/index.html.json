@@ -1961,10 +1961,10 @@
   },
   "editorState": {
     "collapsedGroupIds": [
+      "group-1",
       "group-10",
       "group-12",
       "group-14",
-      "group-3",
       "group-8",
       "group-9",
       "template-423",
@@ -5541,7 +5541,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "overshoot"
+          "hoverEasing": "overshoot",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-6",
@@ -5580,7 +5582,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -5713,7 +5717,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-7",
@@ -5753,7 +5759,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "overshoot"
+          "hoverEasing": "overshoot",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -5886,7 +5894,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-8",
@@ -5926,7 +5936,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "overshoot"
+          "hoverEasing": "overshoot",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -6059,7 +6071,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-9",
@@ -6099,7 +6113,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "overshoot"
+          "hoverEasing": "overshoot",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -6232,7 +6248,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-10",
@@ -6272,7 +6290,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "overshoot"
+          "hoverEasing": "overshoot",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -6459,70 +6479,70 @@
       "galleryItems": [
         {
           "id": "cc-texture-1",
-          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_01.png",
+          "imagePath": "library://textures/dendrit/ChatGPT-Bild 18. Okt. 2026, 14_13_42-8.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-2",
-          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_02.png",
+          "imagePath": "library://textures/impakt/file_000000007b8881f4b929620d45908ac2.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-3",
-          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_03.png",
+          "imagePath": "library://textures/fraktur/fraktur_rounded_hor.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-4",
-          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_04.png",
+          "imagePath": "library://textures/matrix/ChatGPT-Bild 18. Okt. 2026, 14_13_38-5.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-5",
-          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_05.png",
+          "imagePath": "library://textures/porifera/porifera.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-6",
-          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_06.png",
+          "imagePath": "library://textures/kohäsion/kohäsion_rounded.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-7",
-          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_07.png",
+          "imagePath": "library://textures/tektonik/tektonik_rounded_hor.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-8",
-          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_08.png",
+          "imagePath": "library://textures/diatomeen/ChatGPT-Bild 18. Okt. 2026, 14_13_40-7.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-9",
-          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_09.png",
+          "imagePath": "library://textures/abrasion/abrasion.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
         },
         {
           "id": "cc-texture-10",
-          "imagePath": "library://components/website/texturwechsel_fade/assets/texture_10.png",
+          "imagePath": "library://textures/potentional/ChatGPT-Bild 18. Okt. 2026, 14_13_37-4.png",
           "fit": "cover",
           "alignX": 0.0,
           "alignY": 0.0
@@ -8429,7 +8449,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -8656,7 +8678,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -8975,7 +8999,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-6",
@@ -9014,7 +9040,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -9147,7 +9175,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-7",
@@ -9186,7 +9216,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -9319,7 +9351,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-8",
@@ -9358,7 +9392,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -9491,7 +9527,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-10",
@@ -9530,7 +9568,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -9663,7 +9703,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         },
         {
           "id": "action-9",
@@ -9702,7 +9744,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -9928,7 +9972,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -10620,7 +10666,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -10846,7 +10894,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -10979,7 +11029,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -11671,7 +11723,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -11897,7 +11951,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -12030,7 +12086,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -12722,7 +12780,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -12948,7 +13008,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -13081,7 +13143,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -13773,7 +13837,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -13999,7 +14065,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -14132,7 +14200,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -14824,7 +14894,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -15050,7 +15122,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -15183,7 +15257,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -15875,7 +15951,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {
@@ -16101,7 +16179,9 @@
           "hoverGlowBlur": 24.0,
           "hoverGlowSpread": 3.0,
           "hoverDirection": "right",
-          "hoverEasing": "easeOut"
+          "hoverEasing": "easeOut",
+          "sequenceTexts": [],
+          "selectedColor": "#303030"
         }
       ],
       "transition": {

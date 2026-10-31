@@ -471,6 +471,16 @@ main.cc-template-page {
   isolation: isolate;
   background: var(--cc-bg, transparent);
 }
+.cc-tm-svg-shadow.cc-tm-image,
+.cc-tm-svg-shadow.cc-tm-icon,
+.cc-tm-svg-shadow.cc-tm-imported-image {
+  overflow: visible;
+  contain: none;
+}
+.cc-tm-svg-shadow > img,
+.cc-tm-svg-shadow > .cc-tm-icon-mask {
+  filter: drop-shadow(var(--cc-svg-shadow, 0px 0px 0px transparent));
+}
 .cc-tm-icon-mask {
   display: block;
   width: 100%;
@@ -583,14 +593,16 @@ main.cc-template-page {
   flex-direction: column;
 }
 .cc-tm-gallery.cc-gallery-sequence,
-.cc-tm-gallery[data-cc-transition*="imageSequenceFade"] {
+.cc-tm-gallery[data-cc-transition*="imageSequenceFade"],
+.cc-tm-gallery[data-cc-transition*="imageSequenceSwoop"] {
   /* Set the full-screen sequence layout on first paint, before JS starts.
      Otherwise the 3-column gallery flashes briefly during page loading. */
   display: block !important;
   overflow: hidden;
 }
 .cc-tm-gallery.cc-gallery-sequence .cc-tm-gallery-field,
-.cc-tm-gallery[data-cc-transition*="imageSequenceFade"] .cc-tm-gallery-field {
+.cc-tm-gallery[data-cc-transition*="imageSequenceFade"] .cc-tm-gallery-field,
+.cc-tm-gallery[data-cc-transition*="imageSequenceSwoop"] .cc-tm-gallery-field {
   position: absolute;
   inset: var(--cc-gallery-padding, 12px);
   width: auto;
@@ -598,7 +610,8 @@ main.cc-template-page {
   opacity: 0;
 }
 .cc-tm-gallery.cc-gallery-sequence .cc-tm-gallery-field:first-child,
-.cc-tm-gallery[data-cc-transition*="imageSequenceFade"] .cc-tm-gallery-field:first-child {
+.cc-tm-gallery[data-cc-transition*="imageSequenceFade"] .cc-tm-gallery-field:first-child,
+.cc-tm-gallery[data-cc-transition*="imageSequenceSwoop"] .cc-tm-gallery-field:first-child {
   opacity: 1;
 }
 .cc-tm-gallery-field {

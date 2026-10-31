@@ -297,7 +297,92 @@
     };
     window.ccRefreshTemplateArchiveFilters = applyArchiveFamilyFilter;
 
+    // Caption actions subscribe to the frame index emitted by the source
+    // gallery. They do not own a timer, so captions cannot drift out of sync.
+    const setSequenceText = (sourceId, frameIndex, animated) => {
+      document.querySelectorAll('[data-cc-wechseltext]').forEach(element => {
+        let actions = [];
+        try { actions = JSON.parse(element.dataset.ccWechseltext || '[]'); }
+        catch (_) { return; }
+        const action = actions.find(a => a.enabled !== false &&
+          a.type === 'wechselText' && a.target === sourceId);
+        if (!action || !Array.isArray(action.sequenceTexts)) return;
+        const next = action.sequenceTexts[frameIndex];
+        if (typeof next !== 'string') return;
+        const label = element.matches('.cc-tm-text')
+          ? (element.querySelector(':scope > span') || element)
+          : element;
+        if (label.textContent === next) return;
+        label.textContent = next;
+        if (animated && label.animate &&
+            !hostWindow.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          label.animate([
+            { opacity: .35, transform: 'translateY(6px)' },
+            { opacity: 1, transform: 'translateY(0)' }
+          ], { duration: Math.max(80, Number(action.durationMs || 220)),
+               easing: 'ease-out' });
+        }
+      });
+    };
+    document.addEventListener('cc:sequence-frame', event => {
+      if (event.detail) setSequenceText(
+        event.detail.sourceId, event.detail.index, true);
+    });
+    window.ccRefreshTemplateSequenceTexts = () => {
+      document.querySelectorAll('[data-cc-wechseltext]').forEach(element => {
+        try {
+          const actions = JSON.parse(element.dataset.ccWechseltext || '[]');
+          for (const action of actions) {
+            if (action.enabled === false || action.type !== 'wechselText' ||
+                !action.target) continue;
+            const source = document.getElementById(action.target);
+            if (source) setSequenceText(action.target,
+                Number(source.dataset.ccSequenceIndex || 0), false);
+          }
+        } catch (_) {}
+      });
+    };
+    const selectedSources = new Map();
+    const deselectSource = (source) => {
+      const selection = selectedSources.get(source);
+      if (!selection) return;
+      const { target, previousColor, previousBg } = selection;
+      if (target.isConnected) {
+        if (previousColor) target.style.setProperty('--cc-bg', previousColor);
+        else target.style.removeProperty('--cc-bg');
+        target.style.backgroundColor = previousBg;
+      }
+      source.removeAttribute('data-cc-selected');
+      source.setAttribute('aria-pressed', 'false');
+      selectedSources.delete(source);
+    };
+    const toggleSelected = (element, action) => {
+      if (!action.target) return;
+      const target = document.getElementById(action.target);
+      if (!target) return;
+      const already = selectedSources.has(element);
+      for (const [source, selection] of Array.from(selectedSources)) {
+        if (source === element || selection.target === target) {
+          deselectSource(source);
+        }
+      }
+      if (already) return;
+      const selectedColor = action.selectedColor || '#303030';
+      selectedSources.set(element, {
+        target,
+        previousColor: target.style.getPropertyValue('--cc-bg'),
+        previousBg: target.style.backgroundColor
+      });
+      target.style.setProperty('--cc-bg', selectedColor);
+      target.style.backgroundColor = selectedColor;
+      element.setAttribute('data-cc-selected', 'true');
+      element.setAttribute('aria-pressed', 'true');
+    };
     const runAction = async (element, action) => {
+      if (action.type === 'selected') {
+        toggleSelected(element, action);
+        return;
+      }
       const type = action.type;
 
       if (type === 'press') {
@@ -473,6 +558,7 @@
         actionBindings.set(element, run);
       });
       applyArchiveFamilyFilter();
+      window.ccRefreshTemplateSequenceTexts?.();
     };
     window.ccRefreshTemplateActions();
 
@@ -778,6 +864,10 @@
       fields.forEach((field, index) => {
         field.style.opacity = index === 0 ? '1' : '0';
       });
+      element.dataset.ccSequenceIndex = '0';
+      document.dispatchEvent(new CustomEvent('cc:sequence-frame', {
+        detail: { sourceId: element.id, index: 0 }
+      }));
       // Keep the first frame fully visible while loading and before playback.
       if (delay > 0) await wait(delay);
       if (controller.cancelled || fields.length === 1 || !Element.prototype.animate) return;
@@ -811,8 +901,12 @@
         // Both layers occupy the same box. Never fade the outgoing layer to
         // transparent before the incoming one has become fully opaque.
         incoming.style.opacity = '0';
+        const swoop = config.effect === 'imageSequenceSwoop';
         const animation = incoming.animate(
-          [{ opacity: 0 }, { opacity: 1 }],
+          swoop
+            ? [{ opacity: 0, transform: 'translateX(36px) scale(.96)' },
+               { opacity: 1, transform: 'translateX(0) scale(1)' }]
+            : [{ opacity: 0 }, { opacity: 1 }],
           { duration, easing, fill: 'both' },
         );
         controller.animations.add(animation);
@@ -826,6 +920,10 @@
         animation.cancel(); // Remove the filled animation after persisting state.
         outgoing.style.opacity = '0';
         current = next;
+        element.dataset.ccSequenceIndex = String(current);
+        document.dispatchEvent(new CustomEvent('cc:sequence-frame', {
+          detail: { sourceId: element.id, index: current }
+        }));
 
         if (!loop && current === fields.length - 1) return;
         if (loop && current === 0 && pause > 0) await wait(pause);
@@ -855,7 +953,7 @@
       cancelTransition(element);
       const controller = { cancelled: false, animations: new Set() };
       transitionControllers.set(element, controller);
-      const runner = config.effect === 'imageSequenceFade' ? runImageSequence(element, config, controller) : runGenericTransition(element, config, controller);
+      const runner = ['imageSequenceFade', 'imageSequenceSwoop'].includes(config.effect) ? runImageSequence(element, config, controller) : runGenericTransition(element, config, controller);
       runner.catch(() => {});
     };
 
