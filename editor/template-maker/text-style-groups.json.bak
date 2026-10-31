@@ -1,28 +1,96 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "groups": {
     "text-style-1": {
       "name": "technisch"
     },
     "text-style-2": {
-      "name": "navigation"
+      "name": "navigation",
+      "explicitKeys": [],
+      "styleExplicit": false,
+      "style": {
+        "fontFamily": "IBMPlexMono",
+        "fontSize": 15.399999999999999,
+        "fontWeight": 200,
+        "textColor": "rgba(253,249,243,1)",
+        "textAlign": "center",
+        "letterSpacing": 4.0,
+        "lineHeight": 1.45,
+        "textUnderline": false,
+        "shadowEnabled": false,
+        "shadowColor": null,
+        "shadowOpacity": 1.0,
+        "shadowBlur": 0.0,
+        "shadowSpread": 0.0,
+        "shadowX": 0.0,
+        "shadowY": 0.0,
+        "fillTexturePath": null,
+        "fillTextureScale": 1.0,
+        "fillTexturePositionX": 0.0,
+        "fillTexturePositionY": 0.0,
+        "fillTextureRepeat": false
+      }
     },
     "text-style-3": {
       "name": "taxonomie & nummer",
       "style": {
-        "fontFamily": "IBMPlexMono"
+        "fontFamily": "IBMPlexMono",
+        "fontSize": 9.0,
+        "fontWeight": 300,
+        "textColor": "rgb(185, 189, 191)",
+        "textAlign": "start",
+        "letterSpacing": 1.76,
+        "lineHeight": 1.2,
+        "textUnderline": false,
+        "shadowEnabled": false,
+        "shadowColor": null,
+        "shadowOpacity": 1.0,
+        "shadowBlur": 0.0,
+        "shadowSpread": 0.0,
+        "shadowX": 0.0,
+        "shadowY": 0.0,
+        "fillTexturePath": null,
+        "fillTextureScale": 1.0,
+        "fillTexturePositionX": 0.0,
+        "fillTexturePositionY": 0.0,
+        "fillTextureRepeat": false
       },
-      "styleExplicit": true
+      "styleExplicit": true,
+      "explicitKeys": [
+        "fontFamily"
+      ]
     },
     "text-style-4": {
       "name": "Title TILE",
       "style": {
         "fontFamily": "BigShoulders",
+        "fontSize": 29.0,
+        "fontWeight": 500,
+        "textColor": "rgba(38,36,35,1)",
+        "textAlign": "start",
         "letterSpacing": 4.8999999999999995,
         "lineHeight": 0.93,
-        "textColor": "rgba(38,36,35,1)"
+        "textUnderline": false,
+        "shadowEnabled": false,
+        "shadowColor": null,
+        "shadowOpacity": 1.0,
+        "shadowBlur": 0.0,
+        "shadowSpread": 0.0,
+        "shadowX": 0.0,
+        "shadowY": 0.0,
+        "fillTexturePath": null,
+        "fillTextureScale": 1.0,
+        "fillTexturePositionX": 0.0,
+        "fillTexturePositionY": 0.0,
+        "fillTextureRepeat": false
       },
-      "styleExplicit": true
+      "styleExplicit": true,
+      "explicitKeys": [
+        "fontFamily",
+        "letterSpacing",
+        "lineHeight",
+        "textColor"
+      ]
     },
     "text-style-5": {
       "name": "linktext"
@@ -38,14 +106,45 @@
       "style": {
         "fontFamily": "Manrope",
         "fontSize": 24.0,
+        "textColor": "rgba(38,36,35,1)",
         "textAlign": "right",
-        "letterSpacing": 1.8800000000000001,
-        "textColor": "rgba(38,36,35,1)"
+        "letterSpacing": 1.8800000000000001
       },
-      "styleExplicit": true
+      "styleExplicit": true,
+      "explicitKeys": [
+        "fontFamily",
+        "fontSize",
+        "letterSpacing",
+        "textAlign",
+        "textColor"
+      ]
     },
     "text-style-9": {
-      "name": "FOOT"
+      "name": "FOOT",
+      "explicitKeys": [],
+      "styleExplicit": false,
+      "style": {
+        "fontFamily": "IBMPlexMono",
+        "fontSize": 19.0,
+        "fontWeight": 400,
+        "textColor": "#e5e0d7",
+        "textAlign": "left",
+        "letterSpacing": 2.1,
+        "lineHeight": 1.2,
+        "textUnderline": false,
+        "shadowEnabled": false,
+        "shadowColor": null,
+        "shadowOpacity": 1.0,
+        "shadowBlur": 0.0,
+        "shadowSpread": 0.0,
+        "shadowX": 0.0,
+        "shadowY": 0.0,
+        "fillTexturePath": null,
+        "fillTextureScale": 1.0,
+        "fillTexturePositionX": 0.0,
+        "fillTexturePositionY": 0.0,
+        "fillTextureRepeat": false
+      }
     }
   }
 }
