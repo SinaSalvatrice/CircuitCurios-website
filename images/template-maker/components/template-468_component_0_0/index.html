@@ -817,8 +817,14 @@
     };
 
     const runAnimation = async (controller, target, frames, options, release = false) => {
-      if (controller.cancelled || !target.animate) return;
+      if (controller.cancelled) return;
+      if (!target.animate) {
+        target.removeAttribute('data-cc-transition-pending');
+        return;
+      }
       const animation = target.animate(frames, options);
+      // Reveal only after its animation has been installed, never before.
+      target.removeAttribute('data-cc-transition-pending');
       // Replace the previous loop endpoint, including any retained reveal mask.
       controller.animations.forEach(previous => previous.cancel());
       controller.animations.clear();
@@ -982,6 +988,7 @@
         if (current.has(element)) continue;
         observer.unobserve(registration.target);
         cancelTransition(element);
+        element.removeAttribute('data-cc-transition-pending');
         transitionRegistrations.delete(element);
       }
       elements.forEach(element => {
@@ -989,7 +996,10 @@
         const marker = element.previousElementSibling;
         const target = element.hasAttribute('data-cc-transition-group')
           ? (marker?.getAttribute('data-cc-group-trigger') === element.id ? marker : null) : element;
-        if (!target) return;
+        if (!target) {
+          element.removeAttribute('data-cc-transition-pending');
+          return;
+        }
         const previous = transitionRegistrations.get(element);
         if (previous && previous.source === source && previous.target === target) return;
         if (previous) {
@@ -998,7 +1008,18 @@
           transitionRegistrations.delete(element);
         }
         const config = transitionConfig(element);
-        if (!config) return;
+        if (!config) {
+          element.removeAttribute('data-cc-transition-pending');
+          return;
+        }
+        // Prepare the initial state immediately, including inspector edits.
+        const sequence = ['imageSequenceFade', 'imageSequenceSwoop'].includes(config.effect);
+        const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+        if (!sequence && !reducedMotion) {
+          element.setAttribute('data-cc-transition-pending', '1');
+        } else {
+          element.removeAttribute('data-cc-transition-pending');
+        }
         const registration = { source, config, target };
         transitionRegistrations.set(element, registration);
         if (config.trigger === 'pageLoad') {
