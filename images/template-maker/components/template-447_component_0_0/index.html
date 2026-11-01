@@ -749,6 +749,122 @@
     };
     window.ccRefreshTemplateHovers();
 
+    // Animation groups share one clock. Their tracks remain independently
+    // editable elements and keep their exact world-space positions.
+    const animationGroupStates = new WeakMap();
+    const playAnimationGroup = async (group) => {
+      const previous = animationGroupStates.get(group);
+      if (previous) {
+        previous.cancelled = true;
+        previous.animations.forEach(a => a.cancel());
+      }
+      const state = { cancelled: false, animations: new Set() };
+      animationGroupStates.set(group, state);
+      let config = {};
+      try { config = JSON.parse(group.dataset.ccTransition || '{}'); } catch (_) {}
+      const tracks = Array.from(group.querySelectorAll('[data-cc-element-kind]'))
+        .filter(e => e.closest('[data-cc-animation-controller]') === group);
+      const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+      const start = async () => {
+        const tasks = [];
+        for (const track of tracks) {
+          if (state.cancelled) return;
+          let t = {};
+          try { t = JSON.parse(track.dataset.ccTransition || '{}'); } catch (_) {}
+          const delay = Math.max(0, Number(t.delayMs || 0));
+          const duration = Math.max(1, Number(t.durationMs || config.durationMs || 350));
+          const easing = t.easing === 'linear' ? 'linear' :
+            t.easing === 'easeIn' ? 'ease-in' : t.easing === 'easeInOut' ? 'ease-in-out' : 'ease-out';
+          const direction = t.direction || 'bottom';
+          const distance = Math.max(0, Number(t.distance || 32));
+          const x = direction === 'left' ? -distance : direction === 'right' ? distance : 0;
+          const y = direction === 'top' ? -distance : direction === 'bottom' ? distance : 0;
+          const effect = t.effect || 'fadeSlide';
+          const fade = ['fade','fadeSlide','rise','blur'].includes(effect);
+          const moving = ['slide','fadeSlide','rise'].includes(effect);
+          const texts = (() => { try { return JSON.parse(track.dataset.ccAnimationTexts || '[]').filter(s => typeof s === 'string'); } catch (_) { return []; } })();
+          const label = track.matches('.cc-tm-text') ? (track.querySelector(':scope > span') || track) : track;
+          if (texts.length > 0) label.textContent = texts[0];
+          const playTrack = async () => {
+            if (['imageSequenceFade', 'imageSequenceSwoop'].includes(t.effect)) {
+              track.removeAttribute('data-cc-transition-pending');
+              await runImageSequence(track, t, state);
+              return;
+            }
+            if (delay) await sleep(delay);
+            if (state.cancelled) return;
+            if (track.animate && t.enabled !== false) {
+              const frames = [
+                { opacity: fade ? 0 : 1, transform: moving ? 'translate(' + x + 'px,' + y + 'px)' : 'none' },
+                { opacity: 1, transform: 'none' },
+              ];
+              const animation = track.animate(frames, { duration, easing, fill: 'both' });
+              state.animations.add(animation);
+              track.removeAttribute('data-cc-transition-pending');
+              try { await animation.finished; } catch (_) {}
+              if (state.cancelled) return;
+              animation.cancel();
+            } else {
+              track.removeAttribute('data-cc-transition-pending');
+            }
+            if (texts.length > 1) {
+              const hold = Math.max(150, Number(t.sequenceHoldMs || config.sequenceHoldMs || 2200));
+              for (let index = 1; index < texts.length && !state.cancelled; index++) {
+                await sleep(hold);
+                if (state.cancelled) return;
+                label.textContent = texts[index];
+                if (label.animate) {
+                  const a = label.animate([{opacity:0.2},{opacity:1}], {duration,easing});
+                  state.animations.add(a);
+                  try { await a.finished; } catch (_) {}
+                }
+              }
+            }
+          };
+          // Start all tracks on one clock; the individual delay controls offset.
+          tasks.push(playTrack());
+        }
+        await Promise.all(tasks);
+      };
+      const groupDelay = Math.max(0, Number(config.delayMs || 0));
+      if (groupDelay) await sleep(groupDelay);
+      do {
+        if (state.cancelled) return;
+        await start();
+        if (!config.loop || state.cancelled) return;
+        await sleep(Math.max(0, Number(config.loopPauseMs || 0)));
+      } while (!state.cancelled);
+    };
+    const groupObservers = new Map();
+    window.ccRefreshTemplateAnimationGroups = () => {
+      document.querySelectorAll('[data-cc-animation-controller]').forEach(group => {
+        const config = (() => { try { return JSON.parse(group.dataset.ccTransition || '{}'); } catch (_) { return {}; } })();
+        const fingerprint = JSON.stringify(config) +
+          Array.from(group.querySelectorAll('[data-cc-element-kind]'))
+            .map(e => (e.dataset.ccTransition || '') + (e.dataset.ccAnimationTexts || '')).join('|');
+        if (group.dataset.ccAnimationFingerprint === fingerprint) return;
+        group.dataset.ccAnimationFingerprint = fingerprint;
+        const existing = groupObservers.get(group);
+        if (existing) existing.disconnect();
+        if (config.trigger === 'enterViewport') {
+          const observer = new IntersectionObserver(entries => {
+            if (entries.some(e => e.isIntersecting)) {
+              void playAnimationGroup(group);
+              if (config.once !== false && !config.loop) observer.disconnect();
+            }
+          }, {threshold: 0.1});
+          const marker = group.previousElementSibling;
+          const target = marker?.getAttribute('data-cc-group-trigger') === group.id
+              ? marker : group;
+          observer.observe(target);
+          groupObservers.set(group, observer);
+        } else {
+          requestAnimationFrame(() => void playAnimationGroup(group));
+        }
+      });
+    };
+    window.ccRefreshTemplateAnimationGroups();
+
     const transitionControllers = new WeakMap();
 
     const transitionConfig = element => {
@@ -982,7 +1098,10 @@
     // Inspector edits register only new/changed transitions. Existing HTML,
     // iframes and unchanged animations keep their current playback state.
     window.ccRefreshTemplateTransitions = () => {
-      const elements = Array.from(document.querySelectorAll('[data-cc-transition]'));
+      window.ccRefreshTemplateAnimationGroups?.();
+      const elements = Array.from(document.querySelectorAll('[data-cc-transition]'))
+        .filter(element => !element.closest('[data-cc-animation-controller]') &&
+          !element.hasAttribute('data-cc-animation-controller'));
       const current = new Set(elements);
       for (const [element, registration] of transitionRegistrations) {
         if (current.has(element)) continue;
