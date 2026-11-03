@@ -5,22 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Component</title>
   <link rel="stylesheet" href="template-maker.css">
+  <script>window.ccFloatingComponent = true;</script>
   <style>
-    html, body { margin: 0; min-height: 100%; background: transparent; }
-    body { display: grid; place-items: start center; }
+    html, body {
+      margin: 0; padding: 0; width: 100%; height: 100%;
+      min-height: 0; overflow: hidden; background: transparent !important;
+    }
+    body { position: relative; display: block; }
+    main.cc-template-page {
+      position: absolute !important; inset: 0 !important;
+      width: 100% !important; height: 100% !important;
+      max-width: none !important; overflow: hidden !important;
+      background: transparent !important;
+    }
+    main.cc-template-page > .cc-template-canvas {
+      position: absolute !important; left: 0; top: 0;
+      margin: 0 !important; transform-origin: top left !important;
+      background: transparent !important;
+    }
   </style>
 </head>
 <body>
 <main id="main" class="cc-template-page" data-cc-template-maker="1" style="--cc-page-bg:rgba(0,0,0,0)">
-  <div class="cc-template-canvas" style="--cc-design-width:1009.4688;--cc-design-height:400.2575;--cc-page-bg:rgba(0,0,0,0)">
-    <div id="website-8" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported" style="left:79.4688px;top:0px;width:930px;height:316.2559px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(16, 27, 22, 0.9);background-color:rgba(16, 27, 22, 0.9);--cc-fg:rgb(240, 242, 237);color:rgb(240, 242, 237);--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Segoe UI';font-family:'Segoe UI';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:15px;border-radius:15px;--cc-border:rgba(242, 247, 238, 0.25);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgba(242, 247, 238, 0.25);box-shadow:0px 23px 65px 0px rgba(9,22,17,0.34)"></div>
-    <button id="website-10" data-cc-element-kind="button" class="cc-tm-element cc-tm-imported cc-tm-imported-button" style="left:103.4688px;top:24.0004px;width:270px;height:268.255px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(187, 204, 192);color:rgb(187, 204, 192);--cc-font-size:11px;font-size:11px;--cc-font-weight:600;font-weight:600;--cc-font-family:'Segoe UI';font-family:'Segoe UI';text-align:center;--cc-letter-spacing:0.44px;letter-spacing:0.44px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(187, 204, 192);--cc-border-width:0px;border:none" type="button">+ Texturbild auswählen</button>
-    <div id="website-11" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:406.4688px;top:33.0006px;width:138.9063px;height:14.0003px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(191, 216, 197);color:rgb(191, 216, 197);--cc-font-size:10px;font-size:10px;--cc-font-weight:700;font-weight:700;--cc-font-family:'Segoe UI';font-family:'Segoe UI';text-align:start;--cc-letter-spacing:1.4px;letter-spacing:1.4px;--cc-line-height:1.2;line-height:1.2;opacity:0.72;--cc-radius:0px;border-radius:0px;--cc-border:rgb(191, 216, 197);--cc-border-width:0px;border:none">BIOLOGIE · FILTRATION</div>
-    <div id="website-12" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:406.4688px;top:50.0009px;width:124.3125px;height:52.001px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(240, 242, 237);color:rgb(240, 242, 237);--cc-font-size:39px;font-size:39px;--cc-font-weight:550;font-weight:550;--cc-font-family:'Segoe UI';font-family:'Segoe UI';text-align:start;--cc-letter-spacing:-1.755px;letter-spacing:-1.755px;--cc-line-height:1.04;line-height:1.04;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(240, 242, 237);--cc-border-width:0px;border:none">Porifera</div>
-    <div id="website-13" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:406.4688px;top:114.549px;width:527.875px;height:86.0172px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(240, 242, 237);color:rgb(240, 242, 237);--cc-font-size:13.5px;font-size:13.5px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Segoe UI';font-family:'Segoe UI';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.68;line-height:1.68;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(240, 242, 237);--cc-border-width:0px;border:none">Porifera überträgt das Prinzip biologischer Filtration auf eine plastische Oberfläche. Zwischen schmalen, organisch verbundenen Stegen öffnen sich unregelmäßige Poren, deren Abstände, Größen und Tiefen ständig variieren. Das Muster wirkt gewachsen, ohne sich in ein starres Raster einzuordnen.</div>
-    <div id="website-14" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:406.4688px;top:217.2384px;width:527.8125px;height:63.3449px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(240, 242, 237);color:rgb(240, 242, 237);--cc-font-size:13.5px;font-size:13.5px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Segoe UI';font-family:'Segoe UI';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.68;line-height:1.68;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(240, 242, 237);--cc-border-width:0px;border:none">Inspiriert von den Strukturen natürlicher Schwammkörper entsteht eine lebendige Textur, die mit Dichte und Offenheit spielt. Manche Bereiche verdichten sich, andere wirken nahezu durchlässig. So wird Filtration als räumliches Gefüge sichtbar.</div>
-    <button id="website-15" data-cc-element-kind="button" class="cc-tm-element cc-tm-imported cc-tm-imported-button" style="left:965.4688px;top:14.0003px;width:30px;height:30.0006px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(240, 242, 237);color:rgb(240, 242, 237);--cc-font-size:22px;font-size:22px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Segoe UI';font-family:'Segoe UI';text-align:center;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:0.9091;line-height:0.9091;opacity:0.65;--cc-radius:50px;border-radius:50px;--cc-border:rgb(240, 242, 237);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgb(240, 242, 237)" type="button">×</button>
-    <div id="website-16" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:0px;top:381.2571px;width:64.8906px;height:19.0004px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(233, 236, 230);color:rgb(233, 236, 230);--cc-font-size:14px;font-size:14px;--cc-font-weight:600;font-weight:600;--cc-font-family:'Segoe UI';font-family:'Segoe UI';text-align:start;--cc-letter-spacing:-0.14px;letter-spacing:-0.14px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(233, 236, 230);--cc-border-width:0px;border:none">02 · Papier</div>
+  <div class="cc-template-canvas" style="--cc-design-width:1774.625;--cc-design-height:1688.6624;--cc-page-bg:rgba(0,0,0,0)">
+    <div id="template-588" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported" style="left:384.4795px;top:290.9686px;width:930px;height:703.8109px;--cc-rotation:0rad;--cc-element-scale:1.8268;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:679.8109px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(38,36,35,0.827);background-color:rgba(38,36,35,0.827);--cc-fg:rgb(240, 242, 237);color:rgb(240, 242, 237);--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Segoe UI';font-family:'Segoe UI';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:15px;border-radius:15px;--cc-border:rgba(242, 247, 238, 0.25);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgba(242, 247, 238, 0.25);box-shadow:10px -14px 14px -9px rgba(25,25,25,1)"></div>
+    <div id="template-590" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:1104.6685px;top:482.4229px;width:473.9972px;height:23.389px;--cc-rotation:0rad;--cc-element-scale:1.8268;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgba(170,169,161,1);color:rgba(170,169,161,1);--cc-font-size:12.79px;font-size:12.79px;--cc-font-weight:300;font-weight:300;--cc-font-family:'IBMPlexMono';font-family:'IBMPlexMono';text-align:start;--cc-letter-spacing:1.76px;letter-spacing:1.76px;--cc-line-height:1.2;line-height:1.2;opacity:0.72;--cc-radius:0px;border-radius:0px;--cc-border:rgb(191, 216, 197);--cc-border-width:0px;border:none">Geologie / Deformation / Bruchlinien</div>
+    <div id="template-591" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:955.769px;top:538.6418px;width:124.3125px;height:52.001px;--cc-rotation:0rad;--cc-element-scale:1.8268;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:28.001px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(240, 242, 237);color:rgb(240, 242, 237);--cc-font-size:39px;font-size:39px;--cc-font-weight:900;font-weight:900;--cc-font-family:'BigShoulders';font-family:'BigShoulders';text-align:start;--cc-letter-spacing:4.9px;letter-spacing:4.9px;--cc-line-height:1.04;line-height:1.04;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(240, 242, 237);--cc-border-width:0px;border:none">TEKTONIK</div>
+<span id="template-592-trigger" data-cc-group-trigger="template-592" style="--cc-group-x:891.2902px;--cc-group-y:600.8083px;--cc-group-width:753.8667px;--cc-group-height:535.2px;" aria-hidden="true"></span>
+<div id="template-592" class="cc-tm-transition-group cc-tm-clip-inside" data-cc-transition-group="1" data-cc-clip-frame="1" style="--cc-group-x:891.2902px;--cc-group-y:600.8083px;--cc-group-width:753.8667px;--cc-group-height:535.2px;--cc-clip-background:transparent;--cc-clip-border:transparent;--cc-clip-border-width:0px;">
+<div id="template-592-scroll" class="cc-tm-clip-scroll" data-cc-clip-scroll="vertical" style="--cc-scroll-x:891.2902px;--cc-scroll-y:600.8083px;--cc-scroll-width:753.8667px;--cc-scroll-height:1087.8541px;"><div id="template-592-scroll-content" class="cc-tm-clip-scroll-content" data-cc-clip-scroll-content="1">
+    <div id="template-593" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:1069.0086px;top:865.6035px;width:392.7519px;height:582.3178px;--cc-rotation:0rad;--cc-element-scale:1.8268;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:558.3178px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(240, 242, 237);color:rgb(240, 242, 237);--cc-font-size:10.0636px;font-size:10.0636px;--cc-font-weight:200;font-weight:200;--cc-font-family:'Manrope';font-family:'Manrope';text-align:start;--cc-letter-spacing:2.38px;letter-spacing:2.38px;--cc-line-height:1.68;line-height:1.68;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(240, 242, 237);--cc-border-width:0px;border:none">01 — Inspiration
+
+Die Erdkruste ist kein starrer Körper. Unter dem Einfluss tektonischer Kräfte werden Gesteinsschichten gestaucht, verschoben, gefaltet und entlang von Störungen aufgebrochen. TEKTONIK übersetzt diese Prozesse in ein dichtes Relief aus gerichteten, gegeneinander versetzten Strukturen.
+
+02 — Formprozess
+
+Wirken Druck- und Scherkräfte auf geschichtetes Gestein, können sich einzelne Lagen verformen oder entlang von Schwächezonen gegeneinander verschieben. Brüche unterbrechen ihren Verlauf, während versetzte Kanten und überlagerte Partien die ursprüngliche Schichtung fragmentieren.
+
+03 — Struktur
+
+Langgezogene, überwiegend parallel verlaufende Stege durchziehen die Oberfläche in wechselnden Winkeln. Tiefe, dunkle Spalten trennen scharfkantige Segmente. Querbrüche, Überlagerungen und abrupte Versätze unterbrechen den Linienrhythmus. Feine Riefen strukturieren die hellen, unregelmäßig abgestuften Flächen.
+
+04 — Wirkung
+
+TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregelmäßigkeit. Scharfe Lichtkanten und dunkle Zwischenräume betonen die gestaffelte Tiefe. Das Relief vermittelt mechanische Spannung, Schichtung und die Dynamik gegeneinander wirkender Kräfte.</div>
+</div></div>
+</div>
+    <button id="template-594" data-cc-element-kind="button"  data-cc-hover="[{&quot;id&quot;:&quot;action-2&quot;,&quot;type&quot;:&quot;hover&quot;,&quot;enabled&quot;:true,&quot;target&quot;:null,&quot;presentation&quot;:&quot;navigate&quot;,&quot;componentPath&quot;:null,&quot;floating&quot;:{&quot;width&quot;:720.0,&quot;height&quot;:520.0,&quot;position&quot;:&quot;center&quot;,&quot;backdropColor&quot;:&quot;#000000&quot;,&quot;backdropOpacity&quot;:0.62,&quot;animation&quot;:&quot;fadeScale&quot;,&quot;durationMs&quot;:280,&quot;cornerRadius&quot;:16.0,&quot;showCloseButton&quot;:true,&quot;closeOnBackdrop&quot;:true,&quot;closeOnEscape&quot;:true},&quot;scale&quot;:0.94,&quot;durationMs&quot;:250,&quot;delayMs&quot;:0,&quot;hoverEffects&quot;:[&quot;glow&quot;],&quot;hoverTarget&quot;:&quot;self&quot;,&quot;hoverReverse&quot;:true,&quot;hoverScale&quot;:1.05,&quot;hoverDistance&quot;:8.0,&quot;hoverTilt&quot;:4.0,&quot;hoverOpacity&quot;:0.7,&quot;hoverGlowColor&quot;:&quot;#ffffff&quot;,&quot;hoverGlowIntensity&quot;:0.7,&quot;hoverGlowBlur&quot;:15.0,&quot;hoverGlowSpread&quot;:3.0,&quot;hoverDirection&quot;:&quot;right&quot;,&quot;hoverEasing&quot;:&quot;easeInOut&quot;,&quot;sequenceTexts&quot;:[],&quot;selectedColor&quot;:&quot;#303030&quot;}]" class="cc-tm-element cc-tm-button" style="left:1486.1568px;top:1201.0305px;width:146.6667px;height:41.3333px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:17.3333px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;cursor:pointer;--cc-bg:rgba(38,36,35,1);background-color:rgba(38,36,35,1);--cc-font-size:16px;font-size:16px;--cc-font-weight:300;font-weight:300;--cc-font-family:'IBMPlexMono';font-family:'IBMPlexMono';--cc-letter-spacing:1.76px;letter-spacing:1.76px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px" type="button">zurück</button>
+    <figure id="template-595" data-cc-element-kind="image" class="cc-tm-element cc-tm-image" style="left:19.6235px;top:20.275px;width:845.6px;height:798.4px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:774.4px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:1px;border-radius:1px;--cc-border:rgba(38,36,35,1);box-shadow:10px -14px 14px -9px rgba(25,25,25,1)"><img src="assets/asset-93e72d57016c1c5fa0977a71.png" alt=""></figure>
+    <figure id="template-596" data-cc-element-kind="image" class="cc-tm-element cc-tm-image" style="left:22.3235px;top:850.975px;width:840px;height:408px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:-0.1111;--cc-image-position-y:-0.268;--cc-image-scale:1.3;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:44.4444%;--cc-object-position-y:36.6013%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:384px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgba(38,36,35,1);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgba(38,36,35,1);box-shadow:10px -14px 14px -9px rgba(25,25,25,1)"><img src="assets/asset-268ab10035c97e37ebcd60ea.png" alt=""></figure>
+    <figure id="template-597" data-cc-element-kind="image" class="cc-tm-element cc-tm-image" style="left:900.3235px;top:18.975px;width:714px;height:398px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:-0.7814;--cc-image-position-y:-0.0754;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:10.9299%;--cc-object-position-y:46.2312%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:374px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgba(38,36,35,1);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgba(38,36,35,1);box-shadow:10px -14px 14px -9px rgba(25,25,25,1)"><img src="assets/asset-a20126db02c1c1d344c0a101.png" alt=""></figure>
   </div>
 
   <div id="cc-interaction-overlay" class="cc-interaction-overlay" role="dialog" aria-label="Detailansicht" aria-modal="true" aria-hidden="true">
@@ -35,7 +69,7 @@
     // display that canvas smaller, but it must scale uniformly in both axes so
     // the published page, preview and editor keep the same proportions.
     const fitTemplateCanvas = () => {
-      if (window.ccSetEditorViewport) return;
+      if (window.ccSetEditorViewport || window.ccFloatingComponent) return;
       const canvas = document.querySelector(
         '.cc-template-page > .cc-template-canvas'
       );
@@ -164,7 +198,8 @@
     const finishClose = () => {
       if (!overlay || !content) return;
       overlay.classList.remove(
-        'cc-open', 'cc-closing', 'cc-panel', 'cc-fullscreen'
+        'cc-open', 'cc-closing', 'cc-panel', 'cc-fullscreen',
+        'cc-component-floating'
       );
       overlay.setAttribute('aria-hidden', 'true');
       content.replaceChildren();
@@ -199,7 +234,8 @@
       }
     };
 
-    const openMediaOverlay = (kind, source, mediaType, rawSettings) => {
+    const openMediaOverlay = (kind, source, mediaType, rawSettings,
+      componentAspectRatio = null) => {
       if (!overlay || !surface || !content || !source) return;
       clearTimeout(closeTimer);
       const isNew = !overlay.classList.contains('cc-open');
@@ -226,7 +262,16 @@
         settings.durationMs + 'ms');
       overlay.dataset.position = settings.position;
       overlay.dataset.animation = settings.animation;
-      overlay.classList.remove('cc-closing', 'cc-panel', 'cc-fullscreen');
+      overlay.classList.remove('cc-closing', 'cc-panel', 'cc-fullscreen',
+        'cc-component-floating');
+      const ratio = Number(componentAspectRatio);
+      if (kind === 'floating' && mediaType === 'iframe' &&
+          Number.isFinite(ratio) && ratio > 0) {
+        overlay.style.setProperty('--cc-component-ratio', String(ratio));
+        overlay.classList.add('cc-component-floating');
+      } else {
+        overlay.style.removeProperty('--cc-component-ratio');
+      }
       if (kind === 'panel') overlay.classList.add('cc-panel');
       if (kind === 'fullscreen') overlay.classList.add('cc-fullscreen');
       close.hidden = !settings.showCloseButton;
@@ -275,13 +320,78 @@
     const archiveFamilies = ['Biologie', 'Geologie', 'Industrie', 'Physik'];
     let activeArchiveFamily = 'all';
 
+    const archiveCardPosition = item => {
+      // Archive groups span the full canvas because child coordinates use
+      // world space. Their real card position is stored in CSS variables.
+      const style = getComputedStyle(item);
+      const group = item.classList.contains('cc-tm-transition-group');
+      const x = parseFloat(group
+        ? style.getPropertyValue('--cc-group-x') : style.left);
+      const y = parseFloat(group
+        ? style.getPropertyValue('--cc-group-y') : style.top);
+      return {
+        x: Number.isFinite(x) ? x : 0,
+        y: Number.isFinite(y) ? y : 0
+      };
+    };
+
     const applyArchiveFamilyFilter = () => {
-      document.querySelectorAll('[data-cc-archive-item="1"]').forEach(item => {
-        const hide = activeArchiveFamily !== 'all' &&
+      // Grid fields own their family: hide the complete slot (including its
+      // component, image, actions and descendants). CSS Grid reflows all
+      // remaining slots into the first positions automatically.
+      document.querySelectorAll('[data-cc-grid-cell="1"]').forEach(field => {
+        // Existing image-sequence animations still use the gallery data type.
+        // They are a slideshow, not filterable grid cards.
+        const gallery = field.closest('.cc-tm-gallery');
+        if (gallery && gallery.matches(
+          '.cc-gallery-sequence, [data-cc-transition*="imageSequenceFade"], [data-cc-transition*="imageSequenceSwoop"]'
+        )) return;
+        const hiddenByEditor = field.hasAttribute('hidden');
+        const hiddenByFilter = activeArchiveFamily !== 'all' &&
+          field.dataset.ccGridFamily !== activeArchiveFamily;
+        const hide = hiddenByEditor || hiddenByFilter;
+        field.classList.toggle('cc-archive-filter-hidden', hide);
+        field.setAttribute('aria-hidden', hide ? 'true' : 'false');
+      });
+      const items = Array.from(
+        document.querySelectorAll('[data-cc-archive-item="1"]')
+      );
+      // Only the outermost card is a filter unit. Descendant labels, images,
+      // borders and nested groups must not be hidden independently.
+      const cards = items.filter(item =>
+        !item.parentElement?.closest('[data-cc-archive-item="1"]'));
+      const originalOrder = cards.map((item, index) => ({
+        item, index, position: archiveCardPosition(item)
+      })).sort((a, b) =>
+        a.position.y - b.position.y ||
+        a.position.x - b.position.x ||
+        a.index - b.index);
+
+      for (const item of items) {
+        const isCard = cards.includes(item);
+        const hide = isCard && activeArchiveFamily !== 'all' &&
           item.dataset.ccArchiveFamily !== activeArchiveFamily;
         item.classList.toggle('cc-archive-filter-hidden', hide);
         item.setAttribute('aria-hidden', hide ? 'true' : 'false');
-      });
+        item.style.removeProperty('--cc-archive-shift-x');
+        item.style.removeProperty('--cc-archive-shift-y');
+      }
+
+      // This is intentionally not a new grid layout. Compact only filtered
+      // cards into the first positions already drawn by the existing page.
+      // Moving the card wrapper keeps its entire subtree together.
+      if (activeArchiveFamily !== 'all') {
+        const visible = originalOrder.filter(entry =>
+          entry.item.dataset.ccArchiveFamily === activeArchiveFamily);
+        visible.forEach((entry, index) => {
+          const slot = originalOrder[index].position;
+          const dx = slot.x - entry.position.x;
+          const dy = slot.y - entry.position.y;
+          entry.item.style.setProperty('--cc-archive-shift-x', dx + 'px');
+          entry.item.style.setProperty('--cc-archive-shift-y', dy + 'px');
+        });
+      }
+
       // Tabs communicate their active state to assistive technology.
       document.querySelectorAll('[data-cc-actions]').forEach(tab => {
         try {
@@ -471,7 +581,8 @@
           action.presentation || 'floating',
           action.componentPath,
           action.componentMedia || 'iframe',
-          action.floating
+          action.floating,
+          action.componentAspectRatio
         );
         return;
       }
@@ -1155,5 +1266,28 @@
   </script>
 </main>
 
+<script>
+  (() => {
+    // A component is content inside ONE modal surface, not another page.
+    // Scale both axes together to fit the iframe; scrolling remains inside
+    // intentional clip elements only.
+    const designWidth = 1774.625;
+    const designHeight = 1688.6624;
+    const canvas = document.querySelector('main.cc-template-page > .cc-template-canvas');
+    if (!canvas) return;
+    const fit = () => {
+      const width = Math.max(1, document.documentElement.clientWidth || window.innerWidth);
+      const height = Math.max(1, document.documentElement.clientHeight || window.innerHeight);
+      const scale = Math.min(width / designWidth, height / designHeight);
+      canvas.style.zoom = '1';
+      canvas.style.transformOrigin = 'top left';
+      canvas.style.transform = 'scale(' + scale + ')';
+      canvas.style.left = Math.max(0, (width - designWidth * scale) / 2) + 'px';
+      canvas.style.top = Math.max(0, (height - designHeight * scale) / 2) + 'px';
+    };
+    fit();
+    window.addEventListener('resize', fit, { passive: true });
+  })();
+</script>
 </body>
 </html>

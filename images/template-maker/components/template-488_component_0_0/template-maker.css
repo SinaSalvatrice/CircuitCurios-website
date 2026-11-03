@@ -254,6 +254,12 @@ main.cc-template-page {
 .cc-archive-filter-hidden {
   display: none !important;
 }
+/* Archive filter moves an entire positioned card, never just its text. */
+.cc-tm-transition-group[data-cc-archive-item="1"],
+.cc-tm-element[data-cc-archive-item="1"] {
+  translate: var(--cc-archive-shift-x, 0px)
+    var(--cc-archive-shift-y, 0px);
+}
 .cc-tm-element {
   position: absolute;
   box-sizing: border-box;
@@ -378,6 +384,20 @@ main.cc-template-page {
   background: #f4f1ea;
   box-shadow: 0 18px 64px rgba(0,0,0,.3);
   outline: none;
+}
+.cc-interaction-overlay.cc-component-floating .cc-interaction-surface {
+  /* A single frameless surface sized to the component's own proportions.
+     Settings remain upper bounds; viewport clipping is avoided. */
+  width: min(var(--cc-popup-width, 720px),
+    calc(var(--cc-popup-height, 520px) * var(--cc-component-ratio, 1)),
+    calc(100vw - 32px),
+    calc((100dvh - 32px) * var(--cc-component-ratio, 1)));
+  height: auto;
+  aspect-ratio: var(--cc-component-ratio, 1);
+  background: transparent;
+}
+.cc-interaction-overlay.cc-component-floating .cc-interaction-content {
+  overflow: hidden;
 }
 .cc-interaction-content {
   width: 100%;
@@ -619,8 +639,10 @@ main.cc-template-page {
   height: var(--cc-border-width, 2px);
   background: var(--cc-border, var(--cc-fg, #282828));
 }
-.cc-tm-gallery {
+ .cc-tm-gallery {
   display: grid;
+  grid-auto-rows: var(--cc-grid-cell-height, auto);
+  align-content: start;
   grid-template-columns: repeat(var(--cc-gallery-columns, 3), minmax(0,1fr));
   gap: var(--cc-gallery-gap, 12px);
   padding: var(--cc-gallery-padding, 12px);
@@ -658,6 +680,9 @@ main.cc-template-page {
 .cc-tm-gallery[data-cc-transition*="imageSequenceSwoop"] .cc-tm-gallery-field:first-child {
   opacity: 1;
 }
+.cc-tm-gallery-field[hidden] {
+  display: none !important;
+}
 .cc-tm-gallery-field {
   position: relative;
   min-width: 0;
@@ -669,6 +694,19 @@ main.cc-template-page {
   border: var(--cc-gallery-item-border-width, 0px) solid
     var(--cc-gallery-item-border, transparent);
   border-radius: var(--cc-gallery-item-radius, 0px);
+}
+.cc-tm-bound-component {
+  overflow: hidden;
+}
+.cc-tm-bound-component[data-cc-element-kind="button"] > iframe {
+  pointer-events: none;
+}
+.cc-tm-inline-component {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  overflow: hidden;
 }
 .cc-tm-gallery-field > img {
   object-fit: var(--cc-gallery-fit, cover);
