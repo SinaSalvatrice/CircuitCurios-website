@@ -5405,7 +5405,7 @@
           "delayMs": 0,
           "hoverEffects": [
             "underline",
-            "glow"
+            "scale"
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
