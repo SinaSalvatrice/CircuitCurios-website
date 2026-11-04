@@ -68,8 +68,13 @@
     },
     "text-style-6": {
       "name": "archiv",
-      "explicitKeys": [],
-      "styleExplicit": false
+      "explicitKeys": [
+        "fontFamily"
+      ],
+      "styleExplicit": true,
+      "style": {
+        "fontFamily": "IBMPlexMono"
+      }
     },
     "text-style-7": {
       "name": "strukturformeln",
@@ -117,7 +122,7 @@
       "style": {
         "fontFamily": "BigShoulders",
         "fontWeight": 900,
-        "letterSpacing": 21.0
+        "letterSpacing": 21.6
       },
       "iconColor": "rgba(253,249,243,1)"
     }
