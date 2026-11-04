@@ -1995,6 +1995,17 @@
         "width": 1920.0,
         "height": 5250.0,
         "geometry": {
+          "template-525": {
+            "x": 0.0,
+            "y": 0.0,
+            "width": 1920.0,
+            "height": 4145.333333333333,
+            "rotation": 0.0,
+            "contentScale": 1.0,
+            "textMode": "fixedWidth",
+            "galleryColumns": 3,
+            "galleryLayout": "grid"
+          },
           "template-423": {
             "x": 0.0,
             "y": 16.0,
@@ -3110,7 +3121,7 @@
       },
       "tablet": {
         "width": 834.0,
-        "height": 28160.76544250983,
+        "height": 28345.119609176498,
         "geometry": {
           "group-8": {
             "x": 32.0,
@@ -4013,12 +4024,23 @@
             "textMode": "fixedWidth",
             "galleryColumns": 3,
             "galleryLayout": "grid"
+          },
+          "template-525": {
+            "x": 210.32986111111165,
+            "y": 28184.76544250983,
+            "width": 184.47916666666669,
+            "height": 136.35416666666669,
+            "rotation": 0.0,
+            "contentScale": 0.4010416666666667,
+            "textMode": "fixedWidth",
+            "galleryColumns": 3,
+            "galleryLayout": "grid"
           }
         }
       },
       "android": {
         "width": 390.0,
-        "height": 17508.00439228211,
+        "height": 17617.983558948777,
         "geometry": {
           "group-8": {
             "x": 20.0,
@@ -4921,6 +4943,17 @@
             "textMode": "fixedWidth",
             "galleryColumns": 3,
             "galleryLayout": "grid"
+          },
+          "template-525": {
+            "x": 101.05902777777801,
+            "y": 17532.00439228211,
+            "width": 83.85416666666666,
+            "height": 61.979166666666664,
+            "rotation": 0.0,
+            "contentScale": 0.18229166666666666,
+            "textMode": "fixedWidth",
+            "galleryColumns": 3,
+            "galleryLayout": "grid"
           }
         }
       }
@@ -5022,6 +5055,102 @@
     }
   ],
   "elements": [
+    {
+      "id": "template-525",
+      "type": "image",
+      "x": 0.0,
+      "y": 0.0,
+      "width": 1920.0,
+      "height": 4145.333333333333,
+      "text": "BILD",
+      "textSnippetId": null,
+      "textSnippetField": "shortDescription",
+      "imagePath": "library://backgrounds/website_legacy/Download (3).jpg",
+      "componentPath": null,
+      "iconMode": "monochrome",
+      "fillTexturePath": null,
+      "fillTextureScale": 1.0,
+      "fillTexturePositionX": 0.0,
+      "fillTexturePositionY": 0.0,
+      "fillTextureRepeat": false,
+      "visible": true,
+      "locked": false,
+      "rotation": 0.0,
+      "imported": false,
+      "sourceTag": null,
+      "sourceSelector": null,
+      "backgroundColor": null,
+      "textColor": null,
+      "fontSize": null,
+      "fontWeight": null,
+      "fontFamily": "Oswald",
+      "textStyleGroupId": null,
+      "archiveFamily": null,
+      "textAlign": null,
+      "textMode": "fixedWidth",
+      "textUnderline": false,
+      "letterSpacing": 0.0,
+      "lineHeight": 1.2,
+      "opacity": 1.0,
+      "borderRadius": 0.0,
+      "borderColor": null,
+      "borderWidth": -1.0,
+      "shadowColor": null,
+      "shadowEnabled": false,
+      "shadowOpacity": 1.0,
+      "shadowBlur": 0.0,
+      "shadowSpread": 0.0,
+      "shadowX": 0.0,
+      "shadowY": 0.0,
+      "groupId": null,
+      "isGroup": false,
+      "clipEnabled": true,
+      "clipMode": "inside",
+      "clipScrollAxis": "none",
+      "animationTexts": [],
+      "layerName": null,
+      "groupColor": null,
+      "contentScale": 1.0,
+      "galleryPreset": "medium",
+      "galleryLayout": "grid",
+      "galleryColumns": 3,
+      "galleryGap": 12.0,
+      "galleryPadding": 12.0,
+      "galleryAlignment": "stretch",
+      "galleryItemBorderWidth": 0.0,
+      "galleryItemBorderColor": null,
+      "galleryItemRadius": 0.0,
+      "galleryItems": [],
+      "interactionEnabled": false,
+      "hoverCursor": "auto",
+      "cursorAssetPath": null,
+      "actions": [],
+      "transition": {
+        "enabled": false,
+        "trigger": "enterViewport",
+        "effect": "fadeSlide",
+        "direction": "bottom",
+        "durationMs": 350,
+        "delayMs": 0,
+        "easing": "easeOut",
+        "once": true,
+        "distance": 32.0,
+        "scaleFrom": 0.96,
+        "staggerMs": 0,
+        "loop": false,
+        "loopPauseMs": 0,
+        "sequenceHoldMs": 2200
+      },
+      "imageFit": "cover",
+      "imageMaskEnabled": false,
+      "iconColor": null,
+      "imagePositionX": 0.0,
+      "imagePositionY": 0.0,
+      "imageScale": 1.0,
+      "anchorX": "left",
+      "anchorY": "top",
+      "href": null
+    },
     {
       "id": "template-423",
       "type": "container",
@@ -5390,6 +5519,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -5432,6 +5562,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -5570,6 +5701,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -5611,6 +5743,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -5750,6 +5883,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -5791,6 +5925,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -5930,6 +6065,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -5971,6 +6107,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -6110,6 +6247,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -6151,6 +6289,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -7058,6 +7197,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -7292,6 +7432,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -7623,6 +7764,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -7664,6 +7806,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -7802,6 +7945,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -7843,6 +7987,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -7981,6 +8126,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -8022,6 +8168,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -8160,6 +8307,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -8201,6 +8349,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -8339,6 +8488,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -8380,6 +8530,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -8614,6 +8765,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -9328,6 +9480,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -9563,6 +9716,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -9701,6 +9855,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -10415,6 +10570,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -10650,6 +10806,7 @@
           "floating": {
             "width": 1600.0,
             "height": 1200.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -10788,6 +10945,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -11502,6 +11660,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -11737,6 +11896,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -11875,6 +12035,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -12589,6 +12750,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -12824,6 +12986,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -12962,6 +13125,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -13676,6 +13840,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -13911,6 +14076,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -14049,6 +14215,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -14763,6 +14930,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -14998,6 +15166,7 @@
           "floating": {
             "width": 720.0,
             "height": 520.0,
+            "viewportMargin": 48.0,
             "position": "center",
             "backdropColor": "#000000",
             "backdropOpacity": 0.62,
@@ -15585,7 +15754,7 @@
       "textAlign": "left",
       "textMode": "fixedWidth",
       "textUnderline": false,
-      "letterSpacing": 21.0,
+      "letterSpacing": 21.6,
       "lineHeight": 0.77,
       "opacity": 1.0,
       "borderRadius": 0.0,
@@ -15681,7 +15850,7 @@
       "textAlign": "left",
       "textMode": "fixedWidth",
       "textUnderline": false,
-      "letterSpacing": 21.0,
+      "letterSpacing": 21.6,
       "lineHeight": 0.77,
       "opacity": 1.0,
       "borderRadius": 0.0,
@@ -15777,7 +15946,7 @@
       "textAlign": "left",
       "textMode": "fixedWidth",
       "textUnderline": false,
-      "letterSpacing": 21.0,
+      "letterSpacing": 21.6,
       "lineHeight": 0.77,
       "opacity": 1.0,
       "borderRadius": 0.0,
@@ -15873,7 +16042,7 @@
       "textAlign": "left",
       "textMode": "fixedWidth",
       "textUnderline": false,
-      "letterSpacing": 21.0,
+      "letterSpacing": 21.6,
       "lineHeight": 0.77,
       "opacity": 1.0,
       "borderRadius": 0.0,
