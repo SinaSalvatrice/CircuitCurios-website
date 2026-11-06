@@ -3,55 +3,2385 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Über CircuitCurios</title>
-  <meta name="description" content="Über CircuitCurios: handgearbeitete Oberflächen, Schmuck und Objekte aus Aluminium aus Remscheid.">
-  <meta name="theme-color" content="#f2f0e9">
+  <meta name="theme-color" content="#e9e8e1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Die Gestalterin hinter CircuitCurios: technische Neugier, experimentelle Denkweise und handwerkliche Formgebung.">
+  <title>Die Gestalterin — CircuitCurios</title>
   <link rel="canonical" href="https://circuitcurios.de/ueber.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* CircuitCurios / Portrait der Gestalterin — eigenständige HTML-Datei.
+       Alle wesentlichen Styles und Illustrationen sind eingebettet.
+       Die optionale Produktaufnahme nutzt den bestehenden Website-Pfad.
+       Bei lokaler Einzeldatei-Vorschau erscheint automatisch die SVG-Fallbackgrafik. */
+    :root {
+      --paper: #e9e8e1;
+      --paper-2: #deded7;
+      --ink: #161715;
+      --charcoal: #1b1c1b;
+      --muted: #5b605d;
+      --silver: #bfc2bf;
+      --rule: #b8bab3;
+      --on-dark: #e9e8e1;
+      --cond: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
+      --mono: 'DM Mono', Consolas, monospace;
+      --gutter: clamp(20px, 4.3vw, 70px);
+      --max: 1550px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 75px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 400 19px/1.4 var(--cond); -webkit-font-smoothing: antialiased; }
+    body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .18;
+      background: repeating-linear-gradient(112deg, rgba(0,0,0,.027) 0px, transparent 1px, rgba(255,255,255,.22) 3px, transparent 6px); }
+    a { color: inherit; } button { color: inherit; font: inherit; cursor: pointer; }
+    img, svg { display: block; max-width: 100%; }
+    h1,h2,h3,p,figure { margin: 0; } h1,h2,h3 { font-family: var(--cond); text-transform: uppercase; font-weight: 800; }
+    ::selection { color: var(--paper); background: var(--ink); }
+    :focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
+    .shell { width: min(calc(100% - 2 * var(--gutter)), var(--max)); margin-inline: auto; }
+    .micro, .kicker, .caption, .site-head nav, .meta-strip, .link, .index-bar, .foot {
+      font-family: var(--mono); font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .13em;
+    }
+    .muted { color: var(--muted); }
+    .skip { position: absolute; z-index: 100; left: 12px; top: -100px; background: var(--ink); color: white; padding: 12px; }
+    .skip:focus { top: 10px; }
+
+    /* Navigation leans on the current Prozess / Formen editorial system. */
+    .site-head { min-height: 68px; padding: 15px var(--gutter); display: flex; justify-content: space-between; align-items: center;
+      gap: 30px; border-bottom: 1px solid #979a94; position: relative; z-index: 5; }
+    .wordmark { text-decoration: none; white-space: nowrap; font: 800 16px/1 var(--cond); letter-spacing: .18em; text-transform: uppercase; }
+    .site-head nav { display: flex; align-items: center; flex-wrap: wrap; gap: clamp(16px, 2.7vw, 36px); font-size: 10px; letter-spacing: .075em; }
+    .site-head nav a { text-decoration: none; padding: 9px 0; border-bottom: 1px solid transparent; }
+    .site-head nav a:hover, .site-head nav a[aria-current='page'] { border-color: currentColor; }
+    .menu-btn { display: none; border: 1px solid var(--ink); background: transparent; padding: 8px 12px; font: 500 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+
+    /* Hero */
+    .hero { padding-top: clamp(48px, 7vw, 112px); }
+    .hero-topline { display: flex; justify-content: space-between; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+    .hero-heading { position: relative; padding: clamp(25px, 4vw, 60px) 0 clamp(38px, 5vw, 80px); overflow: hidden; }
+    .hero-heading h1 { font-size: clamp(76px, 15vw, 245px); line-height: .73; letter-spacing: -.044em; font-weight: 800; }
+    .hero-heading h1 span { display: block; }
+    .hero-heading h1 span:last-child { padding-left: clamp(9px, 10vw, 155px); }
+    .hero-heading .hero-aside { position: absolute; top: clamp(32px, 5vw, 75px); right: 2px; text-align: right; line-height: 1.6; }
+    .hero-grid { display: grid; grid-template-columns: 1.24fr .76fr; gap: clamp(24px, 5vw, 85px); align-items: stretch; border-top: 1px solid var(--rule); padding-top: clamp(18px, 2.2vw, 36px); }
+    .hero-art { margin: 0; position: relative; overflow: hidden; min-height: clamp(380px, 41vw, 620px); background: #c6c8c3; }
+    .hero-art::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(0deg, rgba(16,18,17,.3), transparent 28%); }
+    .hero-art > svg { width: 100%; height: 100%; position: absolute; inset: 0; }
+    .hero-art > img { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1); }
+    .hero-art figcaption { z-index: 2; position: absolute; bottom: 20px; left: 22px; right: 22px; display: flex; justify-content: space-between;
+      color: white; text-shadow: 0 1px 10px #333; }
+    .hero-intro { padding: clamp(20px, 3vw, 50px) 0; display: flex; flex-direction: column; justify-content: space-between; }
+    .hero-intro .lead { font-size: clamp(29px, 3.2vw, 54px); line-height: 1.06; font-weight: 600; max-width: 500px; letter-spacing: -.015em; }
+    .hero-intro .note { font-size: clamp(18px, 1.5vw, 22px); line-height: 1.4; color: #454b47; max-width: 440px; margin-top: 28px; }
+    .hero-intro-bottom { border-top: 1px solid var(--rule); margin-top: 40px; padding-top: 15px; display: flex; justify-content: space-between; gap: 20px; }
+    .link { display: inline-flex; gap: 14px; align-items: center; padding: 10px 0; border-bottom: 1px solid currentColor; text-decoration: none; }
+    .link span { font-size: 20px; line-height: .7; }
+    .meta-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; margin-top: clamp(55px, 8vw, 120px); padding: 16px 0 60px; border-top: 1px solid var(--rule); color: var(--muted); }
+    .meta-strip b { color: var(--ink); font-weight: 500; }
+
+    /* Three numbered chapters */
+    .chapters { border-top: 1px solid var(--rule); }
+    .chapter { display: grid; grid-template-columns: 100px minmax(0, 1fr) minmax(360px, 1fr); gap: clamp(22px, 4vw, 70px);
+      align-items: start; padding-block: clamp(65px, 9vw, 145px); border-bottom: 1px solid var(--rule); }
+    .chapter-num { color: #8a908a; font: 700 clamp(74px, 9.1vw, 145px)/.73 var(--cond); letter-spacing: -.06em; }
+    .chapter-copy { max-width: 565px; }
+    .chapter-copy .kicker { display: block; color: var(--muted); margin-bottom: 27px; }
+    .chapter-copy h2 { font-size: clamp(58px, 6.5vw, 105px); line-height: .79; letter-spacing: -.044em; margin: 0 0 34px; }
+    .chapter-copy p { font-size: clamp(19px, 1.45vw, 23px); line-height: 1.36; color: #424743; margin-top: 18px; }
+    .chapter-copy p:first-of-type { color: var(--ink); }
+    .chapter-visual { min-height: 420px; align-self: stretch; }
+    .diagram { background: #d0d2cd; height: 100%; min-height: 490px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+    .diagram-dark { color: #d7dad5; background: #252827; }
+    .diagram-light { background: #c8cbc6; }
+    .diagram figcaption { flex: 0 0 auto; display: flex; justify-content: space-between; gap: 10px; padding: 13px 15px;
+      border-top: 1px solid rgba(80,82,77,.35); line-height: 1.4; }
+    .diagram-dark figcaption { border-color: rgba(230,230,225,.28); }
+    .diagram svg { flex: 1; width: 100%; min-height: 0; }
+    .diagram .studied-lines { stroke: currentColor; stroke-width: 1; fill: none; }
+    .diagram .ghost-lines { stroke: currentColor; opacity: .25; stroke-width: .8; fill: none; }
+    .chapter:nth-child(2) .chapter-visual { grid-column: 2; grid-row: 1; }
+    .chapter:nth-child(2) .chapter-copy { grid-column: 3; grid-row: 1; }
+    .chapter:nth-child(2) .chapter-num { grid-column: 1; grid-row: 1; }
+
+    .interlude { background: var(--charcoal); color: var(--on-dark); }
+    .interlude-inner { padding-block: clamp(75px, 10vw, 150px); display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: end; }
+    .interlude h2 { font-size: clamp(60px, 9.7vw, 165px); line-height: .76; letter-spacing: -.04em; }
+    .interlude h2 span { display: block; }
+    .interlude p:not(.kicker) { color: #b7bcb6; max-width: 420px; font-size: clamp(21px, 2.3vw, 32px); line-height: 1.17; }
+    .interlude .kicker { color: #a8aea8; margin-bottom: 32px; }
+
+    .endnav { display: grid; grid-template-columns: 1fr 1fr; padding-top: 50px; padding-bottom: 100px; gap: 24px; }
+    .endnav a { min-height: 175px; display: grid; grid-template-columns: auto 1fr auto; gap: 18px; align-items: end;
+      border-top: 1px solid var(--rule); text-decoration: none; padding-top: 14px; }
+    .endnav a:hover { border-top-color: var(--ink); }
+    .endnav .end-title { font: 800 clamp(36px, 5vw, 76px)/.8 var(--cond); letter-spacing: -.04em; text-transform: uppercase; }
+    .endnav .arrow { font-size: 28px; line-height: 1; }
+    .foot { border-top: 1px solid var(--rule); padding: 21px var(--gutter) 30px; display: flex; flex-wrap: wrap; gap: 16px 35px;
+      justify-content: space-between; color: var(--muted); }
+    .foot a { text-decoration: none; } .foot a:hover { text-decoration: underline; }
+    .foot > div { display: flex; gap: 23px; flex-wrap: wrap; }
+
+    @media (max-width: 1050px) {
+      .chapter { grid-template-columns: 70px minmax(0,1fr); row-gap: 40px; }
+      .chapter-num { font-size: 95px; }
+      .chapter-copy { grid-column: 2; }
+      .chapter-visual, .chapter:nth-child(2) .chapter-visual { grid-column: 2; grid-row: 2; }
+      .chapter:nth-child(2) .chapter-copy { grid-column: 2; grid-row: 1; }
+      .chapter:nth-child(2) .chapter-num { grid-column: 1; grid-row: 1; }
+      .diagram { min-height: 430px; }
+    }
+    @media (max-width: 720px) {
+      html { scroll-padding-top: 60px; }
+      .site-head { min-height: 58px; gap: 12px; }
+      .wordmark { font-size: 14px; }
+      .menu-btn { display: inline-block; }
+      .site-head nav { display: none; flex-direction: column; align-items: stretch; position: absolute; z-index: 10;
+        top: calc(100% + 1px); left: 0; right: 0; gap: 0; background: var(--paper); border-bottom: 1px solid var(--ink); padding: 10px var(--gutter) 18px; }
+      .site-head nav.open { display: flex; }
+      .site-head nav a { padding: 12px 0; }
+      .hero { padding-top: 42px; }
+      .hero-topline .micro:last-child { display: none; }
+      .hero-heading { padding: 40px 0 42px; }
+      .hero-heading h1 { font-size: clamp(64px, 12.7vw, 114px); }
+      .hero-heading h1 span:last-child { padding-left: 0; }
+      .hero-heading .hero-aside { right: 0; top: 15px; font-size: 8px; }
+      .hero-grid { display: flex; flex-direction: column; gap: 0; }
+      .hero-art { min-height: 370px; }
+      .hero-intro { padding-top: 30px; }
+      .hero-intro .lead { font-size: clamp(32px, 8vw, 46px); }
+      .hero-intro-bottom { margin-top: 26px; }
+      .meta-strip { grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 48px; padding-bottom: 48px; }
+      .meta-strip span:last-child { grid-column: 1 / -1; }
+      .chapter { grid-template-columns: 1fr; padding-block: 60px; row-gap: 24px; }
+      .chapter-num, .chapter:nth-child(2) .chapter-num { grid-column: 1; grid-row: 1; font-size: 83px; }
+      .chapter-copy, .chapter:nth-child(2) .chapter-copy { grid-column: 1; grid-row: 2; }
+      .chapter-visual, .chapter:nth-child(2) .chapter-visual { grid-column: 1; grid-row: 3; }
+      .chapter-copy h2 { font-size: clamp(58px, 13vw, 85px); margin-bottom: 27px; }
+      .chapter-copy .kicker { margin-bottom: 19px; }
+      .chapter-copy p { font-size: 20px; }
+      .diagram { min-height: 360px; }
+      .interlude-inner { grid-template-columns: 1fr; gap: 32px; padding-block: 75px; }
+      .interlude h2 { font-size: clamp(64px, 14vw, 105px); }
+      .endnav { grid-template-columns: 1fr; padding-top: 35px; padding-bottom: 60px; }
+      .endnav a { min-height: 115px; }
+      .foot { padding-inline: var(--gutter); }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+  </style>
+
+<style data-cc-template-export data-cc-inline-stylesheet="template-maker.css">
+
+/* Generated by CircuitCurios Website Template Maker. */
+/* Keep entrance transitions invisible until their first animation frame.
+   Without JavaScript, or with reduced motion, show the normal page. */
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  .cc-template-page [data-cc-transition-pending="1"] {
+    visibility: hidden;
+  }
+}
+main.cc-template-page {
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  max-width: 100vw !important;
+  min-width: 0 !important;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: var(--cc-page-bg, #f4f1ea);
+}
+.cc-template-canvas {
+  position: relative;
+  width: calc(var(--cc-design-width) * 1px);
+  height: calc(var(--cc-design-height) * 1px);
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--cc-page-bg, #f4f1ea);
+}
+.cc-tm-transition-group {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  transform-origin: calc(var(--cc-group-x) + var(--cc-group-width) / 2)
+    calc(var(--cc-group-y) + var(--cc-group-height) / 2);
+  --cc-rotation: 0rad;
+  --cc-element-scale: 1;
+}
+.cc-tm-transition-group > .cc-tm-element { pointer-events: auto; }
+.cc-tm-transition-group[data-cc-clip-frame="1"]::before {
+  content: "";
+  position: absolute;
+  left: var(--cc-group-x);
+  top: var(--cc-group-y);
+  width: var(--cc-group-width);
+  height: var(--cc-group-height);
+  background: var(--cc-clip-background, transparent);
+  border: var(--cc-clip-border-width, 0px) solid var(--cc-clip-border, transparent);
+  box-sizing: border-box;
+  pointer-events: none;
+}
+.cc-tm-clip-scroll {
+  position: absolute;
+  left: var(--cc-group-x);
+  top: var(--cc-group-y);
+  width: var(--cc-group-width);
+  height: var(--cc-group-height);
+  pointer-events: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  overflow: auto;
+}
+.cc-tm-clip-scroll[data-cc-clip-scroll="vertical"] { overflow-x: hidden; overflow-y: auto; }
+.cc-tm-clip-scroll[data-cc-clip-scroll="horizontal"] { overflow-x: auto; overflow-y: hidden; }
+.cc-tm-clip-scroll-content {
+  position: relative;
+  width: var(--cc-scroll-width);
+  height: var(--cc-scroll-height);
+  min-height: 100%;
+}
+.cc-tm-clip-scroll-content > .cc-tm-element,
+.cc-tm-clip-scroll-content > .cc-tm-transition-group,
+.cc-tm-clip-scroll-content > [data-cc-group-trigger] {
+  translate: calc(0px - var(--cc-scroll-x)) calc(0px - var(--cc-scroll-y));
+}
+.cc-tm-clip-scroll-content > .cc-tm-element { pointer-events: auto; }
+/* Clips are full-canvas group wrappers because child coordinates stay in
+   world-space. They mask paint without moving or resizing text elements. */
+.cc-tm-clip-inside {
+  clip-path: inset(
+    var(--cc-group-y)
+    calc(100% - var(--cc-group-x) - var(--cc-group-width))
+    calc(100% - var(--cc-group-y) - var(--cc-group-height))
+    var(--cc-group-x)
+  );
+}
+.cc-tm-clip-hide-inside {
+  clip-path: polygon(evenodd,
+    0 0, 100% 0, 100% 100%, 0 100%, 0 0,
+    var(--cc-group-x) var(--cc-group-y),
+    var(--cc-group-x) calc(var(--cc-group-y) + var(--cc-group-height)),
+    calc(var(--cc-group-x) + var(--cc-group-width))
+      calc(var(--cc-group-y) + var(--cc-group-height)),
+    calc(var(--cc-group-x) + var(--cc-group-width)) var(--cc-group-y),
+    var(--cc-group-x) var(--cc-group-y)
+  );
+}
+[data-cc-group-trigger] {
+  position: absolute;
+  left: var(--cc-group-x);
+  top: var(--cc-group-y);
+  width: var(--cc-group-width);
+  height: var(--cc-group-height);
+  pointer-events: none;
+}
+.cc-archive-filter-hidden {
+  display: none !important;
+}
+/* Archive filter moves an entire positioned card, never just its text. */
+.cc-tm-transition-group[data-cc-archive-item="1"],
+.cc-tm-element[data-cc-archive-item="1"] {
+  translate: var(--cc-archive-shift-x, 0px)
+    var(--cc-archive-shift-y, 0px);
+}
+.cc-tm-element {
+  position: absolute;
+  box-sizing: border-box;
+  transform-origin: center center;
+  transform: rotate(var(--cc-rotation, 0rad)) scale(var(--cc-element-scale, 1));
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  min-height: 0;
+  max-width: none;
+  max-height: none;
+  white-space: var(--cc-text-white-space, pre-wrap);
+  overflow-wrap: var(--cc-overflow-wrap, anywhere);
+  border-radius: var(--cc-radius, 0);
+  font-family: var(--cc-font-family, inherit);
+  letter-spacing: var(--cc-letter-spacing, inherit);
+  line-height: var(--cc-line-height, inherit);
+}
+.cc-tm-hero > img,
+.cc-tm-image > img,
+.cc-tm-icon > img,
+.cc-tm-imported:not(.cc-tm-raw-html) > img,
+.cc-tm-texture-card > .cc-tm-media > img,
+.cc-tm-gallery > .cc-tm-gallery-field > img,
+.cc-tm-about > .cc-tm-about-media > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  object-fit: var(--cc-object-fit, cover);
+  object-position:
+    var(--cc-object-position-x, 50%)
+    var(--cc-object-position-y, 50%);
+  transform: scale(var(--cc-image-scale, 1));
+  transform-origin:
+    var(--cc-object-position-x, 50%)
+    var(--cc-object-position-y, 50%);
+}
+.cc-tm-imported {
+  padding: 0;
+  overflow: hidden;
+  color: var(--cc-fg, inherit);
+  background: var(--cc-bg, transparent);
+  line-height: var(--cc-line-height, 1.08);
+}
+/* Browser Range text measurements describe line boxes, not clipped glyph bounds.
+   Keep imported text free to paint its ascenders/descenders and letter spacing. */
+.cc-tm-imported-text {
+  overflow: visible;
+  overflow-wrap: normal;
+}
+.cc-tm-imported:not(.cc-tm-raw-html) > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.cc-tm-imported-button {
+  display: grid;
+  place-items: center;
+  color: var(--cc-fg, inherit);
+  background: var(--cc-bg, transparent);
+  font-family: var(--cc-font-family, inherit);
+  text-decoration: none;
+}
+.cc-tm-imported-divider {
+  min-height: 1px;
+  background: var(--cc-border, var(--cc-fg, #282828));
+}
+
+.cc-tm-placeholder {
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(135deg, transparent 49%, rgba(30,30,30,.12) 50%, transparent 51%),
+    #d8d2c7;
+}
+.cc-tm-hero {
+  overflow: hidden;
+  contain: paint;
+  background: var(--cc-bg, transparent);
+}
+.cc-tm-hero > img,
+.cc-tm-hero > .cc-tm-placeholder {
+  position: absolute;
+  inset: 0;
+}
+
+/* Floating interaction dialogs are styled by the exported CSS as well as
+   the standalone preview; no additional website stylesheet is required. */
+.cc-interaction-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  box-sizing: border-box;
+  padding: var(--cc-popup-margin, 48px);
+  place-items: center;
+  background: var(--cc-popup-backdrop, rgba(0,0,0,.62));
+  isolation: isolate;
+}
+.cc-interaction-overlay.cc-open { display: grid; }
+.cc-interaction-overlay[data-position="top"] { align-items: start; }
+.cc-interaction-overlay[data-position="bottom"] { align-items: end; }
+.cc-interaction-overlay[data-position="left"] { justify-items: start; }
+.cc-interaction-overlay[data-position="right"] { justify-items: end; }
+.cc-interaction-surface {
+  position: relative;
+  box-sizing: border-box;
+  width: min(var(--cc-popup-width, 720px),
+    calc(100vw - var(--cc-popup-margin, 48px) - var(--cc-popup-margin, 48px)));
+  height: min(var(--cc-popup-height, 520px),
+    calc(100dvh - var(--cc-popup-margin, 48px) - var(--cc-popup-margin, 48px)));
+  min-width: 0;
+  min-height: 0;
+  max-height: calc(100dvh - var(--cc-popup-margin, 48px) - var(--cc-popup-margin, 48px));
+  overflow: hidden;
+  border-radius: var(--cc-popup-radius, 16px);
+  background: #f4f1ea;
+  box-shadow: 0 18px 64px rgba(0,0,0,.3);
+  outline: none;
+}
+.cc-interaction-overlay.cc-component-floating .cc-interaction-surface {
+  /* A single frameless surface sized to the component's own proportions.
+     Settings remain upper bounds; viewport clipping is avoided. */
+  width: min(var(--cc-popup-width, 720px),
+    calc(var(--cc-popup-height, 520px) * var(--cc-component-ratio, 1)),
+    calc(100vw - var(--cc-popup-margin, 48px) - var(--cc-popup-margin, 48px)),
+    calc((100dvh - var(--cc-popup-margin, 48px) -
+      var(--cc-popup-margin, 48px)) * var(--cc-component-ratio, 1)));
+  height: auto;
+  aspect-ratio: var(--cc-component-ratio, 1);
+  background: transparent;
+}
+.cc-interaction-overlay.cc-component-floating .cc-interaction-content {
+  overflow: hidden;
+}
+.cc-interaction-content {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.cc-interaction-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+}
+.cc-interaction-component {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.cc-interaction-move {
+  position: absolute;
+  z-index: 6;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 20px;
+  border: 0;
+  background: transparent;
+  cursor: grab;
+  touch-action: none;
+}
+.cc-interaction-move::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin: auto;
+  border-radius: 999px;
+  background: rgba(255,255,255,.7);
+  box-shadow: 0 1px 3px rgba(0,0,0,.7);
+}
+.cc-interaction-move:active { cursor: grabbing; }
+.cc-interaction-overlay.cc-panel .cc-interaction-move,
+.cc-interaction-overlay.cc-fullscreen .cc-interaction-move {
+  display: none;
+}
+.cc-interaction-close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  color: #111;
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 1px 8px rgba(0,0,0,.22);
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 1;
+}
+.cc-interaction-close[hidden] { display: none !important; }
+.cc-interaction-overlay.cc-panel { justify-items: end; padding: 0; }
+.cc-interaction-overlay.cc-panel .cc-interaction-surface {
+  width: min(var(--cc-popup-width, 720px), 100vw);
+  height: 100dvh;
+  max-height: 100dvh;
+  border-radius: 0;
+}
+.cc-interaction-overlay.cc-fullscreen { padding: 0; }
+.cc-interaction-overlay.cc-fullscreen .cc-interaction-surface {
+  width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  border-radius: 0;
+}
+@keyframes cc-popup-enter {
+  from { opacity: 0; transform: var(--cc-popup-from, scale(.9)); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes cc-popup-exit {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: var(--cc-popup-from, scale(.9)); }
+}
+@keyframes cc-popup-backdrop-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.cc-interaction-overlay[data-animation="fadeScale"] {
+  --cc-popup-from: scale(.9);
+}
+.cc-interaction-overlay[data-animation="fade"] {
+  --cc-popup-from: none;
+}
+.cc-interaction-overlay[data-animation="slideUp"] {
+  --cc-popup-from: translateY(48px);
+}
+.cc-interaction-overlay[data-animation="slideDown"] {
+  --cc-popup-from: translateY(-48px);
+}
+.cc-interaction-overlay.cc-open:not([data-animation="none"]) {
+  animation: cc-popup-backdrop-enter var(--cc-popup-duration, 280ms) ease-out both;
+}
+.cc-interaction-overlay.cc-open:not([data-animation="none"]) .cc-interaction-surface {
+  animation: cc-popup-enter var(--cc-popup-duration, 280ms) ease-out both;
+}
+.cc-interaction-overlay.cc-closing {
+  animation: cc-popup-backdrop-enter var(--cc-popup-duration, 280ms) ease-in reverse both !important;
+}
+.cc-interaction-overlay.cc-closing .cc-interaction-surface {
+  animation: cc-popup-exit var(--cc-popup-duration, 280ms) ease-in both !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cc-interaction-overlay,
+  .cc-interaction-surface { animation: none !important; }
+}
+@media (max-width: 700px) {
+  .cc-interaction-overlay { --cc-popup-margin: 12px !important; }
+}
+
+.cc-tm-shade {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.30);
+}
+.cc-tm-hero-text {
+  position: absolute;
+  inset: 42px;
+  display: grid;
+  align-content: center;
+  color: var(--cc-fg, #fff);
+  font-family: var(--cc-font-family, inherit);
+  font-size: var(--cc-font-size, clamp(18px, 3vw, 44px));
+  font-weight: var(--cc-font-weight, 700);
+  letter-spacing: var(--cc-letter-spacing, inherit);
+  line-height: var(--cc-line-height, 1.05);
+}
+.cc-tm-text {
+  /* Text is a transparent glyph layer. Its editable bounds are not artwork. */
+  padding: 0;
+  display: block;
+  overflow: visible;
+  color: var(--cc-fg, #1f1f1f);
+  background: var(--cc-bg, transparent);
+  font-family: var(--cc-font-family, inherit);
+  font-size: var(--cc-font-size, clamp(14px, 1.8vw, 24px));
+  font-weight: var(--cc-font-weight, 400);
+  letter-spacing: var(--cc-letter-spacing, inherit);
+  line-height: var(--cc-line-height, 1.35);
+}
+.cc-tm-icon {
+  overflow: hidden;
+  contain: paint;
+  isolation: isolate;
+  background: var(--cc-bg, transparent);
+}
+.cc-tm-svg-shadow.cc-tm-image,
+.cc-tm-svg-shadow.cc-tm-icon,
+.cc-tm-svg-shadow.cc-tm-imported-image {
+  overflow: visible;
+  contain: none;
+}
+.cc-tm-svg-shadow > img,
+.cc-tm-svg-shadow > .cc-tm-icon-mask {
+  filter: drop-shadow(var(--cc-svg-shadow, 0px 0px 0px transparent));
+}
+.cc-tm-icon-mask {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--cc-fg, #1f1f1f);
+  -webkit-mask-image: var(--cc-icon-src, none);
+  mask-image: var(--cc-icon-src, none);
+  -webkit-mask-mode: alpha;
+  mask-mode: alpha;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
+  mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
+  -webkit-mask-size: var(--cc-icon-fit, contain);
+  mask-size: var(--cc-icon-fit, contain);
+  transform: scale(var(--cc-image-scale, 1));
+  transform-origin: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
+}
+.cc-tm-image,
+.cc-tm-imported-image {
+  overflow: hidden;
+  contain: paint;
+  isolation: isolate;
+  background: var(--cc-bg, transparent);
+}
+/* A raster or SVG image is a CSS alpha mask, not a text glyph. */
+.cc-tm-icon-mask {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--cc-icon-color, #1f1f1f);
+  -webkit-mask-image: var(--cc-icon-url);
+  mask-image: var(--cc-icon-url);
+  -webkit-mask-size: var(--cc-icon-mask-size, contain);
+  mask-size: var(--cc-icon-mask-size, contain);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
+  mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
+  transform: scale(var(--cc-image-scale, 1));
+  transform-origin: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
+}
+.cc-tm-texture-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: var(--cc-border-width, 2px) solid var(--cc-border, #1f1f1f);
+  background: var(--cc-bg, #ebe6dc);
+}
+.cc-tm-texture-card > .cc-tm-media {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  contain: paint;
+  isolation: isolate;
+}
+.cc-tm-card-copy {
+  flex: 0 0 auto;
+  padding: 16px;
+  color: var(--cc-fg, #1f1f1f);
+  font-family: var(--cc-font-family, inherit);
+  font-size: var(--cc-font-size, inherit);
+  font-weight: var(--cc-font-weight, 600);
+  letter-spacing: var(--cc-letter-spacing, inherit);
+  line-height: var(--cc-line-height, inherit);
+}
+.cc-tm-button {
+  display: grid;
+  place-items: center;
+  border: var(--cc-border-width, 0px) solid var(--cc-border, transparent);
+  border-radius: var(--cc-radius, 2px);
+  background: var(--cc-bg, #202020);
+  color: var(--cc-fg, #fff);
+  font-family: var(--cc-font-family, inherit);
+  font-size: var(--cc-font-size, inherit);
+  font-weight: var(--cc-font-weight, 700);
+  letter-spacing: var(--cc-letter-spacing, .08em);
+  line-height: var(--cc-line-height, 1.2);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.cc-tm-divider {
+  display: flex;
+  align-items: center;
+}
+.cc-tm-divider span {
+  display: block;
+  width: 100%;
+  height: var(--cc-border-width, 2px);
+  background: var(--cc-border, var(--cc-fg, #282828));
+}
+ .cc-tm-gallery {
+  display: grid;
+  grid-auto-rows: var(--cc-grid-cell-height, auto);
+  align-content: start;
+  grid-template-columns: repeat(var(--cc-gallery-columns, 3), minmax(0,1fr));
+  gap: var(--cc-gallery-gap, 12px);
+  padding: var(--cc-gallery-padding, 12px);
+  align-items: var(--cc-gallery-alignment, stretch);
+  background: var(--cc-bg, #eee9df);
+  border: var(--cc-border-width, 1px) solid var(--cc-border, #c4beb3);
+}
+.cc-tm-gallery[style*="--cc-gallery-layout:row"] {
+  display: flex;
+  flex-direction: row;
+}
+.cc-tm-gallery[style*="--cc-gallery-layout:column"] {
+  display: flex;
+  flex-direction: column;
+}
+.cc-tm-gallery.cc-gallery-sequence,
+.cc-tm-gallery[data-cc-transition*="imageSequenceFade"],
+.cc-tm-gallery[data-cc-transition*="imageSequenceSwoop"] {
+  /* Set the full-screen sequence layout on first paint, before JS starts.
+     Otherwise the 3-column gallery flashes briefly during page loading. */
+  display: block !important;
+  overflow: hidden;
+}
+.cc-tm-gallery.cc-gallery-sequence .cc-tm-gallery-field,
+.cc-tm-gallery[data-cc-transition*="imageSequenceFade"] .cc-tm-gallery-field,
+.cc-tm-gallery[data-cc-transition*="imageSequenceSwoop"] .cc-tm-gallery-field {
+  position: absolute;
+  inset: var(--cc-gallery-padding, 12px);
+  width: auto;
+  height: auto;
+  opacity: 0;
+}
+.cc-tm-gallery.cc-gallery-sequence .cc-tm-gallery-field:first-child,
+.cc-tm-gallery[data-cc-transition*="imageSequenceFade"] .cc-tm-gallery-field:first-child,
+.cc-tm-gallery[data-cc-transition*="imageSequenceSwoop"] .cc-tm-gallery-field:first-child {
+  opacity: 1;
+}
+.cc-tm-gallery-field[hidden] {
+  display: none !important;
+}
+.cc-tm-gallery-field {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  contain: paint;
+  isolation: isolate;
+  flex: 1 1 0;
+  border: var(--cc-gallery-item-border-width, 0px) solid
+    var(--cc-gallery-item-border, transparent);
+  border-radius: var(--cc-gallery-item-radius, 0px);
+}
+.cc-tm-bound-component {
+  overflow: hidden;
+}
+.cc-tm-bound-component[data-cc-element-kind="button"] > iframe {
+  pointer-events: none;
+}
+.cc-tm-inline-component {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  overflow: hidden;
+}
+.cc-tm-gallery-field > img {
+  object-fit: var(--cc-gallery-fit, cover);
+  object-position:
+    var(--cc-gallery-pos-x, 50%)
+    var(--cc-gallery-pos-y, 50%);
+}
+.cc-tm-process {
+  padding: 2%;
+  border: var(--cc-border-width, 1px) solid var(--cc-border, #c4beb3);
+  background: var(--cc-bg, #f4f1ea);
+  color: var(--cc-fg, #1f1f1f);
+  font-family: var(--cc-font-family, inherit);
+}
+.cc-tm-process > strong {
+  display: block;
+  margin-bottom: 3%;
+  color: var(--cc-fg, #1f1f1f);
+  font-size: var(--cc-font-size, clamp(14px, 1.7vw, 24px));
+  font-weight: var(--cc-font-weight, 700);
+  letter-spacing: var(--cc-letter-spacing, inherit);
+  line-height: var(--cc-line-height, inherit);
+}
+.cc-tm-process-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 1.5%;
+  height: 65%;
+  align-items: center;
+}
+.cc-tm-process-row span {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  color: var(--cc-fg, #1f1f1f);
+  border: 1px solid var(--cc-border, #aaa397);
+  background: color-mix(in srgb, var(--cc-bg, #ddd7cc) 78%, #ddd7cc);
+}
+.cc-tm-about {
+  display: grid;
+  grid-template-columns: 4fr 5fr;
+  overflow: hidden;
+  border: var(--cc-border-width, 1px) solid var(--cc-border, #c4beb3);
+  background: var(--cc-bg, #ece7de);
+}
+.cc-tm-about-media {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  contain: paint;
+  isolation: isolate;
+}
+.cc-tm-about-copy {
+  padding: 6%;
+  color: var(--cc-fg, #1f1f1f);
+  font-family: var(--cc-font-family, inherit);
+  font-weight: var(--cc-font-weight, 700);
+  font-size: var(--cc-font-size, clamp(15px, 2vw, 26px));
+  letter-spacing: var(--cc-letter-spacing, inherit);
+  line-height: var(--cc-line-height, inherit);
+}
+.cc-tm-footer-block {
+  padding: 2.5%;
+  background: var(--cc-bg, #1f1f1f);
+  color: var(--cc-fg, #fff);
+  font-family: var(--cc-font-family, inherit);
+  font-size: var(--cc-font-size, clamp(14px, 1.8vw, 24px));
+  font-weight: var(--cc-font-weight, 700);
+  letter-spacing: var(--cc-letter-spacing, .08em);
+  line-height: var(--cc-line-height, inherit);
+}
+
+
+/* Underline in text nodes (also when the glyph color is a texture mask). */
+.cc-tm-element.cc-tm-underlined,
+.cc-tm-element.cc-tm-hover-underlined,
+.cc-tm-hover-underlined .cc-tm-element {
+  text-decoration-line: underline !important;
+  text-decoration-color: var(--cc-fg, currentColor);
+}
+.cc-tm-element.cc-tm-underlined .cc-tm-fill-target,
+.cc-tm-element.cc-tm-hover-underlined .cc-tm-fill-target,
+.cc-tm-hover-underlined .cc-tm-fill-target {
+  text-decoration-line: underline;
+  text-decoration-color: var(--cc-fg, currentColor);
+}
+
+/* Browser-native text and alpha masks: keep text editable and images portable. */
+.cc-tm-element.cc-tm-textured .cc-tm-fill-target {
+  background-image: var(--cc-fill-texture);
+  background-size: var(--cc-fill-size, cover);
+  background-position: var(--cc-fill-pos-x, 50%) var(--cc-fill-pos-y, 50%);
+  background-repeat: var(--cc-fill-repeat, no-repeat);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.cc-tm-element.cc-tm-textured.cc-tm-container {
+  background-image: var(--cc-fill-texture);
+  background-size: var(--cc-fill-size, cover);
+  background-position: var(--cc-fill-pos-x, 50%) var(--cc-fill-pos-y, 50%);
+  background-repeat: var(--cc-fill-repeat, no-repeat);
+}
+.cc-tm-element.cc-tm-textured.cc-tm-image,
+.cc-tm-element.cc-tm-textured.cc-tm-imported-image {
+  background-image: var(--cc-fill-texture);
+  background-size: var(--cc-fill-size, cover);
+  background-position: var(--cc-fill-pos-x, 50%) var(--cc-fill-pos-y, 50%);
+  background-repeat: var(--cc-fill-repeat, no-repeat);
+  -webkit-mask-image: var(--cc-icon-mask);
+  mask-image: var(--cc-icon-mask);
+  mask-mode: alpha;
+  -webkit-mask-size: var(--cc-object-fit, contain);
+  mask-size: var(--cc-object-fit, contain);
+  -webkit-mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
+  mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.cc-tm-element.cc-tm-textured.cc-tm-image > img,
+.cc-tm-element.cc-tm-textured.cc-tm-imported-image > img {
+  visibility: hidden;
+}
+.cc-tm-container {
+  display: grid;
+  place-items: center;
+  border: var(--cc-border-width, 2px) solid var(--cc-border, #4d4d4d);
+  background: var(--cc-bg, transparent);
+  color: var(--cc-fg, #4d4d4d);
+  font-family: var(--cc-font-family, inherit);
+  font-size: var(--cc-font-size, inherit);
+  font-weight: var(--cc-font-weight, 600);
+  letter-spacing: var(--cc-letter-spacing, inherit);
+  line-height: var(--cc-line-height, inherit);
+}
+@media (max-width: 700px) {
+  .cc-tm-hero-text {
+    font-size: var(--cc-font-size, clamp(12px, 4.3vw, 26px));
+  }
+  .cc-tm-text {
+    font-size: var(--cc-font-size, clamp(10px, 3.2vw, 18px));
+  }
+  .cc-tm-card-copy,
+  .cc-tm-about-copy,
+  .cc-tm-footer-block {
+    font-size: var(--cc-font-size, clamp(9px, 3vw, 17px));
+  }
+}
+
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Zum Inhalt</a>
-  <header class="site-header" data-header>
-    <a class="brand" href="index.html" aria-label="CircuitCurios Startseite"><span class="brand-mark" aria-hidden="true">CC</span><span>CircuitCurios</span></a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span class="sr-only">Navigation öffnen</span><span></span><span></span></button>
-    <nav class="site-nav" id="site-nav" data-nav aria-label="Hauptnavigation">
-      <a href="index.html">Oberflächen</a><a href="prozess.html">Prozess</a><a href="formen.html">Formen</a><a class="active" href="ueber.html">Über</a><a href="shop.html">Shop</a>
-    </nav>
-  </header>
+<a href="#main" class="skip">Zum Inhalt</a>
+<header class="site-head">
+  <a class="wordmark" href="index.html" aria-label="CircuitCurios – Startseite">CircuitCurios</a>
+  <button class="menu-btn" type="button" aria-controls="mainnav" aria-expanded="false" id="menuBtn">Menü +</button>
+  <nav id="mainnav" aria-label="Hauptnavigation">
+    <a href="index.html">Oberflächen</a>
+    <a href="formen.html">Formen</a>
+    <a href="prozess.html">Prozess</a>
+    <a href="ueber.html" aria-current="page">Die Gestalterin</a>
+    <a href="shop.html">Shop</a>
+  </nav>
+</header>
+<main id="main" class="cc-template-page" data-cc-template-maker="1" style="--cc-page-bg:rgb(233, 232, 225)">
+  <div class="cc-template-canvas" style="--cc-design-width:1425;--cc-design-height:5162.4844;--cc-page-bg:rgb(233, 232, 225)">
+    <div id="website-1" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:24px;top:-87px;width:68.2344px;height:23px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgb(22, 23, 21);background-color:rgb(22, 23, 21);--cc-fg:rgb(255, 255, 255);color:rgb(255, 255, 255);--cc-font-size:19px;font-size:19px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(255, 255, 255);--cc-border-width:0px;border:none">Zum Inhalt</div>
+    <div id="website-2" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported" style="pointer-events:none;left:0px;top:0px;width:1425px;height:68px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:44px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:19px;font-size:19px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none"></div>
+    <div id="website-3" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:61.9063px;top:23.5px;width:124.4844px;height:19px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:16px;font-size:16px;--cc-font-weight:800;font-weight:800;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:2.88px;letter-spacing:2.88px;--cc-line-height:1;line-height:1;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">CIRCUITCURIOS</div>
+    <div id="website-4" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:928.8438px;top:26px;width:74.25px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:0.75px;letter-spacing:0.75px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">OBERFLÄCHEN</div>
+    <div id="website-5" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:1039.0938px;top:26px;width:40.5px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:0.75px;letter-spacing:0.75px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">FORMEN</div>
+    <div id="website-6" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:1115.5938px;top:26px;width:47.25px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:0.75px;letter-spacing:0.75px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">PROZESS</div>
+    <div id="website-7" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:1198.8438px;top:26px;width:101.25px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:0.75px;letter-spacing:0.75px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">DIE GESTALTERIN</div>
+    <div id="website-8" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:1336.0938px;top:26px;width:27px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:0.75px;letter-spacing:0.75px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">SHOP</div>
+    <div id="website-9" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported" style="pointer-events:none;left:61.9219px;top:168.7969px;width:1301.1563px;height:35px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:11px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none"></div>
+    <div id="website-10" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:61.9219px;top:168.7969px;width:233.6094px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">04 / PERSON HINTER CIRCUITCURIOS</div>
+    <div id="website-11" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:1063.7656px;top:168.7969px;width:299.3125px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">UNABHÄNGIG · EXPERIMENTELL · HANDWERKLICH</div>
+    <div id="website-12" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:1273.4688px;top:276.7969px;width:87.6094px;height:45px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:21px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:right;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.6;line-height:1.6;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">PORTRAIT / HALTUNG / ARBEITSWEISE</div>
+    <div id="website-13" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:61.9219px;top:210.3906px;width:1301.1563px;height:416.6719px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:392.6719px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:216px;font-size:216px;--cc-font-weight:800;font-weight:800;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:-9.504px;letter-spacing:-9.504px;--cc-line-height:0.73;line-height:0.73;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">DIE GESTALTERIN.</div>
+    <div id="website-14" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported" style="left:61.9219px;top:648.7344px;width:1301.1563px;height:623.0625px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:599.0625px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:19px;font-size:19px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(184, 186, 179);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgb(184, 186, 179)"></div>
+    <div id="website-15" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:83.9219px;top:1237.7969px;width:718.0625px;height:14px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(255, 255, 255);color:rgb(255, 255, 255);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(255, 255, 255);--cc-border-width:0px;border:none;text-shadow:0px 1px 10px rgba(51,51,51,1)">CIRCUITCURIOS · MATERIALSTUDIE 01 / 03</div>
+    <div id="website-16" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:895.9844px;top:724.5938px;width:226.3125px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(91, 96, 93);--cc-border-width:0px;border:none">ZWISCHEN TECHNIK UND GESTALTUNG</div>
+    <div id="website-17" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:895.9844px;top:734.5938px;width:403.7656px;height:152.6563px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:128.6563px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:46.08px;font-size:46.08px;--cc-font-weight:600;font-weight:600;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:-0.6912px;letter-spacing:-0.6912px;--cc-line-height:1.06;line-height:1.06;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">Neugier als Antrieb. Experiment als Methode. Formgebung als Ergebnis.</div>
+    <div id="website-18" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:895.9844px;top:915.0781px;width:406.5625px;height:56.2188px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:32.2188px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(69, 75, 71);color:rgb(69, 75, 71);--cc-font-size:21.6px;font-size:21.6px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(69, 75, 71);--cc-border-width:0px;border:none">Ein Porträt der Person hinter den Formen – erzählt über Interessen, Denkweisen und die praktische Arbeit.</div>
+    <div id="website-19" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported" style="left:895.9844px;top:1177.6094px;width:467.0938px;height:51px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:27px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:19px;font-size:19px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(184, 186, 179);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgb(184, 186, 179)"></div>
+    <div id="website-20" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:895.9844px;top:1193.6094px;width:153.3125px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(91, 96, 93);--cc-border-width:0px;border:none">3 KAPITEL / 1 HALTUNG</div>
+    <div id="website-21" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:1267.4063px;top:1197.6094px;width:95.6719px;height:26px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:2px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">ENTDECKEN ↘</div>
+    <div id="website-22" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported" style="left:61.9219px;top:1386.9844px;width:1301.1563px;height:91px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:67px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(184, 186, 179);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgb(184, 186, 179)"></div>
+    <div id="website-23" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:61.9219px;top:1403.9844px;width:109.5156px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(91, 96, 93);--cc-border-width:0px;border:none">01 — DIE PERSON</div>
+    <div id="website-24" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:500.6406px;top:1403.9844px;width:131.4219px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(91, 96, 93);--cc-border-width:0px;border:none">02 — DIE DENKWEISE</div>
+    <div id="website-25" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:939.3594px;top:1403.9844px;width:131.4219px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(91, 96, 93);--cc-border-width:0px;border:none">03 — DIE UMSETZUNG</div>
+    <div id="website-26" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported" style="left:0px;top:1477.9844px;width:1425px;height:2747.1875px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:2723.1875px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:19px;font-size:19px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(184, 186, 179);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgb(184, 186, 179)"></div>
+    <div id="website-27" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported" style="pointer-events:none;left:61.9219px;top:1478.9844px;width:1301.1563px;height:831.1875px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:807.1875px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:19px;font-size:19px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none"></div>
+    <div id="website-28" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:61.9219px;top:1577.5781px;width:80.8594px;height:157px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:133px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(138, 144, 138);color:rgb(138, 144, 138);--cc-font-size:131.04px;font-size:131.04px;--cc-font-weight:700;font-weight:700;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:-7.8624px;letter-spacing:-7.8624px;--cc-line-height:0.73;line-height:0.73;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(138, 144, 138);--cc-border-width:0px;border:none">01</div>
+    <div id="website-29" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:219.5156px;top:1608.5781px;width:146px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(91, 96, 93);--cc-border-width:0px;border:none">HINTER CIRCUITCURIOS</div>
+    <div id="website-30" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:219.5156px;top:1629.5781px;width:260.125px;height:186.9375px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:162.9375px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:93.6px;font-size:93.6px;--cc-font-weight:800;font-weight:800;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:-4.1184px;letter-spacing:-4.1184px;--cc-line-height:0.79;line-height:0.79;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">DIE PERSON.</div>
+    <div id="website-31" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:219.5156px;top:1832.4531px;width:506.2813px;height:81.75px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:57.75px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:20.88px;font-size:20.88px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.36;line-height:1.36;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">Hinter CircuitCurios steht eine unabhängige Gestalterin mit einer ausgeprägten Neugier für technische Zusammenhänge, Materialien und ungewöhnliche Lösungswege.</div>
+    <div id="website-32" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:219.5156px;top:1935.5781px;width:537.7656px;height:110.125px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:86.125px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(66, 71, 67);color:rgb(66, 71, 67);--cc-font-size:20.88px;font-size:20.88px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.36;line-height:1.36;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(66, 71, 67);--cc-border-width:0px;border:none">Das Interesse reicht von Elektronik und mechanischen Konstruktionen bis zur gestalterischen Auseinandersetzung mit Oberflächen und Formen. Dabei verschwimmen die Grenzen zwischen technischem Tüfteln, handwerklicher Arbeit und kreativem Experiment.</div>
+    <div id="website-33" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:219.5156px;top:2067.0781px;width:514.2031px;height:110.125px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:86.125px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(66, 71, 67);color:rgb(66, 71, 67);--cc-font-size:20.88px;font-size:20.88px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.36;line-height:1.36;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(66, 71, 67);--cc-border-width:0px;border:none">Im Mittelpunkt steht keine klassische künstlerische Ausbildung oder festgelegte Disziplin, sondern eine eigenständige Herangehensweise, die unterschiedliche Kenntnisse, Interessen und Fähigkeiten miteinander verbindet.</div>
+    <div id="website-34" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:835.0938px;top:2152.5781px;width:512.9844px;height:14px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(215, 218, 213);color:rgb(215, 218, 213);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgba(230, 230, 225, 0.28);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgba(230, 230, 225, 0.28)">INTERESSENFELD / ELEKTRONIK SKIZZE A—01</div>
+    <div id="website-35" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported" style="pointer-events:none;left:61.9219px;top:2310.1719px;width:1301.1563px;height:877.5625px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:853.5625px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:19px;font-size:19px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none"></div>
+    <div id="website-36" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:61.9219px;top:2408.7656px;width:101.0313px;height:157px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:133px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(138, 144, 138);color:rgb(138, 144, 138);--cc-font-size:131.04px;font-size:131.04px;--cc-font-weight:700;font-weight:700;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:-7.8624px;letter-spacing:-7.8624px;--cc-line-height:0.73;line-height:0.73;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(138, 144, 138);--cc-border-width:0px;border:none">02</div>
+    <div id="website-37" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:820.0938px;top:2439.7656px;width:182.5px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(91, 96, 93);--cc-border-width:0px;border:none">NEUGIER ALS AUSGANGSPUNKT</div>
+    <div id="website-38" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:820.0938px;top:2460.7656px;width:376.1875px;height:186.9375px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:162.9375px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:93.6px;font-size:93.6px;--cc-font-weight:800;font-weight:800;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:-4.1184px;letter-spacing:-4.1184px;--cc-line-height:0.79;line-height:0.79;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">DIE DENKWEISE.</div>
+    <div id="website-39" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:820.0938px;top:2663.6406px;width:538.7344px;height:110.125px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:86.125px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:20.88px;font-size:20.88px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.36;line-height:1.36;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">Der Wunsch, Dinge zu verstehen, beginnt häufig dort, wo andere sie als selbstverständlich betrachten. Wie funktioniert etwas? Warum entsteht eine bestimmte Form? Und was geschieht, wenn gewohnte Vorgehensweisen verändert werden?</div>
+    <div id="website-40" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:820.0938px;top:2795.1406px;width:531.4844px;height:81.75px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:57.75px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(66, 71, 67);color:rgb(66, 71, 67);--cc-font-size:20.88px;font-size:20.88px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.36;line-height:1.36;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(66, 71, 67);--cc-border-width:0px;border:none">Aus solchen Fragen entwickelt sich ein offener Umgang mit Materialien, Techniken und Gestaltungsmöglichkeiten. Bestehende Lösungen sind dabei keine festen Vorgaben, sondern Ausgangspunkte für eigene Überlegungen.</div>
+    <div id="website-41" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:820.0938px;top:2898.2656px;width:521.6719px;height:81.75px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:57.75px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(66, 71, 67);color:rgb(66, 71, 67);--cc-font-size:20.88px;font-size:20.88px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.36;line-height:1.36;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(66, 71, 67);--cc-border-width:0px;border:none">Das Experiment besitzt einen ebenso hohen Stellenwert wie das Ergebnis. Unerwartete Beobachtungen, vermeintliche Fehler und ungewöhnliche Kombinationen können neue Richtungen eröffnen.</div>
+    <div id="website-42" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:820.0938px;top:3001.3906px;width:504.7344px;height:53.375px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:29.375px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(66, 71, 67);color:rgb(66, 71, 67);--cc-font-size:20.88px;font-size:20.88px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.36;line-height:1.36;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(66, 71, 67);--cc-border-width:0px;border:none">Nicht jede Idee muss von Anfang an ein klares Ziel verfolgen. Manchmal entsteht die interessanteste Frage erst während der Arbeit.</div>
+    <div id="website-43" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:234.5156px;top:3030.1406px;width:512.9844px;height:14px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgba(80, 82, 77, 0.35);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgba(80, 82, 77, 0.35)">STRUKTUR / MÖGLICHKEIT / ABWEICHUNG SKIZZE B—02</div>
+    <div id="website-44" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported" style="pointer-events:none;left:61.9219px;top:3187.7344px;width:1301.1563px;height:1037.4375px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1013.4375px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:19px;font-size:19px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none"></div>
+    <div id="website-45" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:61.9219px;top:3286.3281px;width:100.7656px;height:157px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:133px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(138, 144, 138);color:rgb(138, 144, 138);--cc-font-size:131.04px;font-size:131.04px;--cc-font-weight:700;font-weight:700;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:-7.8624px;letter-spacing:-7.8624px;--cc-line-height:0.73;line-height:0.73;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(138, 144, 138);--cc-border-width:0px;border:none">03</div>
+    <div id="website-46" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:219.5156px;top:3317.3281px;width:240.9063px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(91, 96, 93);--cc-border-width:0px;border:none">ZWISCHEN VERSUCH UND ENTSCHEIDUNG</div>
+    <div id="website-47" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:219.5156px;top:3338.3281px;width:383.9531px;height:186.9375px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:162.9375px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:93.6px;font-size:93.6px;--cc-font-weight:800;font-weight:800;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:-4.1184px;letter-spacing:-4.1184px;--cc-line-height:0.79;line-height:0.79;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">DIE UMSETZUNG.</div>
+    <div id="website-48" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:219.5156px;top:3541.2031px;width:521.9844px;height:110.125px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:86.125px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:20.88px;font-size:20.88px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.36;line-height:1.36;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(22, 23, 21);--cc-border-width:0px;border:none">Die praktische Arbeit ist geprägt von Ausprobieren, Verändern und Weiterentwickeln. Werkzeuge und Verfahren werden nicht ausschließlich entsprechend ihrer ursprünglichen Bestimmung eingesetzt, sondern auch auf neue Anwendungsmöglichkeiten untersucht.</div>
+    <div id="website-49" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:219.5156px;top:3672.7031px;width:526.625px;height:110.125px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:86.125px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(66, 71, 67);color:rgb(66, 71, 67);--cc-font-size:20.88px;font-size:20.88px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.36;line-height:1.36;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(66, 71, 67);--cc-border-width:0px;border:none">Dabei wechseln sich gezielte Arbeitsschritte mit offenen Experimenten ab. Manche Versuche führen unmittelbar zu einem brauchbaren Ergebnis, andere liefern zunächst nur eine Beobachtung, die später wieder aufgegriffen wird.</div>
+    <div id="website-50" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:219.5156px;top:3804.2031px;width:511.5313px;height:53.375px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:29.375px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(66, 71, 67);color:rgb(66, 71, 67);--cc-font-size:20.88px;font-size:20.88px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.36;line-height:1.36;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(66, 71, 67);--cc-border-width:0px;border:none">Technische Hilfsmittel, digitale Werkzeuge und handwerkliche Verfahren ergänzen sich, ohne dass eines davon den gesamten Prozess bestimmt.</div>
+    <div id="website-51" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:219.5156px;top:3878.9531px;width:522.3438px;height:110.125px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:86.125px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(66, 71, 67);color:rgb(66, 71, 67);--cc-font-size:20.88px;font-size:20.88px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.36;line-height:1.36;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(66, 71, 67);--cc-border-width:0px;border:none">Entscheidend bleibt die bewusste Auswahl: Welche Eigenschaften einer entstandenen Struktur sind interessant? Was lässt sich weiterentwickeln? Und an welchem Punkt wird aus einem Versuch eine eigenständige Gestaltung?</div>
+    <div id="website-52" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:219.5156px;top:4010.4531px;width:533.7813px;height:81.75px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:57.75px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(66, 71, 67);color:rgb(66, 71, 67);--cc-font-size:20.88px;font-size:20.88px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.36;line-height:1.36;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(66, 71, 67);--cc-border-width:0px;border:none">So entstehen Arbeiten, deren Charakter nicht allein durch die ursprüngliche Idee, sondern ebenso durch die Erfahrungen während ihrer Umsetzung geprägt wird.</div>
+    <div id="website-53" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:835.0938px;top:4067.5781px;width:512.9844px;height:14px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(215, 218, 213);color:rgb(215, 218, 213);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgba(230, 230, 225, 0.28);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgba(230, 230, 225, 0.28)">BEARBEITUNG / AUSWAHL / FORM SKIZZE C—03</div>
+    <div id="website-54" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported" style="left:0px;top:4225.1719px;width:1425px;height:546.3125px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:522.3125px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgb(27, 28, 27);background-color:rgb(27, 28, 27);--cc-fg:rgb(233, 232, 225);color:rgb(233, 232, 225);--cc-font-size:19px;font-size:19px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(233, 232, 225);--cc-border-width:0px;border:none"></div>
+    <div id="website-55" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:61.9219px;top:4369.1719px;width:277.4063px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(168, 174, 168);color:rgb(168, 174, 168);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(168, 174, 168);--cc-border-width:0px;border:none">CIRCUITCURIOS / GESTALTERISCHE HALTUNG</div>
+    <div id="website-56" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:61.9219px;top:4384.1719px;width:682.625px;height:274.1563px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:250.1563px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(233, 232, 225);color:rgb(233, 232, 225);--cc-font-size:139.68px;font-size:139.68px;--cc-font-weight:800;font-weight:800;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:-5.5872px;letter-spacing:-5.5872px;--cc-line-height:0.76;line-height:0.76;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(233, 232, 225);--cc-border-width:0px;border:none">KEINE FESTE FORMEL.</div>
+    <div id="website-57" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:804.5469px;top:4476.7344px;width:411.2656px;height:150.3125px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:126.3125px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(183, 188, 182);color:rgb(183, 188, 182);--cc-font-size:32px;font-size:32px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.17;line-height:1.17;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(183, 188, 182);--cc-border-width:0px;border:none">Die Arbeit folgt keinem abgeschlossenen Schema. Fragen, Versuche und Erkenntnisse verändern den Weg – und mit ihm das Ergebnis.</div>
+    <div id="website-58" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:61.9219px;top:4923.8906px;width:638.5781px;height:86px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:62px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:19px;font-size:19px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(184, 186, 179);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgb(184, 186, 179)">02 PROZESS ↗</div>
+    <div id="website-59" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:724.5px;top:4923.8906px;width:638.5781px;height:86px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:62px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:19px;font-size:19px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(184, 186, 179);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgb(184, 186, 179)">03 FORMEN ↗</div>
+    <div id="website-60" data-cc-element-kind="footer" class="cc-tm-element cc-tm-imported" style="left:0px;top:5096.4844px;width:1425px;height:66px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:42px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(184, 186, 179);--cc-border-width:1px;border-width:1px;border-style:solid;border-color:rgb(184, 186, 179)">CIRCUITCURIOS REMSCHEID · DEUTSCHLAND © 2026 IMPRESSUM DATENSCHUTZ PRIVACY POLICY</div>
+    <div id="website-61" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:61.9063px;top:5118.4844px;width:94.9063px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(91, 96, 93);--cc-border-width:0px;border:none">CIRCUITCURIOS</div>
+    <div id="website-62" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:179.8125px;top:5118.4844px;width:167.9063px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(91, 96, 93);--cc-border-width:0px;border:none">REMSCHEID · DEUTSCHLAND</div>
+    <div id="website-63" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:370.7188px;top:5118.4844px;width:43.8125px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(91, 96, 93);--cc-border-width:0px;border:none">© 2026</div>
+    <div id="website-64" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:1068.875px;top:5118.4844px;width:65.7031px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(91, 96, 93);--cc-border-width:0px;border:none">IMPRESSUM</div>
+    <div id="website-65" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:1157.5781px;top:5118.4844px;width:80.3125px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(91, 96, 93);--cc-border-width:0px;border:none">DATENSCHUTZ</div>
+    <div id="website-66" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:1260.8906px;top:5118.4844px;width:102.2031px;height:13px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(91, 96, 93);color:rgb(91, 96, 93);--cc-font-size:10px;font-size:10px;--cc-font-weight:500;font-weight:500;--cc-font-family:'DM Mono';font-family:'DM Mono';text-align:start;--cc-letter-spacing:1.3px;letter-spacing:1.3px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(91, 96, 93);--cc-border-width:0px;border:none">PRIVACY POLICY</div>
+    <div id="website-67" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported cc-tm-raw-html" data-cc-raw-html="1" style="left:61.9219px;top:681.4063px;width:762.0625px;height:590.3906px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:566.3906px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none">
+<svg viewBox="0 0 760 590" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="alugrad" x1="0" x2="1" y1=".2" y2=".9"><stop stop-color="#ededeb"></stop><stop offset=".48" stop-color="#b3b7b3"></stop><stop offset="1" stop-color="#767d78"></stop></linearGradient>
+            <pattern id="diagonals" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(37)"><path d="M0 0 V9" stroke="#292e2b" stroke-opacity=".23" stroke-width="1"></path></pattern>
+          </defs>
+          <rect width="760" height="590" fill="#aab0aa"></rect>
+          <path d="M0 80 H760 M0 185 H760 M0 290 H760 M0 395 H760 M0 500 H760 M85 0V590 M190 0V590 M295 0V590 M400 0V590 M505 0V590 M610 0V590 M715 0V590" stroke="#eff0e8" opacity=".22"></path>
+          <g transform="translate(380 295) rotate(-22)">
+            <rect x="-140" y="-230" width="280" height="460" rx="135" fill="url(#alugrad)" stroke="#606862" stroke-width="2"></rect>
+            <rect x="-112" y="-199" width="224" height="398" rx="110" fill="url(#diagonals)" stroke="#4e5650" stroke-opacity=".6"></rect>
+            <circle cx="0" cy="-179" r="17" fill="none" stroke="#3d423f" stroke-width="5"></circle>
+            <path d="M-95-90 C0-120,10-10,95-40 M-95-24 C-30-90,40 70,95 13 M-90 67 C-30-30,40 155,90 89" stroke="#47504a" stroke-width="2" fill="none" opacity=".5"></path>
+          </g>
+          <g fill="none" stroke="#303631" stroke-width="1" opacity=".75"><path d="M76 65H680V520H76Z"></path><path d="M76 46V25M76 540V563M54 65H31M700 520H725"></path></g>
+          <g font-family="monospace" font-size="11" fill="#2f3430"><text x="86" y="86">FORM / OBERFLÄCHE</text><text x="570" y="507">STUDIE 01</text></g>
+        </svg>
+    </div>
+    <div id="website-68" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported cc-tm-raw-html" data-cc-raw-html="1" style="left:820.0938px;top:1608.5781px;width:542.9844px;height:530px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:506px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(215, 218, 213);color:rgb(215, 218, 213);--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none">
+<svg viewBox="0 0 600 510" role="img" aria-label="Technische Strichzeichnung: Schaltkreise und Bauteile">
+            <defs><pattern id="boardgrid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#bec3bd" stroke-width=".55" opacity=".16"></path></pattern></defs>
+            <rect width="600" height="510" fill="url(#boardgrid)"></rect>
+            <g stroke="#a3aaa4" stroke-width="1.4" fill="none">
+              <rect x="90" y="74" width="420" height="365" rx="7"></rect>
+              <rect x="208" y="157" width="182" height="175" rx="4" stroke-width="2"></rect>
+              <rect x="241" y="190" width="116" height="109" rx="2"></rect>
+              <path d="M208 180H162V120H110 M208 217H148V259H102 M208 286H162V359H110 M390 180H458V132H500 M390 227H479V257H500 M390 296H450V391H502"></path>
+              <path d="M230 157V118H290V74M260 157V121M322 157V115H380V74M280 332V372H150V439M340 332V382H410V439"></path>
+              <circle cx="110" cy="120" r="7"></circle><circle cx="102" cy="259" r="7"></circle><circle cx="110" cy="359" r="7"></circle>
+              <circle cx="500" cy="132" r="7"></circle><circle cx="500" cy="257" r="7"></circle><circle cx="502" cy="391" r="7"></circle>
+              <circle cx="290" cy="74" r="6"></circle><circle cx="380" cy="74" r="6"></circle><circle cx="150" cy="439" r="6"></circle>
+            </g>
+            <g stroke="#d0d5ce" stroke-width="2"><path d="M208 173h-18m18 17h-18m18 17h-18m18 17h-18m18 17h-18m18 17h-18m18 17h-18m18 17h-18m18 17h-18"></path><path d="M390 173h18m-18 17h18m-18 17h18m-18 17h18m-18 17h18m-18 17h18m-18 17h18m-18 17h18m-18 17h18"></path></g>
+            <g fill="#d7dad4" font-family="monospace" font-size="10" letter-spacing="1"><text x="102" y="103">IN</text><text x="473" y="113">OUT</text><text x="255" y="244">?</text><text x="101" y="470">CIRCUIT / FORM</text><text x="432" y="470">01—A</text></g>
+          </svg>
+    </div>
+    <div id="website-69" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported cc-tm-raw-html" data-cc-raw-html="1" style="left:219.5156px;top:2439.7656px;width:542.9844px;height:576.375px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:552.375px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(22, 23, 21);color:rgb(22, 23, 21);--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none">
+<svg viewBox="0 0 600 510" role="img" aria-label="Grafische Untersuchung von Linien, Wellen und Variationen">
+            <g fill="none" stroke="#49534d" opacity=".22"><circle cx="300" cy="246" r="183"></circle><circle cx="300" cy="246" r="143"></circle><circle cx="300" cy="246" r="101"></circle><circle cx="300" cy="246" r="57"></circle><path d="M300 29V468M63 246H537"></path></g>
+            <g fill="none" stroke="#343b36" stroke-width="1.7" stroke-linecap="round">
+              <path d="M70 308 C102 308 109 168 141 168 S178 350 213 350 S257 135 292 135 S340 360 376 360 S421 157 460 157 S493 309 533 309"></path>
+              <path d="M70 350 C108 350 111 228 149 228 S184 392 223 392 S266 199 305 199 S351 404 392 404 S436 218 478 218 S504 352 533 352" opacity=".55"></path>
+              <path d="M70 270 C103 270 117 111 151 111 S191 315 227 315 S271 77 312 77 S354 325 393 325 S438 113 477 113 S513 267 533 267" opacity=".45"></path>
+              <circle cx="292" cy="135" r="5" fill="#343b36"></circle><circle cx="376" cy="360" r="5" fill="#343b36"></circle><circle cx="460" cy="157" r="5" fill="#343b36"></circle>
+            </g>
+            <g stroke="#343b36" fill="none"><path d="M62 45H178M62 45V135M415 447H540M540 364V447"></path></g>
+            <g font-family="monospace" font-size="11" fill="#343b36"><text x="69" y="62">VARIATION 02</text><text x="420" y="466">FORMSTUDIE</text><text x="310" y="231">X</text></g>
+          </svg>
+    </div>
+    <div id="website-70" data-cc-element-kind="container" class="cc-tm-element cc-tm-imported cc-tm-raw-html" data-cc-raw-html="1" style="left:820.0938px;top:3317.3281px;width:542.9844px;height:736.25px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:cover;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:712.25px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgba(0, 0, 0, 0);background-color:rgba(0, 0, 0, 0);--cc-fg:rgb(215, 218, 213);color:rgb(215, 218, 213);--cc-font-size:16px;font-size:16px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.2;line-height:1.2;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:transparent;--cc-border-width:0px;border:none">
+<svg viewBox="0 0 600 510" role="img" aria-label="Technische Metallstruktur im Übergang vom Versuch zum Objekt">
+            <defs>
+              <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9dcd8"></stop><stop offset=".45" stop-color="#858b86"></stop><stop offset=".75" stop-color="#bdc1bd"></stop><stop offset="1" stop-color="#747a75"></stop></linearGradient>
+              <pattern id="cutmarks" width="46" height="33" patternUnits="userSpaceOnUse"><path d="M3 25L26 6 M23 33L45 11 M1 5L7 1" stroke="#262e29" stroke-width="2" stroke-opacity=".4"></path></pattern>
+            </defs>
+            <rect x="0" y="0" width="600" height="510" fill="#252827"></rect>
+            <g fill="none" stroke="#d4d9d1" opacity=".22"><path d="M34 36H566V475H34Z"></path><path d="M300 32V478M32 255H568"></path><circle cx="300" cy="255" r="207"></circle></g>
+            <g transform="translate(300 255) rotate(-13)">
+              <rect x="-144" y="-147" width="288" height="294" rx="9" fill="url(#steel)" stroke="#e1e4df" stroke-opacity=".7" stroke-width="2"></rect>
+              <rect x="-144" y="-147" width="288" height="294" rx="9" fill="url(#cutmarks)"></rect>
+              <path d="M-126-90 C-30-138,42-15,130-75 M-126 0 C-18-55,35 78,130-4 M-126 89 C-40 32,34 160,130 88" fill="none" stroke="#39423b" stroke-width="3" opacity=".65"></path>
+              <circle cx="0" cy="0" r="56" fill="none" stroke="#29322d" stroke-width="5" opacity=".55"></circle>
+              <circle cx="0" cy="0" r="22" fill="#29322d" opacity=".53"></circle>
+            </g>
+            <g fill="none" stroke="#e0e2dd" opacity=".65"><path d="M70 80V49H134 M470 460H533V395"></path></g>
+            <g font-family="monospace" font-size="11" fill="#e3e4df"><text x="49" y="61">MATERIAL / VERSUCH</text><text x="431" y="457">03—C</text></g>
+          </svg>
+    </div>
+  </div>
 
-  <main id="main">
-    <section class="about-hero">
-      <figure class="portrait-panel about-object-panel">
-        <img src="images/web/kohesion-ring.webp" alt="Handgearbeiteter Aluminiumring von CircuitCurios">
-        <figcaption>Material · Oberfläche · Handarbeit</figcaption>
-      </figure>
-      <div class="about-copy">
-        <p class="eyebrow">CircuitCurios · Remscheid</p>
-        <h1>Material mit<br>eigener Spur.</h1>
-        <p class="about-lead">CircuitCurios ist ein unabhängiges Handmade-Label. Im Mittelpunkt stehen Aluminium, Oberfläche und Einzelstücke.</p>
-        <p>Statt perfekte industrielle Wiederholung zu imitieren, bleibt sichtbar, dass jedes Stück von Hand bearbeitet wurde. Struktur, kleine Unterschiede und Werkzeugspuren gehören zum Entwurf.</p>
-        <p>Daraus entstehen Schmuck und kleine Objekte, bei denen Form und Oberfläche zusammen gedacht werden. Das Material darf zeigen, was mit ihm passiert ist.</p>
-        <a class="arrow-link" href="shop.html">Aktuelle Stücke ansehen <span>→</span></a>
-      </div>
-    </section>
+  <div id="cc-interaction-overlay" class="cc-interaction-overlay" role="dialog" aria-label="Detailansicht" aria-modal="true" aria-hidden="true">
+    <div class="cc-interaction-surface" tabindex="-1">
+      <button class="cc-interaction-move" type="button" aria-label="Floating-Fenster verschieben" title="Fenster verschieben"></button>
+      <button class="cc-interaction-close" type="button" aria-label="Schließen">×</button>
+      <div class="cc-interaction-content"></div>
+    </div>
+  </div>
+  <script>
+  (() => {
+    // Keep one logical canvas coordinate system everywhere. The browser may
+    // display that canvas smaller, but it must scale uniformly in both axes so
+    // the published page, preview and editor keep the same proportions.
+    const fitTemplateCanvas = () => {
+      if (window.ccSetEditorViewport || window.ccFloatingComponent) return;
+      const canvas = document.querySelector(
+        '.cc-template-page > .cc-template-canvas'
+      );
+      if (!canvas) return;
+      const style = getComputedStyle(canvas);
+      const designWidth = parseFloat(
+        style.getPropertyValue('--cc-design-width') || ''
+      );
+      if (!Number.isFinite(designWidth) || designWidth <= 0) return;
+      const host = canvas.parentElement;
+      const viewportWidth = Math.max(
+        1,
+        document.documentElement.clientWidth || window.innerWidth || 1
+      );
+      const hostWidth = host && host.clientWidth > 0
+        ? host.clientWidth
+        : viewportWidth;
+      const hostRect = host ? host.getBoundingClientRect() : null;
+      const visibleHostWidth = hostRect
+        ? Math.max(
+            1,
+            Math.min(
+              hostWidth,
+              viewportWidth - Math.max(0, hostRect.left)
+            )
+          )
+        : viewportWidth;
+      // Existing site CSS can make <main> wider than the browser viewport.
+      // Never use that oversized host width as the scale reference, otherwise
+      // the logical canvas stays at 1:1 and the right side gets clipped.
+      const available = Math.max(
+        1,
+        Math.min(viewportWidth, visibleHostWidth)
+      );
+      const scale = Math.min(1, available / designWidth);
+      canvas.style.zoom = String(scale);
+    };
+    fitTemplateCanvas();
+    window.addEventListener('resize', fitTemplateCanvas, { passive: true });
 
-    <section class="about-notes section-shell reveal">
-      <div><span>01</span><strong>Handarbeit</strong><p>Oberflächen werden direkt am Werkstück erzeugt und nicht aufgedruckt.</p></div>
-      <div><span>02</span><strong>Material</strong><p>Aluminium ist leicht, wandelbar und reagiert stark auf Struktur, Licht und Finish.</p></div>
-      <div><span>03</span><strong>Einzelstück</strong><p>Die Bearbeitung von Hand sorgt dafür, dass kein Stück exakt identisch ausfällt.</p></div>
-    </section>
+    // Native mouse wheels scroll vertically. In a horizontal-only clip,
+    // translate vertical wheel movement to scrollLeft; horizontal trackpads
+    // and touch scrolling remain native. Delegate so live DOM patches work.
+    document.addEventListener('wheel', event => {
+      if (event.ctrlKey || event.metaKey || event.altKey) return;
+      const target = event.target;
+      if (!(target instanceof Element) ||
+          target.closest('input, textarea, select, [contenteditable="true"]')) return;
+      const clip = target.closest('.cc-tm-clip-scroll[data-cc-clip-scroll="horizontal"], .cc-tm-clip-scroll[data-cc-clip-scroll="both"]');
+      if (!clip) return;
+      const axis = clip.getAttribute('data-cc-clip-scroll');
+      if (axis === 'both' && !event.shiftKey) return;
+      if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
+      const maximum = clip.scrollWidth - clip.clientWidth;
+      if (maximum <= 0) return;
+      const multiplier = event.deltaMode === 1 ? 16 :
+        event.deltaMode === 2 ? clip.clientWidth : 1;
+      const amount = event.deltaY * multiplier;
+      if (!amount) return;
+      const desired = Math.max(0, Math.min(maximum, clip.scrollLeft + amount));
+      if (Math.abs(desired - clip.scrollLeft) < .01) return;
+      clip.scrollLeft = desired;
+      event.preventDefault();
+      event.stopPropagation();
+    }, { passive: false });
 
-    <nav class="page-gates section-shell" aria-label="Weitere Seiten">
-      <a href="formen.html"><small>03</small><span>Formen</span><b>←</b></a>
-      <a href="shop.html"><small>04</small><span>Shop</span><b>→</b></a>
-    </nav>
-  </main>
+    const overlay = document.getElementById('cc-interaction-overlay');
+    // The generated overlay starts inside <main>. Move it to <body> so
+    // transforms, containment and scroll offsets on the page cannot change
+    // the viewport-relative position of a fixed dialog.
+    if (overlay && overlay.parentElement !== document.body) {
+      document.querySelectorAll('body > #cc-interaction-overlay')
+        .forEach(stale => { if (stale !== overlay) stale.remove(); });
+      document.body.appendChild(overlay);
+    }
+    const content = overlay ? overlay.querySelector('.cc-interaction-content') : null;
+    const close = overlay ? overlay.querySelector('.cc-interaction-close') : null;
+    const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+    const hostWindow = (() => {
+      try {
+        if (window.top && window.top.location.origin === window.location.origin) {
+          return window.top;
+        }
+      } catch (_) {}
+      return window;
+    })();
+    const hostDocument = (() => {
+      try { return hostWindow.document; } catch (_) { return document; }
+    })();
 
-  <footer class="site-footer section-shell">
-    <div><strong>CircuitCurios</strong><span>Remscheid · Deutschland</span><span>© <span data-year>2026</span></span></div>
-    <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="circuitcurios-privacy-policy.html">Privacy Policy</a></nav>
-  </footer>
+    (() => {
+      let push = null;
+      try {
+        push = sessionStorage.getItem('cc-page-push');
+        sessionStorage.removeItem('cc-page-push');
+      } catch (_) {}
+      if (!push) return;
+
+      const canvas = document.querySelector('.cc-template-canvas');
+      if (!canvas || !canvas.animate) return;
+      const startX = push === 'fromRight' ? '48px' : '-48px';
+      canvas.animate(
+        [
+          { transform: 'translateX(' + startX + ')', opacity: 0 },
+          { transform: 'translateX(0)', opacity: 1 }
+        ],
+        {
+          duration: 320,
+          easing: 'cubic-bezier(.2,.75,.25,1)',
+          fill: 'both'
+        }
+      );
+    })();
+
+    const surface = overlay ? overlay.querySelector('.cc-interaction-surface') : null;
+    const moveHandle = overlay ? overlay.querySelector('.cc-interaction-move') : null;
+    const floatingDefaults = {
+      width: 720, height: 520, position: 'center',
+      backdropColor: '#000000', backdropOpacity: .62,
+      animation: 'fadeScale', durationMs: 280, cornerRadius: 16,
+      showCloseButton: true, closeOnBackdrop: true, closeOnEscape: true,
+    };
+    const floatingPositions = ['center', 'top', 'bottom', 'left', 'right'];
+    const floatingAnimations = [
+      'fadeScale', 'fade', 'slideUp', 'slideDown', 'none',
+    ];
+    const clampNumber = (value, fallback, min, max) => {
+      const number = Number(value);
+      return Number.isFinite(number)
+        ? Math.max(min, Math.min(max, number))
+        : fallback;
+    };
+    const floatingSettings = raw => {
+      const input = raw && typeof raw === 'object' ? raw : {};
+      return {
+        width: clampNumber(input.width, 720, 240, 2400),
+        height: clampNumber(input.height, 520, 160, 2000),
+        viewportMargin: clampNumber(input.viewportMargin, 48, 12, 160),
+        position: floatingPositions.includes(input.position)
+          ? input.position : 'center',
+        backdropColor: typeof input.backdropColor === 'string' &&
+          /^#[0-9a-fA-F]{6}$/.test(input.backdropColor)
+          ? input.backdropColor : '#000000',
+        backdropOpacity: clampNumber(
+          input.backdropOpacity, .62, 0, 1
+        ),
+        animation: floatingAnimations.includes(input.animation)
+          ? input.animation : 'fadeScale',
+        durationMs: clampNumber(input.durationMs, 280, 0, 1500),
+        cornerRadius: clampNumber(input.cornerRadius, 16, 0, 64),
+        showCloseButton: input.showCloseButton !== false ||
+          (input.closeOnBackdrop === false && input.closeOnEscape === false),
+        closeOnBackdrop: input.closeOnBackdrop !== false,
+        closeOnEscape: input.closeOnEscape !== false,
+      };
+    };
+    let activeFloating = floatingDefaults;
+    let previousFocus = null;
+    let previousBodyOverflow = null;
+    let closeTimer = null;
+
+    const finishClose = () => {
+      if (!overlay || !content) return;
+      overlay.classList.remove(
+        'cc-open', 'cc-closing', 'cc-panel', 'cc-fullscreen',
+        'cc-component-floating'
+      );
+      overlay.setAttribute('aria-hidden', 'true');
+      content.replaceChildren();
+      if (previousBodyOverflow !== null) {
+        document.body.style.overflow = previousBodyOverflow;
+        previousBodyOverflow = null;
+      }
+      if (previousFocus && previousFocus.isConnected &&
+          typeof previousFocus.focus === 'function') {
+        previousFocus.focus();
+      }
+      previousFocus = null;
+    };
+    // Editor mode must be able to close the dialog even while the WebView
+    // ignores pointer input and its animation timers are paused.
+    window.ccDismissInteractionOverlay = () => {
+      clearTimeout(closeTimer);
+      finishClose();
+    };
+    const closeOverlay = () => {
+      if (!overlay || !overlay.classList.contains('cc-open') ||
+          overlay.classList.contains('cc-closing')) return;
+      clearTimeout(closeTimer);
+      const duration = window.matchMedia('(prefers-reduced-motion: reduce)')
+        .matches || activeFloating.animation === 'none'
+        ? 0 : activeFloating.durationMs;
+      if (duration === 0 || window.ccPlayback?.paused) {
+        finishClose();
+      } else {
+        overlay.classList.add('cc-closing');
+        closeTimer = setTimeout(finishClose, duration);
+      }
+    };
+
+    const openMediaOverlay = (kind, source, mediaType, rawSettings,
+      componentAspectRatio = null) => {
+      if (!overlay || !surface || !content || !source) return;
+      clearTimeout(closeTimer);
+      const isNew = !overlay.classList.contains('cc-open');
+      activeFloating = floatingSettings(rawSettings);
+      if (isNew) {
+        previousFocus = document.activeElement;
+        previousBodyOverflow = document.body.style.overflow;
+      }
+      document.body.style.overflow = 'hidden';
+
+      const settings = activeFloating;
+      const hex = settings.backdropColor;
+      const red = parseInt(hex.substring(1, 3), 16);
+      const green = parseInt(hex.substring(3, 5), 16);
+      const blue = parseInt(hex.substring(5, 7), 16);
+      overlay.style.setProperty('--cc-popup-backdrop',
+        'rgba(' + red + ',' + green + ',' + blue + ',' +
+        settings.backdropOpacity + ')');
+      overlay.style.setProperty('--cc-popup-width', settings.width + 'px');
+      overlay.style.setProperty('--cc-popup-height', settings.height + 'px');
+      overlay.style.setProperty('--cc-popup-margin', settings.viewportMargin + 'px');
+      // Every new open starts centered. Only an explicit pointer drag can
+      // move the current window; saved page geometry is never modified.
+      surface.style.removeProperty('translate');
+      delete surface.dataset.dragX;
+      delete surface.dataset.dragY;
+      overlay.style.setProperty('--cc-popup-radius',
+        settings.cornerRadius + 'px');
+      overlay.style.setProperty('--cc-popup-duration',
+        settings.durationMs + 'ms');
+      overlay.dataset.position = settings.position;
+      overlay.dataset.animation = settings.animation;
+      overlay.classList.remove('cc-closing', 'cc-panel', 'cc-fullscreen',
+        'cc-component-floating');
+      const ratio = Number(componentAspectRatio);
+      if (kind === 'floating' && mediaType === 'iframe' &&
+          Number.isFinite(ratio) && ratio > 0) {
+        overlay.style.setProperty('--cc-component-ratio', String(ratio));
+        overlay.classList.add('cc-component-floating');
+      } else {
+        overlay.style.removeProperty('--cc-component-ratio');
+      }
+      if (kind === 'panel') overlay.classList.add('cc-panel');
+      if (kind === 'fullscreen') overlay.classList.add('cc-fullscreen');
+      close.hidden = !settings.showCloseButton;
+      content.replaceChildren();
+
+      const media = document.createElement(
+        mediaType === 'iframe' ? 'iframe' : 'img'
+      );
+      media.className = mediaType === 'iframe'
+        ? 'cc-interaction-frame'
+        : 'cc-interaction-component';
+      media.src = source;
+      if (mediaType === 'iframe') {
+        media.title = 'Geöffneter Inhalt';
+      } else {
+        media.alt = '';
+      }
+      content.appendChild(media);
+      // The editor emergency-close path can force-hide a broken dialog.
+      overlay.style.removeProperty('display');
+      overlay.classList.add('cc-open');
+      overlay.setAttribute('aria-hidden', 'false');
+      if (settings.showCloseButton) close.focus();
+      else surface.focus();
+    };
+
+    // A small handle lets desktop users move a floating without confusing
+    // the component's own scrollable text with a drag target.
+    if (moveHandle && surface) {
+      let drag = null;
+      moveHandle.addEventListener('pointerdown', event => {
+        if (event.button !== 0 || !overlay?.classList.contains('cc-open') ||
+            overlay.classList.contains('cc-panel') ||
+            overlay.classList.contains('cc-fullscreen')) return;
+        event.preventDefault();
+        const rect = surface.getBoundingClientRect();
+        drag = {
+          id: event.pointerId, x: event.clientX, y: event.clientY,
+          rect, dx: Number(surface.dataset.dragX) || 0,
+          dy: Number(surface.dataset.dragY) || 0,
+        };
+        moveHandle.setPointerCapture(event.pointerId);
+      });
+      moveHandle.addEventListener('pointermove', event => {
+        if (!drag || event.pointerId !== drag.id) return;
+        event.preventDefault();
+        const inset = 8;
+        const deltaX = event.clientX - drag.x;
+        const deltaY = event.clientY - drag.y;
+        const dx = Math.max(inset - drag.rect.left,
+          Math.min(deltaX, innerWidth - inset - drag.rect.right));
+        const dy = Math.max(inset - drag.rect.top,
+          Math.min(deltaY, innerHeight - inset - drag.rect.bottom));
+        const x = drag.dx + dx, y = drag.dy + dy;
+        surface.style.translate = x + 'px ' + y + 'px';
+        surface.dataset.dragX = String(x);
+        surface.dataset.dragY = String(y);
+      });
+      const finishDrag = event => {
+        if (!drag || event.pointerId !== drag.id) return;
+        if (moveHandle.hasPointerCapture(event.pointerId)) {
+          moveHandle.releasePointerCapture(event.pointerId);
+        }
+        drag = null;
+      };
+      moveHandle.addEventListener('pointerup', finishDrag);
+      moveHandle.addEventListener('pointercancel', finishDrag);
+      moveHandle.addEventListener('lostpointercapture', () => { drag = null; });
+    }
+    close && close.addEventListener('click', closeOverlay);
+    overlay && overlay.addEventListener('click', event => {
+      if (event.target === overlay && activeFloating.closeOnBackdrop) {
+        closeOverlay();
+      }
+    });
+    document.addEventListener('keydown', event => {
+      if (!overlay || !overlay.classList.contains('cc-open')) return;
+      if (event.key === 'Escape' && activeFloating.closeOnEscape) {
+        event.preventDefault();
+        closeOverlay();
+      }
+      // Keep keyboard focus in the active dialog, even without the X button.
+      if (event.key === 'Tab' && !overlay.contains(document.activeElement)) {
+        event.preventDefault();
+        (close.hidden ? surface : close).focus();
+      }
+    });
+
+    const archiveFamilies = ['Biologie', 'Geologie', 'Industrie', 'Physik'];
+    let activeArchiveFamily = 'all';
+
+    const archiveCardPosition = item => {
+      // Archive groups span the full canvas because child coordinates use
+      // world space. Their real card position is stored in CSS variables.
+      const style = getComputedStyle(item);
+      const group = item.classList.contains('cc-tm-transition-group');
+      const x = parseFloat(group
+        ? style.getPropertyValue('--cc-group-x') : style.left);
+      const y = parseFloat(group
+        ? style.getPropertyValue('--cc-group-y') : style.top);
+      return {
+        x: Number.isFinite(x) ? x : 0,
+        y: Number.isFinite(y) ? y : 0
+      };
+    };
+
+    const applyArchiveFamilyFilter = () => {
+      // Grid fields own their family: hide the complete slot (including its
+      // component, image, actions and descendants). CSS Grid reflows all
+      // remaining slots into the first positions automatically.
+      document.querySelectorAll('[data-cc-grid-cell="1"]').forEach(field => {
+        // Existing image-sequence animations still use the gallery data type.
+        // They are a slideshow, not filterable grid cards.
+        const gallery = field.closest('.cc-tm-gallery');
+        if (gallery && gallery.matches(
+          '.cc-gallery-sequence, [data-cc-transition*="imageSequenceFade"], [data-cc-transition*="imageSequenceSwoop"]'
+        )) return;
+        const hiddenByEditor = field.hasAttribute('hidden');
+        const hiddenByFilter = activeArchiveFamily !== 'all' &&
+          field.dataset.ccGridFamily !== activeArchiveFamily;
+        const hide = hiddenByEditor || hiddenByFilter;
+        field.classList.toggle('cc-archive-filter-hidden', hide);
+        field.setAttribute('aria-hidden', hide ? 'true' : 'false');
+      });
+      const items = Array.from(
+        document.querySelectorAll('[data-cc-archive-item="1"]')
+      );
+      // Only the outermost card is a filter unit. Descendant labels, images,
+      // borders and nested groups must not be hidden independently.
+      const cards = items.filter(item =>
+        !item.parentElement?.closest('[data-cc-archive-item="1"]'));
+      const originalOrder = cards.map((item, index) => ({
+        item, index, position: archiveCardPosition(item)
+      })).sort((a, b) =>
+        a.position.y - b.position.y ||
+        a.position.x - b.position.x ||
+        a.index - b.index);
+
+      for (const item of items) {
+        const isCard = cards.includes(item);
+        const hide = isCard && activeArchiveFamily !== 'all' &&
+          item.dataset.ccArchiveFamily !== activeArchiveFamily;
+        item.classList.toggle('cc-archive-filter-hidden', hide);
+        item.setAttribute('aria-hidden', hide ? 'true' : 'false');
+        item.style.removeProperty('--cc-archive-shift-x');
+        item.style.removeProperty('--cc-archive-shift-y');
+      }
+
+      // This is intentionally not a new grid layout. Compact only filtered
+      // cards into the first positions already drawn by the existing page.
+      // Moving the card wrapper keeps its entire subtree together.
+      if (activeArchiveFamily !== 'all') {
+        const visible = originalOrder.filter(entry =>
+          entry.item.dataset.ccArchiveFamily === activeArchiveFamily);
+        visible.forEach((entry, index) => {
+          const slot = originalOrder[index].position;
+          const dx = slot.x - entry.position.x;
+          const dy = slot.y - entry.position.y;
+          entry.item.style.setProperty('--cc-archive-shift-x', dx + 'px');
+          entry.item.style.setProperty('--cc-archive-shift-y', dy + 'px');
+        });
+      }
+
+      // Tabs communicate their active state to assistive technology.
+      document.querySelectorAll('[data-cc-actions]').forEach(tab => {
+        try {
+          const actions = JSON.parse(tab.dataset.ccActions || '[]');
+          const filter = actions.find(action =>
+            action.enabled !== false && action.type === 'filterFamily');
+          if (!filter) return;
+          const family = archiveFamilies.includes(filter.target)
+            ? filter.target : 'all';
+          tab.setAttribute('aria-pressed', String(family === activeArchiveFamily));
+        } catch (_) {}
+      });
+    };
+    window.ccRefreshTemplateArchiveFilters = applyArchiveFamilyFilter;
+
+    // Caption actions subscribe to the frame index emitted by the source
+    // gallery. They do not own a timer, so captions cannot drift out of sync.
+    const setSequenceText = (sourceId, frameIndex, animated) => {
+      document.querySelectorAll('[data-cc-wechseltext]').forEach(element => {
+        let actions = [];
+        try { actions = JSON.parse(element.dataset.ccWechseltext || '[]'); }
+        catch (_) { return; }
+        const action = actions.find(a => a.enabled !== false &&
+          a.type === 'wechselText' && a.target === sourceId);
+        if (!action || !Array.isArray(action.sequenceTexts)) return;
+        const next = action.sequenceTexts[frameIndex];
+        if (typeof next !== 'string') return;
+        const label = element.matches('.cc-tm-text')
+          ? (element.querySelector(':scope > span') || element)
+          : element;
+        if (label.textContent === next) return;
+        label.textContent = next;
+        if (animated && label.animate &&
+            !hostWindow.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          label.animate([
+            { opacity: .35, transform: 'translateY(6px)' },
+            { opacity: 1, transform: 'translateY(0)' }
+          ], { duration: Math.max(80, Number(action.durationMs || 220)),
+               easing: 'ease-out' });
+        }
+      });
+    };
+    document.addEventListener('cc:sequence-frame', event => {
+      if (event.detail) setSequenceText(
+        event.detail.sourceId, event.detail.index, true);
+    });
+    window.ccRefreshTemplateSequenceTexts = () => {
+      document.querySelectorAll('[data-cc-wechseltext]').forEach(element => {
+        try {
+          const actions = JSON.parse(element.dataset.ccWechseltext || '[]');
+          for (const action of actions) {
+            if (action.enabled === false || action.type !== 'wechselText' ||
+                !action.target) continue;
+            const source = document.getElementById(action.target);
+            if (source) setSequenceText(action.target,
+                Number(source.dataset.ccSequenceIndex || 0), false);
+          }
+        } catch (_) {}
+      });
+    };
+    const selectedSources = new Map();
+    const deselectSource = (source) => {
+      const selection = selectedSources.get(source);
+      if (!selection) return;
+      const { target, previousColor, previousBg } = selection;
+      if (target.isConnected) {
+        if (previousColor) target.style.setProperty('--cc-bg', previousColor);
+        else target.style.removeProperty('--cc-bg');
+        target.style.backgroundColor = previousBg;
+      }
+      source.removeAttribute('data-cc-selected');
+      source.setAttribute('aria-pressed', 'false');
+      selectedSources.delete(source);
+    };
+    const toggleSelected = (element, action) => {
+      if (!action.target) return;
+      const target = document.getElementById(action.target);
+      if (!target) return;
+      const already = selectedSources.has(element);
+      for (const [source, selection] of Array.from(selectedSources)) {
+        if (source === element || selection.target === target) {
+          deselectSource(source);
+        }
+      }
+      if (already) return;
+      const selectedColor = action.selectedColor || '#303030';
+      selectedSources.set(element, {
+        target,
+        previousColor: target.style.getPropertyValue('--cc-bg'),
+        previousBg: target.style.backgroundColor
+      });
+      target.style.setProperty('--cc-bg', selectedColor);
+      target.style.backgroundColor = selectedColor;
+      element.setAttribute('data-cc-selected', 'true');
+      element.setAttribute('aria-pressed', 'true');
+    };
+    const runAction = async (element, action) => {
+      if (action.type === 'selected') {
+        toggleSelected(element, action);
+        return;
+      }
+      const type = action.type;
+
+      if (type === 'press') {
+        const scale = Number(action.scale || .94);
+        const duration = Number(action.durationMs || 120);
+        const rotation =
+          getComputedStyle(element).getPropertyValue('--cc-rotation').trim() ||
+          '0rad';
+
+        element.style.transition =
+          'transform ' + duration + 'ms ease-out';
+        element.style.transform =
+          'rotate(' + rotation + ') scale(calc(var(--cc-element-scale, 1) * ' + scale + '))';
+        await wait(duration);
+        element.style.transform =
+          'rotate(' + rotation + ') scale(var(--cc-element-scale, 1))';
+        await wait(Math.max(80, duration));
+        element.style.transition = '';
+        element.style.transform = '';
+        return;
+      }
+
+      if (type === 'openUrl' && action.target) {
+        if (action.presentation === 'newTab') {
+          window.open(action.target, '_blank', 'noopener');
+        } else {
+          hostWindow.location.href = action.target;
+        }
+        return;
+      }
+
+      if (type === 'openInternal' && action.target) {
+        if (action.presentation === 'newTab') {
+          window.open(action.target, '_blank', 'noopener');
+        } else if (
+          action.presentation === 'floating' ||
+          action.presentation === 'panel' ||
+          action.presentation === 'fullscreen'
+        ) {
+          openMediaOverlay(
+            action.presentation,
+            action.target,
+            'iframe',
+            action.floating
+          );
+        } else if (
+          action.presentation === 'pushFromRight' ||
+          action.presentation === 'pushFromLeft'
+        ) {
+          const canvas =
+            hostDocument.querySelector('.cc-template-canvas');
+          const fromRight = action.presentation === 'pushFromRight';
+          try {
+            hostWindow.sessionStorage.setItem(
+              'cc-page-push',
+              fromRight ? 'fromRight' : 'fromLeft'
+            );
+          } catch (_) {}
+
+          if (canvas && canvas.animate) {
+            const distance = fromRight ? '-48px' : '48px';
+            const animation = canvas.animate(
+              [
+                { transform: 'translateX(0)', opacity: 1 },
+                { transform: 'translateX(' + distance + ')', opacity: 0 }
+              ],
+              {
+                duration: 280,
+                easing: 'cubic-bezier(.2,.75,.25,1)',
+                fill: 'forwards'
+              }
+            );
+            try {
+              await animation.finished;
+            } catch (_) {}
+          }
+          hostWindow.location.href = action.target;
+        } else {
+          hostWindow.location.href = action.target;
+        }
+        return;
+      }
+
+      if (type === 'openComponent' && action.componentPath) {
+        openMediaOverlay(
+          action.presentation || 'floating',
+          action.componentPath,
+          action.componentMedia || 'iframe',
+          action.floating,
+          action.componentAspectRatio
+        );
+        return;
+      }
+
+      if (type === 'scrollTo' && action.target) {
+        const target = document.getElementById(action.target);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+        }
+        return;
+      }
+
+      if (type === 'filterFamily') {
+        activeArchiveFamily = archiveFamilies.includes(action.target)
+          ? action.target : 'all';
+        applyArchiveFamilyFilter();
+        return;
+      }
+
+      if (type === 'toggle' && action.target) {
+        const target = document.getElementById(action.target);
+        if (target) target.classList.toggle('cc-hidden-by-action');
+        return;
+      }
+
+      if (type === 'lightbox') {
+        const image = element.querySelector('img');
+        if (image && image.src) {
+          openMediaOverlay('floating', image.src, 'image');
+        }
+        return;
+      }
+
+      if (type === 'back') {
+        hostWindow.history.back();
+      }
+    };
+
+    // The editor patches DOM nodes in place. Register click handlers for new
+    // elements without reinstalling unchanged handlers on every edit.
+    const actionBindings = new Map();
+    window.ccRefreshTemplateActions = () => {
+      const live = new Set(document.querySelectorAll('[data-cc-actions]'));
+      for (const [element, run] of actionBindings) {
+        if (live.has(element)) continue;
+        element.removeEventListener('click', run);
+        element.removeEventListener('keydown', run);
+        actionBindings.delete(element);
+      }
+      live.forEach(element => {
+        if (actionBindings.has(element)) return;
+      const run = async event => {
+        if (
+          event.type === 'keydown' &&
+          event.key !== 'Enter' &&
+          event.key !== ' '
+        ) {
+          return;
+        }
+        if (event.type === 'keydown' || event.type === 'click') {
+          event.preventDefault();
+        }
+
+        let actions = [];
+        try {
+          actions = JSON.parse(element.dataset.ccActions || '[]');
+        } catch (_) {
+          return;
+        }
+
+        for (const action of actions) {
+          if (action.enabled === false) continue;
+          const delay = Number(action.delayMs || 0);
+          if (delay > 0) await wait(delay);
+          await runAction(element, action);
+        }
+      };
+
+        element.addEventListener('click', run);
+        element.addEventListener('keydown', run);
+        actionBindings.set(element, run);
+      });
+      applyArchiveFamilyFilter();
+      window.ccRefreshTemplateSequenceTexts?.();
+    };
+    window.ccRefreshTemplateActions();
+
+    const easingValue = value => {
+      if (value === 'linear') return 'linear';
+      if (value === 'easeIn') return 'ease-in';
+      if (value === 'easeInOut') return 'ease-in-out';
+      if (value === 'overshoot') {
+        return 'cubic-bezier(.2,1.55,.45,1)';
+      }
+      return 'ease-out';
+    };
+
+
+    // Calculate fully opaque RGB once, then apply the configured intensity.
+    // CSS text-shadow/box-shadow/glow never needs a visible rectangular overlay.
+    const hoverGlowRGBA = (raw, alpha) => {
+      const value = String(raw || '#ffffff').trim();
+      const hex = value.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i);
+      let channels = [255, 255, 255], sourceAlpha = 1;
+      if (hex) {
+        const full = hex[1].length === 3
+          ? [...hex[1]].map(c => c + c).join('') : hex[1];
+        channels = [0, 2, 4].map(i => parseInt(full.slice(i, i + 2), 16));
+      } else {
+        const rgb = value.match(/^rgba?\(\s*(\d+(?:\.\d+)?)\s*,\s*(\d+(?:\.\d+)?)\s*,\s*(\d+(?:\.\d+)?)(?:\s*,\s*([\d.]+))?\s*\)$/i);
+        if (rgb) {
+          channels = rgb.slice(1, 4).map(n => Math.round(Number(n)));
+          sourceAlpha = Number(rgb[4] ?? 1);
+        }
+      }
+      return 'rgba(' + channels.join(',') + ',' +
+        Math.max(0, Math.min(1, alpha * sourceAlpha)).toFixed(3) + ')';
+    };
+
+    // Hover effects use individual transform properties so they compose with
+    // the editor's existing CSS transform and viewport transitions.
+    // Click/Press remains independent; touch devices do not synthesize hover.
+    // DOM patches can add a hover to an existing node or change its effects.
+    // Rebind only changed sources; leave all other running animations intact.
+    const hoverBindings = new Map();
+    const hoverSupported = hostWindow.matchMedia?.(
+      '(hover: hover) and (pointer: fine)').matches ?? true;
+    window.ccRefreshTemplateHovers = () => {
+      const live = new Set(document.querySelectorAll('[data-cc-hover]'));
+      for (const [source, binding] of hoverBindings) {
+        if (live.has(source) && binding.serialized === source.dataset.ccHover) {
+          continue;
+        }
+        binding.dispose();
+        hoverBindings.delete(source);
+      }
+      if (!hoverSupported) return;
+      live.forEach(source => {
+        if (hoverBindings.has(source)) return;
+        const serialized = source.dataset.ccHover;
+        let actions = [];
+        try { actions = JSON.parse(serialized || '[]'); }
+        catch (_) { return; }
+        const disposers = [];
+
+        actions.filter(action => action.enabled !== false).forEach(action => {
+          let active = null;
+          let baseline = null;
+          let underlineTarget = null;
+          const effects = new Set(Array.isArray(action.hoverEffects)
+            ? action.hoverEffects : ['lift']);
+          const clearUnderline = () => {
+            if (underlineTarget) {
+              underlineTarget.classList.remove('cc-tm-hover-underlined');
+              underlineTarget = null;
+            }
+          };
+          const targetOf = () => {
+            if (action.hoverTarget === 'other') {
+              return action.target ? document.getElementById(action.target) : null;
+            }
+            if (action.hoverTarget === 'group') {
+              return source.closest('.cc-tm-transition-group') || source;
+            }
+            return source;
+          };
+          const snapshot = target => {
+            const css = getComputedStyle(target);
+            return {
+              translate: css.translate === 'none' ? '0px 0px' : css.translate,
+              scale: css.scale === 'none' ? '1' : css.scale,
+              rotate: css.rotate === 'none' ? '0deg' : css.rotate,
+              opacity: css.opacity,
+              boxShadow: css.boxShadow,
+              textShadow: css.textShadow,
+              filter: css.filter,
+            };
+          };
+          const play = entering => {
+            const target = targetOf();
+            if (!target || !target.animate) return;
+            if (effects.has('underline')) {
+              if (underlineTarget && underlineTarget !== target) clearUnderline();
+              target.classList.toggle('cc-tm-hover-underlined', entering);
+              underlineTarget = entering ? target : null;
+            }
+            // Capture the original CSS once, before any filled animation.
+            if (!baseline || baseline.target !== target) {
+              baseline = { target, style: snapshot(target) };
+            }
+            const start = snapshot(target);
+            if (active) active.cancel();
+            const end = { ...baseline.style };
+            if (entering) {
+              const distance = Math.max(0, Math.min(200, Number(action.hoverDistance ?? 8)));
+              let x = 0, y = 0;
+              if (effects.has('lift')) y -= distance;
+              if (effects.has('slide')) {
+                const direction = action.hoverDirection || 'right';
+                if (direction === 'left') x -= distance;
+                else if (direction === 'up') y -= distance;
+                else if (direction === 'down') y += distance;
+                else x += distance;
+              }
+              if (effects.has('lift') || effects.has('slide'))
+                end.translate = x + 'px ' + y + 'px';
+              if (effects.has('scale'))
+                end.scale = String(Math.max(.5, Math.min(2, Number(action.hoverScale ?? 1.05))));
+              if (effects.has('tilt'))
+                end.rotate = String(Math.max(-45, Math.min(45, Number(action.hoverTilt ?? 4)))) + 'deg';
+              if (effects.has('fade'))
+                end.opacity = String(Math.max(0, Math.min(1, Number(action.hoverOpacity ?? .7))));
+              if (effects.has('glow')) {
+                const intensity = Math.max(0, Math.min(1,
+                  Number(action.hoverGlowIntensity ?? .85)));
+                const blur = Math.max(0, Math.min(150, Number(action.hoverGlowBlur ?? 24)));
+                const core = Math.max(0, Math.min(50, Number(action.hoverGlowSpread ?? 3)));
+                const color = action.hoverGlowColor || '#ffffff';
+                const strong = hoverGlowRGBA(color, intensity);
+                const soft = hoverGlowRGBA(color, intensity * .5);
+                const kind = target.getAttribute('data-cc-element-kind');
+                if (kind === 'text') {
+                  // Text-shadow follows each glyph, including counters and letter edges.
+                  const layers = [
+                    '0 0 ' + core + 'px ' + strong,
+                    '0 0 ' + blur + 'px ' + strong,
+                    '0 0 ' + (blur * 1.7) + 'px ' + soft,
+                  ];
+                  end.textShadow = (baseline.style.textShadow === 'none' ? '' :
+                    baseline.style.textShadow + ', ') + layers.join(', ');
+                } else if (kind === 'image' || kind === 'icon') {
+                  // Alpha-based imagery needs a silhouette glow, not a box.
+                  const halo = 'drop-shadow(0 0 ' + Math.max(1, blur / 2) +
+                    'px ' + strong + ') drop-shadow(0 0 ' + Math.max(1, blur) +
+                    'px ' + soft + ')';
+                  end.filter = (baseline.style.filter === 'none' ? '' :
+                    baseline.style.filter + ' ') + halo;
+                } else {
+                  end.boxShadow = (baseline.style.boxShadow === 'none' ? '' :
+                    baseline.style.boxShadow + ', ') + '0 0 ' + blur + 'px ' +
+                    core + 'px ' + strong;
+                }
+              }
+            }
+            const duration = hostWindow.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+              ? 0 : Math.max(0, Math.min(5000, Number(action.durationMs ?? 250)));
+            active = target.animate([start, end], {
+              duration, delay: entering ? Math.max(0, Number(action.delayMs || 0)) : 0,
+              easing: easingValue(action.hoverEasing || 'easeOut'),
+              fill: 'forwards'
+            });
+          };
+          const enter = () => play(true);
+          const leave = () => {
+            if (action.hoverReverse !== false) play(false);
+          };
+          source.addEventListener('pointerenter', enter);
+          source.addEventListener('pointerleave', leave);
+          disposers.push(() => {
+            source.removeEventListener('pointerenter', enter);
+            source.removeEventListener('pointerleave', leave);
+            // Cancel filled animations when an effect is edited or removed.
+            if (active) active.cancel();
+            clearUnderline();
+          });
+        });
+        hoverBindings.set(source, {
+          serialized,
+          dispose: () => disposers.forEach(dispose => dispose()),
+        });
+      });
+    };
+    window.ccRefreshTemplateHovers();
+
+    // Animation groups share one clock. Their tracks remain independently
+    // editable elements and keep their exact world-space positions.
+    const animationGroupStates = new WeakMap();
+    const playAnimationGroup = async (group) => {
+      const previous = animationGroupStates.get(group);
+      if (previous) {
+        previous.cancelled = true;
+        previous.animations.forEach(a => a.cancel());
+      }
+      const state = { cancelled: false, animations: new Set() };
+      animationGroupStates.set(group, state);
+      let config = {};
+      try { config = JSON.parse(group.dataset.ccTransition || '{}'); } catch (_) {}
+      const tracks = Array.from(group.querySelectorAll('[data-cc-element-kind]'))
+        .filter(e => e.closest('[data-cc-animation-controller]') === group);
+      const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+      const start = async () => {
+        const tasks = [];
+        for (const track of tracks) {
+          if (state.cancelled) return;
+          let t = {};
+          try { t = JSON.parse(track.dataset.ccTransition || '{}'); } catch (_) {}
+          const delay = Math.max(0, Number(t.delayMs || 0));
+          const duration = Math.max(1, Number(t.durationMs || config.durationMs || 350));
+          const easing = t.easing === 'linear' ? 'linear' :
+            t.easing === 'easeIn' ? 'ease-in' : t.easing === 'easeInOut' ? 'ease-in-out' : 'ease-out';
+          const direction = t.direction || 'bottom';
+          const distance = Math.max(0, Number(t.distance || 32));
+          const x = direction === 'left' ? -distance : direction === 'right' ? distance : 0;
+          const y = direction === 'top' ? -distance : direction === 'bottom' ? distance : 0;
+          const effect = t.effect || 'fadeSlide';
+          const fade = ['fade','fadeSlide','rise','blur'].includes(effect);
+          const moving = ['slide','fadeSlide','rise'].includes(effect);
+          const texts = (() => { try { return JSON.parse(track.dataset.ccAnimationTexts || '[]').filter(s => typeof s === 'string'); } catch (_) { return []; } })();
+          const label = track.matches('.cc-tm-text') ? (track.querySelector(':scope > span') || track) : track;
+          if (texts.length > 0) label.textContent = texts[0];
+          const playTrack = async () => {
+            if (['imageSequenceFade', 'imageSequenceSwoop'].includes(t.effect)) {
+              track.removeAttribute('data-cc-transition-pending');
+              await runImageSequence(track, t, state);
+              return;
+            }
+            if (delay) await sleep(delay);
+            if (state.cancelled) return;
+            if (track.animate && t.enabled !== false) {
+              const frames = [
+                { opacity: fade ? 0 : 1, transform: moving ? 'translate(' + x + 'px,' + y + 'px)' : 'none' },
+                { opacity: 1, transform: 'none' },
+              ];
+              const animation = track.animate(frames, { duration, easing, fill: 'both' });
+              state.animations.add(animation);
+              track.removeAttribute('data-cc-transition-pending');
+              try { await animation.finished; } catch (_) {}
+              if (state.cancelled) return;
+              animation.cancel();
+            } else {
+              track.removeAttribute('data-cc-transition-pending');
+            }
+            if (texts.length > 1) {
+              const hold = Math.max(150, Number(t.sequenceHoldMs || config.sequenceHoldMs || 2200));
+              for (let index = 1; index < texts.length && !state.cancelled; index++) {
+                await sleep(hold);
+                if (state.cancelled) return;
+                label.textContent = texts[index];
+                if (label.animate) {
+                  const a = label.animate([{opacity:0.2},{opacity:1}], {duration,easing});
+                  state.animations.add(a);
+                  try { await a.finished; } catch (_) {}
+                }
+              }
+            }
+          };
+          // Start all tracks on one clock; the individual delay controls offset.
+          tasks.push(playTrack());
+        }
+        await Promise.all(tasks);
+      };
+      const groupDelay = Math.max(0, Number(config.delayMs || 0));
+      if (groupDelay) await sleep(groupDelay);
+      do {
+        if (state.cancelled) return;
+        await start();
+        if (!config.loop || state.cancelled) return;
+        await sleep(Math.max(0, Number(config.loopPauseMs || 0)));
+      } while (!state.cancelled);
+    };
+    const groupObservers = new Map();
+    window.ccRefreshTemplateAnimationGroups = () => {
+      document.querySelectorAll('[data-cc-animation-controller]').forEach(group => {
+        const config = (() => { try { return JSON.parse(group.dataset.ccTransition || '{}'); } catch (_) { return {}; } })();
+        const fingerprint = JSON.stringify(config) +
+          Array.from(group.querySelectorAll('[data-cc-element-kind]'))
+            .map(e => (e.dataset.ccTransition || '') + (e.dataset.ccAnimationTexts || '')).join('|');
+        if (group.dataset.ccAnimationFingerprint === fingerprint) return;
+        group.dataset.ccAnimationFingerprint = fingerprint;
+        const existing = groupObservers.get(group);
+        if (existing) existing.disconnect();
+        if (config.trigger === 'enterViewport') {
+          const observer = new IntersectionObserver(entries => {
+            if (entries.some(e => e.isIntersecting)) {
+              void playAnimationGroup(group);
+              if (config.once !== false && !config.loop) observer.disconnect();
+            }
+          }, {threshold: 0.1});
+          const marker = group.previousElementSibling;
+          const target = marker?.getAttribute('data-cc-group-trigger') === group.id
+              ? marker : group;
+          observer.observe(target);
+          groupObservers.set(group, observer);
+        } else {
+          requestAnimationFrame(() => void playAnimationGroup(group));
+        }
+      });
+    };
+    window.ccRefreshTemplateAnimationGroups();
+
+    const transitionControllers = new WeakMap();
+
+    const transitionConfig = element => {
+      try {
+        const config = JSON.parse(element.dataset.ccTransition || '{}');
+        return config.enabled ? config : null;
+      } catch (_) {
+        return null;
+      }
+    };
+
+    const transitionStates = (element, config) => {
+      const distance = Number(config.distance || 32);
+      const effect = config.effect || 'fadeSlide';
+      const direction = config.direction || 'bottom';
+      const rotation =
+        getComputedStyle(element).getPropertyValue('--cc-rotation').trim() ||
+        '0rad';
+      const parsedOpacity = Number.parseFloat(getComputedStyle(element).opacity);
+      const targetOpacity = Number.isFinite(parsedOpacity) ? parsedOpacity : 1;
+      let x = 0;
+      let y = 0;
+      if (direction === 'left') x = -distance;
+      if (direction === 'right') x = distance;
+      if (direction === 'top') y = -distance;
+      if (direction === 'bottom') y = distance;
+      const moves = effect === 'slide' || effect === 'fadeSlide' || effect === 'rise';
+      const fades = effect === 'fade' || effect === 'fadeSlide' || effect === 'rise' || effect === 'blur' || effect === 'bounce';
+      const scale = effect === 'scale' ? Number(config.scaleFrom || .96) : 1;
+      let startClip = 'inset(0)';
+      let endClip = 'inset(0)';
+      if (effect === 'reveal') {
+        startClip = 'inset(100% 0 0 0)';
+        if (direction === 'left') startClip = 'inset(0 100% 0 0)';
+        if (direction === 'right') startClip = 'inset(0 0 0 100%)';
+        if (direction === 'top') startClip = 'inset(0 0 100% 0)';
+        if (element.hasAttribute('data-cc-transition-group')) {
+          const style = getComputedStyle(element);
+          const number = name => parseFloat(style.getPropertyValue(name)) || 0;
+          const left = number('--cc-group-x'), top = number('--cc-group-y');
+          const width = number('--cc-group-width'), height = number('--cc-group-height');
+          const right = element.clientWidth - left - width;
+          const bottom = element.clientHeight - top - height;
+          const clip = (t, r, b, l) => 'inset(' + [t, r, b, l].map(n => n + 'px').join(' ') + ')';
+          endClip = clip(top, right, bottom, left);
+          startClip = clip(top + height, right, bottom, left);
+          if (direction === 'left') startClip = clip(top, right + width, bottom, left);
+          if (direction === 'right') startClip = clip(top, right, bottom, left + width);
+          if (direction === 'top') startClip = clip(top, right, bottom + height, left);
+        }
+      }
+      return {
+        start: {
+          opacity: fades ? 0 : targetOpacity,
+          transform: 'rotate(' + rotation + ') translate(' + (moves ? x : 0) + 'px,' + (moves ? y : 0) + 'px) scale(calc(var(--cc-element-scale, 1) * ' + scale + '))',
+          filter: effect === 'blur' ? 'blur(14px)' : 'none',
+          ...(effect === 'reveal' ? { clipPath: startClip } : {})
+        },
+        end: {
+          opacity: targetOpacity,
+          transform: 'rotate(' + rotation + ') translate(0px,0px) scale(var(--cc-element-scale, 1))',
+          filter: 'none',
+          ...(effect === 'reveal' ? { clipPath: endClip } : {})
+        }
+      };
+    };
+
+    const runAnimation = async (controller, target, frames, options, release = false) => {
+      if (controller.cancelled) return;
+      if (!target.animate) {
+        target.removeAttribute('data-cc-transition-pending');
+        return;
+      }
+      const animation = target.animate(frames, options);
+      // Reveal only after its animation has been installed, never before.
+      target.removeAttribute('data-cc-transition-pending');
+      // Replace the previous loop endpoint, including any retained reveal mask.
+      controller.animations.forEach(previous => previous.cancel());
+      controller.animations.clear();
+      controller.animations.add(animation);
+      try { await animation.finished; } catch (_) {}
+      // The visible endpoint is the element's own CSS. Keeping a filled reveal
+      // animation would permanently clip its exported shadow at the box edge.
+      if (release || controller.cancelled) {
+        animation.cancel();
+        controller.animations.delete(animation);
+      }
+    };
+
+    const cancelTransition = element => {
+      const controller = transitionControllers.get(element);
+      if (!controller) return;
+      controller.cancelled = true;
+      controller.animations.forEach(animation => animation.cancel());
+      controller.animations.clear();
+      transitionControllers.delete(element);
+      if (element.classList.contains('cc-gallery-sequence')) {
+        // Never expose the underlying 3-column gallery when playback stops.
+        // Keep the first texture visible until the sequence starts again.
+        element.querySelectorAll('.cc-tm-gallery-field').forEach((field, index) => {
+          field.style.opacity = index === 0 ? '1' : '0';
+        });
+      }
+    };
+
+    // Keep an opaque image underneath the incoming image for the entire fade.
+    // A fade-out-to-background is not a crossfade.
+    const runImageSequence = async (element, config, controller) => {
+      const fields = Array.from(element.querySelectorAll('.cc-tm-gallery-field'));
+      if (!fields.length) return;
+      const duration = Math.max(0, Number(config.durationMs ?? 350));
+      const hold = Math.max(0, Number(config.sequenceHoldMs ?? 2200));
+      const delay = Math.max(0, Number(config.delayMs ?? 0));
+      const pause = Math.max(0, Number(config.loopPauseMs ?? 0));
+      const loop = config.loop === true;
+      const easing = easingValue(config.easing);
+
+      element.classList.add('cc-gallery-sequence');
+      fields.forEach((field, index) => {
+        field.style.opacity = index === 0 ? '1' : '0';
+      });
+      element.dataset.ccSequenceIndex = '0';
+      document.dispatchEvent(new CustomEvent('cc:sequence-frame', {
+        detail: { sourceId: element.id, index: 0 }
+      }));
+      // Keep the first frame fully visible while loading and before playback.
+      if (delay > 0) await wait(delay);
+      if (controller.cancelled || fields.length === 1 || !Element.prototype.animate) return;
+
+      let current = 0;
+      do {
+        if (controller.cancelled) return;
+        if (hold > 0) await wait(hold);
+        if (controller.cancelled) return;
+
+        const next = (current + 1) % fields.length;
+        const incoming = fields[next];
+        const outgoing = fields[current];
+        // Keep the outgoing texture visible until the incoming image has
+        // decoded; never animate an empty frame or expose the background.
+        const nextImage = incoming.querySelector('img');
+        if (nextImage) {
+          try {
+            if (typeof nextImage.decode === 'function') {
+              await nextImage.decode();
+            } else if (!nextImage.complete) {
+              await new Promise((resolve) => {
+                nextImage.addEventListener('load', resolve, { once: true });
+                nextImage.addEventListener('error', resolve, { once: true });
+              });
+            }
+          } catch (_) {}
+          if (!nextImage.naturalWidth) return;
+        }
+        if (controller.cancelled) return;
+        // Both layers occupy the same box. Never fade the outgoing layer to
+        // transparent before the incoming one has become fully opaque.
+        incoming.style.opacity = '0';
+        const swoop = config.effect === 'imageSequenceSwoop';
+        const animation = incoming.animate(
+          swoop
+            ? [{ opacity: 0, transform: 'translateX(36px) scale(.96)' },
+               { opacity: 1, transform: 'translateX(0) scale(1)' }]
+            : [{ opacity: 0 }, { opacity: 1 }],
+          { duration, easing, fill: 'both' },
+        );
+        controller.animations.add(animation);
+        try { await animation.finished; } catch (_) {}
+        controller.animations.delete(animation);
+        if (controller.cancelled) {
+          animation.cancel();
+          return;
+        }
+        incoming.style.opacity = '1';
+        animation.cancel(); // Remove the filled animation after persisting state.
+        outgoing.style.opacity = '0';
+        current = next;
+        element.dataset.ccSequenceIndex = String(current);
+        document.dispatchEvent(new CustomEvent('cc:sequence-frame', {
+          detail: { sourceId: element.id, index: current }
+        }));
+
+        if (!loop && current === fields.length - 1) return;
+        if (loop && current === 0 && pause > 0) await wait(pause);
+      } while (!controller.cancelled);
+    };
+
+    const runGenericTransition = async (element, config, controller) => {
+      const duration = Math.max(0, Number(config.durationMs || 350));
+      const delay = Math.max(0, Number(config.delayMs || 0));
+      const pause = Math.max(0, Number(config.loopPauseMs || 0));
+      const loop = config.loop === true;
+      const easing = config.effect === 'bounce' ? easingValue('overshoot') : easingValue(config.easing);
+      const states = transitionStates(element, config);
+      const options = { duration, easing, fill: 'forwards' };
+      if (delay > 0) await wait(delay);
+      do {
+        if (controller.cancelled) return;
+        await runAnimation(controller, element, [states.start, states.end], options, true);
+        if (!loop || controller.cancelled) return;
+        if (pause > 0) await wait(pause);
+        await runAnimation(controller, element, [states.end, states.start], options);
+        if (pause > 0) await wait(pause);
+      } while (!controller.cancelled);
+    };
+
+    const startTransition = (element, config) => {
+      cancelTransition(element);
+      const controller = { cancelled: false, animations: new Set() };
+      transitionControllers.set(element, controller);
+      const runner = ['imageSequenceFade', 'imageSequenceSwoop'].includes(config.effect) ? runImageSequence(element, config, controller) : runGenericTransition(element, config, controller);
+      runner.catch(() => {});
+    };
+
+    const transitionRegistrations = new Map();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        for (const [element, registration] of transitionRegistrations) {
+          if (registration.target !== entry.target) continue;
+          const config = registration.config;
+          if (entry.isIntersecting) {
+            startTransition(element, config);
+            if (config.once !== false && config.loop !== true) observer.unobserve(entry.target);
+          } else if (config.once === false || config.loop === true) {
+            cancelTransition(element);
+          }
+        }
+      });
+    }, { threshold: .12 });
+
+    // Inspector edits register only new/changed transitions. Existing HTML,
+    // iframes and unchanged animations keep their current playback state.
+    window.ccRefreshTemplateTransitions = () => {
+      window.ccRefreshTemplateAnimationGroups?.();
+      const elements = Array.from(document.querySelectorAll('[data-cc-transition]'))
+        .filter(element => !element.closest('[data-cc-animation-controller]') &&
+          !element.hasAttribute('data-cc-animation-controller'));
+      const current = new Set(elements);
+      for (const [element, registration] of transitionRegistrations) {
+        if (current.has(element)) continue;
+        observer.unobserve(registration.target);
+        cancelTransition(element);
+        element.removeAttribute('data-cc-transition-pending');
+        transitionRegistrations.delete(element);
+      }
+      elements.forEach(element => {
+        const source = element.dataset.ccTransition;
+        const marker = element.previousElementSibling;
+        const target = element.hasAttribute('data-cc-transition-group')
+          ? (marker?.getAttribute('data-cc-group-trigger') === element.id ? marker : null) : element;
+        if (!target) {
+          element.removeAttribute('data-cc-transition-pending');
+          return;
+        }
+        const previous = transitionRegistrations.get(element);
+        if (previous && previous.source === source && previous.target === target) return;
+        if (previous) {
+          observer.unobserve(previous.target);
+          cancelTransition(element);
+          transitionRegistrations.delete(element);
+        }
+        const config = transitionConfig(element);
+        if (!config) {
+          element.removeAttribute('data-cc-transition-pending');
+          return;
+        }
+        // Prepare the initial state immediately, including inspector edits.
+        const sequence = ['imageSequenceFade', 'imageSequenceSwoop'].includes(config.effect);
+        const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+        if (!sequence && !reducedMotion) {
+          element.setAttribute('data-cc-transition-pending', '1');
+        } else {
+          element.removeAttribute('data-cc-transition-pending');
+        }
+        const registration = { source, config, target };
+        transitionRegistrations.set(element, registration);
+        if (config.trigger === 'pageLoad') {
+          requestAnimationFrame(() => {
+            if (transitionRegistrations.get(element) === registration) startTransition(element, config);
+          });
+        } else {
+          observer.observe(target);
+        }
+      });
+    };
+    window.ccRefreshTemplateTransitions();
+  })();
+  </script>
+</main>
+<footer class="foot">
+  <div><span>CircuitCurios</span><span>Remscheid · Deutschland</span><span>© <span id="year">2026</span></span></div>
+  <div><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="circuitcurios-privacy-policy.html">Privacy Policy</a></div>
+</footer>
+<script>
+  const menuButton = document.getElementById('menuBtn');
+  const navigation = document.getElementById('mainnav');
+  menuButton.addEventListener('click', () => {
+    const opened = navigation.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(opened));
+    menuButton.textContent = opened ? 'Menü −' : 'Menü +';
+  });
+  navigation.addEventListener('click', event => {
+    if (event.target.closest('a')) {
+      navigation.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.textContent = 'Menü +';
+    }
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
