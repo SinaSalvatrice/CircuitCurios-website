@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e9e8e1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Die Gestalterin hinter CircuitCurios: technische Neugier, experimentelle Denkweise und handwerkliche Formgebung.">
+  <title>Die Gestalterin — CircuitCurios</title>
+  <link rel="canonical" href="https://circuitcurios.de/ueber.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* CircuitCurios / Portrait der Gestalterin — eigenständige HTML-Datei.
+       Alle wesentlichen Styles und Illustrationen sind eingebettet.
+       Die optionale Produktaufnahme nutzt den bestehenden Website-Pfad.
+       Bei lokaler Einzeldatei-Vorschau erscheint automatisch die SVG-Fallbackgrafik. */
+    :root {
+      --paper: #e9e8e1;
+      --paper-2: #deded7;
+      --ink: #161715;
+      --charcoal: #1b1c1b;
+      --muted: #5b605d;
+      --silver: #bfc2bf;
+      --rule: #b8bab3;
+      --on-dark: #e9e8e1;
+      --cond: 'Barlow Condensed', 'Arial Narrow', Impact, sans-serif;
+      --mono: 'DM Mono', Consolas, monospace;
+      --gutter: clamp(20px, 4.3vw, 70px);
+      --max: 1550px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 75px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 400 19px/1.4 var(--cond); -webkit-font-smoothing: antialiased; }
+    body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .18;
+      background: repeating-linear-gradient(112deg, rgba(0,0,0,.027) 0px, transparent 1px, rgba(255,255,255,.22) 3px, transparent 6px); }
+    a { color: inherit; } button { color: inherit; font: inherit; cursor: pointer; }
+    img, svg { display: block; max-width: 100%; }
+    h1,h2,h3,p,figure { margin: 0; } h1,h2,h3 { font-family: var(--cond); text-transform: uppercase; font-weight: 800; }
+    ::selection { color: var(--paper); background: var(--ink); }
+    :focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
+    .shell { width: min(calc(100% - 2 * var(--gutter)), var(--max)); margin-inline: auto; }
+    .micro, .kicker, .caption, .site-head nav, .meta-strip, .link, .index-bar, .foot {
+      font-family: var(--mono); font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .13em;
+    }
+    .muted { color: var(--muted); }
+    .skip { position: absolute; z-index: 100; left: 12px; top: -100px; background: var(--ink); color: white; padding: 12px; }
+    .skip:focus { top: 10px; }
+
+    /* Navigation leans on the current Prozess / Formen editorial system. */
+    .site-head { min-height: 68px; padding: 15px var(--gutter); display: flex; justify-content: space-between; align-items: center;
+      gap: 30px; border-bottom: 1px solid #979a94; position: relative; z-index: 5; }
+    .wordmark { text-decoration: none; white-space: nowrap; font: 800 16px/1 var(--cond); letter-spacing: .18em; text-transform: uppercase; }
+    .site-head nav { display: flex; align-items: center; flex-wrap: wrap; gap: clamp(16px, 2.7vw, 36px); font-size: 10px; letter-spacing: .075em; }
+    .site-head nav a { text-decoration: none; padding: 9px 0; border-bottom: 1px solid transparent; }
+    .site-head nav a:hover, .site-head nav a[aria-current='page'] { border-color: currentColor; }
+    .menu-btn { display: none; border: 1px solid var(--ink); background: transparent; padding: 8px 12px; font: 500 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+
+    /* Hero */
+    .hero { padding-top: clamp(48px, 7vw, 112px); }
+    .hero-topline { display: flex; justify-content: space-between; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+    .hero-heading { position: relative; padding: clamp(25px, 4vw, 60px) 0 clamp(38px, 5vw, 80px); overflow: hidden; }
+    .hero-heading h1 { font-size: clamp(76px, 15vw, 245px); line-height: .73; letter-spacing: -.044em; font-weight: 800; }
+    .hero-heading h1 span { display: block; }
+    .hero-heading h1 span:last-child { padding-left: clamp(9px, 10vw, 155px); }
+    .hero-heading .hero-aside { position: absolute; top: clamp(32px, 5vw, 75px); right: 2px; text-align: right; line-height: 1.6; }
+    .hero-grid { display: grid; grid-template-columns: 1.24fr .76fr; gap: clamp(24px, 5vw, 85px); align-items: stretch; border-top: 1px solid var(--rule); padding-top: clamp(18px, 2.2vw, 36px); }
+    .hero-art { margin: 0; position: relative; overflow: hidden; min-height: clamp(380px, 41vw, 620px); background: #c6c8c3; }
+    .hero-art::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(0deg, rgba(16,18,17,.3), transparent 28%); }
+    .hero-art > svg { width: 100%; height: 100%; position: absolute; inset: 0; }
+    .hero-art > img { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1); }
+    .hero-art figcaption { z-index: 2; position: absolute; bottom: 20px; left: 22px; right: 22px; display: flex; justify-content: space-between;
+      color: white; text-shadow: 0 1px 10px #333; }
+    .hero-intro { padding: clamp(20px, 3vw, 50px) 0; display: flex; flex-direction: column; justify-content: space-between; }
+    .hero-intro .lead { font-size: clamp(29px, 3.2vw, 54px); line-height: 1.06; font-weight: 600; max-width: 500px; letter-spacing: -.015em; }
+    .hero-intro .note { font-size: clamp(18px, 1.5vw, 22px); line-height: 1.4; color: #454b47; max-width: 440px; margin-top: 28px; }
+    .hero-intro-bottom { border-top: 1px solid var(--rule); margin-top: 40px; padding-top: 15px; display: flex; justify-content: space-between; gap: 20px; }
+    .link { display: inline-flex; gap: 14px; align-items: center; padding: 10px 0; border-bottom: 1px solid currentColor; text-decoration: none; }
+    .link span { font-size: 20px; line-height: .7; }
+    .meta-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; margin-top: clamp(55px, 8vw, 120px); padding: 16px 0 60px; border-top: 1px solid var(--rule); color: var(--muted); }
+    .meta-strip b { color: var(--ink); font-weight: 500; }
+
+    /* Three numbered chapters */
+    .chapters { border-top: 1px solid var(--rule); }
+    .chapter { display: grid; grid-template-columns: 100px minmax(0, 1fr) minmax(360px, 1fr); gap: clamp(22px, 4vw, 70px);
+      align-items: start; padding-block: clamp(65px, 9vw, 145px); border-bottom: 1px solid var(--rule); }
+    .chapter-num { color: #8a908a; font: 700 clamp(74px, 9.1vw, 145px)/.73 var(--cond); letter-spacing: -.06em; }
+    .chapter-copy { max-width: 565px; }
+    .chapter-copy .kicker { display: block; color: var(--muted); margin-bottom: 27px; }
+    .chapter-copy h2 { font-size: clamp(58px, 6.5vw, 105px); line-height: .79; letter-spacing: -.044em; margin: 0 0 34px; }
+    .chapter-copy p { font-size: clamp(19px, 1.45vw, 23px); line-height: 1.36; color: #424743; margin-top: 18px; }
+    .chapter-copy p:first-of-type { color: var(--ink); }
+    .chapter-visual { min-height: 420px; align-self: stretch; }
+    .diagram { background: #d0d2cd; height: 100%; min-height: 490px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+    .diagram-dark { color: #d7dad5; background: #252827; }
+    .diagram-light { background: #c8cbc6; }
+    .diagram figcaption { flex: 0 0 auto; display: flex; justify-content: space-between; gap: 10px; padding: 13px 15px;
+      border-top: 1px solid rgba(80,82,77,.35); line-height: 1.4; }
+    .diagram-dark figcaption { border-color: rgba(230,230,225,.28); }
+    .diagram svg { flex: 1; width: 100%; min-height: 0; }
+    .diagram .studied-lines { stroke: currentColor; stroke-width: 1; fill: none; }
+    .diagram .ghost-lines { stroke: currentColor; opacity: .25; stroke-width: .8; fill: none; }
+    .chapter:nth-child(2) .chapter-visual { grid-column: 2; grid-row: 1; }
+    .chapter:nth-child(2) .chapter-copy { grid-column: 3; grid-row: 1; }
+    .chapter:nth-child(2) .chapter-num { grid-column: 1; grid-row: 1; }
+
+    .interlude { background: var(--charcoal); color: var(--on-dark); }
+    .interlude-inner { padding-block: clamp(75px, 10vw, 150px); display: grid; grid-template-columns: 1.1fr .9fr; gap: 60px; align-items: end; }
+    .interlude h2 { font-size: clamp(60px, 9.7vw, 165px); line-height: .76; letter-spacing: -.04em; }
+    .interlude h2 span { display: block; }
+    .interlude p:not(.kicker) { color: #b7bcb6; max-width: 420px; font-size: clamp(21px, 2.3vw, 32px); line-height: 1.17; }
+    .interlude .kicker { color: #a8aea8; margin-bottom: 32px; }
+
+    .endnav { display: grid; grid-template-columns: 1fr 1fr; padding-top: 50px; padding-bottom: 100px; gap: 24px; }
+    .endnav a { min-height: 175px; display: grid; grid-template-columns: auto 1fr auto; gap: 18px; align-items: end;
+      border-top: 1px solid var(--rule); text-decoration: none; padding-top: 14px; }
+    .endnav a:hover { border-top-color: var(--ink); }
+    .endnav .end-title { font: 800 clamp(36px, 5vw, 76px)/.8 var(--cond); letter-spacing: -.04em; text-transform: uppercase; }
+    .endnav .arrow { font-size: 28px; line-height: 1; }
+    .foot { border-top: 1px solid var(--rule); padding: 21px var(--gutter) 30px; display: flex; flex-wrap: wrap; gap: 16px 35px;
+      justify-content: space-between; color: var(--muted); }
+    .foot a { text-decoration: none; } .foot a:hover { text-decoration: underline; }
+    .foot > div { display: flex; gap: 23px; flex-wrap: wrap; }
+
+    @media (max-width: 1050px) {
+      .chapter { grid-template-columns: 70px minmax(0,1fr); row-gap: 40px; }
+      .chapter-num { font-size: 95px; }
+      .chapter-copy { grid-column: 2; }
+      .chapter-visual, .chapter:nth-child(2) .chapter-visual { grid-column: 2; grid-row: 2; }
+      .chapter:nth-child(2) .chapter-copy { grid-column: 2; grid-row: 1; }
+      .chapter:nth-child(2) .chapter-num { grid-column: 1; grid-row: 1; }
+      .diagram { min-height: 430px; }
+    }
+    @media (max-width: 720px) {
+      html { scroll-padding-top: 60px; }
+      .site-head { min-height: 58px; gap: 12px; }
+      .wordmark { font-size: 14px; }
+      .menu-btn { display: inline-block; }
+      .site-head nav { display: none; flex-direction: column; align-items: stretch; position: absolute; z-index: 10;
+        top: calc(100% + 1px); left: 0; right: 0; gap: 0; background: var(--paper); border-bottom: 1px solid var(--ink); padding: 10px var(--gutter) 18px; }
+      .site-head nav.open { display: flex; }
+      .site-head nav a { padding: 12px 0; }
+      .hero { padding-top: 42px; }
+      .hero-topline .micro:last-child { display: none; }
+      .hero-heading { padding: 40px 0 42px; }
+      .hero-heading h1 { font-size: clamp(64px, 12.7vw, 114px); }
+      .hero-heading h1 span:last-child { padding-left: 0; }
+      .hero-heading .hero-aside { right: 0; top: 15px; font-size: 8px; }
+      .hero-grid { display: flex; flex-direction: column; gap: 0; }
+      .hero-art { min-height: 370px; }
+      .hero-intro { padding-top: 30px; }
+      .hero-intro .lead { font-size: clamp(32px, 8vw, 46px); }
+      .hero-intro-bottom { margin-top: 26px; }
+      .meta-strip { grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 48px; padding-bottom: 48px; }
+      .meta-strip span:last-child { grid-column: 1 / -1; }
+      .chapter { grid-template-columns: 1fr; padding-block: 60px; row-gap: 24px; }
+      .chapter-num, .chapter:nth-child(2) .chapter-num { grid-column: 1; grid-row: 1; font-size: 83px; }
+      .chapter-copy, .chapter:nth-child(2) .chapter-copy { grid-column: 1; grid-row: 2; }
+      .chapter-visual, .chapter:nth-child(2) .chapter-visual { grid-column: 1; grid-row: 3; }
+      .chapter-copy h2 { font-size: clamp(58px, 13vw, 85px); margin-bottom: 27px; }
+      .chapter-copy .kicker { margin-bottom: 19px; }
+      .chapter-copy p { font-size: 20px; }
+      .diagram { min-height: 360px; }
+      .interlude-inner { grid-template-columns: 1fr; gap: 32px; padding-block: 75px; }
+      .interlude h2 { font-size: clamp(64px, 14vw, 105px); }
+      .endnav { grid-template-columns: 1fr; padding-top: 35px; padding-bottom: 60px; }
+      .endnav a { min-height: 115px; }
+      .foot { padding-inline: var(--gutter); }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+<a href="#main" class="skip">Zum Inhalt</a>
+<header class="site-head">
+  <a class="wordmark" href="index.html" aria-label="CircuitCurios – Startseite">CircuitCurios</a>
+  <button class="menu-btn" type="button" aria-controls="mainnav" aria-expanded="false" id="menuBtn">Menü +</button>
+  <nav id="mainnav" aria-label="Hauptnavigation">
+    <a href="index.html">Oberflächen</a>
+    <a href="formen.html">Formen</a>
+    <a href="prozess.html">Prozess</a>
+    <a href="ueber.html" aria-current="page">Die Gestalterin</a>
+    <a href="shop.html">Shop</a>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero shell" aria-labelledby="hero-title">
+    <div class="hero-topline micro"><span>04 / Person hinter CircuitCurios</span><span>Unabhängig · experimentell · handwerklich</span></div>
+    <div class="hero-heading">
+      <p class="micro hero-aside">Portrait /<br>Haltung /<br>Arbeitsweise</p>
+      <h1 id="hero-title"><span>Die</span><span>Gestalterin.</span></h1>
+    </div>
+    <div class="hero-grid">
+      <figure class="hero-art">
+        <!-- Eigenständige grafische Rückfallebene; Foto erscheint nur bei vorhandener Website-Datei. -->
+        <svg viewBox="0 0 760 590" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="alugrad" x1="0" x2="1" y1=".2" y2=".9"><stop stop-color="#ededeb"/><stop offset=".48" stop-color="#b3b7b3"/><stop offset="1" stop-color="#767d78"/></linearGradient>
+            <pattern id="diagonals" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(37)"><path d="M0 0 V9" stroke="#292e2b" stroke-opacity=".23" stroke-width="1"/></pattern>
+          </defs>
+          <rect width="760" height="590" fill="#aab0aa"/>
+          <path d="M0 80 H760 M0 185 H760 M0 290 H760 M0 395 H760 M0 500 H760 M85 0V590 M190 0V590 M295 0V590 M400 0V590 M505 0V590 M610 0V590 M715 0V590" stroke="#eff0e8" opacity=".22"/>
+          <g transform="translate(380 295) rotate(-22)">
+            <rect x="-140" y="-230" width="280" height="460" rx="135" fill="url(#alugrad)" stroke="#606862" stroke-width="2"/>
+            <rect x="-112" y="-199" width="224" height="398" rx="110" fill="url(#diagonals)" stroke="#4e5650" stroke-opacity=".6"/>
+            <circle cx="0" cy="-179" r="17" fill="none" stroke="#3d423f" stroke-width="5"/>
+            <path d="M-95-90 C0-120,10-10,95-40 M-95-24 C-30-90,40 70,95 13 M-90 67 C-30-30,40 155,90 89" stroke="#47504a" stroke-width="2" fill="none" opacity=".5"/>
+          </g>
+          <g fill="none" stroke="#303631" stroke-width="1" opacity=".75"><path d="M76 65H680V520H76Z"/><path d="M76 46V25M76 540V563M54 65H31M700 520H725"/></g>
+          <g font-family="monospace" font-size="11" fill="#2f3430"><text x="86" y="86">FORM / OBERFLÄCHE</text><text x="570" y="507">STUDIE 01</text></g>
+        </svg>
+        <img src="images/web/kohesion-ring.webp" alt="Handgearbeiteter Aluminiumring von CircuitCurios" onerror="this.remove()">
+        <figcaption class="caption"><span>CircuitCurios · Materialstudie</span><span>01 / 03</span></figcaption>
+      </figure>
+      <div class="hero-intro">
+        <div>
+          <p class="kicker muted">Zwischen Technik und Gestaltung</p>
+          <p class="lead">Neugier als Antrieb. Experiment als Methode. Formgebung als Ergebnis.</p>
+          <p class="note">Ein Porträt der Person hinter den Formen – erzählt über Interessen, Denkweisen und die praktische Arbeit.</p>
+        </div>
+        <div class="hero-intro-bottom"><span class="micro muted">3 Kapitel / 1 Haltung</span><a class="link" href="#person">Entdecken <span aria-hidden="true">↘</span></a></div>
+      </div>
+    </div>
+    <div class="meta-strip"><span><b>01</b> — Die Person</span><span><b>02</b> — Die Denkweise</span><span><b>03</b> — Die Umsetzung</span></div>
+  </section>
+
+  <div class="chapters">
+    <section class="chapter shell" id="person" aria-labelledby="person-title">
+      <div class="chapter-num" aria-hidden="true">01</div>
+      <div class="chapter-copy">
+        <span class="kicker">Hinter CircuitCurios</span>
+        <h2 id="person-title">Die<br>Person.</h2>
+        <p>Hinter CircuitCurios steht eine unabhängige Gestalterin mit einer ausgeprägten Neugier für technische Zusammenhänge, Materialien und ungewöhnliche Lösungswege.</p>
+        <p>Das Interesse reicht von Elektronik und mechanischen Konstruktionen bis zur gestalterischen Auseinandersetzung mit Oberflächen und Formen. Dabei verschwimmen die Grenzen zwischen technischem Tüfteln, handwerklicher Arbeit und kreativem Experiment.</p>
+        <p>Im Mittelpunkt steht keine klassische künstlerische Ausbildung oder festgelegte Disziplin, sondern eine eigenständige Herangehensweise, die unterschiedliche Kenntnisse, Interessen und Fähigkeiten miteinander verbindet.</p>
+      </div>
+      <div class="chapter-visual">
+        <figure class="diagram diagram-dark" aria-label="Technische Illustration einer Elektronikplatine">
+          <svg viewBox="0 0 600 510" role="img" aria-label="Technische Strichzeichnung: Schaltkreise und Bauteile">
+            <defs><pattern id="boardgrid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#bec3bd" stroke-width=".55" opacity=".16"/></pattern></defs>
+            <rect width="600" height="510" fill="url(#boardgrid)"/>
+            <g stroke="#a3aaa4" stroke-width="1.4" fill="none">
+              <rect x="90" y="74" width="420" height="365" rx="7"/>
+              <rect x="208" y="157" width="182" height="175" rx="4" stroke-width="2"/>
+              <rect x="241" y="190" width="116" height="109" rx="2"/>
+              <path d="M208 180H162V120H110 M208 217H148V259H102 M208 286H162V359H110 M390 180H458V132H500 M390 227H479V257H500 M390 296H450V391H502"/>
+              <path d="M230 157V118H290V74M260 157V121M322 157V115H380V74M280 332V372H150V439M340 332V382H410V439"/>
+              <circle cx="110" cy="120" r="7"/><circle cx="102" cy="259" r="7"/><circle cx="110" cy="359" r="7"/>
+              <circle cx="500" cy="132" r="7"/><circle cx="500" cy="257" r="7"/><circle cx="502" cy="391" r="7"/>
+              <circle cx="290" cy="74" r="6"/><circle cx="380" cy="74" r="6"/><circle cx="150" cy="439" r="6"/>
+            </g>
+            <g stroke="#d0d5ce" stroke-width="2"><path d="M208 173h-18m18 17h-18m18 17h-18m18 17h-18m18 17h-18m18 17h-18m18 17h-18m18 17h-18m18 17h-18"/><path d="M390 173h18m-18 17h18m-18 17h18m-18 17h18m-18 17h18m-18 17h18m-18 17h18m-18 17h18m-18 17h18"/></g>
+            <g fill="#d7dad4" font-family="monospace" font-size="10" letter-spacing="1"><text x="102" y="103">IN</text><text x="473" y="113">OUT</text><text x="255" y="244">?</text><text x="101" y="470">CIRCUIT / FORM</text><text x="432" y="470">01—A</text></g>
+          </svg>
+          <figcaption class="caption"><span>Interessenfeld / Elektronik</span><span>Skizze A—01</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter shell" id="denkweise" aria-labelledby="denk-title">
+      <div class="chapter-num" aria-hidden="true">02</div>
+      <div class="chapter-copy">
+        <span class="kicker">Neugier als Ausgangspunkt</span>
+        <h2 id="denk-title">Die<br>Denkweise.</h2>
+        <p>Der Wunsch, Dinge zu verstehen, beginnt häufig dort, wo andere sie als selbstverständlich betrachten. Wie funktioniert etwas? Warum entsteht eine bestimmte Form? Und was geschieht, wenn gewohnte Vorgehensweisen verändert werden?</p>
+        <p>Aus solchen Fragen entwickelt sich ein offener Umgang mit Materialien, Techniken und Gestaltungsmöglichkeiten. Bestehende Lösungen sind dabei keine festen Vorgaben, sondern Ausgangspunkte für eigene Überlegungen.</p>
+        <p>Das Experiment besitzt einen ebenso hohen Stellenwert wie das Ergebnis. Unerwartete Beobachtungen, vermeintliche Fehler und ungewöhnliche Kombinationen können neue Richtungen eröffnen.</p>
+        <p>Nicht jede Idee muss von Anfang an ein klares Ziel verfolgen. Manchmal entsteht die interessanteste Frage erst während der Arbeit.</p>
+      </div>
+      <div class="chapter-visual">
+        <figure class="diagram diagram-light" aria-label="Abstrakte strukturelle Formstudie">
+          <svg viewBox="0 0 600 510" role="img" aria-label="Grafische Untersuchung von Linien, Wellen und Variationen">
+            <g fill="none" stroke="#49534d" opacity=".22"><circle cx="300" cy="246" r="183"/><circle cx="300" cy="246" r="143"/><circle cx="300" cy="246" r="101"/><circle cx="300" cy="246" r="57"/><path d="M300 29V468M63 246H537"/></g>
+            <g fill="none" stroke="#343b36" stroke-width="1.7" stroke-linecap="round">
+              <path d="M70 308 C102 308 109 168 141 168 S178 350 213 350 S257 135 292 135 S340 360 376 360 S421 157 460 157 S493 309 533 309"/>
+              <path d="M70 350 C108 350 111 228 149 228 S184 392 223 392 S266 199 305 199 S351 404 392 404 S436 218 478 218 S504 352 533 352" opacity=".55"/>
+              <path d="M70 270 C103 270 117 111 151 111 S191 315 227 315 S271 77 312 77 S354 325 393 325 S438 113 477 113 S513 267 533 267" opacity=".45"/>
+              <circle cx="292" cy="135" r="5" fill="#343b36"/><circle cx="376" cy="360" r="5" fill="#343b36"/><circle cx="460" cy="157" r="5" fill="#343b36"/>
+            </g>
+            <g stroke="#343b36" fill="none"><path d="M62 45H178M62 45V135M415 447H540M540 364V447"/></g>
+            <g font-family="monospace" font-size="11" fill="#343b36"><text x="69" y="62">VARIATION 02</text><text x="420" y="466">FORMSTUDIE</text><text x="310" y="231">X</text></g>
+          </svg>
+          <figcaption class="caption"><span>Struktur / Möglichkeit / Abweichung</span><span>Skizze B—02</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter shell" id="umsetzung" aria-labelledby="umsetzung-title">
+      <div class="chapter-num" aria-hidden="true">03</div>
+      <div class="chapter-copy">
+        <span class="kicker">Zwischen Versuch und Entscheidung</span>
+        <h2 id="umsetzung-title">Die<br>Umsetzung.</h2>
+        <p>Die praktische Arbeit ist geprägt von Ausprobieren, Verändern und Weiterentwickeln. Werkzeuge und Verfahren werden nicht ausschließlich entsprechend ihrer ursprünglichen Bestimmung eingesetzt, sondern auch auf neue Anwendungsmöglichkeiten untersucht.</p>
+        <p>Dabei wechseln sich gezielte Arbeitsschritte mit offenen Experimenten ab. Manche Versuche führen unmittelbar zu einem brauchbaren Ergebnis, andere liefern zunächst nur eine Beobachtung, die später wieder aufgegriffen wird.</p>
+        <p>Technische Hilfsmittel, digitale Werkzeuge und handwerkliche Verfahren ergänzen sich, ohne dass eines davon den gesamten Prozess bestimmt.</p>
+        <p>Entscheidend bleibt die bewusste Auswahl: Welche Eigenschaften einer entstandenen Struktur sind interessant? Was lässt sich weiterentwickeln? Und an welchem Punkt wird aus einem Versuch eine eigenständige Gestaltung?</p>
+        <p>So entstehen Arbeiten, deren Charakter nicht allein durch die ursprüngliche Idee, sondern ebenso durch die Erfahrungen während ihrer Umsetzung geprägt wird.</p>
+      </div>
+      <div class="chapter-visual">
+        <figure class="diagram diagram-dark" aria-label="Illustration einer bearbeiteten Metalloberfläche">
+          <svg viewBox="0 0 600 510" role="img" aria-label="Technische Metallstruktur im Übergang vom Versuch zum Objekt">
+            <defs>
+              <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9dcd8"/><stop offset=".45" stop-color="#858b86"/><stop offset=".75" stop-color="#bdc1bd"/><stop offset="1" stop-color="#747a75"/></linearGradient>
+              <pattern id="cutmarks" width="46" height="33" patternUnits="userSpaceOnUse"><path d="M3 25L26 6 M23 33L45 11 M1 5L7 1" stroke="#262e29" stroke-width="2" stroke-opacity=".4"/></pattern>
+            </defs>
+            <rect x="0" y="0" width="600" height="510" fill="#252827"/>
+            <g fill="none" stroke="#d4d9d1" opacity=".22"><path d="M34 36H566V475H34Z"/><path d="M300 32V478M32 255H568"/><circle cx="300" cy="255" r="207"/></g>
+            <g transform="translate(300 255) rotate(-13)">
+              <rect x="-144" y="-147" width="288" height="294" rx="9" fill="url(#steel)" stroke="#e1e4df" stroke-opacity=".7" stroke-width="2"/>
+              <rect x="-144" y="-147" width="288" height="294" rx="9" fill="url(#cutmarks)"/>
+              <path d="M-126-90 C-30-138,42-15,130-75 M-126 0 C-18-55,35 78,130-4 M-126 89 C-40 32,34 160,130 88" fill="none" stroke="#39423b" stroke-width="3" opacity=".65"/>
+              <circle cx="0" cy="0" r="56" fill="none" stroke="#29322d" stroke-width="5" opacity=".55"/>
+              <circle cx="0" cy="0" r="22" fill="#29322d" opacity=".53"/>
+            </g>
+            <g fill="none" stroke="#e0e2dd" opacity=".65"><path d="M70 80V49H134 M470 460H533V395"/></g>
+            <g font-family="monospace" font-size="11" fill="#e3e4df"><text x="49" y="61">MATERIAL / VERSUCH</text><text x="431" y="457">03—C</text></g>
+          </svg>
+          <figcaption class="caption"><span>Bearbeitung / Auswahl / Form</span><span>Skizze C—03</span></figcaption>
+        </figure>
+      </div>
+    </section>
+  </div>
+
+  <section class="interlude" aria-labelledby="interlude-title">
+    <div class="interlude-inner shell">
+      <div><p class="kicker">CircuitCurios / Gestalterische Haltung</p><h2 id="interlude-title"><span>Keine feste</span><span>Formel.</span></h2></div>
+      <p>Die Arbeit folgt keinem abgeschlossenen Schema. Fragen, Versuche und Erkenntnisse verändern den Weg – und mit ihm das Ergebnis.</p>
+    </div>
+  </section>
+
+  <nav class="endnav shell" aria-label="Weitere Seiten">
+    <a href="prozess.html"><span class="micro muted">02</span><span class="end-title">Prozess</span><span class="arrow" aria-hidden="true">↗</span></a>
+    <a href="formen.html"><span class="micro muted">03</span><span class="end-title">Formen</span><span class="arrow" aria-hidden="true">↗</span></a>
+  </nav>
+</main>
+<footer class="foot">
+  <div><span>CircuitCurios</span><span>Remscheid · Deutschland</span><span>© <span id="year">2026</span></span></div>
+  <div><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="circuitcurios-privacy-policy.html">Privacy Policy</a></div>
+</footer>
+<script>
+  const menuButton = document.getElementById('menuBtn');
+  const navigation = document.getElementById('mainnav');
+  menuButton.addEventListener('click', () => {
+    const opened = navigation.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(opened));
+    menuButton.textContent = opened ? 'Menü −' : 'Menü +';
+  });
+  navigation.addEventListener('click', event => {
+    if (event.target.closest('a')) {
+      navigation.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.textContent = 'Menü +';
+    }
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
