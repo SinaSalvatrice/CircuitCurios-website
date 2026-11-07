@@ -2309,6 +2309,23 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
             const start = snapshot(target);
             if (active) active.cancel();
             const end = { ...baseline.style };
+            // Scroll positioning belongs to the clip, not the hover animation.
+            // Never freeze its translate when scrolling/hovering over children.
+            const scrollChild = target.parentElement?.hasAttribute(
+              'data-cc-clip-scroll-content');
+            const scrollTranslate = 'calc(0px - var(--cc-scroll-x)) ' +
+              'calc(0px - var(--cc-scroll-y))';
+            const movesOnHover = effects.has('lift') || effects.has('slide');
+            if (!movesOnHover) {
+              // Effects such as glow/fade/scale must not capture the clip's
+              // translate, or the hovered element jumps while scrolling.
+              delete start.translate;
+              delete end.translate;
+            } else if (scrollChild) {
+              // Keep the scroll-origin dynamic for the entire hover animation.
+              start.translate = scrollTranslate;
+              end.translate = scrollTranslate;
+            }
             if (entering) {
               const distance = Math.max(0, Math.min(200, Number(action.hoverDistance ?? 8)));
               let x = 0, y = 0;
@@ -2320,8 +2337,12 @@ a{color:inherit}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-
                 else if (direction === 'down') y += distance;
                 else x += distance;
               }
-              if (effects.has('lift') || effects.has('slide'))
-                end.translate = x + 'px ' + y + 'px';
+              if (movesOnHover) {
+                end.translate = scrollChild
+                  ? 'calc(' + x + 'px - var(--cc-scroll-x)) ' +
+                    'calc(' + y + 'px - var(--cc-scroll-y))'
+                  : x + 'px ' + y + 'px';
+              }
               if (effects.has('scale'))
                 end.scale = String(Math.max(.5, Math.min(2, Number(action.hoverScale ?? 1.05))));
               if (effects.has('tilt'))
