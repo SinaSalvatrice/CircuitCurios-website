@@ -1,4 +1,7 @@
 {
   "version": 1,
-  "pages": {}
+  "pages": {
+    "datenschutz.html": "datenschutz",
+    "impressum.html": "impressum"
+  }
 }
