@@ -919,17 +919,7 @@ main.cc-template-page {
 </head>
 <body>
 <a href="#main" class="skip">Zum Inhalt</a>
-<header class="site-head">
-  <a class="wordmark" href="index.html" aria-label="CircuitCurios – Startseite">CircuitCurios</a>
-  <button class="menu-btn" type="button" aria-controls="mainnav" aria-expanded="false" id="menuBtn">Menü +</button>
-  <nav id="mainnav" aria-label="Hauptnavigation">
-    <a href="index.html">Oberflächen</a>
-    <a href="formen.html">Formen</a>
-    <a href="prozess.html">Prozess</a>
-    <a href="ueber.html" aria-current="page">Die Gestalterin</a>
-    <a href="shop.html">Shop</a>
-  </nav>
-</header>
+
 <main id="main" class="cc-template-page" data-cc-template-maker="1" style="--cc-page-bg:rgb(233, 232, 225)">
   <div class="cc-template-canvas" style="--cc-design-width:1425;--cc-design-height:5162.4844;--cc-page-bg:rgb(233, 232, 225)">
     <div id="website-1" data-cc-element-kind="text" class="cc-tm-element cc-tm-imported cc-tm-imported-text" style="left:24px;top:-87px;width:68.2344px;height:23px;--cc-rotation:0rad;--cc-element-scale:1;--cc-object-fit:fill;--cc-image-position-x:0;--cc-image-position-y:0;--cc-image-scale:1;--cc-anchor-x:left;--cc-anchor-y:top;--cc-object-position-x:50%;--cc-object-position-y:50%;--cc-text-mode:fixedWidth;--cc-text-white-space:pre-wrap;--cc-overflow-wrap:anywhere;--cc-gallery-layout:grid;--cc-gallery-columns:3;--cc-gallery-gap:12px;--cc-grid-cell-height:1px;--cc-gallery-padding:12px;--cc-gallery-alignment:stretch;--cc-gallery-item-border-width:0px;--cc-gallery-item-border:transparent;--cc-gallery-item-radius:0px;--cc-bg:rgb(22, 23, 21);background-color:rgb(22, 23, 21);--cc-fg:rgb(255, 255, 255);color:rgb(255, 255, 255);--cc-font-size:19px;font-size:19px;--cc-font-weight:400;font-weight:400;--cc-font-family:'Barlow Condensed';font-family:'Barlow Condensed';text-align:start;--cc-letter-spacing:0px;letter-spacing:0px;--cc-line-height:1.4;line-height:1.4;opacity:1;--cc-radius:0px;border-radius:0px;--cc-border:rgb(255, 255, 255);--cc-border-width:0px;border:none">Zum Inhalt</div>
@@ -2367,20 +2357,6 @@ main.cc-template-page {
   <div><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="circuitcurios-privacy-policy.html">Privacy Policy</a></div>
 </footer>
 <script>
-  const menuButton = document.getElementById('menuBtn');
-  const navigation = document.getElementById('mainnav');
-  menuButton.addEventListener('click', () => {
-    const opened = navigation.classList.toggle('open');
-    menuButton.setAttribute('aria-expanded', String(opened));
-    menuButton.textContent = opened ? 'Menü −' : 'Menü +';
-  });
-  navigation.addEventListener('click', event => {
-    if (event.target.closest('a')) {
-      navigation.classList.remove('open');
-      menuButton.setAttribute('aria-expanded', 'false');
-      menuButton.textContent = 'Menü +';
-    }
-  });
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
