@@ -6,6 +6,13 @@
   font-display: swap;
 }
 @font-face {
+  font-family: 'BigShoulders';
+  src: url('../images/template-maker/fonts/BigShoulders-0.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
   font-family: 'IBMPlexMono';
   src: url('../images/template-maker/fonts/IBMPlexMono-0.ttf') format('truetype');
   font-style: normal;
@@ -52,13 +59,6 @@
   src: url('../images/template-maker/fonts/IBMPlexMono-6.ttf') format('truetype');
   font-style: normal;
   font-weight: 100;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'BigShoulders';
-  src: url('../images/template-maker/fonts/BigShoulders-0.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 400;
   font-display: swap;
 }
 @font-face {
@@ -174,14 +174,20 @@ main.cc-template-page {
   height: var(--cc-group-height);
   pointer-events: none;
 }
+[data-cc-stack-entry].cc-hidden-by-action,
 .cc-archive-filter-hidden {
   display: none !important;
 }
 /* Archive filter moves an entire positioned card, never just its text. */
 .cc-tm-transition-group[data-cc-archive-item="1"],
-.cc-tm-element[data-cc-archive-item="1"] {
+[data-cc-group-trigger][style*="--cc-archive-shift-x"] {
   translate: var(--cc-archive-shift-x, 0px)
     var(--cc-archive-shift-y, 0px);
+}
+[data-cc-stack] > [data-cc-stack-entry],
+[data-cc-stack] > [data-cc-group-trigger] {
+  --cc-stack-shift: 0px 0px;
+  translate: var(--cc-stack-shift);
 }
 .cc-tm-element {
   position: absolute;
