@@ -2016,6 +2016,438 @@
         "section_sethinweis_heading": "TEIL EINER KOLLEKTION",
         "section_sethinweis_text": "\"{texture}\" ist Teil einer Kollektion, in der dieselbe Oberfläche auf verschiedenen Schmuckformen weitergeführt wird. Form, Fläche und Rundung verändern ihre Wirkung und damit auch das Spiel von Licht und Schatten.\n\nDie gemeinsame Oberfläche verbindet die Stücke, ohne daraus identische Wiederholungen oder ein fest definiertes Set zu machen."
       }
+    },
+    "seite_start_titel": {
+      "name": "Startseite · Überschrift · Eine Textur aus der Nähe",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Startseite",
+        "textType": "Überschrift",
+        "text": "Form und Oberfläche",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_start_intro": {
+      "name": "Startseite · Einleitung · Eine Textur aus der Nähe",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Startseite",
+        "textType": "Einleitung",
+        "text": "Handgearbeiteter Aluminiumschmuck von CircuitCurios. Der Einstieg führt über die Form eines Stücks oder über seine Textur.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_start_kurz": {
+      "name": "Startseite · Kurzbeschreibung · Eine Textur aus der Nähe",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Startseite",
+        "textType": "Kurzbeschreibung",
+        "text": "Die Nahaufnahme zeigt Kanten und Vertiefungen im Aluminium.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_start_lang": {
+      "name": "Startseite · Langbeschreibung · Eine Textur aus der Nähe",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Startseite",
+        "textType": "Langbeschreibung",
+        "text": "Flach betrachtet fällt zuerst die Kontur auf. Kippt das Stück ins Licht, treten einzelne Kanten hervor. Eine Nahaufnahme zeigt, wie eng das Relief auf der kleinen Fläche zusammenliegt.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_start_bild": {
+      "name": "Startseite · Bildunterschrift · Eine Textur aus der Nähe",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Startseite",
+        "textType": "Bildunterschrift",
+        "text": "Detail einer strukturierten Aluminiumoberfläche",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_start_link": {
+      "name": "Startseite · Linktext · Eine Textur aus der Nähe",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Startseite",
+        "textType": "Linktext",
+        "text": "Oberflächen entdecken",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_prozess_titel": {
+      "name": "Prozess · Überschrift · Die Spur der Punze",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Prozess",
+        "textType": "Überschrift",
+        "text": "Vom Blech zum Schmuckstück",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_prozess_intro": {
+      "name": "Prozess · Einleitung · Die Spur der Punze",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Prozess",
+        "textType": "Einleitung",
+        "text": "Am Anfang steht ein Stück Aluminium. Hier lässt sich verfolgen, wie die Kontur entsteht, wie die Oberfläche ihre Struktur erhält und welche Werkzeuge dabei zum Einsatz kommen.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_prozess_kurz": {
+      "name": "Prozess · Kurzbeschreibung · Die Spur der Punze",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Prozess",
+        "textType": "Kurzbeschreibung",
+        "text": "Dicht gesetzte Punzschläge hinterlassen ein Relief aus Vertiefungen und schmalen Stegen.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_prozess_lang": {
+      "name": "Prozess · Langbeschreibung · Die Spur der Punze",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Prozess",
+        "textType": "Langbeschreibung",
+        "text": "Beim Punzieren setzt die Punze an einzelnen Punkten auf dem Metall auf. Aus vielen einzelnen Vertiefungen entsteht eine zusammenhängende Fläche. Abstand und Ausrichtung der Schläge bestimmen, wo schmale Stege stehen bleiben und wie das Licht über die Struktur wandert.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_prozess_bild": {
+      "name": "Prozess · Bildunterschrift · Die Spur der Punze",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Prozess",
+        "textType": "Bildunterschrift",
+        "text": "Punzierte Fläche im Streiflicht",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_prozess_link": {
+      "name": "Prozess · Linktext · Die Spur der Punze",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Prozess",
+        "textType": "Linktext",
+        "text": "Werkzeuge ansehen",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_formen_titel": {
+      "name": "Formen · Überschrift · Offener Armreif",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Formen",
+        "textType": "Überschrift",
+        "text": "Eine Textur, mehrere Formen",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_formen_intro": {
+      "name": "Formen · Einleitung · Offener Armreif",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Formen",
+        "textType": "Einleitung",
+        "text": "Ring, Armreif und Anhänger geben einer Oberfläche ganz unterschiedlichen Raum. Die Übersicht zeigt die Konturen und wie sich die Struktur über jede Form verteilt.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_formen_kurz": {
+      "name": "Formen · Kurzbeschreibung · Offener Armreif",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Formen",
+        "textType": "Kurzbeschreibung",
+        "text": "Das breite Band folgt dem Handgelenk und endet in zwei offenen Kanten.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_formen_lang": {
+      "name": "Formen · Langbeschreibung · Offener Armreif",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Formen",
+        "textType": "Langbeschreibung",
+        "text": "Auf dem breiten Band lässt sich eine Linie über die Rundung hinweg verfolgen. Von vorn ist nur ein Ausschnitt zu sehen. Beim Drehen rücken die seitlichen Partien ins Licht und der Verlauf bis zu den offenen Enden wird erkennbar.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_formen_bild": {
+      "name": "Formen · Bildunterschrift · Offener Armreif",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Formen",
+        "textType": "Bildunterschrift",
+        "text": "Offener Armreif in der Seitenansicht",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_formen_link": {
+      "name": "Formen · Linktext · Offener Armreif",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Formen",
+        "textType": "Linktext",
+        "text": "Formen vergleichen",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_oberflaechen_titel": {
+      "name": "Oberflächen · Überschrift · Verzweigte Adern",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Oberflächen",
+        "textType": "Überschrift",
+        "text": "Das Texturarchiv",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_oberflaechen_intro": {
+      "name": "Oberflächen · Einleitung · Verzweigte Adern",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Oberflächen",
+        "textType": "Einleitung",
+        "text": "Die Oberflächen sind nach Biologie, Geologie, Industrie und Physik geordnet. Jede Familie versammelt Texturen mit verwandten sichtbaren Merkmalen.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_oberflaechen_kurz": {
+      "name": "Oberflächen · Kurzbeschreibung · Verzweigte Adern",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Oberflächen",
+        "textType": "Kurzbeschreibung",
+        "text": "Von einer Hauptlinie zweigen feinere Adern in die Fläche ab.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_oberflaechen_lang": {
+      "name": "Oberflächen · Langbeschreibung · Verzweigte Adern",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Oberflächen",
+        "textType": "Langbeschreibung",
+        "text": "Eine kräftige Linie gibt die Richtung vor. Feinere Linien zweigen seitlich ab und teilen die Fläche in ungleiche Felder. In der Nahansicht lässt sich verfolgen, welche Äste durchlaufen und welche bereits nach wenigen Millimetern enden.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_oberflaechen_bild": {
+      "name": "Oberflächen · Bildunterschrift · Verzweigte Adern",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Oberflächen",
+        "textType": "Bildunterschrift",
+        "text": "Ausschnitt einer verzweigten Struktur",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_oberflaechen_link": {
+      "name": "Oberflächen · Linktext · Verzweigte Adern",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Oberflächen",
+        "textType": "Linktext",
+        "text": "Zur Texturfamilie",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_ueber_titel": {
+      "name": "Über · Überschrift · Beobachten und zerlegen",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Über",
+        "textType": "Überschrift",
+        "text": "Die Gestalterin",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_ueber_intro": {
+      "name": "Über · Einleitung · Beobachten und zerlegen",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Über",
+        "textType": "Einleitung",
+        "text": "Hinter CircuitCurios steht Sina Gessner. Ihr Interesse gilt den Stellen, an denen sich der Aufbau eines Gegenstands an seiner Oberfläche ablesen lässt.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_ueber_kurz": {
+      "name": "Über · Kurzbeschreibung · Beobachten und zerlegen",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Über",
+        "textType": "Kurzbeschreibung",
+        "text": "Naturbeobachtung und technische Details liefern die Vorbilder für die Oberflächen.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_ueber_lang": {
+      "name": "Über · Langbeschreibung · Beobachten und zerlegen",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Über",
+        "textType": "Langbeschreibung",
+        "text": "Eine Blattader kann ebenso zum Ausgangspunkt werden wie die regelmäßige Teilung eines technischen Bauteils. Entscheidend ist ein sichtbares Detail. Im Metall verändert sich sein Maßstab, bis die Linien auch auf der schmalen Fläche eines Rings lesbar bleiben.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_ueber_bild": {
+      "name": "Über · Bildunterschrift · Beobachten und zerlegen",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Über",
+        "textType": "Bildunterschrift",
+        "text": "Detail aus der Werkstatt",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_ueber_link": {
+      "name": "Über · Linktext · Beobachten und zerlegen",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Über",
+        "textType": "Linktext",
+        "text": "Zum Prozess",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_shop_titel": {
+      "name": "Shop · Überschrift · Gebogener Anhänger aus Aluminium",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Shop",
+        "textType": "Überschrift",
+        "text": "Schmuckstücke im Überblick",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_shop_intro": {
+      "name": "Shop · Einleitung · Gebogener Anhänger aus Aluminium",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Shop",
+        "textType": "Einleitung",
+        "text": "Eine Form kann mehrere Texturen tragen. Die Detailansichten zeigen, wie die jeweilige Oberfläche auf dem fertigen Schmuckstück wirkt.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_shop_kurz": {
+      "name": "Shop · Kurzbeschreibung · Gebogener Anhänger aus Aluminium",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Shop",
+        "textType": "Kurzbeschreibung",
+        "text": "Die Wölbung fängt das Licht entlang der Längsachse ein.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_shop_lang": {
+      "name": "Shop · Langbeschreibung · Gebogener Anhänger aus Aluminium",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Shop",
+        "textType": "Langbeschreibung",
+        "text": "Die leichte Wölbung teilt die Vorderseite in helle und dunkle Partien. Von der Seite ist der Bogen der Fläche zu erkennen. Die frontale Ansicht zeigt, wie die Textur bis an die Außenkante verläuft.",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_shop_bild": {
+      "name": "Shop · Bildunterschrift · Gebogener Anhänger aus Aluminium",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Shop",
+        "textType": "Bildunterschrift",
+        "text": "Anhänger in Frontal- und Seitenansicht",
+        "text_en": ""
+      },
+      "sourceFields": {}
+    },
+    "seite_shop_link": {
+      "name": "Shop · Linktext · Gebogener Anhänger aus Aluminium",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "page": "Shop",
+        "textType": "Linktext",
+        "text": "Zum Schmuckstück",
+        "text_en": ""
+      },
+      "sourceFields": {}
     }
   },
   "activeTextSnippet": "tektonik",
