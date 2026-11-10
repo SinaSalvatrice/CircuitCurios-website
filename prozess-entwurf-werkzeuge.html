@@ -708,8 +708,8 @@ DIE WERKZEUGSPUR ENTSTEHT IM MATERIAL.</div>
     // DOM patches can add a hover to an existing node or change its effects.
     // Rebind only changed sources; leave all other running animations intact.
     const hoverBindings = new Map();
-    const hoverSupported = hostWindow.matchMedia?.(
-      '(hover: hover) and (pointer: fine)').matches ?? true;
+    // Register hover regardless of the primary pointer. A touchscreen
+    // device can still have a mouse; skip actual touch events below.
     window.ccRefreshTemplateHovers = () => {
       const live = new Set(document.querySelectorAll('[data-cc-hover]'));
       for (const [source, binding] of hoverBindings) {
@@ -719,7 +719,6 @@ DIE WERKZEUGSPUR ENTSTEHT IM MATERIAL.</div>
         binding.dispose();
         hoverBindings.delete(source);
       }
-      if (!hoverSupported) return;
       live.forEach(source => {
         if (hoverBindings.has(source)) return;
         const serialized = source.dataset.ccHover;
@@ -835,8 +834,12 @@ DIE WERKZEUGSPUR ENTSTEHT IM MATERIAL.</div>
               fill: 'forwards'
             });
           };
-          const enter = () => play(true);
-          const leave = () => {
+          const enter = event => {
+            if (event.pointerType === 'touch') return;
+            play(true);
+          };
+          const leave = event => {
+            if (event.pointerType === 'touch') return;
             if (action.hoverReverse !== false) play(false);
           };
           source.addEventListener('pointerenter', enter);

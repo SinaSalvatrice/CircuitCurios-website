@@ -3525,8 +3525,8 @@ left:150.9231px !important; top:3118.0513px !important; width:246.1538px !import
     // DOM patches can add a hover to an existing node or change its effects.
     // Rebind only changed sources; leave all other running animations intact.
     const hoverBindings = new Map();
-    const hoverSupported = hostWindow.matchMedia?.(
-      '(hover: hover) and (pointer: fine)').matches ?? true;
+    // Register hover regardless of the primary pointer. A touchscreen
+    // device can still have a mouse; skip actual touch events below.
     window.ccRefreshTemplateHovers = () => {
       const live = new Set(document.querySelectorAll('[data-cc-hover]'));
       for (const [source, binding] of hoverBindings) {
@@ -3536,7 +3536,6 @@ left:150.9231px !important; top:3118.0513px !important; width:246.1538px !import
         binding.dispose();
         hoverBindings.delete(source);
       }
-      if (!hoverSupported) return;
       live.forEach(source => {
         if (hoverBindings.has(source)) return;
         const serialized = source.dataset.ccHover;
@@ -3673,8 +3672,12 @@ left:150.9231px !important; top:3118.0513px !important; width:246.1538px !import
               fill: 'forwards'
             });
           };
-          const enter = () => play(true);
-          const leave = () => {
+          const enter = event => {
+            if (event.pointerType === 'touch') return;
+            play(true);
+          };
+          const leave = event => {
+            if (event.pointerType === 'touch') return;
             if (action.hoverReverse !== false) play(false);
           };
           source.addEventListener('pointerenter', enter);
