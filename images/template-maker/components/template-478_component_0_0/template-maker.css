@@ -251,14 +251,20 @@ main.cc-template-page {
   height: var(--cc-group-height);
   pointer-events: none;
 }
+[data-cc-stack-entry].cc-hidden-by-action,
 .cc-archive-filter-hidden {
   display: none !important;
 }
 /* Archive filter moves an entire positioned card, never just its text. */
 .cc-tm-transition-group[data-cc-archive-item="1"],
-.cc-tm-element[data-cc-archive-item="1"] {
+[data-cc-group-trigger][style*="--cc-archive-shift-x"] {
   translate: var(--cc-archive-shift-x, 0px)
     var(--cc-archive-shift-y, 0px);
+}
+[data-cc-stack] > [data-cc-stack-entry],
+[data-cc-stack] > [data-cc-group-trigger] {
+  --cc-stack-shift: 0px 0px;
+  translate: var(--cc-stack-shift);
 }
 .cc-tm-element {
   position: absolute;
@@ -361,7 +367,7 @@ main.cc-template-page {
   inset: 0;
   z-index: 2147483000;
   box-sizing: border-box;
-  padding: 16px;
+  padding: var(--cc-popup-margin, 48px);
   place-items: center;
   background: var(--cc-popup-backdrop, rgba(0,0,0,.62));
   isolation: isolate;
@@ -374,11 +380,13 @@ main.cc-template-page {
 .cc-interaction-surface {
   position: relative;
   box-sizing: border-box;
-  width: min(var(--cc-popup-width, 720px), calc(100vw - 32px));
-  height: min(var(--cc-popup-height, 520px), calc(100dvh - 32px));
+  width: min(var(--cc-popup-width, 720px),
+    calc(100vw - var(--cc-popup-margin, 48px) - var(--cc-popup-margin, 48px)));
+  height: min(var(--cc-popup-height, 520px),
+    calc(100dvh - var(--cc-popup-margin, 48px) - var(--cc-popup-margin, 48px)));
   min-width: 0;
   min-height: 0;
-  max-height: calc(100dvh - 32px);
+  max-height: calc(100dvh - var(--cc-popup-margin, 48px) - var(--cc-popup-margin, 48px));
   overflow: hidden;
   border-radius: var(--cc-popup-radius, 16px);
   background: #f4f1ea;
@@ -390,8 +398,9 @@ main.cc-template-page {
      Settings remain upper bounds; viewport clipping is avoided. */
   width: min(var(--cc-popup-width, 720px),
     calc(var(--cc-popup-height, 520px) * var(--cc-component-ratio, 1)),
-    calc(100vw - 32px),
-    calc((100dvh - 32px) * var(--cc-component-ratio, 1)));
+    calc(100vw - var(--cc-popup-margin, 48px) - var(--cc-popup-margin, 48px)),
+    calc((100dvh - var(--cc-popup-margin, 48px) -
+      var(--cc-popup-margin, 48px)) * var(--cc-component-ratio, 1)));
   height: auto;
   aspect-ratio: var(--cc-component-ratio, 1);
   background: transparent;
@@ -417,6 +426,34 @@ main.cc-template-page {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+.cc-interaction-move {
+  position: absolute;
+  z-index: 6;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 20px;
+  border: 0;
+  background: transparent;
+  cursor: grab;
+  touch-action: none;
+}
+.cc-interaction-move::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin: auto;
+  border-radius: 999px;
+  background: rgba(255,255,255,.7);
+  box-shadow: 0 1px 3px rgba(0,0,0,.7);
+}
+.cc-interaction-move:active { cursor: grabbing; }
+.cc-interaction-overlay.cc-panel .cc-interaction-move,
+.cc-interaction-overlay.cc-fullscreen .cc-interaction-move {
+  display: none;
 }
 .cc-interaction-close {
   position: absolute;
@@ -492,11 +529,7 @@ main.cc-template-page {
   .cc-interaction-surface { animation: none !important; }
 }
 @media (max-width: 700px) {
-  .cc-interaction-overlay { padding: 12px; }
-  .cc-interaction-surface {
-    width: min(var(--cc-popup-width, 720px), calc(100vw - 24px));
-    height: min(var(--cc-popup-height, 520px), calc(100dvh - 24px));
-  }
+  .cc-interaction-overlay { --cc-popup-margin: 12px !important; }
 }
 
 .cc-tm-shade {

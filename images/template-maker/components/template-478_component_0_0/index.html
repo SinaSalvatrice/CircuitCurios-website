@@ -59,6 +59,7 @@ MATRIX verbindet geometrische Präzision mit materieller Lebendigkeit. Die regel
 
   <div id="cc-interaction-overlay" class="cc-interaction-overlay" role="dialog" aria-label="Detailansicht" aria-modal="true" aria-hidden="true">
     <div class="cc-interaction-surface" tabindex="-1">
+      <button class="cc-interaction-move" type="button" aria-label="Floating-Fenster verschieben" title="Fenster verschieben"></button>
       <button class="cc-interaction-close" type="button" aria-label="Schließen">×</button>
       <div class="cc-interaction-content"></div>
     </div>
@@ -110,7 +111,41 @@ MATRIX verbindet geometrische Präzision mit materieller Lebendigkeit. Die regel
     fitTemplateCanvas();
     window.addEventListener('resize', fitTemplateCanvas, { passive: true });
 
+    // Native mouse wheels scroll vertically. In a horizontal-only clip,
+    // translate vertical wheel movement to scrollLeft; horizontal trackpads
+    // and touch scrolling remain native. Delegate so live DOM patches work.
+    document.addEventListener('wheel', event => {
+      if (event.ctrlKey || event.metaKey || event.altKey) return;
+      const target = event.target;
+      if (!(target instanceof Element) ||
+          target.closest('input, textarea, select, [contenteditable="true"]')) return;
+      const clip = target.closest('.cc-tm-clip-scroll[data-cc-clip-scroll="horizontal"], .cc-tm-clip-scroll[data-cc-clip-scroll="both"]');
+      if (!clip) return;
+      const axis = clip.getAttribute('data-cc-clip-scroll');
+      if (axis === 'both' && !event.shiftKey) return;
+      if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
+      const maximum = clip.scrollWidth - clip.clientWidth;
+      if (maximum <= 0) return;
+      const multiplier = event.deltaMode === 1 ? 16 :
+        event.deltaMode === 2 ? clip.clientWidth : 1;
+      const amount = event.deltaY * multiplier;
+      if (!amount) return;
+      const desired = Math.max(0, Math.min(maximum, clip.scrollLeft + amount));
+      if (Math.abs(desired - clip.scrollLeft) < .01) return;
+      clip.scrollLeft = desired;
+      event.preventDefault();
+      event.stopPropagation();
+    }, { passive: false });
+
     const overlay = document.getElementById('cc-interaction-overlay');
+    // The generated overlay starts inside <main>. Move it to <body> so
+    // transforms, containment and scroll offsets on the page cannot change
+    // the viewport-relative position of a fixed dialog.
+    if (overlay && overlay.parentElement !== document.body) {
+      document.querySelectorAll('body > #cc-interaction-overlay')
+        .forEach(stale => { if (stale !== overlay) stale.remove(); });
+      document.body.appendChild(overlay);
+    }
     const content = overlay ? overlay.querySelector('.cc-interaction-content') : null;
     const close = overlay ? overlay.querySelector('.cc-interaction-close') : null;
     const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -151,6 +186,7 @@ MATRIX verbindet geometrische Präzision mit materieller Lebendigkeit. Die regel
     })();
 
     const surface = overlay ? overlay.querySelector('.cc-interaction-surface') : null;
+    const moveHandle = overlay ? overlay.querySelector('.cc-interaction-move') : null;
     const floatingDefaults = {
       width: 720, height: 520, position: 'center',
       backdropColor: '#000000', backdropOpacity: .62,
@@ -170,8 +206,9 @@ MATRIX verbindet geometrische Präzision mit materieller Lebendigkeit. Die regel
     const floatingSettings = raw => {
       const input = raw && typeof raw === 'object' ? raw : {};
       return {
-        width: clampNumber(input.width, 720, 240, 1600),
-        height: clampNumber(input.height, 520, 160, 1200),
+        width: clampNumber(input.width, 720, 240, 2400),
+        height: clampNumber(input.height, 520, 160, 2000),
+        viewportMargin: clampNumber(input.viewportMargin, 48, 12, 160),
         position: floatingPositions.includes(input.position)
           ? input.position : 'center',
         backdropColor: typeof input.backdropColor === 'string' &&
@@ -256,6 +293,12 @@ MATRIX verbindet geometrische Präzision mit materieller Lebendigkeit. Die regel
         settings.backdropOpacity + ')');
       overlay.style.setProperty('--cc-popup-width', settings.width + 'px');
       overlay.style.setProperty('--cc-popup-height', settings.height + 'px');
+      overlay.style.setProperty('--cc-popup-margin', settings.viewportMargin + 'px');
+      // Every new open starts centered. Only an explicit pointer drag can
+      // move the current window; saved page geometry is never modified.
+      surface.style.removeProperty('translate');
+      delete surface.dataset.dragX;
+      delete surface.dataset.dragY;
       overlay.style.setProperty('--cc-popup-radius',
         settings.cornerRadius + 'px');
       overlay.style.setProperty('--cc-popup-duration',
@@ -298,6 +341,49 @@ MATRIX verbindet geometrische Präzision mit materieller Lebendigkeit. Die regel
       else surface.focus();
     };
 
+    // A small handle lets desktop users move a floating without confusing
+    // the component's own scrollable text with a drag target.
+    if (moveHandle && surface) {
+      let drag = null;
+      moveHandle.addEventListener('pointerdown', event => {
+        if (event.button !== 0 || !overlay?.classList.contains('cc-open') ||
+            overlay.classList.contains('cc-panel') ||
+            overlay.classList.contains('cc-fullscreen')) return;
+        event.preventDefault();
+        const rect = surface.getBoundingClientRect();
+        drag = {
+          id: event.pointerId, x: event.clientX, y: event.clientY,
+          rect, dx: Number(surface.dataset.dragX) || 0,
+          dy: Number(surface.dataset.dragY) || 0,
+        };
+        moveHandle.setPointerCapture(event.pointerId);
+      });
+      moveHandle.addEventListener('pointermove', event => {
+        if (!drag || event.pointerId !== drag.id) return;
+        event.preventDefault();
+        const inset = 8;
+        const deltaX = event.clientX - drag.x;
+        const deltaY = event.clientY - drag.y;
+        const dx = Math.max(inset - drag.rect.left,
+          Math.min(deltaX, innerWidth - inset - drag.rect.right));
+        const dy = Math.max(inset - drag.rect.top,
+          Math.min(deltaY, innerHeight - inset - drag.rect.bottom));
+        const x = drag.dx + dx, y = drag.dy + dy;
+        surface.style.translate = x + 'px ' + y + 'px';
+        surface.dataset.dragX = String(x);
+        surface.dataset.dragY = String(y);
+      });
+      const finishDrag = event => {
+        if (!drag || event.pointerId !== drag.id) return;
+        if (moveHandle.hasPointerCapture(event.pointerId)) {
+          moveHandle.releasePointerCapture(event.pointerId);
+        }
+        drag = null;
+      };
+      moveHandle.addEventListener('pointerup', finishDrag);
+      moveHandle.addEventListener('pointercancel', finishDrag);
+      moveHandle.addEventListener('lostpointercapture', () => { drag = null; });
+    }
     close && close.addEventListener('click', closeOverlay);
     overlay && overlay.addEventListener('click', event => {
       if (event.target === overlay && activeFloating.closeOnBackdrop) {
@@ -324,73 +410,95 @@ MATRIX verbindet geometrische Präzision mit materieller Lebendigkeit. Die regel
       // Archive groups span the full canvas because child coordinates use
       // world space. Their real card position is stored in CSS variables.
       const style = getComputedStyle(item);
-      const group = item.classList.contains('cc-tm-transition-group');
-      const x = parseFloat(group
-        ? style.getPropertyValue('--cc-group-x') : style.left);
-      const y = parseFloat(group
-        ? style.getPropertyValue('--cc-group-y') : style.top);
+      const x = parseFloat(style.getPropertyValue('--cc-group-x'));
+      const y = parseFloat(style.getPropertyValue('--cc-group-y'));
       return {
         x: Number.isFinite(x) ? x : 0,
         y: Number.isFinite(y) ? y : 0
       };
     };
 
-    const applyArchiveFamilyFilter = () => {
-      // Grid fields own their family: hide the complete slot (including its
-      // component, image, actions and descendants). CSS Grid reflows all
-      // remaining slots into the first positions automatically.
-      document.querySelectorAll('[data-cc-grid-cell="1"]').forEach(field => {
-        // Existing image-sequence animations still use the gallery data type.
-        // They are a slideshow, not filterable grid cards.
-        const gallery = field.closest('.cc-tm-gallery');
-        if (gallery && gallery.matches(
-          '.cc-gallery-sequence, [data-cc-transition*="imageSequenceFade"], [data-cc-transition*="imageSequenceSwoop"]'
-        )) return;
-        const hiddenByEditor = field.hasAttribute('hidden');
-        const hiddenByFilter = activeArchiveFamily !== 'all' &&
-          field.dataset.ccGridFamily !== activeArchiveFamily;
-        const hide = hiddenByEditor || hiddenByFilter;
-        field.classList.toggle('cc-archive-filter-hidden', hide);
-        field.setAttribute('aria-hidden', hide ? 'true' : 'false');
-      });
-      const items = Array.from(
-        document.querySelectorAll('[data-cc-archive-item="1"]')
-      );
-      // Only the outermost card is a filter unit. Descendant labels, images,
-      // borders and nested groups must not be hidden independently.
-      const cards = items.filter(item =>
-        !item.parentElement?.closest('[data-cc-archive-item="1"]'));
-      const originalOrder = cards.map((item, index) => ({
-        item, index, position: archiveCardPosition(item)
-      })).sort((a, b) =>
-        a.position.y - b.position.y ||
-        a.position.x - b.position.x ||
-        a.index - b.index);
-
-      for (const item of items) {
-        const isCard = cards.includes(item);
-        const hide = isCard && activeArchiveFamily !== 'all' &&
-          item.dataset.ccArchiveFamily !== activeArchiveFamily;
-        item.classList.toggle('cc-archive-filter-hidden', hide);
-        item.setAttribute('aria-hidden', hide ? 'true' : 'false');
-        item.style.removeProperty('--cc-archive-shift-x');
-        item.style.removeProperty('--cc-archive-shift-y');
-      }
-
-      // This is intentionally not a new grid layout. Compact only filtered
-      // cards into the first positions already drawn by the existing page.
-      // Moving the card wrapper keeps its entire subtree together.
-      if (activeArchiveFamily !== 'all') {
-        const visible = originalOrder.filter(entry =>
-          entry.item.dataset.ccArchiveFamily === activeArchiveFamily);
-        visible.forEach((entry, index) => {
-          const slot = originalOrder[index].position;
-          const dx = slot.x - entry.position.x;
-          const dy = slot.y - entry.position.y;
-          entry.item.style.setProperty('--cc-archive-shift-x', dx + 'px');
-          entry.item.style.setProperty('--cc-archive-shift-y', dy + 'px');
+    const arrangeStacks = () => {
+      const sizes = new Map();
+      for (const stack of Array.from(document.querySelectorAll('[data-cc-stack]')).reverse()) {
+        const style = getComputedStyle(stack);
+        const number = (css, name) => parseFloat(css.getPropertyValue(name)) || 0;
+        const entries = [];
+        for (const node of stack.children) {
+          if (!node.hasAttribute('data-cc-stack-entry')) continue;
+          const css = getComputedStyle(node);
+          if (node.hidden || css.display === 'none') continue;
+          const nested = sizes.get(node);
+          if (nested && !nested.count) continue;
+          entries.push({ node, x: number(css, '--cc-group-x'), y: number(css, '--cc-group-y'),
+            width: nested?.width ?? number(css, '--cc-group-width'),
+            height: nested?.height ?? number(css, '--cc-group-height') });
+        }
+        const layout = style.getPropertyValue('--cc-stack-layout').trim();
+        const columns = layout === 'column' ? 1 : layout === 'row' ? entries.length :
+          Math.max(1, number(style, '--cc-stack-columns'));
+        const gap = number(style, '--cc-stack-gap');
+        const padding = number(style, '--cc-stack-padding');
+        const left = number(style, '--cc-group-x') + padding;
+        let x = left, y = number(style, '--cc-group-y') + padding, rowHeight = 0;
+        const top = y;
+        let right = left;
+        const track = entries.reduce((widest, item) => Math.max(widest, item.width), 0);
+        entries.forEach((entry, index) => {
+          if (index && index % columns === 0) {
+            x = left;
+            y += rowHeight + gap;
+            rowHeight = 0;
+          }
+          const trigger = entry.node.previousElementSibling;
+          const parts = trigger?.dataset.ccGroupTrigger === entry.node.id
+            ? [entry.node, trigger] : [entry.node];
+          for (const part of parts) {
+            const shift = (x - entry.x) + 'px ' + (y - entry.y) + 'px';
+            part.style.setProperty('--cc-stack-shift', shift);
+          }
+          right = Math.max(right, x + entry.width);
+          x += (layout === 'grid' ? track : entry.width) + gap;
+          rowHeight = Math.max(rowHeight, entry.height);
         });
+        sizes.set(stack, { count: entries.length, width: right - left + 2 * padding,
+          height: y - top + rowHeight + 2 * padding });
       }
+    };
+
+    const applyArchiveFamilyFilter = () => {
+      const selector = '[data-cc-archive-item="1"]';
+      for (const canvas of document.querySelectorAll('.cc-template-canvas')) {
+        const groups = Array.from(canvas.querySelectorAll(selector)).filter(group =>
+          group.closest('.cc-template-canvas') === canvas &&
+          !group.parentElement.closest(selector));
+        const slots = groups.map(group => ({ group, ...archiveCardPosition(group) }))
+          .sort((a, b) => a.y - b.y || a.x - b.x);
+        const freeSlots = slots.filter(entry => !entry.group.parentElement.closest('[data-cc-stack]'));
+        let visibleIndex = 0;
+        for (const entry of slots) {
+          const { group } = entry;
+          const filtered = activeArchiveFamily !== 'all';
+          const hide = filtered && group.dataset.ccArchiveFamily !== activeArchiveFamily;
+          const slot = filtered && !hide && !group.parentElement.closest('[data-cc-stack]')
+            ? freeSlots[visibleIndex++] : null;
+          // The transition observer uses a sibling with the same world coordinates.
+          const trigger = group.previousElementSibling;
+          const parts = trigger?.dataset.ccGroupTrigger === group.id ? [group, trigger] : [group];
+          for (const part of parts) {
+            part.classList.toggle('cc-archive-filter-hidden', hide);
+            if (slot) {
+              part.style.setProperty('--cc-archive-shift-x', (slot.x - entry.x) + 'px');
+              part.style.setProperty('--cc-archive-shift-y', (slot.y - entry.y) + 'px');
+            } else {
+              part.style.removeProperty('--cc-archive-shift-x');
+              part.style.removeProperty('--cc-archive-shift-y');
+            }
+          }
+        }
+      }
+
+      arrangeStacks();
 
       // Tabs communicate their active state to assistive technology.
       document.querySelectorAll('[data-cc-actions]').forEach(tab => {
@@ -406,6 +514,10 @@ MATRIX verbindet geometrische Präzision mit materieller Lebendigkeit. Die regel
       });
     };
     window.ccRefreshTemplateArchiveFilters = applyArchiveFamilyFilter;
+    window.addEventListener('resize', () => {
+      if (activeArchiveFamily !== 'all') applyArchiveFamilyFilter();
+      else arrangeStacks();
+    }, { passive: true });
 
     // Caption actions subscribe to the frame index emitted by the source
     // gallery. They do not own a timer, so captions cannot drift out of sync.
@@ -607,7 +719,10 @@ MATRIX verbindet geometrische Präzision mit materieller Lebendigkeit. Die regel
 
       if (type === 'toggle' && action.target) {
         const target = document.getElementById(action.target);
-        if (target) target.classList.toggle('cc-hidden-by-action');
+        if (target) {
+          target.classList.toggle('cc-hidden-by-action');
+          if (target.closest('[data-cc-stack]')) arrangeStacks();
+        }
         return;
       }
 
@@ -779,6 +894,23 @@ MATRIX verbindet geometrische Präzision mit materieller Lebendigkeit. Die regel
             const start = snapshot(target);
             if (active) active.cancel();
             const end = { ...baseline.style };
+            // Scroll positioning belongs to the clip, not the hover animation.
+            // Never freeze its translate when scrolling/hovering over children.
+            const scrollChild = target.parentElement?.hasAttribute(
+              'data-cc-clip-scroll-content');
+            const scrollTranslate = 'calc(0px - var(--cc-scroll-x)) ' +
+              'calc(0px - var(--cc-scroll-y))';
+            const movesOnHover = effects.has('lift') || effects.has('slide');
+            if (!movesOnHover) {
+              // Effects such as glow/fade/scale must not capture the clip's
+              // translate, or the hovered element jumps while scrolling.
+              delete start.translate;
+              delete end.translate;
+            } else if (scrollChild) {
+              // Keep the scroll-origin dynamic for the entire hover animation.
+              start.translate = scrollTranslate;
+              end.translate = scrollTranslate;
+            }
             if (entering) {
               const distance = Math.max(0, Math.min(200, Number(action.hoverDistance ?? 8)));
               let x = 0, y = 0;
@@ -790,8 +922,12 @@ MATRIX verbindet geometrische Präzision mit materieller Lebendigkeit. Die regel
                 else if (direction === 'down') y += distance;
                 else x += distance;
               }
-              if (effects.has('lift') || effects.has('slide'))
-                end.translate = x + 'px ' + y + 'px';
+              if (movesOnHover) {
+                end.translate = scrollChild
+                  ? 'calc(' + x + 'px - var(--cc-scroll-x)) ' +
+                    'calc(' + y + 'px - var(--cc-scroll-y))'
+                  : x + 'px ' + y + 'px';
+              }
               if (effects.has('scale'))
                 end.scale = String(Math.max(.5, Math.min(2, Number(action.hoverScale ?? 1.05))));
               if (effects.has('tilt'))
