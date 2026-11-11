@@ -84,7 +84,7 @@
     "text-style-8": {
       "name": "lange beschreibung",
       "style": {
-        "fontFamily": "Manrope",
+        "fontFamily": "Urbanist",
         "fontWeight": 200,
         "letterSpacing": 2.98
       },
@@ -122,7 +122,7 @@
       "style": {
         "fontFamily": "BigShoulders",
         "fontWeight": 900,
-        "letterSpacing": 21.6
+        "letterSpacing": 19.2
       },
       "iconColor": "rgba(253,249,243,1)"
     }
