@@ -2872,7 +2872,6 @@
       "template-399",
       "template-41",
       "template-46",
-      "template-54",
       "template-79",
       "template-81"
     ]
@@ -4478,7 +4477,7 @@
       "fillTexturePositionY": 0.0,
       "fillTextureRepeat": false,
       "visible": true,
-      "locked": true,
+      "locked": false,
       "rotation": 0.0,
       "imported": false,
       "sourceTag": null,
@@ -4874,7 +4873,7 @@
           "type": "openInternal",
           "enabled": true,
           "target": null,
-          "presentation": "navigate",
+          "presentation": "pushFromRight",
           "componentPath": null,
           "floating": {
             "width": 720.0,
