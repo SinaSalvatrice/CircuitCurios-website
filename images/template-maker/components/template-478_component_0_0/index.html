@@ -826,8 +826,10 @@ MATRIX verbindet geometrische Präzision mit materieller Lebendigkeit. Die regel
     // DOM patches can add a hover to an existing node or change its effects.
     // Rebind only changed sources; leave all other running animations intact.
     const hoverBindings = new Map();
-    const hoverSupported = hostWindow.matchMedia?.(
-      '(hover: hover) and (pointer: fine)').matches ?? true;
+    // Do not gate registration on the primary input device. A touchscreen
+    // laptop/Android device may gain a mouse after the page has loaded, while
+    // (hover: hover) still reports false for the primary touch pointer.
+    // Ignore only actual touch events; preserve mouse, pen and editor events.
     window.ccRefreshTemplateHovers = () => {
       const live = new Set(document.querySelectorAll('[data-cc-hover]'));
       for (const [source, binding] of hoverBindings) {
@@ -837,7 +839,6 @@ MATRIX verbindet geometrische Präzision mit materieller Lebendigkeit. Die regel
         binding.dispose();
         hoverBindings.delete(source);
       }
-      if (!hoverSupported) return;
       live.forEach(source => {
         if (hoverBindings.has(source)) return;
         const serialized = source.dataset.ccHover;
@@ -974,8 +975,12 @@ MATRIX verbindet geometrische Präzision mit materieller Lebendigkeit. Die regel
               fill: 'forwards'
             });
           };
-          const enter = () => play(true);
-          const leave = () => {
+          const enter = event => {
+            if (event.pointerType === 'touch') return;
+            play(true);
+          };
+          const leave = event => {
+            if (event.pointerType === 'touch') return;
             if (action.hoverReverse !== false) play(false);
           };
           source.addEventListener('pointerenter', enter);
