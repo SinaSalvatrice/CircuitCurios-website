@@ -85,8 +85,8 @@
       "name": "lange beschreibung",
       "style": {
         "fontFamily": "Urbanist",
-        "fontWeight": 200,
-        "letterSpacing": 2.98
+        "fontWeight": 300,
+        "letterSpacing": 2.1799999999999997
       },
       "styleExplicit": true,
       "explicitKeys": [
