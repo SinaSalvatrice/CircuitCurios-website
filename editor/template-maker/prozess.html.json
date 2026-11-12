@@ -2919,13 +2919,13 @@
     {
       "family": "IBMPlexMono",
       "assets": [
-        "library://fonts/IBMPlexMono-Bold.ttf",
-        "library://fonts/IBMPlexMono-ExtraLight.ttf",
-        "library://fonts/IBMPlexMono-Light.ttf",
-        "library://fonts/IBMPlexMono-Medium.ttf",
-        "library://fonts/IBMPlexMono-Regular.ttf",
-        "library://fonts/IBMPlexMono-SemiBold.ttf",
-        "library://fonts/IBMPlexMono-Thin.ttf"
+        "library://fonts/ibmplex mono/IBMPlexMono-Bold.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-ExtraLight.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-Light.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-Medium.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-Regular.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-SemiBold.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-Thin.ttf"
       ]
     },
     {
