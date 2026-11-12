@@ -6,13 +6,6 @@
   font-display: swap;
 }
 @font-face {
-  font-family: 'BigShoulders';
-  src: url('../images/template-maker/fonts/BigShoulders-0.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
   font-family: 'IBMPlexMono';
   src: url('../images/template-maker/fonts/IBMPlexMono-0.ttf') format('truetype');
   font-style: normal;
@@ -59,6 +52,13 @@
   src: url('../images/template-maker/fonts/IBMPlexMono-6.ttf') format('truetype');
   font-style: normal;
   font-weight: 100;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'BigShoulders';
+  src: url('../images/template-maker/fonts/BigShoulders-0.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
 }
 @font-face {
