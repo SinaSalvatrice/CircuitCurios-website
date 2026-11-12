@@ -2861,7 +2861,8 @@
     "text-style-7": "strukturformeln",
     "text-style-8": "lange beschreibung",
     "text-style-9": "FOOT",
-    "text-style-10": "hero text"
+    "text-style-10": "hero text",
+    "text-style-11": "große zahlen"
   },
   "editorState": {
     "collapsedGroupIds": [
@@ -6182,13 +6183,13 @@
     {
       "family": "Avenir Next Condensed Ultra",
       "assets": [
-        "library://fonts/Avenir Next Condensed Ultra Light.otf"
+        "library://fonts/avenir/Avenir Next Condensed Ultra Light.otf"
       ]
     },
     {
       "family": "Avenir Next Ultra",
       "assets": [
-        "library://fonts/Avenir Next Ultra Light.otf"
+        "library://fonts/avenir/Avenir Next Ultra Light.otf"
       ]
     },
     {
@@ -6200,16 +6201,16 @@
     {
       "family": "Avenir Next",
       "assets": [
-        "library://fonts/Avenir Next Bold.otf",
-        "library://fonts/Avenir Next Regular.otf",
-        "library://fonts/Avenir Next Thin.otf"
+        "library://fonts/avenir/Avenir Next Bold.otf",
+        "library://fonts/avenir/Avenir Next Regular.otf",
+        "library://fonts/avenir/Avenir Next Thin.otf"
       ]
     },
     {
       "family": "OpenSans",
       "assets": [
-        "library://fonts/OpenSans-Light.ttf",
-        "library://fonts/OpenSans-LightItalic.ttf"
+        "library://fonts/open sans/OpenSans-Light.ttf",
+        "library://fonts/open sans/OpenSans-LightItalic.ttf"
       ]
     },
     {
@@ -6221,13 +6222,13 @@
     {
       "family": "IBMPlexMono",
       "assets": [
-        "library://fonts/IBMPlexMono-Bold.ttf",
-        "library://fonts/IBMPlexMono-ExtraLight.ttf",
-        "library://fonts/IBMPlexMono-Light.ttf",
-        "library://fonts/IBMPlexMono-Medium.ttf",
-        "library://fonts/IBMPlexMono-Regular.ttf",
-        "library://fonts/IBMPlexMono-SemiBold.ttf",
-        "library://fonts/IBMPlexMono-Thin.ttf"
+        "library://fonts/ibmplex mono/IBMPlexMono-Bold.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-ExtraLight.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-Light.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-Medium.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-Regular.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-SemiBold.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-Thin.ttf"
       ]
     },
     {
@@ -8335,7 +8336,7 @@
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "textColor": "rgba(170,169,161,1)",
       "fontSize": 9.0,
-      "fontWeight": 300,
+      "fontWeight": 200,
       "fontFamily": "IBMPlexMono",
       "textStyleGroupId": "text-style-3",
       "archiveFamily": null,
@@ -8541,7 +8542,7 @@
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "textColor": "rgba(102,102,102,1)",
       "fontSize": 9.0,
-      "fontWeight": 300,
+      "fontWeight": 200,
       "fontFamily": "IBMPlexMono",
       "textStyleGroupId": "text-style-3",
       "archiveFamily": null,
@@ -9495,7 +9496,7 @@
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "textColor": "rgb(185, 189, 191)",
       "fontSize": 9.0,
-      "fontWeight": 300,
+      "fontWeight": 200,
       "fontFamily": "IBMPlexMono",
       "textStyleGroupId": "text-style-3",
       "archiveFamily": null,
@@ -9701,7 +9702,7 @@
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "textColor": "rgb(185, 189, 191)",
       "fontSize": 9.0,
-      "fontWeight": 300,
+      "fontWeight": 200,
       "fontFamily": "IBMPlexMono",
       "textStyleGroupId": "text-style-3",
       "archiveFamily": null,
@@ -10655,7 +10656,7 @@
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "textColor": "rgb(185, 189, 191)",
       "fontSize": 9.0,
-      "fontWeight": 300,
+      "fontWeight": 200,
       "fontFamily": "IBMPlexMono",
       "textStyleGroupId": "text-style-3",
       "archiveFamily": null,
@@ -10861,7 +10862,7 @@
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "textColor": "rgb(185, 189, 191)",
       "fontSize": 9.0,
-      "fontWeight": 300,
+      "fontWeight": 200,
       "fontFamily": "IBMPlexMono",
       "textStyleGroupId": "text-style-3",
       "archiveFamily": null,
@@ -11815,7 +11816,7 @@
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "textColor": "rgb(185, 189, 191)",
       "fontSize": 9.0,
-      "fontWeight": 300,
+      "fontWeight": 200,
       "fontFamily": "IBMPlexMono",
       "textStyleGroupId": "text-style-3",
       "archiveFamily": null,
@@ -12021,7 +12022,7 @@
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "textColor": "rgb(185, 189, 191)",
       "fontSize": 9.0,
-      "fontWeight": 300,
+      "fontWeight": 200,
       "fontFamily": "IBMPlexMono",
       "textStyleGroupId": "text-style-3",
       "archiveFamily": null,
@@ -12975,7 +12976,7 @@
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "textColor": "rgb(185, 189, 191)",
       "fontSize": 9.0,
-      "fontWeight": 300,
+      "fontWeight": 200,
       "fontFamily": "IBMPlexMono",
       "textStyleGroupId": "text-style-3",
       "archiveFamily": null,
@@ -13181,7 +13182,7 @@
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "textColor": "rgb(185, 189, 191)",
       "fontSize": 9.0,
-      "fontWeight": 300,
+      "fontWeight": 200,
       "fontFamily": "IBMPlexMono",
       "textStyleGroupId": "text-style-3",
       "archiveFamily": null,
@@ -14135,7 +14136,7 @@
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "textColor": "rgb(185, 189, 191)",
       "fontSize": 9.0,
-      "fontWeight": 300,
+      "fontWeight": 200,
       "fontFamily": "IBMPlexMono",
       "textStyleGroupId": "text-style-3",
       "archiveFamily": null,
@@ -14341,7 +14342,7 @@
       "backgroundColor": "rgba(0, 0, 0, 0)",
       "textColor": "rgb(185, 189, 191)",
       "fontSize": 9.0,
-      "fontWeight": 300,
+      "fontWeight": 200,
       "fontFamily": "IBMPlexMono",
       "textStyleGroupId": "text-style-3",
       "archiveFamily": null,
