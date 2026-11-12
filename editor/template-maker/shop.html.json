@@ -2131,8 +2131,8 @@
       },
       "sourceFields": {
         "page": "Prozess",
-        "textType": "Überschrift",
-        "text": "Vom Blech zum Schmuckstück",
+        "textType": "Kurzbeschreibung",
+        "text": "01 — Die Idee\n\nAm Anfang steht eine Entdeckung, eine Beobachtung oder eine spontane Vorstellung. Ein Gegenstand fällt durch seine besondere Struktur auf und weckt die Idee, daraus eine Textur zu entwickeln. Manchmal entsteht die Gestaltung auch unabhängig von einem konkreten Vorbild. Erste Überlegungen zu Namen und Einordnung begleiten diesen Schritt.",
         "text_en": ""
       }
     },
@@ -2842,7 +2842,12 @@
         "page": "Prozess",
         "textType": "Kurzbeschreibung"
       },
-      "sourceFields": {}
+      "sourceFields": {
+        "text": "02 — Material\n\nJe nach geplantem Stück fällt die Wahl auf Aluminiumdraht oder bereits flaches Aluminiummaterial. Wird Draht verwendet, muss dieser zunächst abgeflacht werden. Durch wiederholte Hammerschläge entsteht eine ebene Fläche, deren Breite und Stärke die Grundlage für die weitere Bearbeitung bilden.\n",
+        "text_en": "",
+        "page": "Prozess",
+        "textType": "Kurzbeschreibung"
+      }
     }
   },
   "activeTextSnippet": "tektonik",
@@ -2856,7 +2861,8 @@
     "text-style-7": "strukturformeln",
     "text-style-8": "lange beschreibung",
     "text-style-9": "FOOT",
-    "text-style-10": "hero text"
+    "text-style-10": "hero text",
+    "text-style-11": "große zahlen"
   },
   "editorState": {
     "collapsedGroupIds": [
@@ -2885,13 +2891,13 @@
     {
       "family": "IBMPlexMono",
       "assets": [
-        "library://fonts/IBMPlexMono-Bold.ttf",
-        "library://fonts/IBMPlexMono-ExtraLight.ttf",
-        "library://fonts/IBMPlexMono-Light.ttf",
-        "library://fonts/IBMPlexMono-Medium.ttf",
-        "library://fonts/IBMPlexMono-Regular.ttf",
-        "library://fonts/IBMPlexMono-SemiBold.ttf",
-        "library://fonts/IBMPlexMono-Thin.ttf"
+        "library://fonts/ibmplex mono/IBMPlexMono-Bold.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-ExtraLight.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-Light.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-Medium.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-Regular.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-SemiBold.ttf",
+        "library://fonts/ibmplex mono/IBMPlexMono-Thin.ttf"
       ]
     }
   ],
