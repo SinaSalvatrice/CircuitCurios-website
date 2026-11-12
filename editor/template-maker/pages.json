@@ -2,6 +2,7 @@
   "version": 1,
   "pages": {
     "datenschutz.html": "datenschutz",
-    "impressum.html": "impressum"
+    "impressum.html": "impressum",
+    "policy.html": "policy"
   }
 }
