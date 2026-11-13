@@ -6779,7 +6779,7 @@
           "id": "action-6",
           "type": "openInternal",
           "enabled": true,
-          "target": null,
+          "target": "index.html",
           "presentation": "navigate",
           "componentPath": null,
           "floating": {
