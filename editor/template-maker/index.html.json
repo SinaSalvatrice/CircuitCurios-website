@@ -16801,7 +16801,7 @@
           "id": "action-3",
           "type": "openInternal",
           "enabled": true,
-          "target": "datenschutz.html",
+          "target": "policy.html",
           "presentation": "navigate",
           "componentPath": null,
           "floating": {
@@ -16867,7 +16867,7 @@
       "anchorX": "left",
       "anchorY": "top",
       "anchorReference": "auto",
-      "href": "datenschutz.html"
+      "href": "policy.html"
     },
     {
       "id": "group-2",

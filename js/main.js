@@ -185,7 +185,7 @@
   if (templateFooterLinks) {
     const links = [
       ['impressum.html', 'IMPRESSUM'],
-      ['datenschutz.html', 'DATENSCHUTZ'],
+      ['policy.html', 'DATENSCHUTZ'],
       [privacyPolicyHref, 'PRIVACY POLICY']
     ];
 
