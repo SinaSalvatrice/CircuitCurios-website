@@ -2862,7 +2862,8 @@
     "text-style-8": "lange beschreibung",
     "text-style-9": "FOOT",
     "text-style-10": "hero text",
-    "text-style-11": "große zahlen"
+    "text-style-11": "große zahlen",
+    "text-style-12": "kleine überschrift"
   },
   "editorState": {
     "collapsedGroupIds": [
@@ -16801,7 +16802,7 @@
           "id": "action-3",
           "type": "openInternal",
           "enabled": true,
-          "target": "datenschutz.html",
+          "target": "policy.html",
           "presentation": "navigate",
           "componentPath": null,
           "floating": {
@@ -17825,7 +17826,7 @@
       "backgroundColor": "rgba(0,0,0,0)",
       "textColor": "#444444",
       "fontSize": 13.0,
-      "fontWeight": 300,
+      "fontWeight": 800,
       "fontFamily": "Urbanist",
       "textStyleGroupId": "text-style-8",
       "archiveFamily": null,

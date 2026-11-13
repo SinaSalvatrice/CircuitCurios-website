@@ -2842,7 +2842,12 @@
         "page": "Prozess",
         "textType": "Kurzbeschreibung"
       },
-      "sourceFields": {}
+      "sourceFields": {
+        "text": "02 — Material\n\nJe nach geplantem Stück fällt die Wahl auf Aluminiumdraht oder bereits flaches Aluminiummaterial. Wird Draht verwendet, muss dieser zunächst abgeflacht werden. Durch wiederholte Hammerschläge entsteht eine ebene Fläche, deren Breite und Stärke die Grundlage für die weitere Bearbeitung bilden.\n",
+        "text_en": "",
+        "page": "Prozess",
+        "textType": "Kurzbeschreibung"
+      }
     }
   },
   "activeTextSnippet": "tektonik",
@@ -2857,18 +2862,20 @@
     "text-style-8": "lange beschreibung",
     "text-style-9": "FOOT",
     "text-style-10": "hero text",
-    "text-style-11": "große zahlen"
+    "text-style-11": "große zahlen",
+    "text-style-12": "kleine überschrift"
   },
   "editorState": {
     "collapsedGroupIds": [
       "group-1",
       "group-16",
+      "group-2",
       "group-8",
       "template-141",
       "template-208",
-      "template-214",
       "template-221",
-      "template-265"
+      "template-265",
+      "template-274"
     ]
   },
   "componentDefaults": {
@@ -5165,6 +5172,20 @@
       "family": "Urbanist",
       "assets": [
         "library://fonts/Urbanist-VariableFont_wght.ttf"
+      ]
+    },
+    {
+      "family": "Walkway",
+      "assets": [
+        "library://fonts/Walkway Black.ttf",
+        "library://fonts/Walkway Bold.ttf",
+        "library://fonts/walkway/Walkway Black.ttf",
+        "library://fonts/walkway/Walkway Bold.ttf",
+        "library://fonts/walkway/Walkway Oblique Black.ttf",
+        "library://fonts/walkway/Walkway Oblique Bold.ttf",
+        "library://fonts/walkway/Walkway Oblique SemiBold.ttf",
+        "library://fonts/walkway/Walkway Oblique.ttf",
+        "library://fonts/walkway/Walkway SemiBold.ttf"
       ]
     }
   ],
@@ -11821,7 +11842,7 @@
       "fillTexturePositionY": 0.0,
       "fillTextureRepeat": false,
       "visible": true,
-      "locked": true,
+      "locked": false,
       "rotation": 0.0,
       "imported": false,
       "sourceTag": null,
@@ -12333,7 +12354,7 @@
           "id": "action-3",
           "type": "openInternal",
           "enabled": true,
-          "target": "datenschutz.html",
+          "target": "policy.html",
           "presentation": "navigate",
           "componentPath": null,
           "floating": {
@@ -13048,8 +13069,8 @@
       "backgroundColor": null,
       "textColor": "rgba(253,249,243,1)",
       "fontSize": 39.29,
-      "fontWeight": 300,
-      "fontFamily": "Urbanist",
+      "fontWeight": 200,
+      "fontFamily": "Walkway",
       "textStyleGroupId": "text-style-8",
       "archiveFamily": null,
       "textAlign": null,

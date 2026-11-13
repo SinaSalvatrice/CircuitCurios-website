@@ -2862,7 +2862,8 @@
     "text-style-8": "lange beschreibung",
     "text-style-9": "FOOT",
     "text-style-10": "hero text",
-    "text-style-11": "große zahlen"
+    "text-style-11": "große zahlen",
+    "text-style-12": "kleine überschrift"
   },
   "editorState": {
     "collapsedGroupIds": [
@@ -4998,7 +4999,7 @@
           "id": "action-3",
           "type": "openInternal",
           "enabled": true,
-          "target": "datenschutz.html",
+          "target": "policy.html",
           "presentation": "navigate",
           "componentPath": null,
           "floating": {
