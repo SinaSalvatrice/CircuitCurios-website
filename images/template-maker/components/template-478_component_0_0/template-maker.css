@@ -304,7 +304,7 @@ main.cc-template-page {
   object-position:
     var(--cc-object-position-x, 50%)
     var(--cc-object-position-y, 50%);
-  transform: scale(var(--cc-image-scale, 1));
+  transform: scale(var(--cc-image-scale, 1)) scaleX(var(--cc-image-flip-x, 1)) scaleY(var(--cc-image-flip-y, 1));
   transform-origin:
     var(--cc-object-position-x, 50%)
     var(--cc-object-position-y, 50%);
@@ -593,7 +593,7 @@ main.cc-template-page {
   mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
   -webkit-mask-size: var(--cc-icon-fit, contain);
   mask-size: var(--cc-icon-fit, contain);
-  transform: scale(var(--cc-image-scale, 1));
+  transform: scale(var(--cc-image-scale, 1)) scaleX(var(--cc-image-flip-x, 1)) scaleY(var(--cc-image-flip-y, 1));
   transform-origin: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
 }
 .cc-tm-image,
@@ -617,7 +617,7 @@ main.cc-template-page {
   mask-repeat: no-repeat;
   -webkit-mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
   mask-position: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
-  transform: scale(var(--cc-image-scale, 1));
+  transform: scale(var(--cc-image-scale, 1)) scaleX(var(--cc-image-flip-x, 1)) scaleY(var(--cc-image-flip-y, 1));
   transform-origin: var(--cc-object-position-x, 50%) var(--cc-object-position-y, 50%);
 }
 .cc-tm-texture-card {

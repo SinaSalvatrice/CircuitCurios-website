@@ -35,7 +35,7 @@
       "name": "taxonomie & nummer",
       "style": {
         "fontFamily": "IBMPlexMono",
-        "fontWeight": 300,
+        "fontWeight": 200,
         "letterSpacing": 1.76
       },
       "styleExplicit": true,
@@ -85,8 +85,8 @@
       "name": "lange beschreibung",
       "style": {
         "fontFamily": "Urbanist",
-        "fontWeight": 200,
-        "letterSpacing": 2.98
+        "fontWeight": 300,
+        "letterSpacing": 2.1799999999999997
       },
       "styleExplicit": true,
       "explicitKeys": [
@@ -125,6 +125,20 @@
         "letterSpacing": 19.2
       },
       "iconColor": "rgba(253,249,243,1)"
+    },
+    "text-style-11": {
+      "name": "große zahlen",
+      "style": {
+        "fontFamily": "IBMPlexMono",
+        "fontWeight": 800,
+        "letterSpacing": -11.97
+      },
+      "explicitKeys": [
+        "fontFamily",
+        "fontWeight",
+        "letterSpacing"
+      ],
+      "styleExplicit": true
     }
   }
 }
