@@ -6,8 +6,7 @@ Statische Website für **https://circuitcurios.de**.
 
 - `index.html` – Startseite
 - `impressum.html` – Impressum
-- `datenschutz.html` – Datenschutzerklärung inkl. Pinterest API
-- `privacy.html` – Kompatibilitäts-Weiterleitung auf `datenschutz.html`
+- `policy.html` – einzige deutsche Datenschutzerklärung (inkl. Pinterest API)
 - `css/style.css` – globales Styling
 - `js/main.js` – Navigation, Header, Reveal-Effekte, Jahreszahl
 - `images/logo.svg` – neutrale Web-Fallback-Wortmarke
@@ -17,7 +16,7 @@ Statische Website für **https://circuitcurios.de**.
 
 ## Vor Live-Nutzung prüfen
 
-In `impressum.html` und `datenschutz.html` sind bewusst **keine persönlichen Anbieterangaben erfunden** worden.  
+In `impressum.html` und `policy.html` sind bewusst **keine persönlichen Anbieterangaben erfunden** worden.  
 Alle gelb markierten Platzhalter müssen durch die tatsächlichen Pflichtangaben ersetzt werden.
 
 ## Technik
