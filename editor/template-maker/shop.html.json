@@ -2878,7 +2878,7 @@
   "page": "shop.html",
   "htmlSource": null,
   "canvas": {
-    "width": 1425.0,
+    "width": 1920.0,
     "height": 2491.0,
     "backgroundColor": "rgb(242, 240, 233)"
   },
@@ -5065,7 +5065,7 @@
       "anchorX": "left",
       "anchorY": "top",
       "anchorReference": "auto",
-      "href": "datenschutz.html"
+      "href": "policy.html"
     }
   ],
   "assetBase": "sharedLibrary"

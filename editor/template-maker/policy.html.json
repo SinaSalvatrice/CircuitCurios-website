@@ -2896,7 +2896,7 @@
     },
     "layouts": {
       "desktop": {
-        "width": 1440.0,
+        "width": 1920.0,
         "height": 1896.0000000000018,
         "geometry": {
           "template-76": {
@@ -4844,7 +4844,7 @@
   "page": "policy.html",
   "htmlSource": null,
   "canvas": {
-    "width": 1440.0,
+    "width": 1920.0,
     "height": 1896.0000000000018,
     "backgroundColor": "rgba(244,241,234,1)"
   },
@@ -9809,7 +9809,7 @@
       "anchorX": "left",
       "anchorY": "top",
       "anchorReference": "auto",
-      "href": "datenschutz.html"
+      "href": "policy.html"
     },
     {
       "id": "group-1",
