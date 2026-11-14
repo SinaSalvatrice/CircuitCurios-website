@@ -441,8 +441,9 @@ TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregel
       // Archive groups span the full canvas because child coordinates use
       // world space. Their real card position is stored in CSS variables.
       const style = getComputedStyle(item);
-      const x = parseFloat(style.getPropertyValue('--cc-group-x'));
-      const y = parseFloat(style.getPropertyValue('--cc-group-y'));
+      const group = item.classList.contains('cc-tm-transition-group');
+      const x = parseFloat(group ? style.getPropertyValue('--cc-group-x') : style.left);
+      const y = parseFloat(group ? style.getPropertyValue('--cc-group-y') : style.top);
       return {
         x: Number.isFinite(x) ? x : 0,
         y: Number.isFinite(y) ? y : 0
@@ -499,6 +500,21 @@ TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregel
 
     const applyArchiveFamilyFilter = () => {
       const selector = '[data-cc-archive-item="1"]';
+      // Field grids use CSS layout; native grids filter their entire card wrapper.
+      document.querySelectorAll('[data-cc-grid-cell="1"]').forEach(field => {
+        const gallery = field.closest('.cc-tm-gallery');
+        if (gallery?.matches(
+          '.cc-gallery-sequence, [data-cc-transition*="imageSequenceFade"], [data-cc-transition*="imageSequenceSwoop"]'
+        )) return;
+        // A tagged wrapper owns its complete subtree, including untagged fields.
+        const card = field.closest(selector);
+        const filterable = !card && gallery?.querySelector(
+          '[data-cc-grid-family]:not([data-cc-grid-family=""])');
+        const hide = !!filterable && activeArchiveFamily !== 'all' &&
+          field.dataset.ccGridFamily !== activeArchiveFamily;
+        field.classList.toggle('cc-archive-filter-hidden', hide);
+        field.setAttribute('aria-hidden', String(field.hidden || hide));
+      });
       for (const canvas of document.querySelectorAll('.cc-template-canvas')) {
         const groups = Array.from(canvas.querySelectorAll(selector)).filter(group =>
           group.closest('.cc-template-canvas') === canvas &&
@@ -511,6 +527,7 @@ TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregel
           const { group } = entry;
           const filtered = activeArchiveFamily !== 'all';
           const hide = filtered && group.dataset.ccArchiveFamily !== activeArchiveFamily;
+          group.setAttribute('aria-hidden', String(hide));
           const slot = filtered && !hide && !group.parentElement.closest('[data-cc-stack]')
             ? freeSlots[visibleIndex++] : null;
           // The transition observer uses a sibling with the same world coordinates.

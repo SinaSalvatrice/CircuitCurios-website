@@ -257,6 +257,7 @@ main.cc-template-page {
 }
 /* Archive filter moves an entire positioned card, never just its text. */
 .cc-tm-transition-group[data-cc-archive-item="1"],
+.cc-tm-element[data-cc-archive-item="1"],
 [data-cc-group-trigger][style*="--cc-archive-shift-x"] {
   translate: var(--cc-archive-shift-x, 0px)
     var(--cc-archive-shift-y, 0px);
