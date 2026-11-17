@@ -35,8 +35,8 @@
       "name": "taxonomie & nummer",
       "style": {
         "fontFamily": "IBMPlexMono",
-        "fontWeight": 200,
-        "letterSpacing": 1.76
+        "fontWeight": 700,
+        "letterSpacing": 2.46
       },
       "styleExplicit": true,
       "explicitKeys": [
@@ -51,7 +51,7 @@
       "style": {
         "fontFamily": "BigShoulders",
         "fontWeight": 900,
-        "letterSpacing": 4.8999999999999995
+        "letterSpacing": 3.0
       },
       "styleExplicit": true,
       "explicitKeys": [
@@ -122,7 +122,7 @@
       "style": {
         "fontFamily": "BigShoulders",
         "fontWeight": 900,
-        "letterSpacing": 0.0
+        "letterSpacing": 10.0
       },
       "iconColor": "rgba(253,249,243,1)"
     },
