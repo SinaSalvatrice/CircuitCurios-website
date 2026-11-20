@@ -2227,13 +2227,13 @@
       "number": "",
       "fields": {
         "page": "Formen",
-        "textType": "Kurzbeschreibung",
+        "textType": "Überschrift",
         "text": "Eine Textur, mehrere Formen",
         "text_en": ""
       },
       "sourceFields": {
         "page": "Formen",
-        "textType": "Kurzbeschreibung",
+        "textType": "Überschrift",
         "text": "Eine Textur, mehrere Formen",
         "text_en": ""
       }
@@ -5813,7 +5813,7 @@
       "imported": false,
       "sourceTag": null,
       "sourceSelector": null,
-      "backgroundColor": "rgba(0,0,0,0)",
+      "backgroundColor": "rgba(245,238,227,1)",
       "textColor": "#f1e9dc",
       "fontSize": 16.0,
       "fontWeight": 400,

@@ -2,7 +2,7 @@
   "schemaVersion": 4,
   "groups": {
     "text-style-1": {
-      "name": "technisch",
+      "name": "texturtitel",
       "style": {
         "fontFamily": "BigShoulders",
         "fontWeight": 400,
@@ -51,7 +51,7 @@
       "style": {
         "fontFamily": "BigShoulders",
         "fontWeight": 200,
-        "letterSpacing": -1.5
+        "letterSpacing": -0.4
       },
       "styleExplicit": true,
       "explicitKeys": [
@@ -63,8 +63,17 @@
     },
     "text-style-5": {
       "name": "linktext",
-      "explicitKeys": [],
-      "styleExplicit": false
+      "explicitKeys": [
+        "fontFamily",
+        "fontWeight",
+        "letterSpacing"
+      ],
+      "styleExplicit": true,
+      "style": {
+        "fontFamily": "IBM Plex Mono",
+        "fontWeight": 600,
+        "letterSpacing": 1.728
+      }
     },
     "text-style-6": {
       "name": "archiv",
@@ -121,7 +130,7 @@
       "styleExplicit": true,
       "style": {
         "fontFamily": "BigShoulders",
-        "fontWeight": 800,
+        "fontWeight": 200,
         "letterSpacing": 10.0
       },
       "iconColor": "rgba(253,249,243,1)"

@@ -2,7 +2,7 @@
   "schemaVersion": 4,
   "groups": {
     "text-style-1": {
-      "name": "technisch",
+      "name": "texturtitel",
       "style": {
         "fontFamily": "BigShoulders",
         "fontWeight": 400,
@@ -51,7 +51,7 @@
       "style": {
         "fontFamily": "BigShoulders",
         "fontWeight": 200,
-        "letterSpacing": -0.9
+        "letterSpacing": -0.4
       },
       "styleExplicit": true,
       "explicitKeys": [
