@@ -192,6 +192,19 @@ main.cc-template-page {
   --cc-element-scale: 1;
 }
 .cc-tm-transition-group > .cc-tm-element { pointer-events: auto; }
+/* Transparent group interiors remain interactive, confined to their shape. */
+.cc-tm-transition-group > .cc-tm-hover-hit-area {
+  position: absolute;
+  left: var(--cc-group-x);
+  top: var(--cc-group-y);
+  width: var(--cc-group-width);
+  height: var(--cc-group-height);
+  box-sizing: border-box;
+  border-radius: var(--cc-group-hit-radius, 0px);
+  clip-path: inset(0 round var(--cc-group-hit-radius, 0px));
+  background: transparent;
+  pointer-events: auto;
+}
 .cc-tm-transition-group[data-cc-clip-frame="1"]::before {
   content: "";
   position: absolute;
@@ -879,6 +892,20 @@ main.cc-template-page {
 .cc-tm-element.cc-tm-textured.cc-tm-image > img,
 .cc-tm-element.cc-tm-textured.cc-tm-imported-image > img {
   visibility: hidden;
+}
+/* Use a separate rounded hit surface. Invisible fill is still interactive,
+   but shadow and the outside corners never trigger a hover. */
+.cc-tm-container[data-cc-hover-surface="1"] {
+  pointer-events: none;
+}
+.cc-tm-container[data-cc-hover-surface="1"]::before {
+  content: "";
+  position: absolute;
+  inset: calc(0px - var(--cc-border-width, 0px));
+  border-radius: inherit;
+  clip-path: inset(0 round var(--cc-radius, 0px));
+  background: transparent;
+  pointer-events: auto;
 }
 .cc-tm-container {
   display: grid;
