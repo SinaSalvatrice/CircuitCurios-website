@@ -50,8 +50,8 @@
       "name": "Title TILE",
       "style": {
         "fontFamily": "BigShoulders",
-        "fontWeight": 900,
-        "letterSpacing": 3.0
+        "fontWeight": 200,
+        "letterSpacing": -1.5
       },
       "styleExplicit": true,
       "explicitKeys": [
@@ -121,7 +121,7 @@
       "styleExplicit": true,
       "style": {
         "fontFamily": "BigShoulders",
-        "fontWeight": 900,
+        "fontWeight": 800,
         "letterSpacing": 10.0
       },
       "iconColor": "rgba(253,249,243,1)"

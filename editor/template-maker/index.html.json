@@ -2227,13 +2227,13 @@
       "number": "",
       "fields": {
         "page": "Formen",
-        "textType": "Kurzbeschreibung",
+        "textType": "Überschrift",
         "text": "Eine Textur, mehrere Formen",
         "text_en": ""
       },
       "sourceFields": {
         "page": "Formen",
-        "textType": "Kurzbeschreibung",
+        "textType": "Überschrift",
         "text": "Eine Textur, mehrere Formen",
         "text_en": ""
       }

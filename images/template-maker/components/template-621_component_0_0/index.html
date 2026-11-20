@@ -436,6 +436,8 @@ TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregel
 
     const archiveFamilies = ['Biologie', 'Geologie', 'Industrie', 'Physik'];
     let activeArchiveFamily = 'all';
+    let activeArchiveType = 'all';
+    let activeArchiveTexture = 'all';
 
     const archiveCardPosition = item => {
       // Archive groups span the full canvas because child coordinates use
@@ -509,9 +511,13 @@ TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregel
         // A tagged wrapper owns its complete subtree, including untagged fields.
         const card = field.closest(selector);
         const filterable = !card && gallery?.querySelector(
-          '[data-cc-grid-family]:not([data-cc-grid-family=""])');
-        const hide = !!filterable && activeArchiveFamily !== 'all' &&
-          field.dataset.ccGridFamily !== activeArchiveFamily;
+          '[data-cc-grid-family]:not([data-cc-grid-family=""]), ' +
+          '[data-cc-grid-type]:not([data-cc-grid-type=""]), ' +
+          '[data-cc-grid-texture]:not([data-cc-grid-texture=""])');
+        const hide = !!filterable && (
+          (activeArchiveFamily !== 'all' && field.dataset.ccGridFamily !== activeArchiveFamily) ||
+          (activeArchiveType !== 'all' && field.dataset.ccGridType !== activeArchiveType) ||
+          (activeArchiveTexture !== 'all' && field.dataset.ccGridTexture !== activeArchiveTexture));
         field.classList.toggle('cc-archive-filter-hidden', hide);
         field.setAttribute('aria-hidden', String(field.hidden || hide));
       });
@@ -525,8 +531,12 @@ TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregel
         let visibleIndex = 0;
         for (const entry of slots) {
           const { group } = entry;
-          const filtered = activeArchiveFamily !== 'all';
-          const hide = filtered && group.dataset.ccArchiveFamily !== activeArchiveFamily;
+          const filtered = activeArchiveFamily !== 'all' ||
+            activeArchiveType !== 'all' || activeArchiveTexture !== 'all';
+          const hide =
+            (activeArchiveFamily !== 'all' && group.dataset.ccArchiveFamily !== activeArchiveFamily) ||
+            (activeArchiveType !== 'all' && group.dataset.ccArchiveType !== activeArchiveType) ||
+            (activeArchiveTexture !== 'all' && group.dataset.ccArchiveTexture !== activeArchiveTexture);
           group.setAttribute('aria-hidden', String(hide));
           const slot = filtered && !hide && !group.parentElement.closest('[data-cc-stack]')
             ? freeSlots[visibleIndex++] : null;
@@ -552,18 +562,19 @@ TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregel
       document.querySelectorAll('[data-cc-actions]').forEach(tab => {
         try {
           const actions = JSON.parse(tab.dataset.ccActions || '[]');
-          const filter = actions.find(action =>
-            action.enabled !== false && action.type === 'filterFamily');
+          const filter = actions.find(action => action.enabled !== false &&
+            ['filterFamily', 'filterType', 'filterTexture'].includes(action.type));
           if (!filter) return;
-          const family = archiveFamilies.includes(filter.target)
-            ? filter.target : 'all';
-          tab.setAttribute('aria-pressed', String(family === activeArchiveFamily));
+          const active = filter.type === 'filterFamily' ? activeArchiveFamily :
+            filter.type === 'filterType' ? activeArchiveType : activeArchiveTexture;
+          tab.setAttribute('aria-pressed', String((filter.target || 'all') === active));
         } catch (_) {}
       });
     };
     window.ccRefreshTemplateArchiveFilters = applyArchiveFamilyFilter;
     window.addEventListener('resize', () => {
-      if (activeArchiveFamily !== 'all') applyArchiveFamilyFilter();
+      if (activeArchiveFamily !== 'all' || activeArchiveType !== 'all' ||
+          activeArchiveTexture !== 'all') applyArchiveFamilyFilter();
       else arrangeStacks();
     }, { passive: true });
 
@@ -761,6 +772,16 @@ TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregel
       if (type === 'filterFamily') {
         activeArchiveFamily = archiveFamilies.includes(action.target)
           ? action.target : 'all';
+        applyArchiveFamilyFilter();
+        return;
+      }
+      if (type === 'filterType') {
+        activeArchiveType = action.target || 'all';
+        applyArchiveFamilyFilter();
+        return;
+      }
+      if (type === 'filterTexture') {
+        activeArchiveTexture = action.target || 'all';
         applyArchiveFamilyFilter();
         return;
       }
@@ -1052,13 +1073,31 @@ TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregel
     // Animation groups share one clock. Their tracks remain independently
     // editable elements and keep their exact world-space positions.
     const animationGroupStates = new WeakMap();
-    const playAnimationGroup = async (group) => {
-      const previous = animationGroupStates.get(group);
+    const cancelAnimationGroup = group => {
+      const state = animationGroupStates.get(group);
+      if (!state) return;
+      state.cancelled = true;
+      state.animations.forEach(animation => animation.cancel());
+      state.animations.clear();
+      state.targets.clear();
+      animationGroupStates.delete(group);
+    };
+    // A looping track needs only its current filled endpoint, not every
+    // animation produced since the editor was opened.
+    const groupAnimation = (state, target, frames, options) => {
+      const animation = target.animate(frames, options);
+      const previous = state.targets.get(target);
       if (previous) {
-        previous.cancelled = true;
-        previous.animations.forEach(a => a.cancel());
+        previous.cancel();
+        state.animations.delete(previous);
       }
-      const state = { cancelled: false, animations: new Set() };
+      state.targets.set(target, animation);
+      state.animations.add(animation);
+      return animation;
+    };
+    const playAnimationGroup = async (group) => {
+      cancelAnimationGroup(group);
+      const state = { cancelled: false, animations: new Set(), targets: new Map() };
       animationGroupStates.set(group, state);
       let config = {};
       try { config = JSON.parse(group.dataset.ccTransition || '{}'); } catch (_) {}
@@ -1068,7 +1107,7 @@ TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregel
       const start = async () => {
         const tasks = [];
         for (const track of tracks) {
-          if (state.cancelled) return;
+          if (state.cancelled || !group.isConnected) return;
           let t = {};
           try { t = JSON.parse(track.dataset.ccTransition || '{}'); } catch (_) {}
           const delay = Math.max(0, Number(t.delayMs || 0));
@@ -1092,14 +1131,13 @@ TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregel
               return;
             }
             if (delay) await sleep(delay);
-            if (state.cancelled) return;
+            if (state.cancelled || !group.isConnected) return;
             if (track.animate && t.enabled !== false) {
               const frames = [
                 { opacity: fade ? 0 : 1, transform: moving ? 'translate(' + x + 'px,' + y + 'px)' : 'none' },
                 { opacity: 1, transform: 'none' },
               ];
-              const animation = track.animate(frames, { duration, easing, fill: 'both' });
-              state.animations.add(animation);
+              const animation = groupAnimation(state, track, frames, { duration, easing, fill: 'both' });
               track.removeAttribute('data-cc-transition-pending');
               try { await animation.finished; } catch (_) {}
               if (state.cancelled) return;
@@ -1111,11 +1149,10 @@ TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregel
               const hold = Math.max(150, Number(t.sequenceHoldMs || config.sequenceHoldMs || 2200));
               for (let index = 1; index < texts.length && !state.cancelled; index++) {
                 await sleep(hold);
-                if (state.cancelled) return;
+                if (state.cancelled || !group.isConnected) return;
                 label.textContent = texts[index];
                 if (label.animate) {
-                  const a = label.animate([{opacity:0.2},{opacity:1}], {duration,easing});
-                  state.animations.add(a);
+                  const a = groupAnimation(state, label, [{opacity:0.2},{opacity:1}], {duration,easing});
                   try { await a.finished; } catch (_) {}
                 }
               }
@@ -1128,38 +1165,64 @@ TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregel
       };
       const groupDelay = Math.max(0, Number(config.delayMs || 0));
       if (groupDelay) await sleep(groupDelay);
-      do {
-        if (state.cancelled) return;
-        await start();
-        if (!config.loop || state.cancelled) return;
-        await sleep(Math.max(0, Number(config.loopPauseMs || 0)));
-      } while (!state.cancelled);
+      try {
+        do {
+          if (state.cancelled || !group.isConnected) return;
+          await start();
+          if (!config.loop || state.cancelled || !group.isConnected) return;
+          await sleep(Math.max(0, Number(config.loopPauseMs || 0)));
+        } while (!state.cancelled);
+      } finally {
+        if (!group.isConnected && animationGroupStates.get(group) === state) {
+          cancelAnimationGroup(group);
+        }
+      }
     };
     const groupObservers = new Map();
     window.ccRefreshTemplateAnimationGroups = () => {
-      document.querySelectorAll('[data-cc-animation-controller]').forEach(group => {
+      const groups = new Set(document.querySelectorAll('[data-cc-animation-controller]'));
+      for (const [group, registration] of groupObservers) {
+        if (groups.has(group)) continue;
+        registration.observer?.disconnect();
+        if (registration.frame != null) cancelAnimationFrame(registration.frame);
+        cancelAnimationGroup(group);
+        groupObservers.delete(group);
+      }
+      groups.forEach(group => {
         const config = (() => { try { return JSON.parse(group.dataset.ccTransition || '{}'); } catch (_) { return {}; } })();
         const fingerprint = JSON.stringify(config) +
           Array.from(group.querySelectorAll('[data-cc-element-kind]'))
-            .map(e => (e.dataset.ccTransition || '') + (e.dataset.ccAnimationTexts || '')).join('|');
-        if (group.dataset.ccAnimationFingerprint === fingerprint) return;
-        group.dataset.ccAnimationFingerprint = fingerprint;
+            .map(e => e.id + ':' + (e.dataset.ccTransition || '') + (e.dataset.ccAnimationTexts || '')).join('|');
+        const marker = group.previousElementSibling;
+        const target = marker?.getAttribute('data-cc-group-trigger') === group.id
+            ? marker : group;
         const existing = groupObservers.get(group);
-        if (existing) existing.disconnect();
+        if (existing?.fingerprint === fingerprint && existing.target === target) return;
+        group.dataset.ccAnimationFingerprint = fingerprint;
+        existing?.observer?.disconnect();
+        if (existing?.frame != null) cancelAnimationFrame(existing.frame);
+        cancelAnimationGroup(group);
+        const registration = { fingerprint, target, observer: null, frame: null };
+        groupObservers.set(group, registration);
+        const play = () => {
+          if (group.isConnected && groupObservers.get(group) === registration) {
+            void playAnimationGroup(group).catch(() => {
+              if (groupObservers.get(group) === registration) cancelAnimationGroup(group);
+            });
+          }
+        };
+        if (config.enabled === false) return;
         if (config.trigger === 'enterViewport') {
           const observer = new IntersectionObserver(entries => {
             if (entries.some(e => e.isIntersecting)) {
-              void playAnimationGroup(group);
+              play();
               if (config.once !== false && !config.loop) observer.disconnect();
             }
           }, {threshold: 0.1});
-          const marker = group.previousElementSibling;
-          const target = marker?.getAttribute('data-cc-group-trigger') === group.id
-              ? marker : group;
           observer.observe(target);
-          groupObservers.set(group, observer);
+          registration.observer = observer;
         } else {
-          requestAnimationFrame(() => void playAnimationGroup(group));
+          registration.frame = requestAnimationFrame(play);
         }
       });
     };
@@ -1450,6 +1513,119 @@ TEKTONIK verbindet eine ausgeprägte Richtungswirkung mit kontrollierter Unregel
         }
       });
     };
+    // WebM playback is configured per editable Template Maker media element.
+    // Bind to individual videos (including those inside grids), never the page.
+    const ccVideoBindings = new Map();
+    const ccVideoSelector = 'video[data-cc-video-trigger]';
+    const setupCcVideo = video => {
+      const trigger = video.dataset.ccVideoTrigger || 'auto';
+      const speed = Number(video.dataset.ccVideoSpeed || 1);
+      const reset = video.dataset.ccVideoReset !== 'false';
+      // Loop, mute and autoplay are real DOM attributes. They must invalidate
+      // an existing binding even if its trigger/speed have not changed.
+      const signature = [trigger, speed, reset, video.hasAttribute('loop'),
+        video.hasAttribute('muted')].join('|');
+      const old = ccVideoBindings.get(video);
+      if (old?.signature === signature) return;
+      old?.cleanup?.();
+
+      const listeners = [];
+      const listen = (target, event, handler) => {
+        target.addEventListener(event, handler);
+        listeners.push(() => target.removeEventListener(event, handler));
+      };
+      const surface = video.closest('.cc-tm-gallery-field') ||
+          video.closest('.cc-tm-element') || video;
+      const play = () => {
+        if (!video.isConnected) return;
+        if (Number.isFinite(speed) && speed > 0) video.playbackRate = speed;
+        const pending = video.play();
+        if (pending && typeof pending.catch === 'function') pending.catch(() => {});
+      };
+      const pause = () => {
+        video.pause();
+        if (reset) {
+          try { video.currentTime = 0; } catch (_) {}
+        }
+      };
+      // Make the selected rule authoritative even if this node was previously
+      // playing as an autoplay clip and is preserved by the live DOM patcher.
+      video.autoplay = trigger === 'auto';
+      video.controls = trigger === 'manual';
+      video.loop = video.hasAttribute('loop');
+      video.muted = video.hasAttribute('muted') ||
+          ['auto','hover','viewport'].includes(trigger);
+      if (Number.isFinite(speed) && speed > 0) video.playbackRate = speed;
+      let observer = null;
+      if (trigger === 'hover') {
+        video.pause();
+        listen(surface, 'pointerenter', play);
+        listen(surface, 'pointerleave', pause);
+        listen(surface, 'focusin', play);
+        listen(surface, 'focusout', pause);
+        // Touch devices have no hover. Tap toggles playback there.
+        if (window.matchMedia?.('(hover: none)').matches) {
+          listen(video, 'click', () => video.paused ? play() : pause());
+        }
+      } else if (trigger === 'click') {
+        video.pause();
+        const toggle = () => video.paused ? play() : video.pause();
+        listen(video, 'click', toggle);
+        listen(video, 'keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggle();
+          }
+        });
+      } else if (trigger === 'viewport') {
+        video.pause();
+        if (typeof IntersectionObserver === 'function') {
+          observer = new IntersectionObserver(entries => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) play();
+              else pause();
+            }
+          }, {threshold: .15});
+          observer.observe(video);
+        } else play();
+      } else if (trigger === 'auto') {
+        play();
+      } else {
+        video.pause(); // manual player, with built-in controls
+      }
+      ccVideoBindings.set(video, {
+        signature,
+        cleanup: () => {
+          listeners.forEach(dispose => dispose());
+          observer?.disconnect();
+          video.pause();
+        },
+      });
+    };
+    const refreshCcVideos = () => {
+      const live = new Set(document.querySelectorAll(ccVideoSelector));
+      for (const [video, binding] of ccVideoBindings) {
+        if (live.has(video)) continue;
+        binding.cleanup();
+        ccVideoBindings.delete(video);
+      }
+      live.forEach(setupCcVideo);
+    };
+    window.ccRefreshTemplateVideos = refreshCcVideos;
+    const mediaRoot = document.querySelector('.cc-template-canvas') || document.body;
+    if (mediaRoot) {
+      const mediaObserver = new MutationObserver(mutations => {
+        if (mutations.some(mutation => mutation.type === 'childList' ||
+            (mutation.type === 'attributes' &&
+              mutation.target.matches?.(ccVideoSelector)))) refreshCcVideos();
+      });
+      mediaObserver.observe(mediaRoot, {
+        subtree: true, childList: true, attributes: true,
+        attributeFilter: ['data-cc-video-trigger', 'data-cc-video-speed',
+          'data-cc-video-reset'],
+      });
+    }
+    refreshCcVideos();
     window.ccRefreshTemplateTransitions();
   })();
   </script>
