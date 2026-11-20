@@ -20324,7 +20324,7 @@
       "galleryItems": [
         {
           "id": "cc-texture-1",
-          "imagePath": "library://website/component/texturwechsel_fade/assets/texture_01.png",
+          "imagePath": "library://website/component/animation/texturwechsel_fade/assets/texture_01.png",
           "componentPath": null,
           "archiveFamily": null,
           "archiveType": null,
@@ -20344,7 +20344,7 @@
         },
         {
           "id": "cc-texture-2",
-          "imagePath": "library://website/component/texturwechsel_fade/assets/texture_02.png",
+          "imagePath": "library://website/component/animation/texturwechsel_fade/assets/texture_02.png",
           "componentPath": null,
           "archiveFamily": null,
           "archiveType": null,
@@ -20364,7 +20364,7 @@
         },
         {
           "id": "cc-texture-3",
-          "imagePath": "library://website/component/texturwechsel_fade/assets/texture_03.png",
+          "imagePath": "library://website/component/animation/texturwechsel_fade/assets/texture_03.png",
           "componentPath": null,
           "archiveFamily": null,
           "archiveType": null,
@@ -20384,7 +20384,7 @@
         },
         {
           "id": "cc-texture-4",
-          "imagePath": "library://website/component/texturwechsel_fade/assets/texture_04.png",
+          "imagePath": "library://website/component/animation/texturwechsel_fade/assets/texture_04.png",
           "componentPath": null,
           "archiveFamily": null,
           "archiveType": null,
@@ -20404,7 +20404,7 @@
         },
         {
           "id": "cc-texture-5",
-          "imagePath": "library://website/component/texturwechsel_fade/assets/texture_05.png",
+          "imagePath": "library://website/component/animation/texturwechsel_fade/assets/texture_05.png",
           "componentPath": null,
           "archiveFamily": null,
           "archiveType": null,
@@ -20424,7 +20424,7 @@
         },
         {
           "id": "cc-texture-6",
-          "imagePath": "library://website/component/texturwechsel_fade/assets/texture_06.png",
+          "imagePath": "library://website/component/animation/texturwechsel_fade/assets/texture_06.png",
           "componentPath": null,
           "archiveFamily": null,
           "archiveType": null,
@@ -20444,7 +20444,7 @@
         },
         {
           "id": "cc-texture-7",
-          "imagePath": "library://website/component/texturwechsel_fade/assets/texture_07.png",
+          "imagePath": "library://website/component/animation/texturwechsel_fade/assets/texture_07.png",
           "componentPath": null,
           "archiveFamily": null,
           "archiveType": null,
@@ -20464,7 +20464,7 @@
         },
         {
           "id": "cc-texture-8",
-          "imagePath": "library://website/component/texturwechsel_fade/assets/texture_08.png",
+          "imagePath": "library://website/component/animation/texturwechsel_fade/assets/texture_08.png",
           "componentPath": null,
           "archiveFamily": null,
           "archiveType": null,
@@ -20484,7 +20484,7 @@
         },
         {
           "id": "cc-texture-9",
-          "imagePath": "library://website/component/texturwechsel_fade/assets/texture_09.png",
+          "imagePath": "library://website/component/animation/texturwechsel_fade/assets/texture_09.png",
           "componentPath": null,
           "archiveFamily": null,
           "archiveType": null,
@@ -20504,7 +20504,7 @@
         },
         {
           "id": "cc-texture-10",
-          "imagePath": "library://website/component/texturwechsel_fade/assets/texture_10.png",
+          "imagePath": "library://website/component/animation/texturwechsel_fade/assets/texture_10.png",
           "componentPath": null,
           "archiveFamily": null,
           "archiveType": null,
