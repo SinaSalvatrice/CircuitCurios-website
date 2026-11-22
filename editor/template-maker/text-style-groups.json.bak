@@ -34,7 +34,7 @@
     "text-style-3": {
       "name": "taxonomie & nummer",
       "style": {
-        "fontFamily": "IBMPlexMono",
+        "fontFamily": "Walkway",
         "fontWeight": 700,
         "letterSpacing": 2.46
       },
