@@ -93,8 +93,8 @@
     "text-style-8": {
       "name": "lange beschreibung",
       "style": {
-        "fontFamily": "Urbanist",
-        "fontWeight": 500,
+        "fontFamily": "Walkway",
+        "fontWeight": 200,
         "letterSpacing": 3.18
       },
       "styleExplicit": true,
