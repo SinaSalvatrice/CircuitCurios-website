@@ -338,6 +338,11 @@ main.cc-template-page {
 .cc-archive-filter-hidden {
   display: none !important;
 }
+/* Hover/click visibility works on ordinary elements and inline components,
+   not only on stack members. */
+.cc-hidden-by-action {
+  display: none !important;
+}
 /* Archive filter moves an entire positioned card, never just its text. */
 .cc-tm-transition-group[data-cc-archive-item="1"],
 .cc-tm-element[data-cc-archive-item="1"],

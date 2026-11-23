@@ -306,6 +306,8 @@ FRAKTUR verbindet die Härte geschlossener Flächen mit der Dynamik ihrer Auflö
       componentAspectRatio = null) => {
       if (!overlay || !surface || !content || !source) return;
       clearTimeout(closeTimer);
+      // Opening by click must never inherit a previous hover's close timer.
+      delete overlay.dataset.ccHoverOwner;
       const isNew = !overlay.classList.contains('cc-open');
       activeFloating = floatingSettings(rawSettings);
       if (isNew) {
@@ -902,7 +904,9 @@ FRAKTUR verbindet die Härte geschlossener Flächen mit der Dynamik ihrer Auflö
     window.ccRefreshTemplateHovers = () => {
       const live = new Set(document.querySelectorAll('[data-cc-hover]'));
       for (const [source, binding] of hoverBindings) {
-        if (live.has(source) && binding.serialized === source.dataset.ccHover) {
+        if (live.has(source) && binding.serialized === source.dataset.ccHover &&
+            binding.targets.every(entry =>
+              document.getElementById(entry.id) === entry.node)) {
           continue;
         }
         binding.dispose();
@@ -916,7 +920,122 @@ FRAKTUR verbindet die Härte geschlossener Flächen mit der Dynamik ihrer Auflö
         catch (_) { return; }
         const disposers = [];
 
-        actions.filter(action => action.enabled !== false).forEach(action => {
+        // A hover is a trigger, not an action type. Commands such as
+        // openComponent and toggle can run on hover while keeping their own
+        // configuration (componentPath, target, presentation, etc.).
+        const commandTargets = [];
+        actions.filter(action => action.enabled !== false &&
+            action.type !== 'hover' && action.type !== 'wechselText')
+          .forEach(action => {
+            const isGroup = source.classList.contains('cc-tm-transition-group');
+            const owner = source.id + ':' + action.id;
+            const targetId = action.type === 'toggle' ? action.target : null;
+            let target = targetId ? document.getElementById(targetId) : null;
+            if (targetId) commandTargets.push({id: targetId, node: target});
+            const originallyHidden = target?.classList.contains('cc-hidden-by-action') || false;
+            const hideTarget = hidden => {
+              if (!target?.isConnected) return;
+              target.classList.toggle('cc-hidden-by-action', hidden);
+              if (target.closest('[data-cc-stack]')) arrangeStacks();
+            };
+            // Hover-show targets start hidden, hover-hide targets start visible.
+            // Never mutate the saved project visibility or delete the element.
+            if (target) hideTarget(action.hoverVisibility !== 'hide');
+            let hovering = false, pending = null, closing = null;
+            const cancelTimers = () => {
+              if (pending !== null) clearTimeout(pending);
+              if (closing !== null) clearTimeout(closing);
+              pending = closing = null;
+            };
+            const inGroupFrame = event => {
+              if (!isGroup) return true;
+              const hit = source.querySelector(':scope > .cc-tm-hover-hit-area');
+              if (!hit) return true;
+              if (!Number.isFinite(event.clientX) ||
+                  !Number.isFinite(event.clientY)) return false;
+              const rect = hit.getBoundingClientRect();
+              const x = event.clientX - rect.left;
+              const y = event.clientY - rect.top;
+              if (!rect.width || !rect.height || x < 0 || y < 0 ||
+                  x > rect.width || y > rect.height) return false;
+              const radius = Math.max(0, Math.min(
+                parseFloat(getComputedStyle(hit).borderTopLeftRadius) || 0,
+                rect.width / 2, rect.height / 2));
+              const dx = x < radius ? radius - x :
+                x > rect.width - radius ? x - rect.width + radius : 0;
+              const dy = y < radius ? radius - y :
+                y > rect.height - radius ? y - rect.height + radius : 0;
+              return dx * dx + dy * dy <= radius * radius;
+            };
+            const closeOwned = () => {
+              closing = null;
+              if (action.type === 'openComponent' &&
+                  overlay?.dataset.ccHoverOwner === owner) {
+                window.ccDismissInteractionOverlay?.();
+                delete overlay.dataset.ccHoverOwner;
+              }
+            };
+            const scheduleClose = () => {
+              clearTimeout(closing);
+              closing = setTimeout(closeOwned, 220);
+            };
+            const onSurfaceEnter = () => { clearTimeout(closing); closing = null; };
+            const onSurfaceLeave = () => { if (!hovering) scheduleClose(); };
+            if (action.type === 'openComponent' && surface) {
+              surface.addEventListener('pointerenter', onSurfaceEnter);
+              surface.addEventListener('pointerleave', onSurfaceLeave);
+            }
+            const activate = () => {
+              pending = null;
+              if (!hovering || !source.isConnected) return;
+              if (action.type === 'toggle') {
+                hideTarget(action.hoverVisibility === 'hide');
+              } else {
+                void runAction(source, action).catch(() => {});
+                if (action.type === 'openComponent' && action.componentPath && overlay) {
+                  overlay.dataset.ccHoverOwner = owner;
+                }
+              }
+            };
+            const update = (event, mayEnter) => {
+              if (event.pointerType === 'touch') return;
+              const next = mayEnter && inGroupFrame(event);
+              if (hovering === next) return;
+              hovering = next;
+              if (pending !== null) { clearTimeout(pending); pending = null; }
+              if (next) {
+                clearTimeout(closing); closing = null;
+                const delay = Math.max(0, Number(action.delayMs || 0));
+                if (delay > 0) pending = setTimeout(activate, delay);
+                else activate();
+              } else if (action.type === 'toggle') {
+                hideTarget(action.hoverVisibility !== 'hide');
+              } else if (action.type === 'openComponent') {
+                scheduleClose();
+              }
+            };
+            const enter = event => update(event, true);
+            const move = event => update(event, true);
+            const leave = event => update(event, false);
+            source.addEventListener('pointerenter', enter);
+            if (isGroup) source.addEventListener('pointermove', move);
+            source.addEventListener('pointerleave', leave);
+            disposers.push(() => {
+              cancelTimers();
+              source.removeEventListener('pointerenter', enter);
+              if (isGroup) source.removeEventListener('pointermove', move);
+              source.removeEventListener('pointerleave', leave);
+              if (action.type === 'openComponent' && surface) {
+                surface.removeEventListener('pointerenter', onSurfaceEnter);
+                surface.removeEventListener('pointerleave', onSurfaceLeave);
+                closeOwned();
+              }
+              if (target?.isConnected) hideTarget(originallyHidden);
+            });
+          });
+
+        actions.filter(action => action.enabled !== false &&
+            action.type === 'hover').forEach(action => {
           let active = null;
           let baseline = null;
           let underlineTarget = null;
@@ -1056,8 +1175,27 @@ FRAKTUR verbindet die Härte geschlossener Flächen mit der Dynamik ihrer Auflö
             // invalid coordinate must never make the whole hover runtime fail.
             if (!Number.isFinite(event.clientX) ||
                 !Number.isFinite(event.clientY)) return false;
-            return document.elementsFromPoint(event.clientX, event.clientY)
-              .includes(hitArea);
+            // An element overlaying the transparent group can prevent the
+            // hit area from appearing in elementsFromPoint(), even though the
+            // pointer is inside the group's actual bounds. Test geometry
+            // instead; this also works for Flutter-forwarded editor events.
+            const rect = hitArea.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            if (rect.width <= 0 || rect.height <= 0 ||
+                x < 0 || y < 0 || x > rect.width || y > rect.height) {
+              return false;
+            }
+            // Respect the rounded corners used by the visible hit surface.
+            const radius = Math.max(0, Math.min(
+              parseFloat(getComputedStyle(hitArea).borderTopLeftRadius) || 0,
+              rect.width / 2, rect.height / 2));
+            if (radius === 0) return true;
+            const dx = x < radius ? radius - x :
+              x > rect.width - radius ? x - (rect.width - radius) : 0;
+            const dy = y < radius ? radius - y :
+              y > rect.height - radius ? y - (rect.height - radius) : 0;
+            return dx * dx + dy * dy <= radius * radius;
           };
           let pointerInside = false;
           const updateHover = (event, mayEnter) => {
@@ -1087,6 +1225,7 @@ FRAKTUR verbindet die Härte geschlossener Flächen mit der Dynamik ihrer Auflö
         });
         hoverBindings.set(source, {
           serialized,
+          targets: commandTargets,
           dispose: () => disposers.forEach(dispose => dispose()),
         });
       });
