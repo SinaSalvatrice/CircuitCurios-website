@@ -3624,6 +3624,7 @@
   "editorState": {
     "collapsedGroupIds": [
       "group-1",
+      "group-11",
       "group-14",
       "group-3",
       "group-4",
@@ -6287,7 +6288,7 @@
       "text": "BILD",
       "textSnippetId": null,
       "textSnippetField": "shortDescription",
-      "imagePath": "library://backgrounds/website_legacy/Download (3).jpg",
+      "imagePath": "library://backgrounds/website_legacy/Download (2).jpg",
       "componentPath": null,
       "componentSourcePath": null,
       "componentRole": null,
