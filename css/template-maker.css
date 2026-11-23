@@ -55,6 +55,13 @@
   font-display: swap;
 }
 @font-face {
+  font-family: 'Walkway UltraCondensed Semi';
+  src: url('../images/template-maker/fonts/Walkway-UltraCondensed-Semi-0.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
   font-family: 'BigShoulders';
   src: url('../images/template-maker/fonts/BigShoulders-0.ttf') format('truetype');
   font-style: normal;
@@ -62,36 +69,8 @@
   font-display: swap;
 }
 @font-face {
-  font-family: 'DMMono';
-  src: url('../images/template-maker/fonts/DMMono-0.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'DMMono';
-  src: url('../images/template-maker/fonts/DMMono-1.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'DMMono';
-  src: url('../images/template-maker/fonts/DMMono-2.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
   font-family: 'Urbanist';
   src: url('../images/template-maker/fonts/Urbanist-0.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Walkway UltraCondensed Semi';
-  src: url('../images/template-maker/fonts/Walkway-UltraCondensed-Semi-0.ttf') format('truetype');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
