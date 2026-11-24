@@ -2025,13 +2025,15 @@
         "page": "Startseite",
         "textType": "Überschrift",
         "text": "Form und Oberfläche",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Startseite",
         "textType": "Überschrift",
         "text": "Form und Oberfläche",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_start_intro": {
@@ -2042,13 +2044,15 @@
         "page": "Startseite",
         "textType": "Einleitung",
         "text": "Handgearbeiteter Aluminiumschmuck von CircuitCurios. Der Einstieg führt über die Form eines Stücks oder über seine Textur.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Startseite",
         "textType": "Einleitung",
         "text": "Handgearbeiteter Aluminiumschmuck von CircuitCurios. Der Einstieg führt über die Form eines Stücks oder über seine Textur.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_start_kurz": {
@@ -2059,13 +2063,15 @@
         "page": "Startseite",
         "textType": "Kurzbeschreibung",
         "text": "Die Nahaufnahme zeigt Kanten und Vertiefungen im Aluminium.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Startseite",
         "textType": "Kurzbeschreibung",
         "text": "Die Nahaufnahme zeigt Kanten und Vertiefungen im Aluminium.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_start_lang": {
@@ -2076,13 +2082,15 @@
         "page": "Startseite",
         "textType": "Langbeschreibung",
         "text": "Flach betrachtet fällt zuerst die Kontur auf. Kippt das Stück ins Licht, treten einzelne Kanten hervor. Eine Nahaufnahme zeigt, wie eng das Relief auf der kleinen Fläche zusammenliegt.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Startseite",
         "textType": "Langbeschreibung",
         "text": "Flach betrachtet fällt zuerst die Kontur auf. Kippt das Stück ins Licht, treten einzelne Kanten hervor. Eine Nahaufnahme zeigt, wie eng das Relief auf der kleinen Fläche zusammenliegt.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_start_bild": {
@@ -2093,13 +2101,15 @@
         "page": "Startseite",
         "textType": "Bildunterschrift",
         "text": "Detail einer strukturierten Aluminiumoberfläche",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Startseite",
         "textType": "Bildunterschrift",
         "text": "Detail einer strukturierten Aluminiumoberfläche",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_start_link": {
@@ -2110,13 +2120,15 @@
         "page": "Startseite",
         "textType": "Linktext",
         "text": "Oberflächen entdecken",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Startseite",
         "textType": "Linktext",
         "text": "Oberflächen entdecken",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_prozess_titel": {
@@ -2127,13 +2139,15 @@
         "page": "Prozess",
         "textType": "Kurzbeschreibung",
         "text": "01 — Die Idee\n\nAm Anfang steht eine Entdeckung, eine Beobachtung oder eine spontane Vorstellung. Ein Gegenstand fällt durch seine besondere Struktur auf und weckt die Idee, daraus eine Textur zu entwickeln. Manchmal entsteht die Gestaltung auch unabhängig von einem konkreten Vorbild. Erste Überlegungen zu Namen und Einordnung begleiten diesen Schritt.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Werkprozess"
       },
       "sourceFields": {
         "page": "Prozess",
         "textType": "Kurzbeschreibung",
         "text": "01 — Die Idee\n\nAm Anfang steht eine Entdeckung, eine Beobachtung oder eine spontane Vorstellung. Ein Gegenstand fällt durch seine besondere Struktur auf und weckt die Idee, daraus eine Textur zu entwickeln. Manchmal entsteht die Gestaltung auch unabhängig von einem konkreten Vorbild. Erste Überlegungen zu Namen und Einordnung begleiten diesen Schritt.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Werkprozess"
       }
     },
     "seite_prozess_intro": {
@@ -2144,13 +2158,15 @@
         "page": "Prozess",
         "textType": "Einleitung",
         "text": "Am Anfang steht ein Stück Aluminium. Hier lässt sich verfolgen, wie die Kontur entsteht, wie die Oberfläche ihre Struktur erhält und welche Werkzeuge dabei zum Einsatz kommen.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Werkprozess"
       },
       "sourceFields": {
         "page": "Prozess",
         "textType": "Einleitung",
         "text": "Am Anfang steht ein Stück Aluminium. Hier lässt sich verfolgen, wie die Kontur entsteht, wie die Oberfläche ihre Struktur erhält und welche Werkzeuge dabei zum Einsatz kommen.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Werkprozess"
       }
     },
     "seite_prozess_kurz": {
@@ -2161,13 +2177,15 @@
         "page": "Prozess",
         "textType": "Kurzbeschreibung",
         "text": "Dicht gesetzte Punzschläge hinterlassen ein Relief aus Vertiefungen und schmalen Stegen.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Werkprozess"
       },
       "sourceFields": {
         "page": "Prozess",
         "textType": "Kurzbeschreibung",
         "text": "Dicht gesetzte Punzschläge hinterlassen ein Relief aus Vertiefungen und schmalen Stegen.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Werkprozess"
       }
     },
     "seite_prozess_lang": {
@@ -2178,13 +2196,15 @@
         "page": "Prozess",
         "textType": "Langbeschreibung",
         "text": "Beim Punzieren setzt die Punze an einzelnen Punkten auf dem Metall auf. Aus vielen einzelnen Vertiefungen entsteht eine zusammenhängende Fläche. Abstand und Ausrichtung der Schläge bestimmen, wo schmale Stege stehen bleiben und wie das Licht über die Struktur wandert.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Werkprozess"
       },
       "sourceFields": {
         "page": "Prozess",
         "textType": "Langbeschreibung",
         "text": "Beim Punzieren setzt die Punze an einzelnen Punkten auf dem Metall auf. Aus vielen einzelnen Vertiefungen entsteht eine zusammenhängende Fläche. Abstand und Ausrichtung der Schläge bestimmen, wo schmale Stege stehen bleiben und wie das Licht über die Struktur wandert.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Werkprozess"
       }
     },
     "seite_prozess_bild": {
@@ -2195,13 +2215,15 @@
         "page": "Prozess",
         "textType": "Bildunterschrift",
         "text": "Punzierte Fläche im Streiflicht",
-        "text_en": ""
+        "text_en": "",
+        "category": "Werkprozess"
       },
       "sourceFields": {
         "page": "Prozess",
         "textType": "Bildunterschrift",
         "text": "Punzierte Fläche im Streiflicht",
-        "text_en": ""
+        "text_en": "",
+        "category": "Werkprozess"
       }
     },
     "seite_prozess_link": {
@@ -2212,13 +2234,15 @@
         "page": "Prozess",
         "textType": "Linktext",
         "text": "Werkzeuge ansehen",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Prozess",
         "textType": "Linktext",
         "text": "Werkzeuge ansehen",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_formen_titel": {
@@ -2229,13 +2253,15 @@
         "page": "Formen",
         "textType": "Überschrift",
         "text": "Eine Textur, mehrere Formen",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Formen",
         "textType": "Überschrift",
         "text": "Eine Textur, mehrere Formen",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_formen_intro": {
@@ -2246,13 +2272,15 @@
         "page": "Formen",
         "textType": "Einleitung",
         "text": "Ring, Armreif und Anhänger geben einer Oberfläche ganz unterschiedlichen Raum. Die Übersicht zeigt die Konturen und wie sich die Struktur über jede Form verteilt.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Formen",
         "textType": "Einleitung",
         "text": "Ring, Armreif und Anhänger geben einer Oberfläche ganz unterschiedlichen Raum. Die Übersicht zeigt die Konturen und wie sich die Struktur über jede Form verteilt.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_formen_kurz": {
@@ -2263,13 +2291,15 @@
         "page": "Formen",
         "textType": "Kurzbeschreibung",
         "text": "Das breite Band folgt dem Handgelenk und endet in zwei offenen Kanten.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Formen",
         "textType": "Kurzbeschreibung",
         "text": "Das breite Band folgt dem Handgelenk und endet in zwei offenen Kanten.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_formen_lang": {
@@ -2280,13 +2310,15 @@
         "page": "Formen",
         "textType": "Langbeschreibung",
         "text": "Auf dem breiten Band lässt sich eine Linie über die Rundung hinweg verfolgen. Von vorn ist nur ein Ausschnitt zu sehen. Beim Drehen rücken die seitlichen Partien ins Licht und der Verlauf bis zu den offenen Enden wird erkennbar.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Formen",
         "textType": "Langbeschreibung",
         "text": "Auf dem breiten Band lässt sich eine Linie über die Rundung hinweg verfolgen. Von vorn ist nur ein Ausschnitt zu sehen. Beim Drehen rücken die seitlichen Partien ins Licht und der Verlauf bis zu den offenen Enden wird erkennbar.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_formen_bild": {
@@ -2297,13 +2329,15 @@
         "page": "Formen",
         "textType": "Bildunterschrift",
         "text": "Offener Armreif in der Seitenansicht",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Formen",
         "textType": "Bildunterschrift",
         "text": "Offener Armreif in der Seitenansicht",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_formen_link": {
@@ -2314,13 +2348,15 @@
         "page": "Formen",
         "textType": "Linktext",
         "text": "Formen vergleichen",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Formen",
         "textType": "Linktext",
         "text": "Formen vergleichen",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_oberflaechen_titel": {
@@ -2331,13 +2367,15 @@
         "page": "Oberflächen",
         "textType": "Überschrift",
         "text": "Das Texturarchiv",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Oberflächen",
         "textType": "Überschrift",
         "text": "Das Texturarchiv",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_oberflaechen_intro": {
@@ -2348,13 +2386,15 @@
         "page": "Oberflächen",
         "textType": "Einleitung",
         "text": "Die Oberflächen sind nach Biologie, Geologie, Industrie und Physik geordnet. Jede Familie versammelt Texturen mit verwandten sichtbaren Merkmalen.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Oberflächen",
         "textType": "Einleitung",
         "text": "Die Oberflächen sind nach Biologie, Geologie, Industrie und Physik geordnet. Jede Familie versammelt Texturen mit verwandten sichtbaren Merkmalen.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_oberflaechen_kurz": {
@@ -2365,13 +2405,15 @@
         "page": "Oberflächen",
         "textType": "Kurzbeschreibung",
         "text": "Von einer Hauptlinie zweigen feinere Adern in die Fläche ab.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Oberflächen",
         "textType": "Kurzbeschreibung",
         "text": "Von einer Hauptlinie zweigen feinere Adern in die Fläche ab.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_oberflaechen_lang": {
@@ -2382,13 +2424,15 @@
         "page": "Oberflächen",
         "textType": "Langbeschreibung",
         "text": "Eine kräftige Linie gibt die Richtung vor. Feinere Linien zweigen seitlich ab und teilen die Fläche in ungleiche Felder. In der Nahansicht lässt sich verfolgen, welche Äste durchlaufen und welche bereits nach wenigen Millimetern enden.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Oberflächen",
         "textType": "Langbeschreibung",
         "text": "Eine kräftige Linie gibt die Richtung vor. Feinere Linien zweigen seitlich ab und teilen die Fläche in ungleiche Felder. In der Nahansicht lässt sich verfolgen, welche Äste durchlaufen und welche bereits nach wenigen Millimetern enden.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_oberflaechen_bild": {
@@ -2399,13 +2443,15 @@
         "page": "Oberflächen",
         "textType": "Bildunterschrift",
         "text": "Ausschnitt einer verzweigten Struktur",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Oberflächen",
         "textType": "Bildunterschrift",
         "text": "Ausschnitt einer verzweigten Struktur",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_oberflaechen_link": {
@@ -2416,13 +2462,15 @@
         "page": "Oberflächen",
         "textType": "Linktext",
         "text": "Zur Texturfamilie",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Oberflächen",
         "textType": "Linktext",
         "text": "Zur Texturfamilie",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_ueber_titel": {
@@ -2433,13 +2481,15 @@
         "page": "Über",
         "textType": "Langbeschreibung",
         "text": "Die praktische Arbeit ist geprägt von Ausprobieren, Verändern und Weiterentwickeln. Werkzeuge und Verfahren werden nicht ausschließlich entsprechend ihrer ursprünglichen Bestimmung eingesetzt, sondern auch auf neue Anwendungsmöglichkeiten untersucht.\n\nDabei wechseln sich gezielte Arbeitsschritte mit offenen Experimenten ab. Manche Versuche führen unmittelbar zu einem brauchbaren Ergebnis, andere liefern zunächst nur eine Beobachtung, die später wieder aufgegriffen wird.\n\nTechnische Hilfsmittel, digitale Werkzeuge und handwerkliche Verfahren ergänzen sich, ohne dass eines davon den gesamten Prozess bestimmt.\n\nEntscheidend bleibt die bewusste Auswahl: Welche Eigenschaften einer entstandenen Struktur sind interessant? Was lässt sich weiterentwickeln? Und an welchem Punkt wird aus einem Versuch eine eigenständige Gestaltung?\n\nSo entstehen Arbeiten, deren Charakter nicht allein durch die ursprüngliche Idee, sondern ebenso durch die Erfahrungen während ihrer Umsetzung geprägt wird.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Über",
         "textType": "Langbeschreibung",
         "text": "Die praktische Arbeit ist geprägt von Ausprobieren, Verändern und Weiterentwickeln. Werkzeuge und Verfahren werden nicht ausschließlich entsprechend ihrer ursprünglichen Bestimmung eingesetzt, sondern auch auf neue Anwendungsmöglichkeiten untersucht.\n\nDabei wechseln sich gezielte Arbeitsschritte mit offenen Experimenten ab. Manche Versuche führen unmittelbar zu einem brauchbaren Ergebnis, andere liefern zunächst nur eine Beobachtung, die später wieder aufgegriffen wird.\n\nTechnische Hilfsmittel, digitale Werkzeuge und handwerkliche Verfahren ergänzen sich, ohne dass eines davon den gesamten Prozess bestimmt.\n\nEntscheidend bleibt die bewusste Auswahl: Welche Eigenschaften einer entstandenen Struktur sind interessant? Was lässt sich weiterentwickeln? Und an welchem Punkt wird aus einem Versuch eine eigenständige Gestaltung?\n\nSo entstehen Arbeiten, deren Charakter nicht allein durch die ursprüngliche Idee, sondern ebenso durch die Erfahrungen während ihrer Umsetzung geprägt wird.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_ueber_intro": {
@@ -2450,13 +2500,15 @@
         "page": "Über",
         "textType": "Einleitung",
         "text": "Hinter CircuitCurios steht Sina Gessner. Ihr Interesse gilt den Stellen, an denen sich der Aufbau eines Gegenstands an seiner Oberfläche ablesen lässt.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Über",
         "textType": "Einleitung",
         "text": "Hinter CircuitCurios steht Sina Gessner. Ihr Interesse gilt den Stellen, an denen sich der Aufbau eines Gegenstands an seiner Oberfläche ablesen lässt.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_ueber_kurz": {
@@ -2467,13 +2519,15 @@
         "page": "Über",
         "textType": "Kurzbeschreibung",
         "text": "Naturbeobachtung und technische Details liefern die Vorbilder für die Oberflächen.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Über",
         "textType": "Kurzbeschreibung",
         "text": "Naturbeobachtung und technische Details liefern die Vorbilder für die Oberflächen.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_ueber_lang": {
@@ -2484,13 +2538,15 @@
         "page": "Über",
         "textType": "Langbeschreibung",
         "text": "Eine Blattader kann ebenso zum Ausgangspunkt werden wie die regelmäßige Teilung eines technischen Bauteils. Entscheidend ist ein sichtbares Detail. Im Metall verändert sich sein Maßstab, bis die Linien auch auf der schmalen Fläche eines Rings lesbar bleiben.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Über",
         "textType": "Langbeschreibung",
         "text": "Eine Blattader kann ebenso zum Ausgangspunkt werden wie die regelmäßige Teilung eines technischen Bauteils. Entscheidend ist ein sichtbares Detail. Im Metall verändert sich sein Maßstab, bis die Linien auch auf der schmalen Fläche eines Rings lesbar bleiben.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_ueber_bild": {
@@ -2501,13 +2557,15 @@
         "page": "Über",
         "textType": "Bildunterschrift",
         "text": "Detail aus der Werkstatt",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Über",
         "textType": "Bildunterschrift",
         "text": "Detail aus der Werkstatt",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_ueber_link": {
@@ -2518,13 +2576,15 @@
         "page": "Über",
         "textType": "Linktext",
         "text": "Zum Prozess",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Über",
         "textType": "Linktext",
         "text": "Zum Prozess",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_shop_titel": {
@@ -2535,13 +2595,15 @@
         "page": "Shop",
         "textType": "Überschrift",
         "text": "Schmuckstücke im Überblick",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Shop",
         "textType": "Überschrift",
         "text": "Schmuckstücke im Überblick",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_shop_intro": {
@@ -2552,13 +2614,15 @@
         "page": "Shop",
         "textType": "Einleitung",
         "text": "Eine Form kann mehrere Texturen tragen. Die Detailansichten zeigen, wie die jeweilige Oberfläche auf dem fertigen Schmuckstück wirkt.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Shop",
         "textType": "Einleitung",
         "text": "Eine Form kann mehrere Texturen tragen. Die Detailansichten zeigen, wie die jeweilige Oberfläche auf dem fertigen Schmuckstück wirkt.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_shop_kurz": {
@@ -2569,13 +2633,15 @@
         "page": "Shop",
         "textType": "Kurzbeschreibung",
         "text": "Die Wölbung fängt das Licht entlang der Längsachse ein.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Shop",
         "textType": "Kurzbeschreibung",
         "text": "Die Wölbung fängt das Licht entlang der Längsachse ein.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_shop_lang": {
@@ -2586,13 +2652,15 @@
         "page": "Shop",
         "textType": "Langbeschreibung",
         "text": "Die leichte Wölbung teilt die Vorderseite in helle und dunkle Partien. Von der Seite ist der Bogen der Fläche zu erkennen. Die frontale Ansicht zeigt, wie die Textur bis an die Außenkante verläuft.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Shop",
         "textType": "Langbeschreibung",
         "text": "Die leichte Wölbung teilt die Vorderseite in helle und dunkle Partien. Von der Seite ist der Bogen der Fläche zu erkennen. Die frontale Ansicht zeigt, wie die Textur bis an die Außenkante verläuft.",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_shop_bild": {
@@ -2603,13 +2671,15 @@
         "page": "Shop",
         "textType": "Bildunterschrift",
         "text": "Anhänger in Frontal- und Seitenansicht",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Shop",
         "textType": "Bildunterschrift",
         "text": "Anhänger in Frontal- und Seitenansicht",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "seite_shop_link": {
@@ -2620,13 +2690,15 @@
         "page": "Shop",
         "textType": "Linktext",
         "text": "Zum Schmuckstück",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "page": "Shop",
         "textType": "Linktext",
         "text": "Zum Schmuckstück",
-        "text_en": ""
+        "text_en": "",
+        "category": "Weitere Texttypen"
       }
     },
     "texture_1794279745020449": {
@@ -2670,13 +2742,19 @@
         "text": "Ein offenes, 6 mm breites Ringband mit geraden Seiten und sanft gerundeten Kanten. Die breite Außenfläche bietet Raum für feine Details und größere Texturmuster. Durch die Krümmung wandern Licht und Schatten über die Oberfläche und lassen ihre Tiefe unterschiedlich hervortreten.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Breit",
+        "typeGroup": "Ringe",
+        "category": "Typen"
       },
       "sourceFields": {
         "text": "Ein offenes, 6 mm breites Ringband mit geraden Seiten und sanft gerundeten Kanten. Die breite Außenfläche bietet Raum für feine Details und größere Texturmuster. Durch die Krümmung wandern Licht und Schatten über die Oberfläche und lassen ihre Tiefe unterschiedlich hervortreten.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Breit",
+        "typeGroup": "Ringe",
+        "category": "Typen"
       }
     },
     "custom_1794279831478965": {
@@ -2687,13 +2765,19 @@
         "text": "Ein schmales, offenes Ringband mit 4 mm Breite und einer klaren, zurückhaltenden Kontur. Die Textur erscheint als feines Band rund um den Finger. Größere Muster werden auf Ausschnitte reduziert, während kleine Strukturelemente den Rhythmus der Oberfläche prägen.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Schmal",
+        "typeGroup": "Ringe",
+        "category": "Typen"
       },
       "sourceFields": {
         "text": "Ein schmales, offenes Ringband mit 4 mm Breite und einer klaren, zurückhaltenden Kontur. Die Textur erscheint als feines Band rund um den Finger. Größere Muster werden auf Ausschnitte reduziert, während kleine Strukturelemente den Rhythmus der Oberfläche prägen.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Schmal",
+        "typeGroup": "Ringe",
+        "category": "Typen"
       }
     },
     "custom_1794279853941013": {
@@ -2704,13 +2788,19 @@
         "text": "Ein offener Armreif aus einem gebogenen Band mit sanft gerundeten Enden. Seine langgezogene Außenfläche trägt die Textur um das Handgelenk und bietet Platz für zusammenhängende Strukturverläufe. Durch die Wölbung und die Bewegung beim Tragen treten einzelne Bereiche abwechselnd ins Licht.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "",
+        "typeGroup": "Armreifen",
+        "category": "Typen"
       },
       "sourceFields": {
         "text": "Ein offener Armreif aus einem gebogenen Band mit sanft gerundeten Enden. Seine langgezogene Außenfläche trägt die Textur um das Handgelenk und bietet Platz für zusammenhängende Strukturverläufe. Durch die Wölbung und die Bewegung beim Tragen treten einzelne Bereiche abwechselnd ins Licht.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "",
+        "typeGroup": "Armreifen",
+        "category": "Typen"
       }
     },
     "custom_1794279893265157": {
@@ -2721,13 +2811,19 @@
         "text": "Ein flacher, rechteckiger Anhänger mit gerundeten Ecken und 2 mm Materialstärke. Die großzügige Fläche zeigt Texturen im Zusammenhang und macht sowohl ihre Gesamtwirkung als auch einzelne Details sichtbar. Eine separat angebrachte Edelstahlöse bildet die Aufhängung.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Überschrift"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Groß · 3 × 4",
+        "typeGroup": "Anhänger",
+        "category": "Typen"
       },
       "sourceFields": {
         "text": "Ein flacher, rechteckiger Anhänger mit gerundeten Ecken und 2 mm Materialstärke. Die großzügige Fläche zeigt Texturen im Zusammenhang und macht sowohl ihre Gesamtwirkung als auch einzelne Details sichtbar. Eine separat angebrachte Edelstahlöse bildet die Aufhängung.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Überschrift"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Groß · 3 × 4",
+        "typeGroup": "Anhänger",
+        "category": "Typen"
       }
     },
     "custom_1794279933285653": {
@@ -2738,13 +2834,19 @@
         "text": "Ein schmales, längliches Rechteck mit gerundeten Ecken und flachem Profil. Auf der begrenzten Fläche erscheint die Textur als konzentrierter Ausschnitt; längs oder quer verlaufende Strukturen treten im Verhältnis zur Kontur deutlich hervor. Die Aufhängung erfolgt über eine angesetzte Edelstahlöse.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Flach · klein",
+        "typeGroup": "Anhänger",
+        "category": "Typen"
       },
       "sourceFields": {
         "text": "Ein schmales, längliches Rechteck mit gerundeten Ecken und flachem Profil. Auf der begrenzten Fläche erscheint die Textur als konzentrierter Ausschnitt; längs oder quer verlaufende Strukturen treten im Verhältnis zur Kontur deutlich hervor. Die Aufhängung erfolgt über eine angesetzte Edelstahlöse.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Flach · klein",
+        "typeGroup": "Anhänger",
+        "category": "Typen"
       }
     },
     "custom_1794279962227263": {
@@ -2755,13 +2857,19 @@
         "text": "Schmale, flache Rechtecke mit gerundeten Ecken, die über Verbindungsösen aus Edelstahl an Edelstahlhängern befestigt sind. Die langen Kanten rahmen die Textur und betonen das gestreckte Format. Beim Tragen bewegen sich die Flächen frei, wodurch Lichtreflexe wechseln und unterschiedliche Strukturdetails hervortreten.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "",
+        "typeGroup": "Ohrhänger",
+        "category": "Typen"
       },
       "sourceFields": {
         "text": "Schmale, flache Rechtecke mit gerundeten Ecken, die über Verbindungsösen aus Edelstahl an Edelstahlhängern befestigt sind. Die langen Kanten rahmen die Textur und betonen das gestreckte Format. Beim Tragen bewegen sich die Flächen frei, wodurch Lichtreflexe wechseln und unterschiedliche Strukturdetails hervortreten.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "",
+        "typeGroup": "Ohrhänger",
+        "category": "Typen"
       }
     },
     "custom_1794279986563918": {
@@ -2772,13 +2880,19 @@
         "text": "Ein durchgehendes Band, das sich in zwei versetzten Windungen um den Finger legt. Zwischenräume und offene Enden gliedern die Form und lassen mehrere Abschnitte der texturierten Außenfläche nebeneinander sichtbar werden. Durch ihre unterschiedliche Ausrichtung zeigt sich die Textur gleichzeitig in verschiedenen Lichtwinkeln.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Spiralring",
+        "typeGroup": "Ringe",
+        "category": "Typen"
       },
       "sourceFields": {
         "text": "Ein durchgehendes Band, das sich in zwei versetzten Windungen um den Finger legt. Zwischenräume und offene Enden gliedern die Form und lassen mehrere Abschnitte der texturierten Außenfläche nebeneinander sichtbar werden. Durch ihre unterschiedliche Ausrichtung zeigt sich die Textur gleichzeitig in verschiedenen Lichtwinkeln.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Spiralring",
+        "typeGroup": "Ringe",
+        "category": "Typen"
       }
     },
     "custom_1794280008200664": {
@@ -2789,13 +2903,19 @@
         "text": "Ein länglicher, kantiger Körper mit deutlich ausgeprägter Tiefe. Die Textur kann sich über mehrere Seiten erstrecken; an den Kanten wechseln Flächenausrichtung und Lichteinfall. Eine durchgehende Bohrung mit 2 mm Durchmesser bildet die direkte Aufhängung ohne zusätzliche Öse.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Turm · groß",
+        "typeGroup": "Anhänger",
+        "category": "Typen"
       },
       "sourceFields": {
         "text": "Ein länglicher, kantiger Körper mit deutlich ausgeprägter Tiefe. Die Textur kann sich über mehrere Seiten erstrecken; an den Kanten wechseln Flächenausrichtung und Lichteinfall. Eine durchgehende Bohrung mit 2 mm Durchmesser bildet die direkte Aufhängung ohne zusätzliche Öse.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Turm · groß",
+        "typeGroup": "Anhänger",
+        "category": "Typen"
       }
     },
     "custom_1794280043479866": {
@@ -2806,13 +2926,19 @@
         "text": "Ein schlanker, kantiger Turmkörper mit schmalen Seitenflächen. Diese zeigen die Textur in begrenzten Ausschnitten, während die Kanten sichtbare Übergänge zwischen den Flächen setzen. Beim Drehen verändert sich ihre Wirkung im Licht. Eine separat angebrachte Edelstahlöse übernimmt die Aufhängung.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Turm · schmal",
+        "typeGroup": "Anhänger",
+        "category": "Typen"
       },
       "sourceFields": {
         "text": "Ein schlanker, kantiger Turmkörper mit schmalen Seitenflächen. Diese zeigen die Textur in begrenzten Ausschnitten, während die Kanten sichtbare Übergänge zwischen den Flächen setzen. Beim Drehen verändert sich ihre Wirkung im Licht. Eine separat angebrachte Edelstahlöse übernimmt die Aufhängung.",
         "text_en": "",
         "page": "Formen",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Turm · schmal",
+        "typeGroup": "Anhänger",
+        "category": "Typen"
       }
     },
     "custom_1794280070491182": {
@@ -2823,13 +2949,19 @@
         "text": "Ein länglicher, rechteckiger Anhänger, dessen oberes Ende zur Öse eingerollt ist. Körper und Aufhängung bestehen aus einem durchgehenden Stück. Die flache Vorderseite bietet eine zusammenhängende Texturfläche; die obere Rundung ergänzt die gerade Kontur um einen weichen Bogen.",
         "text_en": "",
         "page": "Prozess",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Aus einem Stück",
+        "typeGroup": "Anhänger",
+        "category": "Typen"
       },
       "sourceFields": {
         "text": "Ein länglicher, rechteckiger Anhänger, dessen oberes Ende zur Öse eingerollt ist. Körper und Aufhängung bestehen aus einem durchgehenden Stück. Die flache Vorderseite bietet eine zusammenhängende Texturfläche; die obere Rundung ergänzt die gerade Kontur um einen weichen Bogen.",
         "text_en": "",
         "page": "Prozess",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "typeVariant": "Aus einem Stück",
+        "typeGroup": "Anhänger",
+        "category": "Typen"
       }
     },
     "custom_1794318266915120": {
@@ -2840,13 +2972,15 @@
         "text": "02 — Material\n\nJe nach geplantem Stück fällt die Wahl auf Aluminiumdraht oder bereits flaches Aluminiummaterial. Wird Draht verwendet, muss dieser zunächst abgeflacht werden. Durch wiederholte Hammerschläge entsteht eine ebene Fläche, deren Breite und Stärke die Grundlage für die weitere Bearbeitung bilden.\n",
         "text_en": "",
         "page": "Prozess",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "category": "Material"
       },
       "sourceFields": {
         "text": "02 — Material\n\nJe nach geplantem Stück fällt die Wahl auf Aluminiumdraht oder bereits flaches Aluminiummaterial. Wird Draht verwendet, muss dieser zunächst abgeflacht werden. Durch wiederholte Hammerschläge entsteht eine ebene Fläche, deren Breite und Stärke die Grundlage für die weitere Bearbeitung bilden.\n",
         "text_en": "",
         "page": "Prozess",
-        "textType": "Kurzbeschreibung"
+        "textType": "Kurzbeschreibung",
+        "category": "Material"
       }
     },
     "custom_1794536741995007": {
@@ -2857,13 +2991,15 @@
         "text": "Hinter CircuitCurios steht eine unabhängige Gestalterin mit einer ausgeprägten Neugier für technische Zusammenhänge, Materialien und ungewöhnliche Lösungswege.\n\nDas Interesse reicht von Elektronik und mechanischen Konstruktionen bis zur gestalterischen Auseinandersetzung mit Oberflächen und Formen. Dabei verschwimmen die Grenzen zwischen technischem Tüfteln, handwerklicher Arbeit und kreativem Experiment.\n\nIm Mittelpunkt steht keine klassische künstlerische Ausbildung oder festgelegte Disziplin, sondern eine eigenständige Herangehensweise, die unterschiedliche Kenntnisse, Interessen und Fähigkeiten miteinander verbindet.",
         "text_en": "",
         "page": "Über",
-        "textType": "Langbeschreibung"
+        "textType": "Langbeschreibung",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "text": "Hinter CircuitCurios steht eine unabhängige Gestalterin mit einer ausgeprägten Neugier für technische Zusammenhänge, Materialien und ungewöhnliche Lösungswege.\n\nDas Interesse reicht von Elektronik und mechanischen Konstruktionen bis zur gestalterischen Auseinandersetzung mit Oberflächen und Formen. Dabei verschwimmen die Grenzen zwischen technischem Tüfteln, handwerklicher Arbeit und kreativem Experiment.\n\nIm Mittelpunkt steht keine klassische künstlerische Ausbildung oder festgelegte Disziplin, sondern eine eigenständige Herangehensweise, die unterschiedliche Kenntnisse, Interessen und Fähigkeiten miteinander verbindet.",
         "text_en": "",
         "page": "Über",
-        "textType": "Langbeschreibung"
+        "textType": "Langbeschreibung",
+        "category": "Weitere Texttypen"
       }
     },
     "custom_1794574810320334": {
@@ -2874,13 +3010,15 @@
         "text": "# Die Gestalterin.\n\n**Zwischen Beobachtung und Formgebung.**\n\nHinter CircuitCurios steht eine unabhängige gestalterische Arbeit, die sich mit Strukturen, Oberflächen und deren Übersetzung in tragbare Objekte beschäftigt.\n\nIm Mittelpunkt steht nicht die Nachbildung bestehender Formen, sondern die Untersuchung ihrer Prinzipien: Wie entsteht eine Struktur? Was bestimmt ihren Verlauf? Und wie verändert sich ihre Wirkung, wenn sie aus ihrem ursprünglichen Zusammenhang gelöst wird?\n\nAus diesen Fragen entstehen eigenständige Formen – durch Beobachtung, Experiment und handwerkliche Umsetzung.",
         "text_en": "",
         "page": "Über",
-        "textType": "Langbeschreibung"
+        "textType": "Langbeschreibung",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "text": "# Die Gestalterin.\n\n**Zwischen Beobachtung und Formgebung.**\n\nHinter CircuitCurios steht eine unabhängige gestalterische Arbeit, die sich mit Strukturen, Oberflächen und deren Übersetzung in tragbare Objekte beschäftigt.\n\nIm Mittelpunkt steht nicht die Nachbildung bestehender Formen, sondern die Untersuchung ihrer Prinzipien: Wie entsteht eine Struktur? Was bestimmt ihren Verlauf? Und wie verändert sich ihre Wirkung, wenn sie aus ihrem ursprünglichen Zusammenhang gelöst wird?\n\nAus diesen Fragen entstehen eigenständige Formen – durch Beobachtung, Experiment und handwerkliche Umsetzung.",
         "text_en": "",
         "page": "Über",
-        "textType": "Langbeschreibung"
+        "textType": "Langbeschreibung",
+        "category": "Weitere Texttypen"
       }
     },
     "custom_1794574846399989": {
@@ -2891,13 +3029,15 @@
         "text": "Jede Oberfläche trägt eine Struktur. Manche folgen einer klaren Ordnung, andere entstehen aus scheinbar zufälligen Veränderungen. Gemeinsam ist ihnen, dass ihre Formen auf Zusammenhänge und Gesetzmäßigkeiten verweisen.\n\nCircuitCurios betrachtet diese Strukturen nicht ausschließlich als dekorative Muster, sondern als eigenständige gestalterische Ausgangspunkte.\n\nEntscheidend ist dabei nicht die möglichst genaue Nachbildung eines Vorbilds. Vielmehr geht es darum, charakteristische Merkmale zu erkennen, zu isolieren und in eine neue Formsprache zu übertragen.\n\nSo wird aus der Beobachtung eines Phänomens der Ausgangspunkt für eine eigenständige Gestaltung.",
         "text_en": "",
         "page": "Über",
-        "textType": "Langbeschreibung"
+        "textType": "Langbeschreibung",
+        "category": "Weitere Texttypen"
       },
       "sourceFields": {
         "text": "Jede Oberfläche trägt eine Struktur. Manche folgen einer klaren Ordnung, andere entstehen aus scheinbar zufälligen Veränderungen. Gemeinsam ist ihnen, dass ihre Formen auf Zusammenhänge und Gesetzmäßigkeiten verweisen.\n\nCircuitCurios betrachtet diese Strukturen nicht ausschließlich als dekorative Muster, sondern als eigenständige gestalterische Ausgangspunkte.\n\nEntscheidend ist dabei nicht die möglichst genaue Nachbildung eines Vorbilds. Vielmehr geht es darum, charakteristische Merkmale zu erkennen, zu isolieren und in eine neue Formsprache zu übertragen.\n\nSo wird aus der Beobachtung eines Phänomens der Ausgangspunkt für eine eigenständige Gestaltung.",
         "text_en": "",
         "page": "Über",
-        "textType": "Langbeschreibung"
+        "textType": "Langbeschreibung",
+        "category": "Weitere Texttypen"
       }
     },
     "product_type_ring": {
@@ -3322,6 +3462,125 @@
         "section_comfort_text_en": "Lightness as a wearing experience. Aluminium's low weight keeps the piece present without making it feel heavy.",
         "section_collection_text_en": "The surface as identity. Every surface is worked by hand and develops its own linework, depth and response to light. The piece does not simply carry the structure – its effect is created through it.",
         "section_sethinweis_text_en": "One texture, multiple carriers. The surface is part of a collection and reappears across different jewelry forms."
+      }
+    },
+    "module_sizepic_texture": {
+      "name": "Sizepic · Standardtitel",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "category": "Modultexte",
+        "module": "Sizepic",
+        "textType": "Überschrift",
+        "text": "Textur"
+      },
+      "sourceFields": {
+        "category": "Modultexte",
+        "module": "Sizepic",
+        "textType": "Überschrift",
+        "text": "Textur"
+      }
+    },
+    "module_sizepic_chains": {
+      "name": "Sizepic · Kettenoptionen",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "category": "Modultexte",
+        "module": "Sizepic",
+        "textType": "Überschrift",
+        "text": "Kettenoptionen"
+      },
+      "sourceFields": {
+        "category": "Modultexte",
+        "module": "Sizepic",
+        "textType": "Überschrift",
+        "text": "Kettenoptionen"
+      }
+    },
+    "module_sizepic_sizes": {
+      "name": "Sizepic · Größen",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "category": "Modultexte",
+        "module": "Sizepic",
+        "textType": "Überschrift",
+        "text": "Größen"
+      },
+      "sourceFields": {
+        "category": "Modultexte",
+        "module": "Sizepic",
+        "textType": "Überschrift",
+        "text": "Größen"
+      }
+    },
+    "module_sizepic_width": {
+      "name": "Sizepic · Maßlinie Breite",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "category": "Modultexte",
+        "module": "Sizepic",
+        "textType": "Maßbeschriftung",
+        "text": "Breite"
+      },
+      "sourceFields": {
+        "category": "Modultexte",
+        "module": "Sizepic",
+        "textType": "Maßbeschriftung",
+        "text": "Breite"
+      }
+    },
+    "module_sizepic_height": {
+      "name": "Sizepic · Maßlinie Höhe",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "category": "Modultexte",
+        "module": "Sizepic",
+        "textType": "Maßbeschriftung",
+        "text": "Höhe"
+      },
+      "sourceFields": {
+        "category": "Modultexte",
+        "module": "Sizepic",
+        "textType": "Maßbeschriftung",
+        "text": "Höhe"
+      }
+    },
+    "module_sizepic_length": {
+      "name": "Sizepic · Maßlinie Länge",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "category": "Modultexte",
+        "module": "Sizepic",
+        "textType": "Maßbeschriftung",
+        "text": "Länge"
+      },
+      "sourceFields": {
+        "category": "Modultexte",
+        "module": "Sizepic",
+        "textType": "Maßbeschriftung",
+        "text": "Länge"
+      }
+    },
+    "module_group_catalog_title": {
+      "name": "Group Shot · Katalogtitel",
+      "kind": "custom",
+      "number": "",
+      "fields": {
+        "category": "Modultexte",
+        "module": "Group Shot",
+        "textType": "Überschrift",
+        "text": "WEITERE TEXTUREN"
+      },
+      "sourceFields": {
+        "category": "Modultexte",
+        "module": "Group Shot",
+        "textType": "Überschrift",
+        "text": "WEITERE TEXTUREN"
       }
     }
   },
@@ -4716,6 +4975,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -4760,6 +5021,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -4915,6 +5178,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -4959,6 +5224,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -5114,6 +5381,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -5158,6 +5427,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -5313,6 +5584,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -5357,6 +5630,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -5512,6 +5787,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -5554,6 +5831,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -5709,6 +5988,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -5751,6 +6032,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -5906,6 +6189,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 3.0,
           "hoverTilt": 4.0,
@@ -5950,6 +6235,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -6889,6 +7176,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.03,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -6933,6 +7222,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -7088,6 +7379,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.03,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -7245,6 +7538,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.03,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -7402,6 +7697,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.03,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -7559,6 +7856,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.03,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -7716,6 +8015,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.03,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -8657,6 +8958,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 3.0,
           "hoverTilt": 4.0,
@@ -8699,6 +9002,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -14118,6 +14423,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 3.0,
           "hoverTilt": 4.0,
@@ -14275,6 +14582,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 3.0,
           "hoverTilt": 4.0,
@@ -14432,6 +14741,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 3.0,
           "hoverTilt": 4.0,
@@ -15709,6 +16020,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.03,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -15751,6 +16064,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -15906,6 +16221,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.03,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -15948,6 +16265,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -16103,6 +16422,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.03,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -16145,6 +16466,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -17196,6 +17519,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 3.0,
           "hoverTilt": 4.0,
@@ -17238,6 +17563,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -17393,6 +17720,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 3.0,
           "hoverTilt": 4.0,
@@ -17437,6 +17766,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -18040,6 +18371,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -18082,6 +18415,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -18237,6 +18572,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -18279,6 +18616,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -18434,6 +18773,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "hover",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
@@ -18476,6 +18817,8 @@
           ],
           "hoverTarget": "self",
           "hoverReverse": true,
+          "trigger": "click",
+          "hoverVisibility": "show",
           "hoverScale": 1.05,
           "hoverDistance": 8.0,
           "hoverTilt": 4.0,
