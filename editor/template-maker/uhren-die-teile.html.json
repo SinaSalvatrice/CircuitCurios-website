@@ -3619,7 +3619,7 @@
     "footer": "library://website/component/foot/foot.cccomponent.json"
   },
   "kind": "circuitcurios.websiteTemplate",
-  "page": "uhren-katalog.html",
+  "page": "uhren-die-teile.html",
   "htmlSource": null,
   "canvas": {
     "width": 1440.0,
